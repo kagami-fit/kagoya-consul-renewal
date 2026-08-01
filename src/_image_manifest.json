@@ -1,0 +1,246 @@
+{
+  "model": "gpt-image-2",
+  "palette": "深い青緑 #123840、ブランドティール #20A5A4、淡いセージ #EAF1EC、砂色 #C6A36A、オフホワイト #F8FAF8。知的・誠実・静かな自信。Type D：直線と直角のリズム、鋭利なエッジ、強コントラスト、グリッドの規律、機械精度の余白。",
+  "items": [
+    {
+      "file": "fv.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Japanese real estate consulting homepage hero, a refined detached house and small income-property building in a calm Tokyo residential neighborhood at early morning, subtle architectural survey drawings and measured grid reflected on glass, no readable text, no logos, no people posing. Editorial architectural photography, believable natural light, deep teal shadows, pale sage highlights, warm sand detail. Type D sharp modern: straight and right-angle rhythm, strong contrast, grid discipline, machine-precision negative space. Compose the main buildings on the right 55 percent and leave calm darker negative space on the left for HTML headline. Premium but not flashy, realistic Japan, horizontal 3:2."
+    },
+    {
+      "file": "hero-sub.jpg",
+      "aspect": "tall",
+      "transparent": false,
+      "prompt": "Vertical editorial photograph for a Japanese real estate consultancy: close view of hands reviewing a property survey, cadastral map and building plan on a clean desk, scale ruler and pencil, face not visible, realistic Japanese office, no readable text, no brand logo. Deep teal, pale sage and warm sand palette. Type D straight lines, sharp edges, strong contrast, grid discipline, generous precise negative space. Natural window light, trustworthy and understated."
+    },
+    {
+      "file": "profile.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Trustworthy corporate consultation scene for a Japanese real estate consultancy, an experienced fictional Japanese male property advisor in his early fifties shown in three-quarter profile while explaining architectural plans, natural expression, modest dark suit, bright modern office, not a celebrity and not presented as a real named person. No text, no logos, no watermark. Deep teal and pale sage color harmony, Type D sharp modern composition, grid discipline, believable editorial photography, suitable for rounded crop."
+    },
+    {
+      "file": "ogp.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Wide social sharing background image for a Japanese real estate consulting company, abstract house-outline geometry merging with a real Tokyo residential streetscape and architectural survey grid, no words, no letters, no logo, no watermark. Deep teal background, vivid teal single accent, pale sage and a small warm sand line. Type D straight and right-angle rhythm, sharp edges, strong contrast, grid discipline, machine-precision whitespace, sophisticated editorial design."
+    },
+    {
+      "file": "badge-1.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Icon-only authority badge for a Japanese real estate homepage, motif of an official document shield and simple house outline, no text, no letters, no numbers, no seal imitation, no logo. Deep teal and vivid teal thin geometric lines, Type D straight lines, sharp edges, strong contrast, grid discipline. Centered with generous margin on pure white #FFFFFF background, simple enough at 40px."
+    },
+    {
+      "file": "badge-2.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Icon-only authority badge for a Japanese real estate homepage, motif of one central property surrounded by a single precise focus frame, representing concentration on one property, no text, no letters, no numbers, no logo. Deep teal and vivid teal straight geometric lines with one warm sand point. Type D sharp modern, grid discipline, machine-precision whitespace. Centered on pure white #FFFFFF background."
+    },
+    {
+      "file": "badge-3.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Icon-only authority badge for a Japanese real estate homepage, motif of three specialists connected around a house and document, representing professional collaboration, no text, no letters, no numbers, no logo. Deep teal and vivid teal straight-line icon, Type D sharp edges, strong contrast, grid discipline. Centered with generous margin on pure white #FFFFFF background."
+    },
+    {
+      "file": "case-1.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Realistic Japanese real estate case-study image: an older detached house on a narrow urban lot with an access path, overlaid subtly with clean property-boundary and rebuilding-feasibility diagram lines, but no readable text or numbers. Documentary architectural photography, respectful and believable, deep teal shadows and warm natural daylight. Type D straight lines, sharp edges, strong contrast, grid discipline, editorial composition."
+    },
+    {
+      "file": "case-2.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Realistic Japanese vacant-house and inheritance consultation context: a well-kept but aging suburban home with a small garden, late afternoon light, a folder of property documents visible in the foreground, no readable text, no people posing, no logos. Calm and empathetic rather than gloomy. Deep teal, pale sage and warm sand palette, Type D precise composition and grid discipline, editorial real-estate photography."
+    },
+    {
+      "file": "case-3.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Realistic Japanese income-property consulting case image: a modest six-unit apartment building and a small commercial building in an urban neighborhood, photographed with architectural clarity, subtle valuation grid and perspective lines, no readable text or logos. Deep teal shadows, vivid teal accent, natural daylight, Type D straight-angle rhythm, strong contrast, precise editorial composition."
+    },
+    {
+      "file": "voice-1.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Natural fictional Japanese property-owner consultation scene, a man in his fifties listening thoughtfully at a desk while reviewing house documents with an advisor, warm believable expression, not staged, no readable text, no brand logos. Editorial photography, deep teal and pale sage accents, Type D clean geometry, suitable for rounded portrait crop."
+    },
+    {
+      "file": "voice-2.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Natural fictional Japanese couple in their forties comparing two property plans with an advisor, candid side angle, bright modern meeting room, calm and trustworthy, no readable text, no logos, no exaggerated smiles. Editorial photography with deep teal and pale sage color harmony, Type D straight-line composition, suitable for rounded crop."
+    },
+    {
+      "file": "voice-3.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Natural fictional Japanese rental-property owner discussing maintenance and vacancy measures with a consultant, hands pointing to a building photo and floor plan, faces secondary, no readable text, no logos. Believable editorial photography, deep teal and warm sand details, Type D grid discipline, suitable for rounded crop."
+    },
+    {
+      "file": "service-sell.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese real estate sale consulting editorial image, property valuation documents, survey map, keys and a detached house visible through an office window, no readable text or logos, no stock-photo handshake. Deep teal, vivid teal, pale sage palette. Type D sharp modern composition, straight lines, strong contrast, grid discipline, realistic natural light."
+    },
+    {
+      "file": "service-buy.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese property purchase consulting editorial image, two residential floor plans and building-condition photos compared side by side with a magnifying glass and pencil, hands only, no readable text, no logos. Deep teal and pale sage palette with one warm sand accent, Type D precise grid, sharp edges and machine-like spacing, realistic office light."
+    },
+    {
+      "file": "service-manage.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese rental property management editorial image, clean apartment exterior, maintenance checklist clipboard and a technician inspecting a corridor in the distance, no readable text, no logos. Believable and practical, deep teal shadows, pale sage surfaces, Type D straight-line rhythm, strong contrast, precise architectural composition."
+    },
+    {
+      "file": "service-invest.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese investment real estate consulting editorial image, small apartment building model, financing documents with all writing blurred and unreadable, calculator and city context, no logos, no fake charts. Deep teal and vivid teal palette, Type D sharp modern, grid discipline, strong contrast, realistic sophisticated office photography."
+    },
+    {
+      "file": "service-fp.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese financial planning consultation connected to housing, advisor and family hands arranging a home model, life-event cards without readable writing, calculator and notebook, natural candid scene, no logos. Calm trustworthy editorial photography, deep teal and pale sage with warm sand detail, Type D precise grid and clean straight lines."
+    },
+    {
+      "file": "service-inherit.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese inherited vacant property consultation editorial image, old family home key, property registry folder with no readable text, family photo turned face-down to avoid identifiable people, and a quiet residential house, respectful and calm. Deep teal, pale sage, warm sand palette, Type D precise composition, no logos or watermark."
+    },
+    {
+      "file": "service-income.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese whole-building income property sale consultation, a mid-rise apartment and small office building shown with clean architectural perspective, occupancy lights in windows, subtle grid overlay, no readable text or logos. Deep teal evening tone with vivid teal accents, Type D strong contrast, sharp edges, machine-precision whitespace."
+    },
+    {
+      "file": "service-renovation.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Japanese house and apartment renovation consulting editorial image, split view of existing room and carefully renovated room using a physical material sample board in foreground rather than a before-after text graphic, no readable text, no logos. Deep teal structural lines, pale sage surfaces, warm sand wood, Type D sharp modern composition."
+    },
+    {
+      "file": "service-dubai.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "International real estate investment consulting editorial image suggesting Dubai, modern skyline and waterfront viewed through a clean office window with property documents in foreground, culturally respectful, realistic, no readable text, no logos, no luxury excess. Deep teal and warm sand palette, Type D sharp geometric composition and grid discipline."
+    },
+    {
+      "file": "property-residence.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Wide Japanese residential property listing photography, refined but realistic condominium exterior near a green urban street, clear architecture, neutral daylight, no people posing, no signs or readable text, no logos. Deep teal shadow treatment and pale sage greenery, Type D precise framing, spacious composition for property card crop."
+    },
+    {
+      "file": "property-income.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Wide Japanese income-property listing photography, six-unit apartment building on a calm Yokohama-like street, realistic scale and materials, no signs or readable text, no logos, no people posing. Deep teal shadows with subtle warm window light, Type D architectural precision, strong but natural contrast."
+    },
+    {
+      "file": "property-management.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Wide Japanese property management photography, clean common corridor and exterior of a managed small apartment building, signs of careful maintenance, natural daylight, no readable text or logos. Deep teal and pale sage palette, Type D straight lines, sharp edges, grid discipline, realistic editorial image."
+    },
+    {
+      "file": "area-meguro.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Wide editorial streetscape inspired by Meguro and Toritsu-daigaku in Tokyo, calm mixed residential and small commercial neighborhood, trees, pedestrians only as distant silhouettes, no readable signs, no logos, no famous landmark. Natural morning light, deep teal shadows, pale sage greenery, Type D clean urban geometry and precise negative space."
+    },
+    {
+      "file": "process-consult.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Step one consultation image for a Japanese real estate consultancy, a caller's hand beside property documents and smartphone showing an abstract blank interface, no readable text, no logos. Natural office scene, deep teal and pale sage palette, Type D sharp geometric framing and precise spacing."
+    },
+    {
+      "file": "process-research.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Step two property research image, Japanese surveyor-style hands checking cadastral map, measuring tape and building plan, no readable text, no official seal, no logos. Realistic documentary detail, deep teal and warm sand accents, Type D grid discipline, sharp edges and strong contrast."
+    },
+    {
+      "file": "process-strategy.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Step three strategy image for a Japanese real estate consultancy, several option cards represented by blank geometric sheets arranged around a house model, hands discussing paths, no readable text, no logos. Deep teal, vivid teal, pale sage palette, Type D straight-angle rhythm, grid discipline, machine-precision whitespace."
+    },
+    {
+      "file": "process-action.jpg",
+      "aspect": "square",
+      "transparent": false,
+      "prompt": "Step four decision and action image for Japanese real estate consulting, property key handed across a desk after reviewing documents, calm professional mood, no handshake pose, no readable text, no logos. Natural light, deep teal and warm sand palette, Type D precise composition and strong contrast."
+    },
+    {
+      "file": "section-bg-1.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Abstract wide background for a Japanese real estate corporate website, faint architectural blueprint grid, house-outline fragments and property boundary lines, no readable text, no numbers, no logo. Very low visual noise, deep teal base with pale sage lines and one muted warm sand contour. Type D straight lines, sharp edges, strong contrast, grid discipline, large quiet areas for HTML text."
+    },
+    {
+      "file": "section-bg-2.jpg",
+      "aspect": "wide",
+      "transparent": false,
+      "prompt": "Light wide background for a Japanese real estate corporate website, off-white and pale sage paper-like surface with subtle measured grid, right-angle architectural marks and one vivid teal focus line, no readable text, no numbers, no logo. Type D machine-precision whitespace, sharp modern geometry, large calm areas for HTML content."
+    },
+    {
+      "file": "deco-grid-1.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single Type D decoration asset: ultra-thin square architectural grid pattern covering about 70 percent of canvas, deep teal lines at low visual density, one vivid teal focus intersection, no text, no letters, no logo. Straight and right-angle rhythm, sharp edges, grid discipline, centered with generous margin on pure white #FFFFFF background."
+    },
+    {
+      "file": "deco-triangle-1.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single Type D decoration asset: one sharp open triangle and one offset right-angle line, deep teal with a small warm sand accent, no text, no letters, no logo, not a collection of icons. Strong contrast, sharp edges, machine-precision whitespace, centered on pure white #FFFFFF background."
+    },
+    {
+      "file": "deco-geometric-1.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single Type D decoration asset: repeating geometric house-outline module built from straight lines and rectangles, deep teal and vivid teal only, low density, no text, no letters, no logo. Grid discipline, sharp edges, precise spacing, centered on pure white #FFFFFF background with generous margin."
+    },
+    {
+      "file": "deco-diagonal-1.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single Type D decoration asset: restrained diagonal stripe panel with five thin parallel lines, deep teal and one vivid teal line, no text, no letters, no logo. Sharp modern, strong contrast, grid discipline, centered with generous empty margin on pure white #FFFFFF background."
+    },
+    {
+      "file": "deco-monochrome-rect.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single Type D decoration asset: one metallic monochrome rectangular plate made of subtle graphite gradients and a precise thin border, no text, no letters, no logo, no mockup. Sharp edges, strong contrast, machine-precision whitespace, centered on pure white #FFFFFF background."
+    },
+    {
+      "file": "icon-sharp-1.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single straight-line Type D icon for property research: magnifying lens intersecting a simple house outline and grid point, no text, no letters, no logo. Deep teal and vivid teal, sharp edges, strong contrast, simple enough at 40px, centered on pure white #FFFFFF background."
+    },
+    {
+      "file": "icon-sharp-2.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single straight-line Type D icon for property value: layered property boundary rectangles and one upward focus marker, no text, no letters, no numbers, no logo. Deep teal with one warm sand point, sharp edges, grid discipline, simple enough at 40px, centered on pure white #FFFFFF background."
+    },
+    {
+      "file": "icon-sharp-3.png",
+      "aspect": "square",
+      "transparent": true,
+      "prompt": "Single straight-line Type D icon for specialist collaboration: three precise nodes linked around a minimal house and document shape, no text, no letters, no logo. Deep teal and vivid teal, sharp edges, strong contrast, simple enough at 40px, centered on pure white #FFFFFF background."
+    }
+  ]
+}

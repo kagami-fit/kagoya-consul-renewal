@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kagoya-consul.co.jp/sitemap.xml
