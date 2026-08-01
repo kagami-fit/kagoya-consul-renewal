@@ -18,6 +18,8 @@
 
 GitHub Pagesの公開URLからそのまま閲覧できます。
 
+https://kagami-fit.github.io/kagoya-consul-renewal/
+
 ローカルでは、このフォルダをWebサーバーの公開フォルダとして開いてください。
 
 ## 補足
