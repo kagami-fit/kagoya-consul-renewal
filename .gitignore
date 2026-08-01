@@ -3,6 +3,6 @@
 !.env.example
 .venv/
 _review/
+_aio-check/
 .DS_Store
 *.log
-
