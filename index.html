@@ -14,7 +14,8 @@
   <style>
     /* FV-25 DollyZoom — A案 */
     .hero { min-height: calc(100svh - 106px); min-height: 690px; position: relative; overflow: hidden; display: grid; align-items: center; background: var(--deep-2); color: #fff; }
-    .hero-bg { position: absolute; inset: -4%; background: var(--deep-2) url("src/fv.webp") center / cover no-repeat; animation: dollyZoom 18s ease-in-out infinite alternate; will-change: transform; }
+    .hero-bg { position: absolute; inset: -4%; display: block; background: var(--deep-2); animation: dollyZoom 18s ease-in-out infinite alternate; will-change: transform; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(5,27,32,.96) 0%, rgba(8,37,43,.84) 36%, rgba(8,37,43,.36) 68%, rgba(8,37,43,.16) 100%), linear-gradient(0deg, rgba(6,28,33,.55), transparent 55%); }
     .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; opacity: .2; mix-blend-mode: screen; background-image: linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(90deg,#000,transparent 76%); }
     @keyframes dollyZoom { from { transform: scale(1); } to { transform: scale(1.18); } }
@@ -170,6 +171,10 @@
       .news-item h3 { grid-column: 2; grid-row: 1 / span 2; }
       .news-item .go { display: none; }
     }
+    @media (max-width: 640px) {
+      .hero { min-height: 744px; }
+      .hero-index { bottom: 64px; }
+    }
     @media (prefers-reduced-motion: reduce) { .hero-bg { animation: none; transform: none; } }
   </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"売却を決めていなくても相談できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。まず状況を知り、売却・保有・管理などの選択肢を整理します。"}},{"@type":"Question","name":"相談や調査には費用がかかりますか？","acceptedAnswer":{"@type":"Answer","text":"一般の不動産相談は内容と必要な調査を確認した上で費用を案内します。ファイナンシャルプランナー相談は無料です。"}},{"@type":"Question","name":"対応できる地域を教えてください。","acceptedAnswer":{"@type":"Answer","text":"空き家買取は国道16号線内側エリア、収益不動産の買取は全国を取り扱っています。"}},{"@type":"Question","name":"再建築不可や相続物件でも相談できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。権利関係や法令を確認し、必要に応じて専門家と連携します。"}}]}</script>
@@ -229,7 +234,7 @@
   <!-- ZOROYA:MAIN -->
   <main id="main">
     <section class="hero" aria-labelledby="hero-title" data-dolly-hero>
-      <div class="hero-bg j" aria-hidden="true"></div>
+      <div class="hero-bg j" aria-hidden="true"><picture><source type="image/webp" srcset="src/fv.webp"><img src="src/fv.jpg" alt="" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high"></picture></div>
       <div class="hero-in">
         <div class="hero-copy j" data-dolly-copy>
           <p class="hero-kicker">Know the value before you decide</p>
@@ -238,7 +243,7 @@
           <div class="hero-actions"><a class="btn" href="contact.html">まず状況を相談する</a><a class="btn btn-outline" href="features.html">KAGOYAの考え方</a></div>
         </div>
       </div>
-      <span class="hero-note">FV-25 / DOLLY ZOOM</span>
+      <span class="hero-note">KAGOYA / REAL ESTATE CONSULTING</span>
       <div class="hero-index"><div class="wrap"><div><b>01</b><span>不動産売買・仲介</span></div><div><b>02</b><span>管理・資産運用</span></div><div><b>03</b><span>相続・空き家・専門家連携</span></div></div></div>
     </section>
 

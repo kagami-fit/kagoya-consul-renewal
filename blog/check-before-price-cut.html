@@ -7,7 +7,8 @@
 <meta name="description" content="問い合わせが少ないからと、すぐ価格を下げる前に確認したいことがあります。物件条件、伝え方、販売先、手続き、費用、期限を整理します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="../assets/css/_shared.css">
 <style>@media(max-width:768px){.zoroya-breakpoint{display:block}}</style>
 <!-- ZOROYA:SEO -->
@@ -115,7 +116,7 @@
       </div>
       <div class="widget">
         <h3 class="widget__ttl">記事をさがす</h3>
-        <form class="w-search" onsubmit="return false;"><input type="search" placeholder="キーワード" aria-label="記事を検索"><button type="submit">検索</button></form>
+        <form class="w-search" action="../news.html" method="get"><input type="search" name="q" placeholder="キーワード" aria-label="記事を検索"><button type="submit">検索</button></form>
       </div>
       <div class="widget">
         <h3 class="widget__ttl">最近の記事</h3>
@@ -140,11 +141,12 @@
 <!-- ZOROYA:FOOTER -->
 <footer class="site-footer">
     <div class="footer-top">
-      <div class="footer-brand"><picture><source type="image/webp" srcset="../src/logo.webp"><img src="../src/logo.png" alt="KAGOYA" loading="lazy" decoding="async"></picture><h2>株式会社 籠や</h2><p>不動産売買・仲介・管理<br>各種不動産コンサルティング</p><a class="tel" href="tel:0344007994">03-4400-7994</a><p>10:00–18:00（定休日：木曜）</p></div>
+      <div class="footer-brand"><picture><source type="image/webp" srcset="../src/logo.webp"><img src="../src/logo.png" alt="KAGOYA" loading="lazy" decoding="async"></picture><h2>株式会社 籠や／KAGOYA 不動産コンサルティング</h2><p>代表取締役 内田 豊／設立 令和3年2月1日<br>不動産売買・仲介・管理、各種不動産コンサルティング</p><a class="tel" href="tel:0344007994">03-4400-7994</a><p>10:00–18:00（定休日：木曜）</p></div>
       <div class="footer-cols"><div class="footer-col"><h3>Consulting</h3><a href="../service.html#sell">売却不動産</a><a href="../service.html#buy">購入不動産</a><a href="../service.html#manage">不動産管理</a><a href="../service.html#inherit">空き家・相続</a></div><div class="footer-col"><h3>Company</h3><a href="../features.html">選ばれる理由</a><a href="../properties.html">物件情報</a><a href="../about.html">会社情報</a><a href="../news.html">ブログ・お知らせ</a></div><div class="footer-col"><h3>Contact</h3><a href="../contact.html">お問い合わせ</a><a href="../faq.html">よくある質問</a><a href="../privacy.html">プライバシーポリシー</a><a href="../index.html">ホーム</a></div></div>
     </div>
     <div class="footer-bottom"><div class="wrap"><span>© KAGOYA Co., Ltd. All rights reserved.</span><div class="footer-legal"><span>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</span><a href="../privacy.html">Privacy Policy</a></div></div></div>
   </footer>
 <!-- /ZOROYA:FOOTER -->
+<script src="../assets/js/site.js"></script>
 </body>
 </html>
