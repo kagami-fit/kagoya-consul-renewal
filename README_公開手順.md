@@ -27,15 +27,15 @@
 
 画像は `src/` にまとまっています。同じファイル名で上書きすると、HTMLを貼り直さずに差し替えられます。
 
-- ヒーロー建物線画：`src/brochure-hero.jpg`／`src/brochure-hero.webp`
+- ヒーロー写真：`src/wp-hero.jpg`／`src/wp-hero.webp`
 - ロゴ：`src/logo.png`
-- 代表イメージ：`src/profile.jpg`
-- 会社案内の線画・事例素材：`src/brochure-*.jpg`／`src/brochure-*.webp`
-- 既存サービス写真：`src/service-*.jpg`
-- 物件写真：`src/property-*.jpg`
+- 相談シーン：`src/wp-consultation.jpg`／`src/wp-consultation.webp`
+- サービス写真：`src/wp-sell.*`、`src/wp-buy.*`、`src/wp-manage.*`、`src/wp-invest.*`、`src/wp-finance.*`、`src/wp-inherit.*`、`src/wp-income.*`、`src/wp-renovation.*`
+- 物件・事例写真：`src/wp-property-*`、`src/wp-case-map.*`
+- 画像の取得元一覧：`src/wp-image-sources.md`
 - OGP・SNS共有画像：`src/ogp.jpg`
 
-元画像の比率に近い写真を使うと崩れにくくなります。差し替え後は、画像最適化と375px・768px・1280pxでの表示確認を行ってください。
+PDFから抽出した画像は使用しません。新しい画像を追加する場合も、既存WordPressの「メディア」からファイルURLをコピーし、取得元を `src/wp-image-sources.md` へ追記します。元画像の比率に近い写真を使うと崩れにくくなります。差し替え後は、画像最適化と375px・768px・1280pxでの表示確認を行ってください。
 
 ## お問い合わせ導線を変更する方法
 
