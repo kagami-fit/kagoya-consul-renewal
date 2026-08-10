@@ -13,7 +13,8 @@
 | `team.html` | 専門家・チーム |
 | `about.html` | 会社情報 |
 | `insights.html` | 知る・読みもの |
-| `properties.html` | 物件情報 |
+| `for-sale.html` | 販売中物件（公開中5件） |
+| `properties.html` | 旧導線互換：販売中物件 |
 | `contact.html` | お問い合わせ |
 | `privacy.html` | プライバシーポリシー |
 | `features.html` | 旧URL互換：籠やの考え方 |

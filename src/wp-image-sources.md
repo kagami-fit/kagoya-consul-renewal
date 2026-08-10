@@ -1,7 +1,20 @@
 # WordPress公式画像 取得元一覧
 
 > 取得日：2026-08-11
-> 方針：会社案内PDFは配色・余白・罫線の参考に限定し、ページ内写真には使用しない。以下はすべて株式会社籠やの現行WordPress公式サイトで公開されている画像。
+> 現在の方針：主要な雰囲気写真は新規生成画像へ切り替えた。実在物件の誤認を避けるため、販売中物件カード4件だけ現行WordPress公式サイトの実物写真を使用する。旧`wp-*`画像は履歴・再利用用に残しているが、主要ページからは参照しない。
+
+## 現在使用中の販売物件写真
+
+| ローカルファイル | 物件 | 取得元URL |
+|---|---|---|
+| `listing-cosmo-kawagoe.jpg` | コスモシティ川越 1階 | `https://kagoya-consul.co.jp/cms/wp-content/uploads/2026/07/line_oa_chat_260708_114105.jpg` |
+| `listing-hatsudai.jpg` | 藤和シティコープ初台 | `https://kagoya-consul.co.jp/cms/wp-content/uploads/2026/05/8f84c3eddab9cf0efae81fee724be6df.jpg` |
+| `listing-heim-yaguchidai.jpg` | ハイム矢口台 | `https://kagoya-consul.co.jp/cms/wp-content/uploads/2026/06/49c8e74e93c29337dadab2c28b3837e7.jpg` |
+| `listing-sugita-building.jpg` | 杉田一丁目店舗ビル | `https://kagoya-consul.co.jp/cms/wp-content/uploads/2026/06/99efa51c37ddc995c0bbcb8547203eff.jpg` |
+
+未公開物件は実物写真を掲載せず、`gen-for-sale.*`へ「イメージ画像」と表示する。
+
+## 旧画像アーカイブ
 
 | ローカルファイル | 主な用途 | 取得元URL |
 |---|---|---|

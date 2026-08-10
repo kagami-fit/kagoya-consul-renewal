@@ -27,15 +27,21 @@
 
 画像は `src/` にまとまっています。同じファイル名で上書きすると、HTMLを貼り直さずに差し替えられます。
 
-- ヒーロー写真：`src/wp-hero.jpg`／`src/wp-hero.webp`
+- ヒーロー写真：`src/gen-hero.jpg`／`src/gen-hero.webp`
 - ロゴ：`src/logo.png`
-- 相談シーン：`src/wp-consultation.jpg`／`src/wp-consultation.webp`
-- サービス写真：`src/wp-sell.*`、`src/wp-buy.*`、`src/wp-manage.*`、`src/wp-invest.*`、`src/wp-finance.*`、`src/wp-inherit.*`、`src/wp-income.*`、`src/wp-renovation.*`
-- 物件・事例写真：`src/wp-property-*`、`src/wp-case-map.*`
-- 画像の取得元一覧：`src/wp-image-sources.md`
+- 相談シーン：`src/gen-consultation.jpg`／`src/gen-consultation.webp`
+- サービス写真：`src/gen-sale.*`、`src/gen-inheritance.*`、`src/gen-purchase.*`、`src/gen-management.*`、`src/gen-investment.*`、`src/gen-finance.*`、`src/gen-renovation.*`
+- 会社・事例・物件一覧の背景：`src/gen-company.*`、`src/gen-site-survey.*`、`src/gen-for-sale.*`
+- 販売中物件の実物写真：`src/listing-*`
+- 生成画像の用途とプロンプト：`src/generated-image-manifest.md`
+- 販売中物件写真の取得元：`src/wp-image-sources.md`
 - OGP・SNS共有画像：`src/ogp.jpg`
 
-PDFから抽出した画像は使用しません。新しい画像を追加する場合も、既存WordPressの「メディア」からファイルURLをコピーし、取得元を `src/wp-image-sources.md` へ追記します。元画像の比率に近い写真を使うと崩れにくくなります。差し替え後は、画像最適化と375px・768px・1280pxでの表示確認を行ってください。
+PDFから抽出した画像は使用しません。サイトの雰囲気写真は新規生成し、実在の販売物件を示すカードだけ現行公式サイトの実物写真を使います。新しい販売物件を追加するときは、物件名・価格・所在地・交通・面積・公式詳細URL・実物写真URLをまとめてCodexへ渡してください。差し替え後は、画像最適化と375px・768px・1280pxでの表示確認を行ってください。
+
+## 販売中物件を更新する方法
+
+販売中物件の正本は `scripts/build_site.py` の `LISTINGS` です。Codexへ「この物件を追加／成約済みにして」と伝えるときは、現行公式サイトの詳細ページURLも一緒に渡してください。更新後に `python3 scripts/build_site.py` を実行すると、トップの抜粋と `for-sale.html` の一覧が同時に更新されます。
 
 ## お問い合わせ導線を変更する方法
 
