@@ -1,392 +1,157 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>株式会社 籠や｜不動産売却相談は、売る前に価値を知る。</title>
-  <meta name="description" content="東京都目黒区の株式会社 籠や（KAGOYA）は、不動産売却相談をはじめ、売買・仲介・管理、再建築不可、空き家・相続、一棟収益不動産の課題を調査と専門家連携で整理します。価格を下げる前に、売却・保有・管理の選択肢を比較し、納得できる判断を支援します。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" as="image" href="src/fv.webp" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/_shared.css">
-  <style>
-    /* FV-25 DollyZoom — A案 */
-    .hero { min-height: calc(100svh - 106px); min-height: 690px; position: relative; overflow: hidden; display: grid; align-items: center; background: var(--deep-2); color: #fff; }
-    .hero-bg { position: absolute; inset: -4%; display: block; background: var(--deep-2); animation: dollyZoom 18s ease-in-out infinite alternate; will-change: transform; }
-    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-    .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(5,27,32,.96) 0%, rgba(8,37,43,.84) 36%, rgba(8,37,43,.36) 68%, rgba(8,37,43,.16) 100%), linear-gradient(0deg, rgba(6,28,33,.55), transparent 55%); }
-    .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; opacity: .2; mix-blend-mode: screen; background-image: linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(90deg,#000,transparent 76%); }
-    @keyframes dollyZoom { from { transform: scale(1); } to { transform: scale(1.18); } }
-    .hero-in { position: relative; z-index: 3; width: var(--wrap); margin: auto; padding: 80px 0 104px; }
-    .hero-copy { max-width: 820px; transition: transform 1s cubic-bezier(.22,1,.36,1); }
-    .hero-kicker { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; color: #b7e5df; font: 600 11px/1.4 var(--font-en); letter-spacing: .24em; text-transform: uppercase; }
-    .hero-kicker::before { content: ""; width: 48px; height: 1px; background: var(--teal); }
-    .hero h1 { margin: 0; font-size: clamp(47px, 7.2vw, 104px); line-height: 1.12; letter-spacing: -.055em; font-weight: 900; }
-    .hero h1 .accent { color: #8edbd5; }
-    .hero-service-line { display: block; margin-top: 18px; color: #b7e5df; font: 600 clamp(12px,1.1vw,15px)/1.5 var(--font-ja); letter-spacing: .13em; }
-    .hero-lead { margin: 30px 0 0; max-width: 680px; color: rgba(255,255,255,.78); font-size: clamp(15px, 1.6vw, 20px); line-height: 1.9; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px; }
-    .hero-actions .btn-outline { color: #fff; border-color: rgba(255,255,255,.58); }
-    .hero-actions .btn-outline:hover { border-color: #fff; background: #fff; color: var(--deep); }
-    .hero-note { position: absolute; right: 28px; bottom: 28px; z-index: 3; writing-mode: vertical-rl; color: rgba(255,255,255,.5); font: 500 9px/1 var(--font-en); letter-spacing: .25em; }
-    .hero-index { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; border-top: 1px solid rgba(255,255,255,.18); background: rgba(6,29,34,.55); backdrop-filter: blur(8px); }
-    .hero-index .wrap { min-height: 76px; display: grid; grid-template-columns: repeat(3,1fr); }
-    .hero-index div { display: flex; align-items: center; gap: 15px; padding: 16px 24px; border-left: 1px solid rgba(255,255,255,.16); }
-    .hero-index div:last-child { border-right: 1px solid rgba(255,255,255,.16); }
-    .hero-index b { color: var(--sand); font: 700 12px/1 var(--font-en); }
-    .hero-index span { font-size: 12px; color: rgba(255,255,255,.78); }
-
-    /* intro-16 静かな雑誌見開き */
-    .intro { background: #f3f6f3; }
-    .spread { min-height: 650px; display: grid; grid-template-columns: .68fr 1.32fr; position: relative; border: 1px solid var(--line); background: #fff; overflow: hidden; }
-    .spread-side { padding: 42px 34px; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
-    .spread-side .issue { color: var(--teal-dark); font: 600 10px/1.7 var(--font-en); letter-spacing: .26em; text-transform: uppercase; }
-    .spread-index div { border-top: 1px solid var(--line); padding: 12px 0 17px; }
-    .spread-index b { display: block; font: 600 12px/1 var(--font-en); letter-spacing: .16em; }
-    .spread-index span { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
-    .spread-page { position: relative; padding: 72px clamp(34px,6vw,82px) 110px; overflow: hidden; }
-    .spread-page h2 { margin: 22px 0 26px; font-size: clamp(38px, 5.5vw, 72px); line-height: 1.28; letter-spacing: -.04em; }
-    .spread-page .lead { margin: 0; max-width: 29em; font-size: clamp(17px,2vw,22px); line-height: 2; }
-    .spread-note { display: grid; grid-template-columns: 100px 1fr; gap: 22px; margin-top: 44px; color: var(--muted); font-size: 13px; }
-    .spread-note .no { border-top: 2px solid var(--teal-dark); padding-top: 9px; color: var(--teal-dark); font: 600 10px/1.3 var(--font-en); letter-spacing: .16em; }
-    .spread-photo { position: absolute; right: -16px; bottom: -92px; width: min(38vw,410px); height: 500px; clip-path: polygon(0 8%,100% 0,92% 92%,8% 100%); opacity: .22; }
-    .spread-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
-
-    /* reasons-09 evidence */
-    .evidence { background: var(--sage); overflow: hidden; }
-    .evidence::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(18,56,64,.055) 1px,transparent 1px), linear-gradient(90deg,rgba(18,56,64,.055) 1px,transparent 1px); background-size: 34px 34px; mask-image: linear-gradient(#000,transparent 82%); }
-    .evidence .wrap { position: relative; }
-    .proof-board { position: relative; min-height: 500px; margin-top: 34px; }
-    .proof { position: absolute; width: min(430px,77vw); padding: 30px; border: 1px solid var(--line); background: #fff; box-shadow: 0 28px 60px -45px rgba(18,56,64,.46); }
-    .proof:nth-child(1) { left: 0; top: 70px; transform: rotate(-1.6deg); }
-    .proof:nth-child(2) { left: 34%; top: 0; transform: rotate(1.2deg); }
-    .proof:nth-child(3) { right: 0; top: 120px; transform: rotate(-.8deg); }
-    .proof .no { color: var(--sand); font: 600 10px/1 var(--font-en); letter-spacing: .22em; }
-    .proof h3 { margin: 16px 0 12px; font-size: clamp(21px,2.3vw,29px); }
-    .proof p { margin: 0; color: var(--muted); font-size: 13px; }
-    .proof::after { content: ""; display: block; height: 1px; margin-top: 22px; background: var(--line); box-shadow: 0 9px 0 var(--line),0 18px 0 var(--line); }
-
-    /* services-09 board */
-    .service-board { display: grid; grid-template-columns: 1.04fr .96fr; min-height: 630px; border: 1px solid var(--line); background: #fff; }
-    .service-map { padding: 36px 42px; border-right: 1px solid var(--line); }
-    .service-lane { display: grid; grid-template-columns: 74px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .service-lane:last-child { border-bottom: 0; }
-    .service-lane .no { color: var(--sand); font: 600 10px/1.8 var(--font-en); letter-spacing: .16em; }
-    .service-lane h3 { margin: 0 0 4px; font-size: 19px; }
-    .service-lane p { margin: 0; color: var(--muted); font-size: 12px; }
-    .service-deliver { padding: 42px; background: linear-gradient(#fff,#f5f9f6); }
-    .service-deliver h3 { margin: 0 0 20px; font-size: 28px; }
-    .service-deliver a { display: flex; justify-content: space-between; gap: 18px; padding: 15px 17px; margin-top: 12px; border: 1px solid var(--line); background: #fff; font-weight: 700; }
-    .service-deliver a small { color: var(--teal-dark); font: 500 9px/1.8 var(--font-en); letter-spacing: .14em; }
-
-    /* numbers-13 published case */
-    .case-study { background: #f5f1e9; }
-    .case-stage { position: relative; min-height: 530px; border: 1px solid #ded4c3; background-color: #fbf8f1; background-image: linear-gradient(rgba(18,56,64,.05) 1px,transparent 1px), linear-gradient(90deg,rgba(18,56,64,.05) 1px,transparent 1px); background-size: 44px 44px; overflow: hidden; }
-    .value { position: absolute; border-radius: 50%; display: grid; place-items: center; text-align: center; }
-    .value-before { width: clamp(124px,16vw,180px); height: clamp(124px,16vw,180px); left: 11%; top: 53%; background: #d9d2c3; color: #60594e; }
-    .value-after { width: clamp(270px,35vw,390px); height: clamp(270px,35vw,390px); right: 8%; top: 50%; transform: translateY(-50%); background: radial-gradient(circle at 30% 25%,#279f9e,var(--deep) 72%); color: #fff; box-shadow: 0 36px 80px -45px rgba(18,56,64,.7); }
-    .value b { display: block; font: 700 clamp(28px,5.4vw,72px)/1 var(--font-en); letter-spacing: -.05em; }
-    .value small { display: block; margin-top: 10px; font-size: 10px; letter-spacing: .14em; }
-    .case-arrow { position: absolute; left: 31%; top: 52%; width: 23%; border-top: 3px solid var(--sand); transform: rotate(-8deg); }
-    .case-arrow::after { content: ""; position: absolute; right: -2px; top: -8px; width: 13px; height: 13px; border-top: 3px solid var(--sand); border-right: 3px solid var(--sand); transform: rotate(45deg); }
-    .case-arrow span { position: absolute; left: 32%; bottom: 14px; color: var(--muted); font: 500 9px/1 var(--font-en); letter-spacing: .16em; white-space: nowrap; }
-    .case-caption { display: flex; justify-content: space-between; gap: 28px; margin-top: 22px; color: var(--muted); font-size: 12px; }
-    .case-caption p { margin: 0; max-width: 50em; }
-
-    /* process-07 tracking */
-    .process { background: #edf2f1; }
-    .tracking { max-width: 980px; margin: auto; border: 1px solid var(--line); background: #fff; }
-    .tracking-head { display: flex; justify-content: space-between; gap: 20px; padding: 18px 26px; border-bottom: 1px solid var(--line); background: #f8faf8; color: var(--muted); font-size: 11px; }
-    .tracking-head b { color: var(--teal-dark); font-family: var(--font-en); letter-spacing: .14em; }
-    .tracking-body { display: grid; grid-template-columns: 1fr 250px; }
-    .steps { position: relative; padding: 30px 30px 30px 76px; }
-    .steps::before { content: ""; position: absolute; left: 43px; top: 52px; bottom: 52px; width: 3px; background: linear-gradient(var(--teal-dark) 0 72%,var(--line) 72%); }
-    .step { position: relative; padding: 17px 0; }
-    .step::before { content: ""; position: absolute; left: -42px; top: 25px; width: 18px; height: 18px; border: 4px solid #fff; outline: 3px solid var(--teal-dark); border-radius: 50%; background: var(--teal-dark); }
-    .step:last-child::before { outline-color: var(--line); background: #fff; }
-    .step h3 { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 18px; }
-    .step h3 span { color: var(--muted); font: 500 9px/1 var(--font-en); letter-spacing: .14em; }
-    .step p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
-    .tracking-side { display: flex; flex-direction: column; gap: 20px; padding: 32px 24px; border-left: 1px solid var(--line); background: #f8faf8; }
-    .tracking-side small { display: block; color: var(--teal-dark); font: 600 9px/1 var(--font-en); letter-spacing: .2em; text-transform: uppercase; }
-    .tracking-side b { display: block; margin-top: 7px; font-size: 16px; }
-
-    /* consultation / news */
-    .consult { background: var(--deep); color: #fff; overflow: hidden; }
-    .consult .two-col { align-items: center; }
-    .consult-copy { padding-left: clamp(0px,5vw,70px); }
-    .consult-copy p { color: rgba(255,255,255,.68); }
-    .consult-photo { position: relative; min-height: 610px; }
-    .consult-photo img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; filter: saturate(.76) contrast(1.04); }
-    .consult-photo::after { content: "CONSULTATION IMAGE"; position: absolute; left: -20px; bottom: 24px; padding: 8px 14px; background: var(--sand); color: var(--deep); font: 700 9px/1 var(--font-en); letter-spacing: .15em; }
-    .consult-points { margin: 34px 0; border-top: 1px solid rgba(255,255,255,.18); }
-    .consult-points div { display: grid; grid-template-columns: 50px 1fr; gap: 16px; padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,.18); }
-    .consult-points span { color: var(--sand); font: 600 11px/1.8 var(--font-en); }
-    .consult-points b { font-size: 14px; }
-    .news-layout { display: grid; grid-template-columns: 300px 1fr; gap: 60px; }
-    .news-side { position: sticky; top: 126px; }
-    .news-side h2 { margin: 10px 0 0; color: var(--deep); font: 700 clamp(48px,7vw,82px)/1 var(--font-en); }
-    .news-list { border-top: 1px solid var(--line); }
-    .news-item { display: grid; grid-template-columns: 110px 110px 1fr 44px; gap: 22px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--line); }
-    .news-item time { color: var(--sand); font: 600 11px/1 var(--font-en); }
-    .news-item .cat { color: var(--teal-dark); font-size: 11px; }
-    .news-item h3 { margin: 0; font-size: 15px; }
-    .news-item .go { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); }
-
-    @media (max-width: 900px) {
-      .hero { min-height: 720px; }
-      .hero-index .wrap { grid-template-columns: 1fr; padding: 10px 0; }
-      .hero-index div { min-height: 42px; padding: 8px 14px; border: 0; }
-      .spread, .service-board, .tracking-body, .news-layout { grid-template-columns: 1fr; }
-      .spread-side { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--line); }
-      .proof-board { min-height: auto; }
-      .proof { position: relative; inset: auto !important; width: 100%; margin-bottom: 16px; transform: none !important; }
-      .service-map { border-right: 0; border-bottom: 1px solid var(--line); }
-      .tracking-side { border-left: 0; border-top: 1px solid var(--line); }
-      .news-side { position: static; }
-    }
-    @media (max-width: 768px) {
-      .hero { min-height: 680px; align-items: start; }
-      .hero-in { padding-top: 92px; }
-      .hero-note { display: none; }
-      .hero-actions .btn { width: 100%; }
-      .spread-page { padding: 48px 24px 130px; }
-      .spread-note { grid-template-columns: 1fr; }
-      .spread-photo { width: 250px; opacity: .16; }
-      .service-map, .service-deliver { padding: 28px 22px; }
-      .service-lane { grid-template-columns: 1fr; gap: 6px; }
-      .case-stage { min-height: 430px; }
-      .value-before { left: 5%; top: 61%; }
-      .value-after { right: -7%; }
-      .case-arrow { left: 26%; width: 24%; }
-      .case-caption { flex-direction: column; }
-      .tracking-head { flex-direction: column; }
-      .steps { padding-left: 66px; }
-      .steps::before { left: 36px; }
-      .consult-photo { min-height: 460px; }
-      .news-item { grid-template-columns: 90px 1fr; }
-      .news-item .cat { grid-column: 1; }
-      .news-item h3 { grid-column: 2; grid-row: 1 / span 2; }
-      .news-item .go { display: none; }
-    }
-    @media (max-width: 640px) {
-      .hero { min-height: 744px; }
-      .hero-index { bottom: 64px; }
-    }
-    @media (prefers-reduced-motion: reduce) { .hero-bg { animation: none; transform: none; } }
-  </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"売却を決めていなくても相談できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。まず状況を知り、売却・保有・管理などの選択肢を整理します。"}},{"@type":"Question","name":"相談や調査には費用がかかりますか？","acceptedAnswer":{"@type":"Answer","text":"一般の不動産相談は内容と必要な調査を確認した上で費用を案内します。ファイナンシャルプランナー相談は無料です。"}},{"@type":"Question","name":"対応できる地域を教えてください。","acceptedAnswer":{"@type":"Answer","text":"空き家買取は国道16号線内側エリア、収益不動産の買取は全国を取り扱っています。"}},{"@type":"Question","name":"再建築不可や相続物件でも相談できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。権利関係や法令を確認し、必要に応じて専門家と連携します。"}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"株式会社 籠や｜不動産売却相談は、売る前に価値を知る。","description":"東京都目黒区の株式会社 籠やが、不動産売却・購入・管理の判断材料を調査と専門家連携で整理します。","url":"https://kagami-fit.github.io/kagoya-consul-renewal/","about":{"@type":"Thing","name":"不動産売却相談"}}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社籠や｜売る前に、不動産の選択肢を知る</title>
+<meta name="description" content="東京都目黒区の株式会社籠やは、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続の納得できる判断を支えます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/_shared.css">
+<style>.hero{width: 100%;}.sig-decoration{mix-blend-mode:multiply}.oversized-pull{font-size:clamp(4rem,8vw,8rem)}.hero-line{clip-path:inset(0 0 0 0)}@media(max-width:768px){.zoroya-breakpoint{display:block}}</style>
 <!-- ZOROYA:SEO -->
 <link rel="canonical" href="https://kagami-fit.github.io/kagoya-consul-renewal/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="株式会社 籠や｜不動産売却相談は、売る前に価値を知る。">
-<meta property="og:description" content="東京都目黒区の株式会社 籠や（KAGOYA）は、不動産売却相談をはじめ、売買・仲介・管理、再建築不可、空き家・相続、一棟収益不動産の課題を調査と専門家連携で整理します。価格を下げる前に、売却・保有・管理の選択肢を比較し、納得できる判断を支援します。">
+<meta property="og:title" content="株式会社籠や｜売る前に、不動産の選択肢を知る">
+<meta property="og:description" content="東京都目黒区の株式会社籠やは、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続の納得できる判断を支えます。">
 <meta property="og:url" content="https://kagami-fit.github.io/kagoya-consul-renewal/">
-<meta property="og:site_name" content="株式会社 籠や／KAGOYA 不動産コンサルティング">
+<meta property="og:site_name" content="株式会社籠や">
 <meta property="og:image" content="https://kagami-fit.github.io/kagoya-consul-renewal/src/ogp.jpg">
 <meta property="og:image:width" content="1536">
 <meta property="og:image:height" content="1024">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="株式会社 籠や｜不動産売却相談は、売る前に価値を知る。">
-<meta name="twitter:description" content="東京都目黒区の株式会社 籠や（KAGOYA）は、不動産売却相談をはじめ、売買・仲介・管理、再建築不可、空き家・相続、一棟収益不動産の課題を調査と専門家連携で整理します。価格を下げる前に、売却・保有・管理の選択肢を比較し、納得できる判断を支援します。">
+<meta name="twitter:title" content="株式会社籠や｜売る前に、不動産の選択肢を知る">
+<meta name="twitter:description" content="東京都目黒区の株式会社籠やは、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続の納得できる判断を支えます。">
 <meta name="twitter:image" content="https://kagami-fit.github.io/kagoya-consul-renewal/src/ogp.jpg">
 <link rel="icon" type="image/png" href="src/favicon.png">
 <link rel="apple-touch-icon" href="src/apple-touch-icon.png">
 <meta name="theme-color" content="#ffffff">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": ["Organization", "LocalBusiness"], "name": "株式会社 籠や／KAGOYA 不動産コンサルティング", "url": "https://kagami-fit.github.io/kagoya-consul-renewal/", "logo": "https://kagami-fit.github.io/kagoya-consul-renewal/src/logo.png", "telephone": "03-4400-7994", "address": {"@type": "PostalAddress", "streetAddress": "〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号"}, "areaServed": "東京都・一都三県を中心に、サービスにより国道16号線内側・都心6区・全国", "openingHours": "10:00〜18:00／木曜日定休"}, {"@type": "WebSite", "name": "株式会社 籠や／KAGOYA 不動産コンサルティング", "url": "https://kagami-fit.github.io/kagoya-consul-renewal/"}]}
+{"@context": "https://schema.org", "@graph": [{"@type": ["Organization", "LocalBusiness"], "name": "株式会社籠や", "url": "https://kagami-fit.github.io/kagoya-consul-renewal/", "description": "株式会社籠やは、東京都目黒区を拠点に、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続などの判断を支える不動産コンサルティング会社です。", "logo": "https://kagami-fit.github.io/kagoya-consul-renewal/src/logo.png", "telephone": "03-4400-7994", "address": {"@type": "PostalAddress", "streetAddress": "〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号"}, "openingHours": "10:00〜18:00"}, {"@type": "WebSite", "name": "株式会社籠や", "url": "https://kagami-fit.github.io/kagoya-consul-renewal/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "まだ売ると決めていなくても相談できますか。", "acceptedAnswer": {"@type": "Answer", "text": "できます。売却前に状況と選択肢を整理するための相談です。"}}, {"@type": "Question", "name": "資料がそろっていなくても大丈夫ですか。", "acceptedAnswer": {"@type": "Answer", "text": "分かる範囲から伺います。所在地や権利関係など、確認が必要な情報をご案内します。"}}, {"@type": "Question", "name": "相続した空き家も相談できますか。", "acceptedAnswer": {"@type": "Answer", "text": "相談できます。利用状況、権利関係、管理負担などを確認し、売却・保有・活用の可能性を整理します。"}}, {"@type": "Question", "name": "権利関係が複雑な不動産にも対応できますか。", "acceptedAnswer": {"@type": "Answer", "text": "内容を確認し、不動産の実務に加えて専門家との連携が必要かを判断します。"}}, {"@type": "Question", "name": "購入予定物件の相談もできますか。", "acceptedAnswer": {"@type": "Answer", "text": "できます。利点だけでなく、条件やリスクも比較できる状態に整理します。"}}, {"@type": "Question", "name": "費用はいつ分かりますか。", "acceptedAnswer": {"@type": "Answer", "text": "相談内容と必要な調査・実行業務を確認し、費用が発生する前に内容と金額をご説明します。"}}, {"@type": "Question", "name": "どこから相談できますか。", "acceptedAnswer": {"@type": "Answer", "text": "電話、メール、公式お問い合わせフォームからご連絡いただけます。"}}]}]}
 </script>
 <!-- /ZOROYA:SEO -->
 </head>
 <body>
-  <a class="skip-link" href="#main">本文へ移動</a>
-
-  <!-- ZOROYA:HEADER -->
-  <div class="utility"><div class="wrap"><span>REAL ESTATE CONSULTING / TOKYO, MEGURO</span><span>宅地建物取引業　東京都知事（1）第108542号</span></div></div>
-  <header class="site-header">
-    <div class="header-in">
-      <a class="brand" href="index.html" aria-label="KAGOYA ホーム">
-        <picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async" fetchpriority="high"></picture>
-        <span class="brand-copy"><b>株式会社 籠や</b><small>REAL ESTATE CONSULTING</small></span>
-      </a>
-      <nav class="global-nav" aria-label="グローバルナビ">
-        <a href="features.html">選ばれる理由</a><a href="service.html">サービス</a><a href="properties.html">物件情報</a><a href="about.html">会社情報</a><a href="faq.html">FAQ</a><a href="news.html">ブログ</a>
-      </nav>
-      <div class="header-actions">
-        <a class="header-tel" href="tel:0344007994"><b>03-4400-7994</b><small>10:00–18:00／木曜定休</small></a>
-        <a class="btn" href="contact.html">お問い合わせ</a>
-        <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
-      </div>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<!-- ZOROYA:HEADER -->
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="index.html" aria-label="KAGOYA ホーム">
+      <picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async"></picture>
+    </a>
+    <nav class="global-nav" aria-label="グローバルナビ"><a href="services.html">サービス</a><a href="cases.html">相談事例</a><a href="team.html">専門家・チーム</a><a href="about.html">会社情報</a></nav>
+    <div class="header-actions">
+      <a class="btn" href="contact.html">選択肢を相談する</a>
+      <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
     </div>
-  </header>
-  <div class="drawer-shade" data-menu-shade></div>
-  <aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
-    <nav aria-label="スマートフォンメニュー">
-      <a href="index.html">ホーム <small>HOME</small></a><a href="features.html">選ばれる理由 <small>FEATURES</small></a><a href="service.html">サービス <small>SERVICE</small></a><a href="properties.html">物件情報 <small>PROPERTY</small></a><a href="about.html">会社情報 <small>ABOUT</small></a><a href="faq.html">よくある質問 <small>FAQ</small></a><a href="news.html">ブログ <small>JOURNAL</small></a><a href="privacy.html">プライバシー <small>PRIVACY</small></a>
-    </nav>
-    <div class="drawer-contact"><a class="btn" href="contact.html">お問い合わせフォーム</a><a class="btn btn-outline" href="tel:0344007994">03-4400-7994</a></div>
-  </aside>
-  <!-- /ZOROYA:HEADER -->
-
-  <!-- ZOROYA:MAIN -->
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title" data-dolly-hero>
-      <div class="hero-bg j" aria-hidden="true"><picture><source type="image/webp" srcset="src/fv.webp"><img src="src/fv.jpg" alt="" width="1536" height="1024" loading="eager" decoding="async" fetchpriority="high"></picture></div>
-      <div class="hero-in">
-        <div class="hero-copy j" data-dolly-copy>
-          <p class="hero-kicker">Know the value before you decide</p>
-          <h1 id="hero-title">その不動産、<br>売る前に<span class="accent">価値を知る。</span><span class="hero-service-line">不動産売却相談</span></h1>
-          <p class="hero-lead">調査と専門家連携で、売却・購入・管理の選択肢を広げます。急いで価格を下げる前に、まだ見えていない可能性から整理します。</p>
-          <div class="hero-actions"><a class="btn" href="contact.html">まず状況を相談する</a><a class="btn btn-outline" href="features.html">KAGOYAの考え方</a></div>
-        </div>
-      </div>
-      <span class="hero-note">KAGOYA / REAL ESTATE CONSULTING</span>
-      <div class="hero-index"><div class="wrap"><div><b>01</b><span>不動産売買・仲介</span></div><div><b>02</b><span>管理・資産運用</span></div><div><b>03</b><span>相続・空き家・専門家連携</span></div></div></div>
-    </section>
-
-    <section class="section intro" id="intro">
-      <div class="wrap">
-        <div class="spread reveal">
-          <aside class="spread-side">
-            <span class="issue">Kagoya editorial / decision guide</span>
-            <div class="spread-index"><div><b>01</b><span>売る前に、条件を知る</span></div><div><b>02</b><span>選択肢を、並べて比べる</span></div><div><b>03</b><span>納得してから、動く</span></div></div>
-          </aside>
-          <div class="spread-page">
-            <span class="eyebrow">Before the decision</span>
-            <h2>不動産は、「買う」も「売る」も<br>まずは「知る」が重要です。</h2>
-            <p class="lead">不動産コンサルティングとは、物件の状態、法的条件、市場性を調べ、売却・保有・管理などの選択肢を比較できる状態をつくる支援です。とくに売却は、必要に迫られてからでは選択肢が狭まりやすいため、KAGOYAは「いま売る」以外も含めて判断材料を整理します。</p>
-            <div class="spread-note"><span class="no">NOTE 01</span><span>一つの物件に向き合い、良い点だけでなく不利な条件も先に共有します。判断を急がせるための説明は行いません。</span></div>
-            <div class="spread-photo" aria-hidden="true"><picture><source type="image/webp" srcset="src/hero-sub.webp"><img src="src/hero-sub.jpg" alt="" loading="lazy" decoding="async"></picture></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section evidence" id="features">
-      <div class="wrap">
-        <div class="section-head reveal"><div><span class="eyebrow">Evidence layers</span><h2 class="section-title">選ばれる理由を、<br>証拠として積み上げる。</h2></div><p class="section-lead">相場だけで決めない。調査、連携、説明という三つの層を重ね、物件ごとに違う「最善」を探します。</p></div>
-        <div class="proof-board">
-          <article class="proof reveal"><span class="no">PROOF 01</span><h3>一つの物件に集中する</h3><p>件数を追うのではなく、その物件の価値を上げる条件や売却以外の可能性まで検討します。</p></article>
-          <article class="proof reveal"><span class="no">PROOF 02</span><h3>専門家と連携して調べる</h3><p>弁護士、税理士、司法書士など、課題に応じた専門家とつながり、判断の抜けを減らします。</p></article>
-          <article class="proof reveal"><span class="no">PROOF 03</span><h3>デメリットも先に伝える</h3><p>価格、期間、制度上の制約など、不都合な情報も隠さず、納得できる選択を支えます。</p></article>
-        </div>
-        <a class="rule-link" href="features.html">FEATURESを詳しく見る</a>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="wrap">
-        <div class="section-head reveal"><div><span class="eyebrow">Service design board</span><h2 class="section-title">サービスを、<br>相談テーマで分解する。</h2></div><p class="section-lead">売買の仲介だけではありません。管理、投資、相続、資金計画、建築・リノベーションまで、物件と目的に合わせて組み立てます。</p></div>
-        <div class="service-board reveal">
-          <div class="service-map">
-            <div class="service-lane"><span class="no">FIELD 01</span><div><h3>売る・買う</h3><p>売却不動産／購入不動産／一棟収益不動産の相談</p></div></div>
-            <div class="service-lane"><span class="no">FIELD 02</span><div><h3>保有・管理する</h3><p>賃貸管理／空室対策／収益性の整理／運用改善</p></div></div>
-            <div class="service-lane"><span class="no">FIELD 03</span><div><h3>承継・整理する</h3><p>相続／空き家／再建築不可など複雑な条件の整理</p></div></div>
-            <div class="service-lane"><span class="no">FIELD 04</span><div><h3>資産全体を考える</h3><p>FP相談／投資用不動産／建築・リフォーム・リノベーション</p></div></div>
-          </div>
-          <aside class="service-deliver">
-            <h3>主なご相談</h3>
-            <a href="service.html#sell"><span>売却不動産</span><small>SELL</small></a><a href="service.html#buy"><span>購入不動産</span><small>BUY</small></a><a href="service.html#manage"><span>不動産管理</span><small>MANAGE</small></a><a href="service.html#inherit"><span>空き家・相続</span><small>INHERIT</small></a><a href="service.html#consult"><span>その他の相談</span><small>ALL SERVICES</small></a>
-            <a class="rule-link" href="service.html">サービス一覧へ</a>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section case-study" id="case">
-      <div class="wrap">
-        <div class="section-head reveal"><div><span class="section-label">Published case</span><h2 class="section-title">「売れない」を、<br>条件整理から見直す。</h2></div><p class="section-lead">公式ブログで紹介されている、再建築不可物件の事例。評価の前提を調べ直し、売却までの道筋を再構成しました。</p></div>
-        <div class="case-stage reveal" aria-label="約3,000万円の評価から約8,000万円での売却に至った掲載事例">
-          <div class="value value-before"><span><b>約3,000</b><small>万円／当初評価</small></span></div>
-          <div class="case-arrow"><span>RESEARCH / STRATEGY</span></div>
-          <div class="value value-after"><span><b>約8,000</b><small>万円／掲載事例の売却価格</small></span></div>
-        </div>
-        <div class="case-caption"><p>再建築不可という一つの条件だけで結論を出さず、接道・法令・手続きなどを整理した実例です。詳しい経緯は公式ブログ掲載内容をもとにしています。</p><span>※同様の結果を保証するものではありません。物件ごとに条件は異なります。</span></div>
-      </div>
-    </section>
-
-    <section class="section" id="properties">
-      <div class="wrap">
-        <div class="section-head reveal"><div><span class="eyebrow">Current properties</span><h2 class="section-title">販売・管理の現場から。</h2></div><p class="section-lead">居住用、一棟収益、管理物件。情報は変動するため、最新状況はお問い合わせ時にご確認ください。</p></div>
-        <div class="property-grid reveal">
-          <article class="property"><picture><source type="image/webp" srcset="src/property-residence.webp"><img src="src/property-residence.jpg" alt="居住用不動産の建物イメージ" loading="lazy" decoding="async"></picture><div class="property-body"><span class="status">FOR SALE / RESIDENCE</span><h3>居住用の販売物件</h3><dl><div><dt>掲載例</dt><dd>コスモシティ川越</dd></div><div><dt>価格</dt><dd>5,120万円</dd></div><div><dt>アクセス</dt><dd>川越駅 徒歩5分</dd></div></dl></div></article>
-          <article class="property"><picture><source type="image/webp" srcset="src/property-income.webp"><img src="src/property-income.jpg" alt="一棟収益不動産の建物イメージ" loading="lazy" decoding="async"></picture><div class="property-body"><span class="status">FOR SALE / INCOME</span><h3>一棟収益の販売物件</h3><dl><div><dt>掲載例</dt><dd>ハイム矢口台</dd></div><div><dt>価格</dt><dd>8,900万円</dd></div><div><dt>アクセス</dt><dd>山手駅 徒歩7分</dd></div></dl></div></article>
-          <article class="property"><picture><source type="image/webp" srcset="src/property-management.webp"><img src="src/property-management.jpg" alt="不動産管理の相談イメージ" loading="lazy" decoding="async"></picture><div class="property-body"><span class="status">PROPERTY MANAGEMENT</span><h3>管理・賃貸募集物件</h3><dl><div><dt>エリア例</dt><dd>目黒・横浜・横須賀</dd></div><div><dt>内容</dt><dd>一棟管理／賃貸募集</dd></div><div><dt>状況</dt><dd>物件ごとに確認</dd></div></dl></div></article>
-        </div>
-        <a class="rule-link" href="properties.html">物件情報を確認する</a>
-      </div>
-    </section>
-
-    <section class="section process" id="process">
-      <div class="wrap">
-        <div class="section-head reveal"><div><span class="eyebrow">Decision tracking</span><h2 class="section-title">いま、何を調べているか。</h2></div><p class="section-lead">不動産の相談は、途中が見えないと不安になります。調査から実行まで、判断材料と次の一手を共有します。</p></div>
-        <div class="tracking reveal">
-          <div class="tracking-head"><span>CONSULTING FLOW <b>#KAGOYA-04</b></span><span>目的に合わせて順序・内容は変わります</span></div>
-          <div class="tracking-body">
-            <div class="steps">
-              <article class="step"><h3>状況を聞く <span>01 / CONSULT</span></h3><p>売却時期、資産背景、困っていることを整理します。</p></article>
-              <article class="step"><h3>物件と条件を調べる <span>02 / RESEARCH</span></h3><p>現地、市場、法令、権利関係など必要な項目を確認します。</p></article>
-              <article class="step"><h3>選択肢を比べる <span>03 / STRATEGY</span></h3><p>売却、保有、管理、改修などを費用・期間とともに比較します。</p></article>
-              <article class="step"><h3>納得した方法で進める <span>04 / ACTION</span></h3><p>選んだ方針に沿って、専門家とも連携し実行します。</p></article>
-            </div>
-            <aside class="tracking-side"><div><small>Contact</small><b>窓口を一本化</b></div><div><small>Decision</small><b>判断材料を共有</b></div><div><small>Specialists</small><b>専門家と連携</b></div><div class="notice">相談内容により調査範囲、期間、費用は異なります。事前に説明します。</div></aside>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section consult">
-      <div class="wrap two-col">
-        <div class="consult-photo reveal"><picture><source type="image/webp" srcset="src/profile.webp"><img src="src/profile.jpg" alt="不動産コンサルティングの相談イメージ" loading="lazy" decoding="async"></picture></div>
-        <div class="consult-copy reveal"><span class="section-label" style="color:#8edbd5">A quiet partner</span><h2 class="section-title">答えを急がず、<br>判断できる状態をつくる。</h2><p>不動産は、家族、仕事、相続、将来設計とつながっています。だからKAGOYAは、物件だけを見て結論を出しません。</p><div class="consult-points"><div><span>01</span><b>価格を下げる前に、価値を左右する条件を調べる</b></div><div><span>02</span><b>良い話だけでなく、リスクや難しさも共有する</b></div><div><span>03</span><b>売買以外の選択肢も含めて一緒に考える</b></div></div><p class="image-cap" style="color:rgba(255,255,255,.52)">※人物写真は相談シーンのイメージです。代表者本人の写真ではありません。</p><a class="btn btn-light" href="about.html">会社情報を見る</a></div>
-      </div>
-    </section>
-
-    <section class="section" id="news">
-      <div class="wrap news-layout">
-        <div class="news-side reveal"><span class="eyebrow">Updates</span><h2>NEWS</h2><p class="section-lead">お知らせ・不動産コラム</p><a class="rule-link" href="news.html">VIEW ALL</a></div>
-        <div class="news-list reveal">
-          <a class="news-item" href="news.html"><time datetime="2026-04-19">2026.04.19</time><span class="cat">お知らせ</span><h3>当社管理物件オーナーの皆様、ゴールデンウィーク期間もご連絡承ります。</h3><span class="go">→</span></a>
-          <a class="news-item" href="news.html"><time datetime="2026-01-01">2026.01.01</time><span class="cat">お知らせ</span><h3>新年のご挨拶</h3><span class="go">→</span></a>
-          <a class="news-item" href="blog/rebuild-impossible-property.html"><time datetime="2024-05-06">2024.05.06</time><span class="cat">コラム</span><h3>再建築不可で売れない土地を、売れる状態へ近づける方法</h3><span class="go">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="wrap faq-layout">
-        <div class="faq-side reveal"><span class="eyebrow">FAQ</span><h2 class="section-title">よくある<br>ご質問</h2><p class="section-lead">まだ方針が決まっていない段階でも構いません。</p><a class="rule-link" href="faq.html">FAQ一覧へ</a></div>
-        <div class="faq-list reveal">
-          <details class="faq-item" open><summary><span class="qno">01</span><span>売却を決めていなくても相談できますか？</span></summary><div class="faq-answer">はい。まず状況を知り、選択肢を整理することが重要です。売却を急がせる前提では進めません。</div></details>
-          <details class="faq-item"><summary><span class="qno">02</span><span>相談や調査には費用がかかりますか？</span></summary><div class="faq-answer">内容や必要な調査によって異なります。一般の不動産相談は、条件を確認したうえで費用をご案内します。ファイナンシャルプランナー相談は無料です。</div></details>
-          <details class="faq-item"><summary><span class="qno">03</span><span>対応できる地域を教えてください。</span></summary><div class="faq-answer">空き家買取は国道16号線内側エリア、収益不動産の買取は全国を取り扱っています。その他は物件ごとにご相談ください。</div></details>
-          <details class="faq-item"><summary><span class="qno">04</span><span>再建築不可や相続物件でも相談できますか？</span></summary><div class="faq-answer">はい。権利関係や法令などを確認し、必要に応じて弁護士・税理士・司法書士などと連携します。</div></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-band" id="contact">
-      <div class="wrap contact-row reveal">
-        <div><span class="eyebrow">Start with what you know</span><p class="contact-word">Contact</p></div>
-        <div class="contact-cards"><a class="contact-card" href="contact.html"><span><b>お問い合わせ</b><small>CONTACT FORM</small></span><span>↗</span></a><a class="contact-card" href="tel:0344007994"><span><b>電話で相談</b><small>03-4400-7994</small></span><span>↗</span></a><a class="contact-card" href="service.html"><span><b>相談テーマを確認</b><small>OUR SERVICES</small></span><span>↗</span></a></div>
-      </div>
-    </section>
-  </main>
-  <!-- /ZOROYA:MAIN -->
-
-  <!-- ZOROYA:FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA" loading="lazy" decoding="async"></picture><h2>株式会社 籠や／KAGOYA 不動産コンサルティング</h2><p>代表取締役 内田 豊／設立 令和3年2月1日<br>不動産売買・仲介・管理、各種不動産コンサルティング</p><a class="tel" href="tel:0344007994">03-4400-7994</a><p>10:00–18:00（定休日：木曜）</p></div>
-      <div class="footer-cols"><div class="footer-col"><h3>Consulting</h3><a href="service.html#sell">売却不動産</a><a href="service.html#buy">購入不動産</a><a href="service.html#manage">不動産管理</a><a href="service.html#inherit">空き家・相続</a></div><div class="footer-col"><h3>Company</h3><a href="features.html">選ばれる理由</a><a href="properties.html">物件情報</a><a href="about.html">会社情報</a><a href="news.html">ブログ・お知らせ</a></div><div class="footer-col"><h3>Contact</h3><a href="contact.html">お問い合わせ</a><a href="faq.html">よくある質問</a><a href="privacy.html">プライバシーポリシー</a><a href="index.html">ホーム</a></div></div>
+  </div>
+</header>
+<div class="drawer-shade" data-menu-shade></div>
+<aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
+  <nav aria-label="スマートフォンメニュー"><a href="index.html">ホーム<small>HOME</small></a><a href="services.html">サービス<small>SERVICES</small></a><a href="cases.html">相談事例<small>CASES</small></a><a href="team.html">専門家・チーム<small>TEAM</small></a><a href="about.html">会社情報<small>ABOUT</small></a><a href="insights.html">知る・読みもの<small>INSIGHTS</small></a><a href="properties.html">物件情報<small>PROPERTIES</small></a><a href="privacy.html">プライバシー<small>PRIVACY</small></a></nav>
+  <div class="drawer-contact"><a class="btn" href="contact.html">売る前に、選択肢を相談する</a><a class="btn btn-outline" href="tel:0344007994">03-4400-7994</a></div>
+</aside>
+<!-- /ZOROYA:HEADER -->
+<!-- ZOROYA:MAIN -->
+<main id="main">
+<section class="hero" data-hero>
+  <div class="hero-inner">
+    <div class="hero-copy reveal reveal--intro">
+      <span class="eyebrow">KAGOYA REAL ESTATE CONSULTING</span>
+      <h1><span>売る前に、</span><br><em>知る。</em><br><span>選択肢はそこから。</span></h1>
+      <p class="lead">不動産の状況・価値・リスクを整理し、納得できる判断を支えます。</p>
+      <div class="hero-actions"><a class="btn" href="contact.html">売る前に、選択肢を相談する</a><a class="btn btn-outline" href="cases.html">相談事例を見る</a></div>
+      <div class="hero-proof"><span>東京都目黒区</span><span>東京都知事（1）第108542号</span><span>資料が未整理でも相談可能</span></div>
     </div>
-    <div class="footer-bottom"><div class="wrap"><span>© KAGOYA Co., Ltd. All rights reserved.</span><div class="footer-legal"><span>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</span><a href="privacy.html">Privacy Policy</a></div></div></div>
-  </footer>
-  <!-- /ZOROYA:FOOTER -->
-  <script src="assets/js/site.js"></script>
+    <div class="hero-visual"><picture><source type="image/webp" srcset="src/brochure-hero.webp"><img src="src/brochure-hero.jpg" alt="住宅と都市を描いたKAGOYA会社案内の建物線画" loading="eager" decoding="async" fetchpriority="high"></picture><span class="hero-caption">SITUATION / VALUE / OPTIONS / RISK</span><span class="hero-line"></span></div>
+  </div>
+</section>
+
+<section class="c-section">
+  <span class="sig-corner sig-corner--tl sig-decoration"></span>
+  <div class="wrap empathy-grid">
+    <div><span class="kicker">Before price</span><div class="empathy-pull oversized-pull">知る</div></div>
+    <div class="empathy-copy reveal"><h2>価格だけでは決められない不動産があります。</h2><p>相続、空き家、共有、接道、管理、収益性。ひとつの査定額だけでは、残すべき選択肢まで見えないことがあります。KAGOYAは、売却の結論を急ぐ前に、判断に必要な材料を整理します。</p></div>
+  </div>
+</section>
+
+<section class="c-section c-section--soft">
+  <div class="wrap knowledge">
+    <div class="knowledge-visual reveal"><picture><source type="image/webp" srcset="src/brochure-four-knowledge.webp"><img src="src/brochure-four-knowledge.jpg" alt="状況・価値・選択肢・リスクを表す4つの線画" loading="lazy" decoding="async"></picture></div>
+    <div><span class="eyebrow">Four viewpoints</span><h2>状況・価値・選択肢・リスクを、順番に見える化します。</h2><ol class="knowledge-list"><li><b>01</b><div><strong>状況を知る</strong><span>所在地、利用状態、権利関係、希望時期を確認します。</span></div></li><li><b>02</b><div><strong>価値を知る</strong><span>市場だけでなく、条件や活用可能性まで見ます。</span></div></li><li><b>03</b><div><strong>選択肢を知る</strong><span>売却・保有・管理・活用を同じ土俵で比べます。</span></div></li><li><b>04</b><div><strong>リスクを知る</strong><span>必要な手続き、時間、費用、将来の注意点を言葉にします。</span></div></li></ol></div>
+  </div>
+</section>
+
+<section class="c-section">
+  <div class="wrap reason-grid">
+    <div class="reason-image"><picture><source type="image/webp" srcset="src/brochure-consulting.webp"><img src="src/brochure-consulting.jpg" alt="不動産資料を見ながら相談する様子の線画" loading="lazy" decoding="async"></picture></div>
+    <div><span class="eyebrow">Connected support</span><h2>一つの相談を、必要な支援へつなぎます。</h2><div class="reason-index"><article class="reason-row"><span class="no">01</span><div><h3>調べるところから始める</h3><p>査定額の提示だけで終わらず、判断を変える条件がないかを整理します。</p></div></article><article class="reason-row"><span class="no">02</span><div><h3>選択肢を並べて説明する</h3><p>売る・持つ・貸す・整える。それぞれの利点と注意点を比較します。</p></div></article><article class="reason-row"><span class="no">03</span><div><h3>必要に応じて専門家へつなぐ</h3><p>法務、税務、資金計画など、不動産だけで完結しない課題を一つの窓口から整理します。</p></div></article></div></div>
+  </div>
+</section>
+
+<section class="c-section c-section--soft">
+  <div class="wrap">
+    <div class="service-feature">
+      <div class="service-feature__image"><picture><source type="image/webp" srcset="src/brochure-services.webp"><img src="src/brochure-services.jpg" alt="売却相談と資産コンサルティングを表す線画" loading="lazy" decoding="async"></picture></div>
+      <div class="service-feature__copy"><span class="kicker">Services</span><h2>相談内容に合わせて、必要な道筋を組み立てます。</h2><p>ひとつのサービスへ当てはめるのではなく、目の前の状況から必要な確認と支援を組み合わせます。</p><div class="service-index"><a href="sale-consulting.html"><span class="no">01</span><strong>売却・調査相談</strong><span class="arr">↗</span></a><a href="inheritance-vacant-house.html"><span class="no">02</span><strong>相続・空き家相談</strong><span class="arr">↗</span></a><a href="purchase-asset.html"><span class="no">03</span><strong>購入・資産形成相談</strong><span class="arr">↗</span></a><a href="property-management.html"><span class="no">04</span><strong>管理・活用相談</strong><span class="arr">↗</span></a></div></div>
+    </div>
+    <div class="service-secondary"><a href="corporate-benefits.html"><small>FOR COMPANY</small><h3>法人向け不動産相談</h3><p>従業員の住まいや資産形成を支える福利厚生の選択肢。</p></a><a href="services.html"><small>ALL SERVICES</small><h3>サービス全体を見る</h3><p>相談領域と進め方を一覧で確認できます。</p></a></div>
+  </div>
+</section>
+
+<section class="c-section">
+  <span class="sig-corner sig-corner--br sig-decoration"></span>
+  <div class="wrap proof-layout">
+    <div class="proof-intro"><span class="eyebrow">Case note</span><h2>難しい案件ほど、調査と対話を重ねます。</h2><div class="proof-pull">9<small>筆の土地を整理した一例</small></div><p>複数の所有者と条件を一つずつ確認し、約1年半かけて調整した事例を会社案内で紹介しています。</p><a class="text-link" href="cases.html">相談事例を詳しく見る</a></div>
+    <div><div class="proof-gallery"><figure><picture><source type="image/webp" srcset="src/brochure-land-map.webp"><img src="src/brochure-land-map.jpg" alt="複数所有者の土地関係を整理した敷地図" loading="lazy" decoding="async"></picture><figcaption>RIGHTS MAP / 権利関係を整理</figcaption></figure><figure><picture><source type="image/webp" srcset="src/brochure-land-before-a.webp"><img src="src/brochure-land-before-a.jpg" alt="調整前の現地の道路側写真" loading="lazy" decoding="async"></picture><figcaption>BEFORE / 現地確認</figcaption></figure><figure><picture><source type="image/webp" srcset="src/brochure-floor-plan.webp"><img src="src/brochure-floor-plan.jpg" alt="土地活用後の建物平面図" loading="lazy" decoding="async"></picture><figcaption>PLAN / 実行可能性を検討</figcaption></figure></div><div class="proof-story"><h3>成果の数字より、判断できる状態をつくる。</h3><p>事例の条件や結果は物件ごとに異なります。ここでお伝えしたいのは、複雑さをそのままにせず、所有者の意思・法的条件・市場性を分けて考える姿勢です。</p></div></div>
+  </div>
+</section>
+
+<section class="c-section c-section--soft">
+  <div class="wrap message-layout">
+    <div class="message-photo"><picture><source type="image/webp" srcset="src/profile.webp"><img src="src/profile.jpg" alt="不動産資料を説明する株式会社籠やの代表イメージ" loading="lazy" decoding="async"></picture></div>
+    <div class="message-copy"><span class="eyebrow">Message</span><h2>売却の前に、納得できる判断を支えたい。</h2><blockquote>分からないまま決めさせない。選択肢と注意点を、言葉にしてお伝えします。</blockquote><p>不動産には、一つとして同じ条件のものがありません。だからこそ、答えを急ぐ前に状況を知り、理由を理解し、自分で選べる土台をつくることを大切にしています。</p><p class="message-sign">代表取締役　内田 豊</p><a class="text-link" href="team.html">相談体制を見る</a></div>
+  </div>
+</section>
+
+<section class="c-section">
+  <div class="wrap"><div class="section-head"><span class="kicker">Cost clarity</span><h2>費用が発生するタイミングを、先にお伝えします。</h2><p class="lead">必要な業務は物件の状況によって変わります。調査や専門家対応など追加の費用が必要になる場合は、実行前に内容と金額をご説明します。</p></div><div class="fee-table"><div class="fee-row"><h3>最初の状況確認</h3><p>分かる範囲でお話を伺い、次に確認したい資料や情報をご案内します。</p></div><div class="fee-row"><h3>調査・実行の提案</h3><p>必要な作業、専門家連携、想定する進め方を整理します。</p></div><div class="fee-row"><h3>費用の説明</h3><p>費用が発生する業務は、内容と金額をご確認いただいてから進めます。</p></div></div><p class="small-note">※具体的な費用はご相談内容により異なります。個別にご説明します。</p></div>
+</section>
+
+<section class="c-section c-section--main">
+  <div class="wrap"><div class="section-head"><span class="eyebrow" style="color:#8FC4D4">Process</span><h2>初めから、売ると決めていなくても構いません。</h2></div><div class="flow-list"><article class="flow-step"><h3>相談</h3><p>電話・メール・フォームから、物件と迷っていることを共有します。</p></article><article class="flow-step"><h3>情報確認</h3><p>所在地、利用状態、権利関係、ご希望の時期などを確認します。</p></article><article class="flow-step"><h3>分析</h3><p>価値を左右する条件と、注意すべきリスクを整理します。</p></article><article class="flow-step"><h3>選択肢・実行</h3><p>売却・保有・管理・活用を比べ、納得した方針で進めます。</p></article></div><div class="flow-art"><picture><source type="image/webp" srcset="src/brochure-process.webp"><img src="src/brochure-process.jpg" alt="相談から契約・実行までの流れを表す線画" loading="lazy" decoding="async"></picture></div></div>
+</section>
+
+<section class="c-section">
+  <div class="wrap faq-layout"><div class="faq-sticky"><span class="eyebrow">FAQ</span><h2>相談前の、よくある質問。</h2><p>売却を決める前に気になることへ、先にお答えします。</p><a class="text-link" href="contact.html">それ以外を相談する</a></div><div class="faq-list"><details class="faq-item"><summary>まだ売ると決めていなくても相談できますか。</summary><div class="faq-answer"><p>できます。売却前に状況と選択肢を整理するための相談です。</p></div></details><details class="faq-item"><summary>資料がそろっていなくても大丈夫ですか。</summary><div class="faq-answer"><p>分かる範囲から伺います。所在地や権利関係など、確認が必要な情報をご案内します。</p></div></details><details class="faq-item"><summary>相続した空き家も相談できますか。</summary><div class="faq-answer"><p>相談できます。利用状況、権利関係、管理負担などを確認し、売却・保有・活用の可能性を整理します。</p></div></details><details class="faq-item"><summary>権利関係が複雑な不動産にも対応できますか。</summary><div class="faq-answer"><p>内容を確認し、不動産の実務に加えて専門家との連携が必要かを判断します。</p></div></details><details class="faq-item"><summary>購入予定物件の相談もできますか。</summary><div class="faq-answer"><p>できます。利点だけでなく、条件やリスクも比較できる状態に整理します。</p></div></details><details class="faq-item"><summary>費用はいつ分かりますか。</summary><div class="faq-answer"><p>相談内容と必要な調査・実行業務を確認し、費用が発生する前に内容と金額をご説明します。</p></div></details><details class="faq-item"><summary>どこから相談できますか。</summary><div class="faq-answer"><p>電話、メール、公式お問い合わせフォームからご連絡いただけます。</p></div></details></div></div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta__bg"><picture><source type="image/webp" srcset="src/brochure-closing.webp"><img src="src/brochure-closing.jpg" alt="住宅と都市を描いた明るい建物線画" loading="lazy" decoding="async"></picture></div>
+  <div class="final-cta__inner"><div class="final-cta__card"><span class="kicker">Start with knowing</span><h2>まずは、状況を知ることから。</h2><p>売るかどうかは、その後で決められます。資料がそろっていなくても、分かる範囲からお聞かせください。</p><div class="hero-actions"><a class="btn" href="contact.html">売る前に、選択肢を相談する</a><a class="btn btn-outline" href="tel:0344007994">電話 03-4400-7994</a></div></div></div>
+</section>
+</main>
+<!-- /ZOROYA:MAIN -->
+<!-- ZOROYA:FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA" loading="lazy" decoding="async"></picture>
+      <h2>株式会社籠や</h2>
+      <p>不動産売買・仲介・管理、不動産コンサルティング<br>代表取締役 内田 豊／東京都知事（1）第108542号</p>
+      <a class="tel" href="tel:0344007994">03-4400-7994</a>
+      <p>10:00〜18:00（定休日：木曜日）<br>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col"><h3>Consulting</h3><a href="sale-consulting.html">売却・調査</a><a href="inheritance-vacant-house.html">相続・空き家</a><a href="purchase-asset.html">購入・資産形成</a><a href="property-management.html">管理・活用</a></div>
+      <div class="footer-col"><h3>Company</h3><a href="cases.html">相談事例</a><a href="team.html">専門家・チーム</a><a href="about.html">会社情報</a><a href="insights.html">知る・読みもの</a></div>
+      <div class="footer-col"><h3>Contact</h3><a href="contact.html">お問い合わせ</a><a href="tel:0344007994">電話で相談</a><a href="mailto:info@kagoya-consul.com">メール</a><a href="privacy.html">プライバシー</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="wrap"><span>© KAGOYA Co., Ltd.</span><div class="footer-legal"><span>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</span><a href="privacy.html">Privacy Policy</a></div></div></div>
+</footer>
+<!-- /ZOROYA:FOOTER -->
+<script src="assets/js/site.js"></script>
 </body>
-<!-- zb:lic 489e516d00feb094 -->
 </html>

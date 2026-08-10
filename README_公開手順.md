@@ -1,6 +1,6 @@
 # KAGOYAサイト 公開・更新ガイド
 
-このフォルダには、株式会社 籠や様のリニューアルサイト一式が入っています。現在はGitHub Pagesで公開しており、HTMLや画像を更新してGitHubへ反映すると公開サイトも更新されます。
+このフォルダには、株式会社籠や様のリニューアルサイト一式が入っています。現在はGitHub Pagesで公開しており、HTMLや画像を更新してGitHubへ反映すると公開サイトも更新されます。
 
 ## 現在の公開先
 
@@ -27,10 +27,11 @@
 
 画像は `src/` にまとまっています。同じファイル名で上書きすると、HTMLを貼り直さずに差し替えられます。
 
-- メイン写真：`src/fv.jpg`
+- ヒーロー建物線画：`src/brochure-hero.jpg`／`src/brochure-hero.webp`
 - ロゴ：`src/logo.png`
-- 会社・相談イメージ：`src/profile.jpg`
-- サービス写真：`src/service-*.jpg`
+- 代表イメージ：`src/profile.jpg`
+- 会社案内の線画・事例素材：`src/brochure-*.jpg`／`src/brochure-*.webp`
+- 既存サービス写真：`src/service-*.jpg`
 - 物件写真：`src/property-*.jpg`
 - OGP・SNS共有画像：`src/ogp.jpg`
 
@@ -110,4 +111,3 @@ WordPress未移行の現段階では管理画面の実スクリーンショッ�
 ## SEO・AI検索について
 
 この静的サイトには、ページごとのタイトル・説明文、OGP、構造化データ、FAQ、サイトマップを設定しています。ただし、本格的なSEO・AIO・GEOは、公開後の記事更新、一次情報の追加、検索状況の分析、内容改善を継続して行う必要があります。
-

@@ -32,8 +32,29 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: .12 });
+    }, { threshold: .06, rootMargin: '0px 0px -4% 0px' });
     reveal.forEach((el) => observer.observe(el));
+
+    // 高速スクロールや大きなスクリーンショットでも要素を取りこぼさない。
+    let revealTicking = false;
+    const revealVisible = () => {
+      revealTicking = false;
+      reveal.forEach((el) => {
+        if (el.classList.contains('is-in')) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * .96 && rect.bottom > 0) {
+          el.classList.add('is-in');
+          observer.unobserve(el);
+        }
+      });
+    };
+    window.addEventListener('scroll', () => {
+      if (!revealTicking) {
+        revealTicking = true;
+        window.requestAnimationFrame(revealVisible);
+      }
+    }, { passive: true });
+    window.addEventListener('load', revealVisible, { once: true });
   } else {
     reveal.forEach((el) => el.classList.add('is-in'));
   }

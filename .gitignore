@@ -6,3 +6,5 @@ _review/
 _aio-check/
 .DS_Store
 *.log
+__pycache__/
+*.pyc
