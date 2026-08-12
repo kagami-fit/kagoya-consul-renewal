@@ -13,13 +13,13 @@ body.variant--sample12 {
   --soft:#EAF0E7;
   --radius:4px;
 }
-.variant--sample12 h1,
+.variant--sample12 h1 { font-family:var(--font-display); }
 .variant--sample12 h2,
-.variant--sample12 h3 { font-family:"Shippori Mincho",serif; }
+.variant--sample12 h3 { font-family:var(--font-jp); }
 .variant--sample12 .site-header { height:84px; background:rgba(249,251,247,.96); border-bottom:1px solid rgba(31,58,95,.12); }
 .variant--sample12 .header-in { max-width:1320px; }
 .variant--sample12 .brand picture { width:150px; }
-.variant--sample12 .global-nav a { font-family:"Shippori Mincho",serif; font-weight:600; }
+.variant--sample12 .global-nav a { font-family:var(--font-jp); font-weight:600; }
 .variant--sample12 .header-actions .btn { border-radius:7px; background:#1F3A5F; }
 
 .variant--sample12 .hero { position:relative; min-height:calc(100vh - 84px); overflow:hidden; background:#10203A; }
@@ -58,7 +58,7 @@ body.variant--sample12 {
 .variant--sample12 .c-section { padding-block:112px; }
 .variant--sample12 .c-section--soft { background:#EAF0E7; }
 .variant--sample12 .empathy-grid { grid-template-columns:.72fr 1.28fr; gap:10%; }
-.variant--sample12 .empathy-pull { color:rgba(31,58,95,.12); font-family:"Shippori Mincho",serif; font-size:clamp(6rem,13vw,11rem); writing-mode:vertical-rl; line-height:.8; }
+.variant--sample12 .empathy-pull { color:rgba(31,58,95,.12); font-family:var(--font-display); font-size:clamp(6rem,13vw,11rem); writing-mode:vertical-rl; line-height:.8; }
 .variant--sample12 .empathy-copy { padding-block:28px; border-block:1px solid #1F3A5F; }
 .variant--sample12 .empathy-copy h2 { font-size:clamp(2.2rem,4.4vw,4.2rem); }
 
@@ -67,14 +67,14 @@ body.variant--sample12 {
 .variant--sample12 .knowledge-list { border-top:1px solid #1F3A5F; }
 .variant--sample12 .knowledge-list li { grid-template-columns:62px 1fr; padding:24px 0; }
 .variant--sample12 .knowledge-list b { color:#5F8347; font-size:1.15rem; }
-.variant--sample12 .knowledge-list strong { font-family:"Shippori Mincho",serif; font-size:1.2rem; }
+.variant--sample12 .knowledge-list strong { font-family:var(--font-display); font-size:1.2rem; }
 
 .variant--sample12 .reason-grid { grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); }
 .variant--sample12 .reason-image { min-height:640px; clip-path:inset(0 100% 0 0); }
 .variant--sample12 .reason-image img { height:100%; object-fit:cover; }
 .variant--sample12 .reason-grid > div:last-child { padding:54px; background:#FFFFFF; }
 .variant--sample12 .reason-row { position:relative; grid-template-columns:58px 1fr; padding:23px 0; }
-.variant--sample12 .reason-row .no { color:#C9A646; font-family:"Space Grotesk",sans-serif; }
+.variant--sample12 .reason-row .no { color:#C9A646; font-family:var(--font-en); }
 
 .variant--sample12 .service-feature { grid-template-columns:1.05fr .95fr; overflow:hidden; border:0; background:#1F3A5F; }
 .variant--sample12 .service-feature__image { clip-path:inset(0 100% 0 0); }
@@ -92,7 +92,7 @@ body.variant--sample12 {
 .variant--sample12 .listing-card:last-child { border-right:0; }
 .variant--sample12 .listing-card__body { padding:28px 24px 32px; }
 .variant--sample12 .listing-type { color:#5F8347; }
-.variant--sample12 .listing-price { color:#1F3A5F; font-family:"Shippori Mincho",serif; }
+.variant--sample12 .listing-price { color:#1F3A5F; font-family:var(--font-en); }
 .variant--sample12 .listing-link { color:#5F8347; }
 
 .variant--sample12 .proof-layout { position:relative; grid-template-columns:.78fr 1.22fr; padding:72px; overflow:hidden; background:#10203A; color:#FFFFFF; }

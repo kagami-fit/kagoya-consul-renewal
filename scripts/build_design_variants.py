@@ -56,7 +56,6 @@ def build(key: str, config: dict[str, str]) -> None:
 <script>document.documentElement.classList.add("j");</script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="assets/css/variant-common.css">
 <link rel="stylesheet" href="assets/css/variant-{key}.css">'''
     html = html.replace("</head>", head_additions + "\n</head>", 1)

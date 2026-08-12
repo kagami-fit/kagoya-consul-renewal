@@ -12,8 +12,9 @@
   --wrap: 1120px;
   --wide: 1320px;
   --header: 70px;
-  --font-jp: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
-  --font-en: "Space Grotesk", Arial, sans-serif;
+  --font-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-display: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-en: "Inter", "Noto Sans", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -36,7 +37,7 @@ button, input, textarea, select { font: inherit; }
 h1, h2, h3, .lead, .btn, summary { word-break: auto-phrase; text-wrap: balance; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { color: var(--main); line-height: 1.35; }
-h1 { font-size: clamp(2.35rem, 5.3vw, 3.55rem); }
+h1 { font-family: var(--font-display); font-size: clamp(2.35rem, 5.3vw, 3.55rem); }
 h2 { font-size: clamp(1.85rem, 3.7vw, 2.65rem); }
 h3 { font-size: clamp(1.22rem, 2vw, 1.55rem); }
 p { margin-bottom: 1.4em; }

@@ -13,9 +13,9 @@ body.variant--sample33 {
   --soft:#E4F3F2;
   --radius:0;
 }
-.variant--sample33 h1,
+.variant--sample33 h1 { font-family:var(--font-display); }
 .variant--sample33 h2,
-.variant--sample33 h3 { font-family:"Shippori Mincho",serif; }
+.variant--sample33 h3 { font-family:var(--font-jp); }
 .variant--sample33 .site-header { height:86px; background:#FFFFFF; border-bottom:0; }
 .variant--sample33 .site-header::before { content:""; position:absolute; left:22px; top:50%; width:15px; height:15px; border:4px solid #69C6C2; border-radius:50%; transform:translateY(-50%); }
 .variant--sample33 .header-in { max-width:1360px; padding-left:24px; }
@@ -56,7 +56,7 @@ body.variant--sample33 {
 .variant--sample33 .c-section--soft { background:#F2F7F7; }
 .variant--sample33 .empathy-grid { position:relative; grid-template-columns:.65fr 1.35fr; gap:10%; align-items:center; overflow:clip; }
 .variant--sample33 .empathy-grid::after { content:"CONSULTING NOTE"; position:absolute; right:3%; top:-34px; font-family:var(--font-en); font-size:10px; letter-spacing:.28em; color:#2E8F8A; }
-.variant--sample33 .empathy-pull { position:relative; color:#101820; font-family:"Shippori Mincho",serif; font-size:clamp(5.8rem,12vw,10rem); }
+.variant--sample33 .empathy-pull { position:relative; color:#101820; font-family:var(--font-display); font-size:clamp(5.8rem,12vw,10rem); }
 .variant--sample33 .empathy-pull::before { content:""; position:absolute; width:140%; height:125%; left:-20%; top:-12%; border:3px solid #2E8F8A; border-radius:50%; transform:rotate(-8deg); opacity:.72; }
 .variant--sample33 .empathy-copy { position:relative; padding:58px 56px 64px; border:1px solid rgba(20,32,40,.12); background:#FFFDF3; box-shadow:0 24px 54px -38px rgba(16,24,32,.5); transform:rotate(-1.2deg); }
 .variant--sample33 .empathy-copy::before { content:""; position:absolute; left:50%; top:-18px; width:110px; height:34px; background:rgba(105,198,194,.3); transform:translateX(-50%) rotate(2deg); }
@@ -96,7 +96,7 @@ body.variant--sample33 {
 .variant--sample33 .listing-card:nth-child(n+2) .listing-card__image img { height:100%; aspect-ratio:auto; }
 .variant--sample33 .listing-card:nth-child(n+2) .listing-card__body { padding:20px; }
 .variant--sample33 .listing-card:nth-child(n+2) dl { display:none; }
-.variant--sample33 .listing-price { color:#2E8F8A; font-family:"Shippori Mincho",serif; }
+.variant--sample33 .listing-price { color:#2E8F8A; font-family:var(--font-en); }
 .variant--sample33 .listing-link { color:#2E8F8A; }
 
 .variant--sample33 .proof-layout { position:relative; width:min(1240px,calc(100% - 64px)); padding:72px; background:#101820; color:#D9E3E8; }

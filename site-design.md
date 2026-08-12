@@ -31,8 +31,9 @@
 ### 2-2. Typeと書体
 
 - A-E型：**Type D モダン**
-- 見出し・本文：Zen Kaku Gothic New
-- 欧文・数字：Space Grotesk
+- H1：Zen Kaku Gothic New（600〜700）
+- H2・H3・本文：Noto Sans JP（本文400〜500、見出し600〜700）
+- 欧文・数字・注釈：Inter（500〜600）
 - モーション：`m-sharp`。FVは0.6秒、通常セクションは0.85秒、証拠は0.9秒、CTAは1.15秒。すべて同じeasingにしない。
 
 ### 2-3. カラートークン
