@@ -20,8 +20,14 @@ GitHub Pagesの公開URLからそのまま閲覧できます。
 
 https://kagami-fit.github.io/kagoya-consul-renewal/
 
+デザイン比較ページ：
+
+https://kagami-fit.github.io/kagoya-consul-renewal/design-comparison.html
+
 ローカルでは、このフォルダをWebサーバーの公開フォルダとして開いてください。
 
 ## 補足
 
 静的サイトのため、入力内容の送信は株式会社籠やの現行公式フォームへ安全に引き継ぐ導線にしています。電話・メールのリンクも利用できます。
+
+`design-sample07.html`、`design-sample12.html`、`design-sample33.html` は、現行トップと同じ文章・画像を使った比較用デザインです。比較専用のため検索エンジンには登録しない設定です。

@@ -1,0 +1,77 @@
+/* Design-comparison chrome shared by the three reference-inspired previews. */
+.variant-switcher {
+  position: fixed;
+  z-index: 180;
+  left: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 999px;
+  background: rgba(10,24,36,.86);
+  box-shadow: 0 14px 42px rgba(10,24,36,.22);
+  color: #FFFFFF;
+  font-family: var(--font-en);
+  font-size: 11px;
+  letter-spacing: .04em;
+  backdrop-filter: blur(16px);
+}
+.variant-switcher__label { padding: 0 10px; opacity: .7; }
+.variant-switcher a {
+  display: inline-flex;
+  min-width: 38px;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+}
+.variant-switcher a:hover,
+.variant-switcher a[aria-current="page"] { background: #FFFFFF; color: #132636; }
+.variant-switcher .variant-switcher__all { color: #E8C376; }
+
+.variant-marquee {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  border-block: 1px solid currentColor;
+  background: var(--surface);
+  color: var(--sub);
+}
+.variant-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: variantMarquee 24s linear infinite;
+}
+.variant-marquee span {
+  display: block;
+  padding: 13px 2.8vw;
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .3em;
+  white-space: nowrap;
+}
+.variant-marquee span::after { content: "◦"; margin-left: 5.6vw; }
+@keyframes variantMarquee { to { transform: translateX(-50%); } }
+
+.variant-slit-layer,
+.variant-light-layer,
+.variant-grid-layer { pointer-events: none; }
+.variant main { overflow-x: clip; }
+
+@media (max-width: 768px) {
+  .variant-switcher { left: 8px; right: 8px; bottom: 72px; justify-content: center; }
+  .variant-switcher__label { display: none; }
+  .variant-switcher a { flex: 1; min-width: 0; padding-inline: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .variant-marquee__track { animation: none; }
+  .variant-slit-layer,
+  .variant-light-layer { display: none; }
+}

@@ -12,7 +12,16 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "http://127.0.0.1:8765/"
 WIDTHS = (375, 768, 1280)
-SHOT_PAGES = {"index.html", "for-sale.html", "cases.html", "contact.html"}
+SHOT_PAGES = {
+    "index.html",
+    "for-sale.html",
+    "cases.html",
+    "contact.html",
+    "design-comparison.html",
+    "design-sample07.html",
+    "design-sample12.html",
+    "design-sample33.html",
+}
 
 
 def pages() -> list[str]:
@@ -57,9 +66,9 @@ def main() -> int:
                     await sleep(35);
                   }
                   window.scrollTo(0, document.body.scrollHeight);
-                  await sleep(120);
+                  await sleep(1500);
                   window.scrollTo(0, 0);
-                  await sleep(120);
+                  await sleep(1200);
                 }""")
                 metrics = page.evaluate("""() => {
                   const ids = [...document.querySelectorAll('[id]')].map(el => el.id);

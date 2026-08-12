@@ -6,6 +6,17 @@
 
 - 公開サイト：https://kagami-fit.github.io/kagoya-consul-renewal/
 - GitHub：https://github.com/kagami-fit/kagoya-consul-renewal
+- デザイン比較：https://kagami-fit.github.io/kagoya-consul-renewal/design-comparison.html
+
+## 3つのデザイン比較案
+
+比較案は、現行トップページの文章・物件情報・画像を複製し、参考サイトのレイアウトと動きだけを取り入れています。
+
+- `design-sample07.html`：白とライトブルー、縦スリット、丸い写真、軽やかなスクロール演出
+- `design-sample12.html`：紺・セージ・ゴールド、大判写真、グリッド、画像ワイプ
+- `design-sample33.html`：濃紺・アクア、フォーカス変化、光点、紙面風レイアウト
+
+現行トップの内容を更新した後は、`python3 scripts/build_design_variants.py` を実行すると3案へ同じ内容が再反映されます。比較案は検索用ページではないため、`noindex` のまま運用します。
 
 ## いちばん簡単な公開方法
 

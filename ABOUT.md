@@ -13,6 +13,7 @@
 - 電話、メール、公式お問い合わせフォームから相談へ進める
 - スマートフォンとPCの両方で閲覧できる
 - GitHub Pagesで公開し、ZIPでも再配布できる
+- 同じ内容のまま、sample07／sample12／sample33を参考にした3つのデザイン・動きの比較案を確認できる
 
 ## 構成
 
@@ -23,6 +24,9 @@
 - `scripts/qa_site.py`：3画面幅で全ページを検証し、代表スクリーンショットを保存するスクリプト
 - `assets/css/_shared.css`：会社案内PDFの色・余白・罫線を反映した共通デザイン
 - `assets/js/site.js`：スマホメニュー、表示アニメーション、固定問い合わせ導線
+- `assets/css/variant-*.css`：3つの比較案ごとの配色、レイアウト、FVデザイン
+- `assets/js/variant-motion.js`：縦スリット、グリッド、光点、ワイプ、スクロール演出
+- `scripts/build_design_variants.py`：現行トップの内容から比較用3案を再生成するスクリプト
 - `src/gen-*`：サイト専用に生成したトップ、相談、サービス、事例、会社用の写真素材
 - `src/listing-*`：現行公式サイトから取得した販売中物件の実物写真
 - `src/generated-image-manifest.md`：生成画像の用途とプロンプト一覧
@@ -33,6 +37,8 @@
 - `insights.html`／`blog/`：読みもの
 - `for-sale.html`：販売中物件5件の一覧
 - `contact.html`／`privacy.html`：問い合わせと個人情報保護方針
+- `design-comparison.html`：現行版と比較案3種の一覧
+- `design-sample07.html`／`design-sample12.html`／`design-sample33.html`：参考サイト別の比較案
 - `zoroya-site.zip`：納品・再公開用パッケージ
 
 ## 使い方
@@ -40,7 +46,8 @@
 1. 公開版は `https://kagami-fit.github.io/kagoya-consul-renewal/` を開く。
 2. ローカル確認はプロジェクト直下で `python3 -m http.server 8765` を実行し、`http://127.0.0.1:8765/` を開く。
 3. 確定仕様からHTMLを再生成する場合は `python3 scripts/build_site.py` を実行する。
-4. 修正後は品質確認を行い、GitHubへpushする。
+4. 現行トップを比較案3種へ反映する場合は `python3 scripts/build_design_variants.py` を実行する。
+5. 修正後は品質確認を行い、GitHubへpushする。
 
 ## 状態
 
@@ -52,5 +59,6 @@
 - 主要下層ページ：稼働中
 - ブログ3記事：稼働中
 - GitHub Pages：稼働中
+- 参考サイト別デザイン比較3案：稼働中（検索除外の比較用ページ）
 - 納品ZIP：更新済み
 - WordPress移行：未着手
