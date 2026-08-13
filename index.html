@@ -74,8 +74,7 @@
        ============================================================ */
     .hero{position:relative; width:100vw; left:50%; margin-left:-50vw; min-height:92vh; display:flex; align-items:center; justify-content:flex-start; overflow:hidden; background:linear-gradient(180deg,#FBFDFE 0%,#EFF6FB 100%);}
     .hero-photo{position:absolute; inset:0; z-index:0; overflow:hidden;}
-    .hero-photo img{width:100%; height:100%; object-fit:cover; object-position:72% center; animation:heroKb 22s ease-in-out infinite alternate; will-change:transform;}
-    @keyframes heroKb{from{transform:scale(1.05)} to{transform:scale(1.16)}}
+    .hero-photo img{width:100%; height:100%; object-fit:cover; object-position:72% center;}
     .hero-scrim{position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(248,252,254,.97) 0%, rgba(248,252,254,.92) 28%, rgba(248,252,254,.5) 54%, rgba(248,252,254,0) 80%);}
     .hero-slit{position:absolute; inset:0; z-index:5; display:none; overflow:hidden; pointer-events:none;}
     .hero-slit.is-on{display:flex;}
@@ -455,8 +454,8 @@
       <div class="hero-aurora" aria-hidden="true"><span class="hero-ab ab1" id="heroAb1"></span><span class="hero-ab ab2" id="heroAb2"></span><span class="hero-ab ab3" id="heroAb3"></span></div>
       <div class="hero-frame"></div>
       <div class="hero-inner">
-        <span class="tagcode">KAGOYA REAL ESTATE CONSULTING</span>
-        <h1 id="hero-title"><span style="display:block;white-space:nowrap">売る前に、</span><span style="display:block;white-space:nowrap"><span class="mk">知る。</span></span><span style="display:block;white-space:nowrap">選択肢はそこから。</span></h1>
+        <span class="tagcode">不動産コンサルティング</span>
+        <h1 id="hero-title"><span style="display:block;white-space:nowrap">まずは「<span class="mk">知る</span>」ことを</span><span style="display:block;white-space:nowrap">大切にしています。</span></h1>
         <p class="lead">査定額を出す前に、状況・価値・選択肢・リスクを整理します。売却を急がず、納得できる判断を支える不動産コンサルティング会社です。</p>
         <div class="btn-row">
           <a class="btn primary" href="contact.html">選択肢を相談する</a>
@@ -469,6 +468,24 @@
         </div>
       </div>
       <span class="hero-scroll">SCROLL</span>
+    </section>
+
+    <!-- NEWS ＝ news-05（中央寄せ＋タブ＋丸バッジ） -->
+    <section class="c-news" id="news">
+      <div class="wrap">
+        <div class="c-news__ttl">NEWS</div>
+        <div class="c-news__tabs">
+          <button class="c-news__tab is-on" type="button">すべて</button>
+          <button class="c-news__tab" type="button">売却</button>
+          <button class="c-news__tab" type="button">相続</button>
+        </div>
+        <div class="c-news__list" id="newsList">
+          <a class="c-news__row" href="blog/inherited-property-first-steps.html"><div class="c-news__badge">相続<span class="pin">01</span></div><div class="c-news__bd"><div class="t">不動産を相続したら最初に整理したい5つのこと</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
+          <a class="c-news__row" href="blog/rebuild-impossible-property.html"><div class="c-news__badge">調査</div><div class="c-news__bd"><div class="t">再建築不可物件は売れない？確認したい4つの条件</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
+          <a class="c-news__row" href="blog/check-before-price-cut.html"><div class="c-news__badge">売却</div><div class="c-news__bd"><div class="t">不動産の価格を下げる前に確認したい6項目</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
+        </div>
+        <div class="c-news__more-wrap"><a class="c-news__more" href="insights.html">読みもの一覧へ</a></div>
+      </div>
     </section>
 
     <!-- INTRO ＝ intro-10 -->
@@ -625,24 +642,6 @@
       </div>
     </section>
 
-    <!-- NEWS ＝ news-05（中央寄せ＋タブ＋丸バッジ） -->
-    <section class="c-news" id="news">
-      <div class="wrap">
-        <div class="c-news__ttl">NEWS</div>
-        <div class="c-news__tabs">
-          <button class="c-news__tab is-on" type="button">すべて</button>
-          <button class="c-news__tab" type="button">売却</button>
-          <button class="c-news__tab" type="button">相続</button>
-        </div>
-        <div class="c-news__list" id="newsList">
-          <a class="c-news__row" href="blog/inherited-property-first-steps.html"><div class="c-news__badge">相続<span class="pin">01</span></div><div class="c-news__bd"><div class="t">不動産を相続したら最初に整理したい5つのこと</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
-          <a class="c-news__row" href="blog/rebuild-impossible-property.html"><div class="c-news__badge">調査</div><div class="c-news__bd"><div class="t">再建築不可物件は売れない？確認したい4つの条件</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
-          <a class="c-news__row" href="blog/check-before-price-cut.html"><div class="c-news__badge">売却</div><div class="c-news__bd"><div class="t">不動産の価格を下げる前に確認したい6項目</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
-        </div>
-        <div class="c-news__more-wrap"><a class="c-news__more" href="insights.html">読みもの一覧へ</a></div>
-      </div>
-    </section>
-
     <!-- FAQ ＝ faq-03（左sticky＋番号アコーディオン） -->
     <section class="c-faq" id="faq">
       <div class="wrap">
@@ -704,32 +703,7 @@
       if (!window.gsap) return;
       gsap.registerPlugin(ScrollTrigger);
 
-      /* HERO ＝ fv-15 Aurora（弱）：分割スリット組み上げ＋淡い光の漂い */
-      (function () {
-        var slit = document.getElementById('heroSlit'); if (!slit || reduce) return;
-        var N = 14, W = window.innerWidth, colW = W / N;
-        for (var i = 0; i < N; i++) {
-          var c = document.createElement('div'); c.className = 'col';
-          var im = document.createElement('img'); im.src = 'src/gen-hero.jpg'; im.alt = '';
-          im.style.left = (-(i * colW)) + 'px';
-          c.appendChild(im); slit.appendChild(c);
-        }
-        slit.classList.add('is-on');
-        gsap.set('#heroSlit .col', { yPercent: function (i) { return i % 2 ? -112 : 112; }, opacity: .2 });
-        var tl = gsap.timeline({ delay: .15 });
-        tl.to('#heroSlit .col', { yPercent: 0, opacity: 1, duration: .85, stagger: { each: .045, from: 'edges' }, ease: 'power3.out' });
-        tl.to('#heroSlit', { opacity: 0, duration: .7, ease: 'power2.inOut', onComplete: function () { slit.style.display = 'none'; } }, '+=.25');
-      })();
-      if (!reduce) {
-        gsap.to('#heroAb1', { x: '10vw', y: '7vw', duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-        gsap.to('#heroAb2', { x: '-9vw', y: '9vw', duration: 11, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-        gsap.to('#heroAb3', { x: '8vw', y: '-8vw', duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-      }
-
-      /* HERO 入場演出（スリット復元後にコピーを時間差でせり上げ） */
-      if (!reduce) {
-        gsap.from('.hero-inner > *', { y: 24, opacity: 0, duration: 1, ease: 'power3.out', stagger: .12, delay: .35 });
-      }
+      /* HERO：ファーストビューは静止表示（アニメーション停止） */
 
       /* 汎用 data-reveal（要素ごと once:true） */
       gsap.utils.toArray('[data-reveal]').forEach(function (el) {
