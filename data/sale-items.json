@@ -1,0 +1,623 @@
+{
+  "source": "https://kagoya-consul.co.jp/sale/",
+  "fetchedAt": "2026-08-13T07:47:01.542Z",
+  "count": 88,
+  "items": [
+    {
+      "id": 2691,
+      "title": "コスモシティ川越　１階",
+      "date": "2026-07-08",
+      "slug": "cosumosithykawagoe5120",
+      "image": "src/wp-sale/2691.jpg"
+    },
+    {
+      "id": 2645,
+      "title": "ハイム矢口台",
+      "date": "2026-06-22",
+      "slug": "haimuyakouguthi8900",
+      "image": "src/wp-sale/2645.jpg"
+    },
+    {
+      "id": 2643,
+      "title": "杉田一丁目店舗ビル(松屋/タコとハイボール)",
+      "date": "2026-06-22",
+      "slug": "sugitaittyoumetennpobill12500",
+      "image": "src/wp-sale/2643.jpg"
+    },
+    {
+      "id": 2612,
+      "title": "尼崎市武庫町１丁目・４LDK・中古戸建て・スーパー目の前",
+      "date": "2026-06-11",
+      "slug": "amagasakittyoumekodate3780",
+      "image": "src/wp-sale/2612.jpg"
+    },
+    {
+      "id": 2582,
+      "title": "藤和シティコープ初台",
+      "date": "2026-05-31",
+      "slug": "touwashityikopuhatudai",
+      "image": "src/wp-sale/2582.jpg"
+    },
+    {
+      "id": 2540,
+      "title": "世田谷区岡本2丁目土地",
+      "date": "2026-05-21",
+      "slug": "setagayakuokamototochi16800",
+      "image": "src/wp-sale/2540.jpg"
+    },
+    {
+      "id": 2362,
+      "title": "目黒区下目黒4丁目戸建てB",
+      "date": "2026-01-10",
+      "slug": "megurokusimomegurokodateb",
+      "image": "src/wp-sale/2362.jpeg"
+    },
+    {
+      "id": 2355,
+      "title": "グランスイート麻布台ヒルトップタワー　１７階",
+      "date": "2026-01-10",
+      "slug": "guransui-toazabudaihiruzutawa",
+      "image": "src/wp-sale/2355.jpg"
+    },
+    {
+      "id": 1135,
+      "title": "目黒区下目黒4丁目戸建てA",
+      "date": "2025-11-30",
+      "slug": "megurokushimomegurokodate",
+      "image": "src/wp-sale/1135.jpg"
+    },
+    {
+      "id": 1221,
+      "title": "ブリリア湘南辻堂海浜公園",
+      "date": "2025-09-05",
+      "slug": "brilliasyounanntsujidou",
+      "image": "src/wp-sale/1221.jpg"
+    },
+    {
+      "id": 1182,
+      "title": "マークプラザ三島広小路",
+      "date": "2025-08-07",
+      "slug": "ma-kupurazamishimahirokouji",
+      "image": "src/wp-sale/1182.jpg"
+    },
+    {
+      "id": 1171,
+      "title": "パシフィック白金台",
+      "date": "2025-08-03",
+      "slug": "shirokanedai",
+      "image": "src/wp-sale/1171.jpg"
+    },
+    {
+      "id": 1169,
+      "title": "横浜台町ビル(一棟管理)",
+      "date": "2025-08-03",
+      "slug": "yokohamadaimachibill",
+      "image": "src/wp-sale/1169.jpg"
+    },
+    {
+      "id": 1145,
+      "title": "水天宮　賃貸戸建て",
+      "date": "2025-07-14",
+      "slug": "suitengutintaikodate",
+      "image": "src/wp-sale/1145.jpg"
+    },
+    {
+      "id": 1129,
+      "title": "目黒区五本木戸建て",
+      "date": "2025-07-12",
+      "slug": "megurokuohongikodate",
+      "image": "src/wp-sale/1129.jpg"
+    },
+    {
+      "id": 1104,
+      "title": "入間市下藤沢土地",
+      "date": "2025-06-07",
+      "slug": "irumashishimofujisawatoti",
+      "image": ""
+    },
+    {
+      "id": 1087,
+      "title": "シャリエ沼津御成橋",
+      "date": "2025-05-28",
+      "slug": "syarienumazuonaribashi",
+      "image": "src/wp-sale/1087.jpg"
+    },
+    {
+      "id": 953,
+      "title": "プレシスタワー三島広小路",
+      "date": "2025-04-03",
+      "slug": "preshisutawamishima5980",
+      "image": "src/wp-sale/953.jpg"
+    },
+    {
+      "id": 828,
+      "title": "松原ハイデンス(リノベーション完了)",
+      "date": "2025-01-05",
+      "slug": "matsubarahaidensu8980",
+      "image": "src/wp-sale/828.jpg"
+    },
+    {
+      "id": 815,
+      "title": "アークヴィレッジ東松山 利回り：12%",
+      "date": "2024-11-25",
+      "slug": "arkvirezzihigashimatsuyama",
+      "image": "src/wp-sale/815.jpg"
+    },
+    {
+      "id": 809,
+      "title": "ジェノヴィア浅草2 スカイガーデン 8階",
+      "date": "2024-11-24",
+      "slug": "zyenoviaasakusa2",
+      "image": "src/wp-sale/809.jpg"
+    },
+    {
+      "id": 799,
+      "title": "プレミスト赤坂檜町公園 4階",
+      "date": "2024-11-24",
+      "slug": "puremisutakasaka",
+      "image": "src/wp-sale/799.jpg"
+    },
+    {
+      "id": 779,
+      "title": "所沢市西狭山ヶ丘一丁目 古家付土地(当社売主)",
+      "date": "2024-10-09",
+      "slug": "tokorozawashinishisayamagaokatochi",
+      "image": "src/wp-sale/779.jpg"
+    },
+    {
+      "id": 765,
+      "title": "幸手市中三丁目 一戸建て(当社売主)",
+      "date": "2024-09-17",
+      "slug": "satteshikodate1280",
+      "image": "src/wp-sale/765.jpg"
+    },
+    {
+      "id": 755,
+      "title": "リバティーハウス(一棟管理)",
+      "date": "2024-08-12",
+      "slug": "libatyhouse",
+      "image": "src/wp-sale/755.jpg"
+    },
+    {
+      "id": 752,
+      "title": "コトブキハイム(一棟管理)",
+      "date": "2024-08-12",
+      "slug": "kotobukihaimu",
+      "image": "src/wp-sale/752.jpg"
+    },
+    {
+      "id": 732,
+      "title": "モンパルナス新子安 利回り：7.5%",
+      "date": "2024-08-12",
+      "slug": "monpalnasushinkoyasu",
+      "image": "src/wp-sale/732.jpg"
+    },
+    {
+      "id": 673,
+      "title": "メゾンフルール平和台 利回り：8%",
+      "date": "2024-05-07",
+      "slug": "mezonfroolheiwadai",
+      "image": "src/wp-sale/673.jpg"
+    },
+    {
+      "id": 751,
+      "title": "メゾングラチーレ",
+      "date": "2024-08-12",
+      "slug": "mezonglatiletintai",
+      "image": "src/wp-sale/751.jpg"
+    },
+    {
+      "id": 748,
+      "title": "スカイコート池尻",
+      "date": "2024-08-12",
+      "slug": "sukaicortikezhiri",
+      "image": "src/wp-sale/748.jpg"
+    },
+    {
+      "id": 747,
+      "title": "ファミール野沢",
+      "date": "2024-08-12",
+      "slug": "familienozawatintai",
+      "image": "src/wp-sale/747.jpg"
+    },
+    {
+      "id": 745,
+      "title": "古内荘(一棟管理)",
+      "date": "2024-08-12",
+      "slug": "fuluuchisou",
+      "image": "src/wp-sale/745.jpg"
+    },
+    {
+      "id": 741,
+      "title": "メゾングラチーレ(一棟管理)",
+      "date": "2024-08-12",
+      "slug": "mezonglatile",
+      "image": "src/wp-sale/741.jpg"
+    },
+    {
+      "id": 738,
+      "title": "ファミール野沢(一棟管理)",
+      "date": "2024-08-12",
+      "slug": "familenoawa",
+      "image": "src/wp-sale/738.jpg"
+    },
+    {
+      "id": 736,
+      "title": "レオパレスフェーリアⅠ",
+      "date": "2024-08-12",
+      "slug": "reoparesufelia1",
+      "image": "src/wp-sale/736.jpg"
+    },
+    {
+      "id": 699,
+      "title": "プロパティ新丸子",
+      "date": "2024-06-01",
+      "slug": "propatyshimomaruko",
+      "image": "src/wp-sale/699.jpg"
+    },
+    {
+      "id": 677,
+      "title": "第二ロイヤルマンション(一棟収益マンション)",
+      "date": "2024-05-07",
+      "slug": "dainiroyalmansion",
+      "image": "src/wp-sale/677.jpg"
+    },
+    {
+      "id": 606,
+      "title": "江東区常盤二丁目駐車場",
+      "date": "2024-04-15",
+      "slug": "koutouku-tokiwanityoume14000",
+      "image": "src/wp-sale/606.jpg"
+    },
+    {
+      "id": 599,
+      "title": "第二ラフォーレ君枝 一棟収益アパート",
+      "date": "2024-04-15",
+      "slug": "laforet-02-2024",
+      "image": "src/wp-sale/599.jpg"
+    },
+    {
+      "id": 635,
+      "title": "パークコート麻布十番ザ・タワー  2LDK 80㎡超 ～※30階以上～",
+      "date": "2024-04-29",
+      "slug": "%e3%83%91%e3%83%bc%e3%82%af%e3%82%b3%e3%83%bc%e3%83%88%e9%ba%bb%e5%b8%83%e5%8d%81%e7%95%aa%e3%82%b6%e3%83%bb%e3%82%bf%e3%83%af%e3%83%bc-2ldk-80%e3%8e%a1%e8%b6%85-%ef%bd%9e%e6%9c%aa%e5%85%ac%e9%96%8b",
+      "image": "src/wp-sale/635.jpg"
+    },
+    {
+      "id": 679,
+      "title": "東横白楽マンション",
+      "date": "2024-05-07",
+      "slug": "touyokohakurakumansion",
+      "image": "src/wp-sale/679.jpg"
+    },
+    {
+      "id": 671,
+      "title": "ガーデンハウスかりがね台A-2～未公開物件～",
+      "date": "2024-05-07",
+      "slug": "gardenhousekarigane",
+      "image": "src/wp-sale/671.jpg"
+    },
+    {
+      "id": 661,
+      "title": "第二ラフォーレ君枝 (賃貸募集中)",
+      "date": "2024-05-04",
+      "slug": "dainiraforekimietintai",
+      "image": "src/wp-sale/661.jpg"
+    },
+    {
+      "id": 652,
+      "title": "第二ラフォーレ君枝 (一棟管理)",
+      "date": "2024-05-04",
+      "slug": "dainiraforekimie",
+      "image": "src/wp-sale/652.jpg"
+    },
+    {
+      "id": 657,
+      "title": "マキシヴ江北アレグリアコート (一室管理)",
+      "date": "2024-05-04",
+      "slug": "makishibukouhokuareguria",
+      "image": "src/wp-sale/657.jpg"
+    },
+    {
+      "id": 659,
+      "title": "BOND西新井大師西ステーションゲート(一室管理)",
+      "date": "2024-05-04",
+      "slug": "bondnishiaraidaisinishistationgate",
+      "image": "src/wp-sale/659.jpg"
+    },
+    {
+      "id": 675,
+      "title": "～未公開物件～",
+      "date": "2024-05-07",
+      "slug": "gumyouziapart",
+      "image": "src/wp-sale/675.jpg"
+    },
+    {
+      "id": 613,
+      "title": "未公開物件多数取り扱い",
+      "date": "2024-04-15",
+      "slug": "mikoukaibukkenn2024",
+      "image": "src/wp-sale/613.jpg"
+    },
+    {
+      "id": 608,
+      "title": "ブライズ方南町(区分投資マンション)",
+      "date": "2024-04-15",
+      "slug": "suginamiku-buraizuhounanntyou4200",
+      "image": "src/wp-sale/608.jpg"
+    },
+    {
+      "id": 609,
+      "title": "フェルクルール田端ルネサンスコート(区分投資マンション)",
+      "date": "2024-04-15",
+      "slug": "arakawaku-felukululutabata4550",
+      "image": "src/wp-sale/609.jpg"
+    },
+    {
+      "id": 607,
+      "title": "パークウェル白金高輪",
+      "date": "2024-04-15",
+      "slug": "minatoku-parkuwelusiroganetakanawa2650",
+      "image": "src/wp-sale/607.jpg"
+    },
+    {
+      "id": 432,
+      "title": "上福岡第一宝コーポ(想定利回り：7.5%)",
+      "date": "2023-12-31",
+      "slug": "kamihukuoka6700",
+      "image": "src/wp-sale/432.jpg"
+    },
+    {
+      "id": 429,
+      "title": "ラボーナ白幡東町(想定利回り：7.78%)",
+      "date": "2023-12-31",
+      "slug": "rabona7480",
+      "image": "src/wp-sale/429.jpg"
+    },
+    {
+      "id": 425,
+      "title": "シャルム熊本No.2 (想定利回り：9.73%)",
+      "date": "2023-12-31",
+      "slug": "syarumu9070",
+      "image": "src/wp-sale/425.jpg"
+    },
+    {
+      "id": 418,
+      "title": "北九州市小倉北区 一棟収益マンション(想定利回り9.21%)",
+      "date": "2023-12-31",
+      "slug": "kitakyuusyuu14000",
+      "image": "src/wp-sale/418.jpg"
+    },
+    {
+      "id": 60,
+      "title": "ウェリス六本木 10F",
+      "date": "2023-12-07",
+      "slug": "wellis-roppongi20230201",
+      "image": "src/wp-sale/60.webp"
+    },
+    {
+      "id": 83,
+      "title": "ナイスステージ世田谷桜丘",
+      "date": "2023-12-07",
+      "slug": "nicestage-setagaya-sakuragaoka20221205",
+      "image": "src/wp-sale/83.webp"
+    },
+    {
+      "id": 84,
+      "title": "ベル・ヴュー川口本町(収益物件)",
+      "date": "2023-12-07",
+      "slug": "belle-vue-kawaguchi20221101",
+      "image": "src/wp-sale/84.webp"
+    },
+    {
+      "id": 85,
+      "title": "プラザ・トム(収益物件)",
+      "date": "2023-12-07",
+      "slug": "plazatom20221102",
+      "image": "src/wp-sale/85.webp"
+    },
+    {
+      "id": 86,
+      "title": "ロジュマンジャンティ人形町",
+      "date": "2023-12-07",
+      "slug": "rojumanjanti-ningyocho20221101",
+      "image": "src/wp-sale/86.webp"
+    },
+    {
+      "id": 87,
+      "title": "東大和市中央四丁目一戸建て",
+      "date": "2023-12-07",
+      "slug": "higashiyamato-tyuouku20221001",
+      "image": "src/wp-sale/87.webp"
+    },
+    {
+      "id": 88,
+      "title": "ヒルズ等々力緑地ウエスト",
+      "date": "2023-12-07",
+      "slug": "hills-todoroki-ryokuchi20221002",
+      "image": "src/wp-sale/88.webp"
+    },
+    {
+      "id": 89,
+      "title": "横浜市鶴見区北寺尾一丁目",
+      "date": "2023-12-07",
+      "slug": "yokohama-tsurumi-kitao20220701",
+      "image": "src/wp-sale/89.webp"
+    },
+    {
+      "id": 90,
+      "title": "エルフォレストビューウィング",
+      "date": "2023-12-07",
+      "slug": "elforest-view-wing20230702",
+      "image": "src/wp-sale/90.webp"
+    },
+    {
+      "id": 128,
+      "title": "Totsu Residence Shiba",
+      "date": "2023-12-07",
+      "slug": "totsu-residence-shiba",
+      "image": "src/wp-sale/128.webp"
+    },
+    {
+      "id": 133,
+      "title": "ドゥ・トゥールEastTower",
+      "date": "2023-12-11",
+      "slug": "detour-easttower20230203",
+      "image": "src/wp-sale/133.webp"
+    },
+    {
+      "id": 138,
+      "title": "クレッセント中目黒",
+      "date": "2023-12-07",
+      "slug": "crescent-nakameguro20230306",
+      "image": "src/wp-sale/138.webp"
+    },
+    {
+      "id": 143,
+      "title": "ニックハイム中目黒",
+      "date": "2023-12-07",
+      "slug": "nickheim-nakameguro20230304",
+      "image": "src/wp-sale/143.webp"
+    },
+    {
+      "id": 145,
+      "title": "西馬込二丁目 中古戸建て",
+      "date": "2023-12-07",
+      "slug": "nishimagome-used20230301",
+      "image": "src/wp-sale/145.webp"
+    },
+    {
+      "id": 148,
+      "title": "パラスト下目黒",
+      "date": "2023-12-07",
+      "slug": "palast-shimomeguro20220801",
+      "image": "src/wp-sale/148.webp"
+    },
+    {
+      "id": 155,
+      "title": "大阪市生野区中古戸建て",
+      "date": "2023-12-11",
+      "slug": "osaka-ikuno-used20230402",
+      "image": "src/wp-sale/155.webp"
+    },
+    {
+      "id": 157,
+      "title": "マイキャッスル学芸大学Ⅲ",
+      "date": "2023-12-07",
+      "slug": "mycastle-gakugei-u-20230302",
+      "image": "src/wp-sale/157.webp"
+    },
+    {
+      "id": 167,
+      "title": "エターナルパレス金沢",
+      "date": "2023-12-07",
+      "slug": "eternalpalace-kanazawa20230404",
+      "image": "src/wp-sale/167.webp"
+    },
+    {
+      "id": 170,
+      "title": "リリーベル高円寺駅前サーモス",
+      "date": "2023-12-07",
+      "slug": "lilybell-koenji20230402",
+      "image": "src/wp-sale/170.webp"
+    },
+    {
+      "id": 175,
+      "title": "ベルク目黒",
+      "date": "2023-12-08",
+      "slug": "beruku-meguro20230303",
+      "image": "src/wp-sale/175.webp"
+    },
+    {
+      "id": 180,
+      "title": "ドエルアルス目黒",
+      "date": "2023-12-08",
+      "slug": "dwellars-meguro20230305",
+      "image": "src/wp-sale/180.webp"
+    },
+    {
+      "id": 185,
+      "title": "杉並区梅里一丁目 土地×24坪",
+      "date": "2023-12-08",
+      "slug": "suginamiku-umisato20230402",
+      "image": "src/wp-sale/185.webp"
+    },
+    {
+      "id": 187,
+      "title": "目黒区目黒本町二丁目土地",
+      "date": "2023-12-08",
+      "slug": "meguro-kurokityo-land20230401",
+      "image": "src/wp-sale/187.webp"
+    },
+    {
+      "id": 193,
+      "title": "高崎市芝塚町築浅中古戸建て",
+      "date": "2023-12-08",
+      "slug": "takasaki-shibatsuka-used20230701",
+      "image": "src/wp-sale/193.webp"
+    },
+    {
+      "id": 198,
+      "title": "ナイスステージ世田谷桜丘~ﾌﾙﾘﾉﾍﾞｰｼｮﾝ完了",
+      "date": "2023-12-08",
+      "slug": "nicestage-setagaya-sakuragaoka20230702",
+      "image": "src/wp-sale/198.webp"
+    },
+    {
+      "id": 203,
+      "title": "TRUST VALUE 広尾 (収益物件) 成約済",
+      "date": "2023-12-08",
+      "slug": "trust-value-2023hiroo-sale0901",
+      "image": "src/wp-sale/203.webp"
+    },
+    {
+      "id": 206,
+      "title": "大田区上池台五丁目土地×20坪",
+      "date": "2023-12-08",
+      "slug": "otaku-kamiikedai20231001",
+      "image": "src/wp-sale/206.jpg"
+    },
+    {
+      "id": 208,
+      "title": "世田谷区北烏山一丁目 中古戸建",
+      "date": "2023-12-08",
+      "slug": "setagayaku-kitkarasuyama20231201",
+      "image": "src/wp-sale/208.webp"
+    },
+    {
+      "id": 211,
+      "title": "レグノ・フィーゴ駒場東大前",
+      "date": "2023-12-08",
+      "slug": "regno-figo-komaba20231202",
+      "image": "src/wp-sale/211.webp"
+    },
+    {
+      "id": 393,
+      "title": "世田谷区代田一丁目 土地×35坪(B区画)",
+      "date": "2023-12-30",
+      "slug": "daita9980",
+      "image": "src/wp-sale/393.jpg"
+    },
+    {
+      "id": 400,
+      "title": "世田谷区代田一丁目 土地×31坪(A区画)",
+      "date": "2023-12-30",
+      "slug": "daita11980",
+      "image": "src/wp-sale/400.jpg"
+    },
+    {
+      "id": 415,
+      "title": "第２蟹江ビル 一棟収益ビル(想定利回り：4.34%)",
+      "date": "2023-12-31",
+      "slug": "kaniebill51800",
+      "image": "src/wp-sale/415.jpg"
+    },
+    {
+      "id": 403,
+      "title": "カテリーナ浅草",
+      "date": "2023-12-30",
+      "slug": "asakusa5980",
+      "image": "src/wp-sale/403.jpg"
+    }
+  ]
+}
