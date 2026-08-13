@@ -32,6 +32,9 @@
 {"@context": "https://schema.org", "@graph": [{"@type": ["Organization", "LocalBusiness"], "name": "株式会社籠や", "url": "https://kagami-fit.github.io/kagoya-consul-renewal/", "description": "株式会社籠やは、東京都目黒区を拠点に、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続などの判断を支える不動産コンサルティング会社です。", "logo": "https://kagami-fit.github.io/kagoya-consul-renewal/src/logo.png", "telephone": "03-4400-7994", "address": {"@type": "PostalAddress", "streetAddress": "〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号"}, "openingHours": "10:00〜18:00"}, {"@type": "WebSite", "name": "株式会社籠や", "url": "https://kagami-fit.github.io/kagoya-consul-renewal/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "まだ売ると決めていなくても相談できますか。", "acceptedAnswer": {"@type": "Answer", "text": "できます。売却前に状況と選択肢を整理するための相談です。"}}, {"@type": "Question", "name": "資料がそろっていなくても大丈夫ですか。", "acceptedAnswer": {"@type": "Answer", "text": "分かる範囲から伺います。所在地や権利関係など、確認が必要な情報をご案内します。"}}, {"@type": "Question", "name": "相続した空き家も相談できますか。", "acceptedAnswer": {"@type": "Answer", "text": "相談できます。利用状況、権利関係、管理負担などを確認し、売却・保有・活用の可能性を整理します。"}}, {"@type": "Question", "name": "権利関係が複雑な不動産にも対応できますか。", "acceptedAnswer": {"@type": "Answer", "text": "内容を確認し、不動産の実務に加えて専門家との連携が必要かを判断します。"}}, {"@type": "Question", "name": "購入予定物件の相談もできますか。", "acceptedAnswer": {"@type": "Answer", "text": "できます。利点だけでなく、条件やリスクも比較できる状態に整理します。"}}, {"@type": "Question", "name": "費用はいつ分かりますか。", "acceptedAnswer": {"@type": "Answer", "text": "相談内容と必要な調査・実行業務を確認し、費用が発生する前に内容と金額をご説明します。"}}, {"@type": "Question", "name": "どこから相談できますか。", "acceptedAnswer": {"@type": "Answer", "text": "電話、メール、公式お問い合わせフォームからご連絡いただけます。"}}]}]}
 </script>
 <!-- /ZOROYA:SEO -->
+<style>
+.listing-taxonomy-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}.listing-taxonomy-tags span{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:10px;line-height:1.25;font-weight:700}.listing-taxonomy-tags .category{color:#fff;background:#e89300}.listing-taxonomy-tags .hash{color:#11647d;background:#e7f3f5}
+</style>
 </head>
 <body class="sample07-subpage">
 <a class="skip-link" href="#main">本文へスキップ</a>
@@ -123,6 +126,19 @@
 <!-- /ZOROYA:MAIN -->
 <script>
 (()=>{const map={'パシフィック白金台':'shirokanedai','横浜台町ビル':'yokohamadaimachibill','水天宮 賃貸戸建て':'suitengutintaikodate','入間市下藤沢土地':'irumashishimofujisawatoti'};document.querySelectorAll('.listing-card--compact').forEach(card=>{const t=card.querySelector('h3')?.textContent.trim();if(map[t]){const a=card.querySelector('a.listing-link');if(a)a.href=`property-detail.html#${map[t]}`;}})})();
+</script>
+<script>
+fetch('data/sale-items.json').then(r=>r.json()).then(data=>{
+  document.querySelectorAll('.listing-card').forEach(card=>{
+    const title=card.querySelector('h3')?.textContent.trim();
+    const item=data.items.find(x=>x.title===title||x.title.includes(title)||title?.includes(x.title));
+    const names=[...(item?.categories||[]).map(label=>({label,kind:'category'})),...(item?.tags||[]).map(label=>({label:`#${label}`,kind:'hash'}))];
+    if(!names.length)return;
+    const wrap=document.createElement('div');wrap.className='listing-taxonomy-tags';
+    names.forEach(({label,kind})=>{const tag=document.createElement('span');tag.className=kind;tag.textContent=label;wrap.append(tag);});
+    card.querySelector('.listing-card__body')?.prepend(wrap);
+  });
+}).catch(()=>{});
 </script>
 <!-- ZOROYA:FOOTER -->
 <footer class="site-footer">

@@ -47,7 +47,17 @@ for (const post of posts) {
   }
   let fields = {};
   try { fields = detailFields(await (await fetch(post.link)).text()); } catch {}
-  items.push({ id: post.id, title: post.title?.rendered || '', date: post.date?.slice(0, 10) || '', slug: post.slug || '', image: gallery[0]?.path || '', gallery: gallery.map((entry) => entry.path), link: post.link, fields });
+  const categories = [];
+  const tags = [];
+  try {
+    const termLinks = post._links?.['wp:term'] || [];
+    for (const termLink of termLinks) {
+      const terms = await (await fetch(`${termLink.href}&per_page=100`)).json();
+      if (termLink.taxonomy === 'sale_category') categories.push(...terms.map((term) => term.name));
+      if (termLink.taxonomy === 'item_tag') tags.push(...terms.map((term) => term.name));
+    }
+  } catch {}
+  items.push({ id: post.id, title: post.title?.rendered || '', date: post.date?.slice(0, 10) || '', slug: post.slug || '', image: gallery[0]?.path || '', gallery: gallery.map((entry) => entry.path), categories, tags, link: post.link, fields });
 }
 fs.mkdirSync(path.join(root, 'data'), { recursive: true });
 fs.writeFileSync(path.join(root, 'data', 'sale-items.json'), JSON.stringify({ source: 'https://kagoya-consul.co.jp/sale/', fetchedAt: new Date().toISOString(), count: items.length, items }, null, 2));

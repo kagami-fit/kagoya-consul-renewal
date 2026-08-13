@@ -1,6 +1,6 @@
 {
   "source": "https://kagoya-consul.co.jp/sale/",
-  "fetchedAt": "2026-08-13T08:05:42.905Z",
+  "fetchedAt": "2026-08-13T08:19:41.320Z",
   "count": 88,
   "items": [
     {
@@ -16,6 +16,10 @@
         "src/wp-sale/2691-04.jpg",
         "src/wp-sale/2691-05.jpg"
       ],
+      "categories": [
+        "販売中物件(土地建物/マンション)"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/cosumosithykawagoe5120",
       "fields": {
         "種別": "マンション",
@@ -37,6 +41,10 @@
       "gallery": [
         "src/wp-sale/2645-01.jpg"
       ],
+      "categories": [
+        "販売中物件(一棟収益)"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/haimuyakouguthi8900",
       "fields": {
         "種別": "一棟収益アパート",
@@ -58,6 +66,10 @@
       "gallery": [
         "src/wp-sale/2643-01.jpg"
       ],
+      "categories": [
+        "販売中物件(一棟収益)"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/sugitaittyoumetennpobill12500",
       "fields": {
         "種別": "一棟収益ビル",
@@ -88,6 +100,8 @@
         "src/wp-sale/2612-09.jpg",
         "src/wp-sale/2612-10.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/amagasakittyoumekodate3780",
       "fields": {
         "種別": "尼崎市武庫町１丁目・４LDKの戸建て物件・スーパー目の前",
@@ -116,6 +130,10 @@
         "src/wp-sale/2582-07.jpg",
         "src/wp-sale/2582-08.jpg"
       ],
+      "categories": [
+        "販売中物件(土地建物/マンション)"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/touwashityikopuhatudai",
       "fields": {
         "種別": "マンション",
@@ -142,6 +160,8 @@
         "src/wp-sale/2540-05.jpg",
         "src/wp-sale/2540-06.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/setagayakuokamototochi16800",
       "fields": {
         "種別": "土地",
@@ -171,6 +191,10 @@
         "src/wp-sale/2362-08.jpeg",
         "src/wp-sale/2362-09.jpeg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/megurokusimomegurokodateb",
       "fields": {
         "種別": "中古戸建て",
@@ -197,6 +221,8 @@
         "src/wp-sale/2355-05.jpg",
         "src/wp-sale/2355-06.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/guransui-toazabudaihiruzutawa",
       "fields": {
         "種別": "マンション",
@@ -236,6 +262,10 @@
         "src/wp-sale/1135-18.jpg",
         "src/wp-sale/1135-19.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/megurokushimomegurokodate",
       "fields": {
         "種別": "中古戸建て",
@@ -271,6 +301,10 @@
         "src/wp-sale/1221-14.jpg",
         "src/wp-sale/1221-15.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/brilliasyounanntsujidou",
       "fields": {
         "種別": "マンション",
@@ -314,6 +348,10 @@
         "src/wp-sale/1182-22.jpg",
         "src/wp-sale/1182-23.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/ma-kupurazamishimahirokouji",
       "fields": {
         "種別": "マンション",
@@ -343,6 +381,8 @@
         "src/wp-sale/1171-08.jpg",
         "src/wp-sale/1171-09.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/shirokanedai",
       "fields": {
         "種別": "マンション",
@@ -364,6 +404,10 @@
       "gallery": [
         "src/wp-sale/1169-01.jpg"
       ],
+      "categories": [
+        "管理物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/yokohamadaimachibill",
       "fields": {
         "種別": "一棟ビル",
@@ -395,6 +439,8 @@
         "src/wp-sale/1145-10.jpg",
         "src/wp-sale/1145-11.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/suitengutintaikodate",
       "fields": {
         "種別": "賃貸戸建て",
@@ -420,6 +466,10 @@
         "src/wp-sale/1129-04.jpg",
         "src/wp-sale/1129-05.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/megurokuohongikodate",
       "fields": {
         "種別": "中古戸建て",
@@ -446,6 +496,8 @@
         "src/wp-sale/1104-05.jpg",
         "src/wp-sale/1104-06.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/irumashishimofujisawatoti",
       "fields": {
         "種別": "売り土地",
@@ -476,6 +528,10 @@
         "src/wp-sale/1087-09.jpg",
         "src/wp-sale/1087-10.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/syarienumazuonaribashi",
       "fields": {
         "種別": "マンション",
@@ -503,6 +559,10 @@
         "src/wp-sale/953-06.jpg",
         "src/wp-sale/953-07.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/preshisutawamishima5980",
       "fields": {
         "種別": "マンション",
@@ -530,6 +590,8 @@
         "src/wp-sale/828-06.jpg",
         "src/wp-sale/828-07.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/matsubarahaidensu8980",
       "fields": {
         "種別": "マンション",
@@ -551,6 +613,10 @@
       "gallery": [
         "src/wp-sale/815-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/arkvirezzihigashimatsuyama",
       "fields": {
         "種別": "一棟収益アパート",
@@ -574,6 +640,10 @@
         "src/wp-sale/809-02.jpg",
         "src/wp-sale/809-03.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/zyenoviaasakusa2",
       "fields": {
         "種別": "マンション",
@@ -602,6 +672,10 @@
         "src/wp-sale/799-07.jpg",
         "src/wp-sale/799-08.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/puremisutakasaka",
       "fields": {
         "種別": "マンション",
@@ -629,6 +703,10 @@
         "src/wp-sale/779-06.jpg",
         "src/wp-sale/779-07.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/tokorozawashinishisayamagaokatochi",
       "fields": {
         "種別": "古家付土地",
@@ -652,6 +730,10 @@
         "src/wp-sale/765-02.jpg",
         "src/wp-sale/765-03.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/satteshikodate1280",
       "fields": {
         "種別": "戸建て",
@@ -673,6 +755,10 @@
       "gallery": [
         "src/wp-sale/755-01.jpg"
       ],
+      "categories": [
+        "管理物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/libatyhouse",
       "fields": {
         "種別": "一棟マンション",
@@ -694,6 +780,8 @@
       "gallery": [
         "src/wp-sale/752-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/kotobukihaimu",
       "fields": {
         "種別": "一棟アパート",
@@ -715,6 +803,8 @@
       "gallery": [
         "src/wp-sale/732-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/monpalnasushinkoyasu",
       "fields": {
         "種別": "一棟アパート",
@@ -736,6 +826,10 @@
       "gallery": [
         "src/wp-sale/673-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/mezonfroolheiwadai",
       "fields": {
         "種別": "一棟収益アパート",
@@ -757,6 +851,8 @@
       "gallery": [
         "src/wp-sale/751-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/mezonglatiletintai",
       "fields": {
         "種別": "一棟アパート",
@@ -778,6 +874,8 @@
       "gallery": [
         "src/wp-sale/748-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/sukaicortikezhiri",
       "fields": {
         "種別": "マンション",
@@ -799,6 +897,8 @@
       "gallery": [
         "src/wp-sale/747-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/familienozawatintai",
       "fields": {
         "種別": "一棟マンション",
@@ -820,6 +920,10 @@
       "gallery": [
         "src/wp-sale/745-01.jpg"
       ],
+      "categories": [
+        "管理物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/fuluuchisou",
       "fields": {
         "種別": "一棟アパート",
@@ -841,6 +945,8 @@
       "gallery": [
         "src/wp-sale/741-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/mezonglatile",
       "fields": {
         "種別": "一棟アパート",
@@ -862,6 +968,10 @@
       "gallery": [
         "src/wp-sale/738-01.jpg"
       ],
+      "categories": [
+        "管理物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/familenoawa",
       "fields": {
         "種別": "一棟マンション",
@@ -883,6 +993,10 @@
       "gallery": [
         "src/wp-sale/736-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/reoparesufelia1",
       "fields": {
         "種別": "一棟アパート",
@@ -911,6 +1025,8 @@
         "src/wp-sale/699-07.jpg",
         "src/wp-sale/699-08.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/propatyshimomaruko",
       "fields": {
         "種別": "マンション",
@@ -932,6 +1048,10 @@
       "gallery": [
         "src/wp-sale/677-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/dainiroyalmansion",
       "fields": {
         "種別": "一棟収益ビル",
@@ -953,6 +1073,10 @@
       "gallery": [
         "src/wp-sale/606-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/koutouku-tokiwanityoume14000",
       "fields": {
         "種別": "駐車場(土地)",
@@ -978,6 +1102,10 @@
         "src/wp-sale/599-04.jpg",
         "src/wp-sale/599-05.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/laforet-02-2024",
       "fields": {
         "種別": "一棟アパート",
@@ -1001,6 +1129,10 @@
         "src/wp-sale/635-02.jpg",
         "src/wp-sale/635-03.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/%e3%83%91%e3%83%bc%e3%82%af%e3%82%b3%e3%83%bc%e3%83%88%e9%ba%bb%e5%b8%83%e5%8d%81%e7%95%aa%e3%82%b6%e3%83%bb%e3%82%bf%e3%83%af%e3%83%bc-2ldk-80%e3%8e%a1%e8%b6%85-%ef%bd%9e%e6%9c%aa%e5%85%ac%e9%96%8b",
       "fields": {
         "種別": "区分マンション",
@@ -1022,6 +1154,10 @@
       "gallery": [
         "src/wp-sale/679-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/touyokohakurakumansion",
       "fields": {
         "種別": "区分マンション",
@@ -1043,6 +1179,10 @@
       "gallery": [
         "src/wp-sale/671-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/gardenhousekarigane",
       "fields": {
         "種別": "戸建収益",
@@ -1064,6 +1204,10 @@
       "gallery": [
         "src/wp-sale/661-01.jpg"
       ],
+      "categories": [
+        "賃貸募集中物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/dainiraforekimietintai",
       "fields": {
         "種別": "賃貸アパート",
@@ -1088,6 +1232,10 @@
         "src/wp-sale/652-03.jpg",
         "src/wp-sale/652-04.jpg"
       ],
+      "categories": [
+        "管理物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/dainiraforekimie",
       "fields": {
         "種別": "一棟アパート",
@@ -1109,6 +1257,8 @@
       "gallery": [
         "src/wp-sale/657-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/makishibukouhokuareguria",
       "fields": {
         "種別": "区分マンション",
@@ -1130,6 +1280,8 @@
       "gallery": [
         "src/wp-sale/659-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/bondnishiaraidaisinishistationgate",
       "fields": {
         "種別": "区分マンション",
@@ -1151,6 +1303,10 @@
       "gallery": [
         "src/wp-sale/675-01.jpg"
       ],
+      "categories": [
+        "販売中物件(一棟収益)"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/gumyouziapart",
       "fields": {
         "種別": "一棟収益物件",
@@ -1172,6 +1328,8 @@
       "gallery": [
         "src/wp-sale/613-01.jpg"
       ],
+      "categories": [],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/mikoukaibukkenn2024",
       "fields": {
         "種別": "",
@@ -1192,6 +1350,13 @@
       "image": "src/wp-sale/608-01.jpg",
       "gallery": [
         "src/wp-sale/608-01.jpg"
+      ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [
+        "その他",
+        "収益物件"
       ],
       "link": "https://kagoya-consul.co.jp/sale/suginamiku-buraizuhounanntyou4200",
       "fields": {
@@ -1214,6 +1379,10 @@
       "gallery": [
         "src/wp-sale/609-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/arakawaku-felukululutabata4550",
       "fields": {
         "種別": "区分投資マンション",
@@ -1235,6 +1404,10 @@
       "gallery": [
         "src/wp-sale/607-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/minatoku-parkuwelusiroganetakanawa2650",
       "fields": {
         "種別": "区分マンション",
@@ -1258,6 +1431,10 @@
         "src/wp-sale/432-02.jpg",
         "src/wp-sale/432-03.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/kamihukuoka6700",
       "fields": {
         "種別": "一棟アパート",
@@ -1280,6 +1457,10 @@
         "src/wp-sale/429-01.jpg",
         "src/wp-sale/429-02.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/rabona7480",
       "fields": {
         "種別": "一棟マンション",
@@ -1303,6 +1484,10 @@
         "src/wp-sale/425-02.jpg",
         "src/wp-sale/425-03.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/syarumu9070",
       "fields": {
         "種別": "一棟マンション",
@@ -1325,6 +1510,10 @@
         "src/wp-sale/418-01.jpg",
         "src/wp-sale/418-02.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/kitakyuusyuu14000",
       "fields": {
         "種別": "一棟マンション",
@@ -1349,6 +1538,10 @@
         "src/wp-sale/60-03.jpg",
         "src/wp-sale/60-04.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/wellis-roppongi20230201",
       "fields": {
         "種別": "マンション",
@@ -1371,6 +1564,10 @@
         "src/wp-sale/83-01.webp",
         "src/wp-sale/83-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/nicestage-setagaya-sakuragaoka20221205",
       "fields": {
         "種別": "マンション",
@@ -1393,6 +1590,10 @@
         "src/wp-sale/84-01.webp",
         "src/wp-sale/84-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/belle-vue-kawaguchi20221101",
       "fields": {
         "種別": "マンション",
@@ -1414,6 +1615,10 @@
       "gallery": [
         "src/wp-sale/85-01.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/plazatom20221102",
       "fields": {
         "種別": "マンション",
@@ -1436,6 +1641,10 @@
         "src/wp-sale/86-01.webp",
         "src/wp-sale/86-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/rojumanjanti-ningyocho20221101",
       "fields": {
         "種別": "マンション",
@@ -1458,6 +1667,10 @@
         "src/wp-sale/87-01.webp",
         "src/wp-sale/87-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/higashiyamato-tyuouku20221001",
       "fields": {
         "種別": "戸建",
@@ -1480,6 +1693,10 @@
         "src/wp-sale/88-01.webp",
         "src/wp-sale/88-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/hills-todoroki-ryokuchi20221002",
       "fields": {
         "種別": "マンション",
@@ -1502,6 +1719,10 @@
         "src/wp-sale/89-01.webp",
         "src/wp-sale/89-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/yokohama-tsurumi-kitao20220701",
       "fields": {
         "種別": "土地",
@@ -1524,6 +1745,10 @@
         "src/wp-sale/90-01.webp",
         "src/wp-sale/90-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/elforest-view-wing20230702",
       "fields": {
         "種別": "マンション",
@@ -1548,6 +1773,10 @@
         "src/wp-sale/128-03.webp",
         "src/wp-sale/128-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/totsu-residence-shiba",
       "fields": {
         "種別": "マンション",
@@ -1572,6 +1801,10 @@
         "src/wp-sale/133-03.webp",
         "src/wp-sale/133-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/detour-easttower20230203",
       "fields": {
         "種別": "マンション",
@@ -1596,6 +1829,10 @@
         "src/wp-sale/138-03.webp",
         "src/wp-sale/138-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/crescent-nakameguro20230306",
       "fields": {
         "種別": "マンション",
@@ -1617,6 +1854,10 @@
       "gallery": [
         "src/wp-sale/143-01.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/nickheim-nakameguro20230304",
       "fields": {
         "種別": "マンション",
@@ -1639,6 +1880,10 @@
         "src/wp-sale/145-01.webp",
         "src/wp-sale/145-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/nishimagome-used20230301",
       "fields": {
         "種別": "戸建",
@@ -1665,6 +1910,10 @@
         "src/wp-sale/148-05.webp",
         "src/wp-sale/148-06.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/palast-shimomeguro20220801",
       "fields": {
         "種別": "マンション",
@@ -1686,6 +1935,10 @@
       "gallery": [
         "src/wp-sale/155-01.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/osaka-ikuno-used20230402",
       "fields": {
         "種別": "戸建",
@@ -1710,6 +1963,10 @@
         "src/wp-sale/157-03.webp",
         "src/wp-sale/157-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/mycastle-gakugei-u-20230302",
       "fields": {
         "種別": "マンション",
@@ -1732,6 +1989,10 @@
         "src/wp-sale/167-01.webp",
         "src/wp-sale/167-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/eternalpalace-kanazawa20230404",
       "fields": {
         "種別": "マンション",
@@ -1756,6 +2017,10 @@
         "src/wp-sale/170-03.webp",
         "src/wp-sale/170-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/lilybell-koenji20230402",
       "fields": {
         "種別": "マンション",
@@ -1780,6 +2045,10 @@
         "src/wp-sale/175-03.webp",
         "src/wp-sale/175-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/beruku-meguro20230303",
       "fields": {
         "種別": "マンション",
@@ -1804,6 +2073,10 @@
         "src/wp-sale/180-03.webp",
         "src/wp-sale/180-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/dwellars-meguro20230305",
       "fields": {
         "種別": "マンション",
@@ -1825,6 +2098,10 @@
       "gallery": [
         "src/wp-sale/185-01.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/suginamiku-umisato20230402",
       "fields": {
         "種別": "土地",
@@ -1847,6 +2124,10 @@
         "src/wp-sale/187-01.webp",
         "src/wp-sale/187-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/meguro-kurokityo-land20230401",
       "fields": {
         "種別": "土地",
@@ -1871,6 +2152,10 @@
         "src/wp-sale/193-03.webp",
         "src/wp-sale/193-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/takasaki-shibatsuka-used20230701",
       "fields": {
         "種別": "戸建",
@@ -1895,6 +2180,10 @@
         "src/wp-sale/198-03.webp",
         "src/wp-sale/198-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/nicestage-setagaya-sakuragaoka20230702",
       "fields": {
         "種別": "マンション",
@@ -1917,6 +2206,10 @@
         "src/wp-sale/203-01.webp",
         "src/wp-sale/203-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/trust-value-2023hiroo-sale0901",
       "fields": {
         "種別": "マンション",
@@ -1939,6 +2232,10 @@
         "src/wp-sale/206-01.jpg",
         "src/wp-sale/206-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/otaku-kamiikedai20231001",
       "fields": {
         "種別": "土地",
@@ -1961,6 +2258,10 @@
         "src/wp-sale/208-01.webp",
         "src/wp-sale/208-02.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/setagayaku-kitkarasuyama20231201",
       "fields": {
         "種別": "戸建",
@@ -1985,6 +2286,10 @@
         "src/wp-sale/211-03.webp",
         "src/wp-sale/211-04.webp"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/regno-figo-komaba20231202",
       "fields": {
         "種別": "マンション",
@@ -2011,6 +2316,10 @@
         "src/wp-sale/393-05.jpg",
         "src/wp-sale/393-06.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/daita9980",
       "fields": {
         "種別": "土地",
@@ -2033,6 +2342,10 @@
         "src/wp-sale/400-01.jpg",
         "src/wp-sale/400-02.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/daita11980",
       "fields": {
         "種別": "土地",
@@ -2054,6 +2367,10 @@
       "gallery": [
         "src/wp-sale/415-01.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/kaniebill51800",
       "fields": {
         "種別": "一棟ビル",
@@ -2082,6 +2399,10 @@
         "src/wp-sale/403-07.jpg",
         "src/wp-sale/403-08.jpg"
       ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/asakusa5980",
       "fields": {
         "種別": "マンション",
