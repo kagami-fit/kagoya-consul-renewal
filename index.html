@@ -194,11 +194,11 @@
        SERVICES ＝ features-02（横スクロール・ピン／ページ唯一の pin）
        テンプレ --accent#C2562C→--main, --bg薄グレー→--soft にマッピング
        ============================================================ */
-    .c-feat{background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-    .c-feat__head{padding:14vh 0 0;}
+    .c-feat{position:relative; isolation:isolate; background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+    .c-feat__head{position:relative; z-index:3; padding:14vh 0 0;}
     .c-feat__head h2{font-family:var(--font-display); font-weight:800; font-size:clamp(30px,5vw,56px); line-height:1.2; margin:16px 0 0; letter-spacing:.01em;}
     .c-feat__head h2 .mk{color:var(--main);}
-    .c-feat__pin{height:100vh; display:flex; align-items:center; overflow:hidden;}
+    .c-feat__pin{position:relative; z-index:2; height:100vh; display:flex; align-items:center; overflow:hidden; background:var(--soft);}
     .c-feat__track{display:flex; gap:30px; padding:0 6vw; will-change:transform;}
     .c-feat__card{flex:0 0 min(420px,82vw); background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 24px 48px -34px rgba(14,40,65,.45);}
     .c-feat__card .ph{position:relative; aspect-ratio:16/10; overflow:hidden; background:#E6EEF4;}
@@ -208,7 +208,7 @@
     .c-feat__card h3{font-family:var(--font-display); font-weight:700; font-size:24px; margin:0 0 12px;}
     .c-feat__card p{color:var(--muted); font-size:14.5px; margin:0;}
     .c-feat__card .price{display:inline-block; margin-top:18px; font-family:var(--font-display); color:var(--main); font-weight:700; font-size:18px;}
-    .c-feat__prog{position:absolute; left:6vw; bottom:6vh; font-family:var(--font-en); font-size:12px; color:var(--muted); letter-spacing:.1em; z-index:5;}
+    .c-feat__prog{position:absolute; left:6vw; bottom:6vh; font-family:var(--font-en); font-size:12px; color:var(--muted); letter-spacing:.1em; z-index:4;}
     @media(max-width:820px){
       .c-feat__pin{height:auto; display:block; padding:20px 0 70px;}
       .c-feat__track{flex-direction:column; padding:0 24px;}
