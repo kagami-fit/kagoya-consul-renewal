@@ -34,6 +34,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--pages", nargs="*", help="確認するHTML。省略時は全ページ")
     parser.add_argument("--report", default="qa-results.json", help="_review内の出力名")
+    parser.add_argument("--base", default=BASE, help="確認対象のベースURL")
     args = parser.parse_args()
     out = ROOT / "_review"
     out.mkdir(exist_ok=True)
@@ -51,7 +52,7 @@ def main() -> int:
                 page.on("console", lambda msg, dest=errors: dest.append(msg.text) if msg.type == "error" else None)
                 page.on("pageerror", lambda exc, dest=errors: dest.append(str(exc)))
                 page.on("response", lambda response, dest=bad_responses: dest.append(f"{response.status} {response.url}") if response.status >= 400 else None)
-                page.goto(BASE + filename, wait_until="load")
+                page.goto(args.base + filename, wait_until="load")
                 page.evaluate("""() => {
                   document.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
                   return Promise.all([...document.images].map(img => img.complete ? Promise.resolve() : new Promise(resolve => {
@@ -89,11 +90,11 @@ def main() -> int:
                 if filename in SHOT_PAGES:
                     page.screenshot(path=str(out / f"{Path(filename).stem}_current_{width}.png"), full_page=True)
                 results.append({"page": filename, "width": width, **metrics, "menu": menu_ok, "consoleErrors": errors, "badResponses": bad_responses})
-                report_path.write_text(json.dumps({"base": BASE, "results": results}, ensure_ascii=False, indent=2), encoding="utf-8")
+                report_path.write_text(json.dumps({"base": args.base, "results": results}, ensure_ascii=False, indent=2), encoding="utf-8")
                 context.close()
         browser.close()
 
-    report = {"base": BASE, "results": results}
+    report = {"base": args.base, "results": results}
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     failures = [
         row for row in results

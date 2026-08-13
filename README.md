@@ -1,6 +1,6 @@
 # KAGOYA コーポレートサイト
 
-株式会社籠やの会社案内PDFと確定HP設計書をもとに再構成した、静的HTMLのコーポレートサイトです。
+株式会社籠やの確定HP設計書を内容の正本にし、`sample07`と同じデザイン構成・スクロール演出へ作り替えた静的HTMLのコーポレートサイトです。配色と書体はKAGOYAの指定を優先しています。
 
 ## ページ構成
 
@@ -25,6 +25,14 @@ https://kagami-fit.github.io/kagoya-consul-renewal/
 https://kagami-fit.github.io/kagoya-consul-renewal/design-comparison.html
 
 ローカルでは、このフォルダをWebサーバーの公開フォルダとして開いてください。
+
+再生成は次の順序です。
+
+```bash
+python3 scripts/build_site.py
+python3 scripts/build_sample07_home.py
+python3 scripts/update_blog_chrome.py
+```
 
 ## 補足
 

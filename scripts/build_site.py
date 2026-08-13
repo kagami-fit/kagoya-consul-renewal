@@ -21,16 +21,24 @@ def img(name: str, alt: str, cls: str = "", eager: bool = False) -> str:
 
 
 def header(current: str = "") -> str:
-    nav = [
-        ("services", "services.html", "サービス"),
-        ("cases", "cases.html", "相談事例"),
-        ("for-sale", "for-sale.html", "販売中物件"),
-        ("team", "team.html", "専門家・チーム"),
-        ("about", "about.html", "会社情報"),
-    ]
-    links = "".join(
-        f'<a href="{href}"{" aria-current=\"page\"" if current == key else ""}>{label}</a>'
-        for key, href, label in nav
+    def nav_link(key: str, href: str, label: str) -> str:
+        current_attr = ' aria-current="page"' if current == key else ""
+        return f'<a href="{href}"{current_attr}>{label}</a>'
+
+    left_links = "".join(
+        [
+            nav_link("services", "services.html", "サービス"),
+            nav_link("for-sale", "for-sale.html", "販売中物件"),
+            nav_link("cases", "cases.html", "相談事例"),
+            nav_link("", "insights.html", "読みもの"),
+        ]
+    )
+    right_links = "".join(
+        [
+            nav_link("team", "team.html", "専門家・チーム"),
+            nav_link("about", "about.html", "会社情報"),
+            nav_link("", "faq.html", "よくある質問"),
+        ]
     )
     drawer_links = [
         ("index.html", "ホーム", "HOME"),
@@ -45,21 +53,20 @@ def header(current: str = "") -> str:
     drawer = "".join(f'<a href="{href}">{label}<small>{en}</small></a>' for href, label, en in drawer_links)
     return f'''<!-- ZOROYA:HEADER -->
 <header class="site-header">
-  <div class="header-in">
-    <a class="brand" href="index.html" aria-label="KAGOYA ホーム">
-      <picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async"></picture>
-    </a>
-    <nav class="global-nav" aria-label="グローバルナビ">{links}</nav>
-    <div class="header-actions">
-      <a class="btn" href="contact.html">選択肢を相談する</a>
-      <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
-    </div>
+  <div class="site-header__topbar"><div class="in"><span>売却を急がず、不動産の選択肢を整理する。</span><div class="right"><span>10:00–18:00／木曜定休</span><span class="tel">03-4400-7994</span><a href="contact.html">相談する</a></div></div></div>
+  <div class="site-header__main">
+    <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）">{left_links}</nav>
+    <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async"></picture></a>
+    <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）">{right_links}</nav>
+    <a class="site-header__cta" href="contact.html">相談する</a>
+    <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
   </div>
+  <div class="site-header__strip"></div>
 </header>
 <div class="drawer-shade" data-menu-shade></div>
 <aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
   <nav aria-label="スマートフォンメニュー">{drawer}</nav>
-  <div class="drawer-contact"><a class="btn" href="contact.html">売る前に、選択肢を相談する</a><a class="btn btn-outline" href="tel:0344007994">03-4400-7994</a></div>
+  <div class="drawer-contact"><a class="btn primary" href="contact.html">選択肢を相談する</a><a class="btn ghost" href="tel:0344007994">03-4400-7994</a></div>
 </aside>
 <!-- /ZOROYA:HEADER -->'''
 
@@ -67,21 +74,12 @@ def header(current: str = "") -> str:
 def footer() -> str:
     return f'''<!-- ZOROYA:FOOTER -->
 <footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA" loading="lazy" decoding="async"></picture>
-      <h2>{NAP_NAME}</h2>
-      <p>不動産売買・仲介・管理、不動産コンサルティング<br>代表取締役 内田 豊／東京都知事（1）第108542号</p>
-      <a class="tel" href="tel:0344007994">03-4400-7994</a>
-      <p>10:00〜18:00（定休日：木曜日）<br>{NAP_ADDRESS}</p>
-    </div>
-    <div class="footer-cols">
-      <div class="footer-col"><h3>Consulting</h3><a href="sale-consulting.html">売却・調査</a><a href="inheritance-vacant-house.html">相続・空き家</a><a href="purchase-asset.html">購入・資産形成</a><a href="property-management.html">管理・活用</a></div>
-      <div class="footer-col"><h3>Company</h3><a href="for-sale.html">販売中物件</a><a href="cases.html">相談事例</a><a href="team.html">専門家・チーム</a><a href="about.html">会社情報</a><a href="insights.html">知る・読みもの</a></div>
-      <div class="footer-col"><h3>Contact</h3><a href="contact.html">お問い合わせ</a><a href="tel:0344007994">電話で相談</a><a href="mailto:info@kagoya-consul.com">メール</a><a href="privacy.html">プライバシー</a></div>
-    </div>
+  <div class="site-footer__info">
+    <div class="site-footer__nap"><div class="nm">{NAP_NAME}</div><p>不動産売買・仲介・管理、不動産コンサルティング<br>〒152-0032 東京都目黒区平町1丁目26-17<br>ソシアル都立大学駅前201号<br>10:00〜18:00／木曜定休</p><a class="tel" href="tel:0344007994">03-4400-7994</a></div>
+    <div class="site-footer__col"><h4>Consulting</h4><a href="sale-consulting.html">売却・調査</a><a href="inheritance-vacant-house.html">相続・空き家</a><a href="purchase-asset.html">購入・資産形成</a><a href="property-management.html">管理・活用</a></div>
+    <div class="site-footer__col"><h4>Guide</h4><a href="for-sale.html">販売中物件</a><a href="cases.html">相談事例</a><a href="team.html">専門家・チーム</a><a href="about.html">会社情報</a><a href="insights.html">知る・読みもの</a><a href="privacy.html">プライバシー</a></div>
   </div>
-  <div class="footer-bottom"><div class="wrap"><span>© KAGOYA Co., Ltd.</span><div class="footer-legal"><span>{NAP_ADDRESS}</span><a href="privacy.html">Privacy Policy</a></div></div></div>
+  <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
 </footer>
 <!-- /ZOROYA:FOOTER -->'''
 
@@ -98,9 +96,10 @@ def page(title: str, description: str, body: str, current: str = "") -> str:
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/_shared.css">
+<link rel="stylesheet" href="assets/css/sample07-theme.css">
 <style>.hero{{width: 100%;}}.sig-decoration{{mix-blend-mode:multiply}}.oversized-pull{{font-size:clamp(4rem,8vw,8rem)}}.hero-line{{clip-path:inset(0 0 0 0)}}@media(max-width:768px){{.zoroya-breakpoint{{display:block}}}}</style>
 </head>
-<body>
+<body class="sample07-subpage">
 <a class="skip-link" href="#main">本文へスキップ</a>
 {header(current)}
 <!-- ZOROYA:MAIN -->

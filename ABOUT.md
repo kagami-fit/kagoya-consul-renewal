@@ -2,7 +2,7 @@
 
 ## 一言で言うと
 
-株式会社籠やの会社案内PDFのカラー・トーンと確定HP設計書をもとに、不動産を「売る前に知る」ための相談サイトへ作り替えたプロジェクトです。主要写真はサイト専用に新規生成し、販売中物件カードだけ実物写真を使用しています。
+株式会社籠やの確定HP設計書を内容の正本にし、参考サイト`sample07`と同じレイアウト・写真リズム・スクロール演出で、不動産相談サイトへ作り替えたプロジェクトです。主要写真はサイト専用に新規生成し、販売中物件カードだけ実物写真を使用しています。
 
 ## 何ができるのか
 
@@ -12,6 +12,7 @@
 - 公開中の販売物件5件を、居住用と一棟収益に分けて確認する
 - 電話、メール、公式お問い合わせフォームから相談へ進める
 - スマートフォンとPCの両方で閲覧できる
+- sample07と同じスリットFV、横スクロールサービス、円形フロー、重なり事例カード、文字点灯を体験できる
 - GitHub Pagesで公開し、ZIPでも再配布できる
 - 同じ内容のまま、sample07／sample12／sample33を参考にした3つのデザイン・動きの比較案を確認できる
 
@@ -21,8 +22,13 @@
 - `site-design.md`：戦略、配色、レイアウト、公開保留ルール
 - `SPEC.md`：NAP、確定コピー、FAQ、ページメタ
 - `scripts/build_site.py`：確定仕様から主要HTMLを再生成するスクリプト
+- `templates/sample07-reference.html`：移植元sample07の構造・動きを保存した参照テンプレート
+- `scripts/build_sample07_home.py`：参照テンプレートへKAGOYAの確定内容を流し込み、トップを再生成するスクリプト
+- `scripts/update_blog_chrome.py`：ブログ3記事へsample07の共通ヘッダー・フッターを適用するスクリプト
 - `scripts/qa_site.py`：3画面幅で全ページを検証し、代表スクリーンショットを保存するスクリプト
+- `scripts/qa_sample07.cjs`：sample07特有の長いスクロール演出を含め、3画面幅で主要21ページを検証するスクリプト
 - `assets/css/_shared.css`：会社案内PDFの色・余白・罫線を反映した共通デザイン
+- `assets/css/sample07-theme.css`：sample07の構成をKAGOYAの配色・指定書体へ適合させる共通テーマ
 - `assets/js/site.js`：スマホメニュー、表示アニメーション、固定問い合わせ導線
 - `assets/css/variant-*.css`：3つの比較案ごとの配色、レイアウト、FVデザイン
 - `assets/js/variant-motion.js`：縦スリット、グリッド、光点、ワイプ、スクロール演出
@@ -45,9 +51,10 @@
 
 1. 公開版は `https://kagami-fit.github.io/kagoya-consul-renewal/` を開く。
 2. ローカル確認はプロジェクト直下で `python3 -m http.server 8765` を実行し、`http://127.0.0.1:8765/` を開く。
-3. 確定仕様からHTMLを再生成する場合は `python3 scripts/build_site.py` を実行する。
-4. 現行トップを比較案3種へ反映する場合は `python3 scripts/build_design_variants.py` を実行する。
-5. 修正後は品質確認を行い、GitHubへpushする。
+3. 確定仕様から再生成する場合は `python3 scripts/build_site.py` → `python3 scripts/build_sample07_home.py` → `python3 scripts/update_blog_chrome.py` の順に実行する。
+4. ローカルサーバー起動後、`node scripts/qa_sample07.cjs http://127.0.0.1:8765/`で3画面幅の品質確認を行う。
+5. 現行トップを旧比較案3種へ反映する場合は `python3 scripts/build_design_variants.py` を実行する。
+6. 修正後は品質確認を行い、GitHubへpushする。
 
 ## 状態
 
@@ -55,10 +62,10 @@
 - 会社案内PDFのカラー・トンマナ反映：完了
 - PDF由来画像の不使用・主要写真の新規生成：完了
 - 販売中物件ページ：稼働中
-- トップページ：稼働中
-- 主要下層ページ：稼働中
-- ブログ3記事：稼働中
+- トップページ：sample07デザイン・演出へ変更済み
+- 主要下層ページ：sample07共通ヘッダー・配色・書体へ変更済み
+- ブログ3記事：sample07共通ヘッダー・配色・書体へ変更済み
 - GitHub Pages：稼働中
-- 参考サイト別デザイン比較3案：稼働中（検索除外の比較用ページ）
-- 納品ZIP：更新済み
+- 参考サイト別デザイン比較3案：旧比較資料として維持（検索除外）
+- 納品ZIP：今回の公開時に再生成
 - WordPress移行：未着手
