@@ -11,7 +11,7 @@ const decodeEntities = (value = '') => value
   .replace(/&#8221;|&#x201d;/gi, '”')
   .replace(/&#038;|&amp;/gi, '&')
   .replace(/&nbsp;/gi, ' ')
-  .replace(/&#(d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+  .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
   .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
 
 const cleanText = (html = '') => decodeEntities(html)
