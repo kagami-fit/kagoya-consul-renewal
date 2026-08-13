@@ -6,6 +6,14 @@ const outDir = path.join(root, 'src', 'wp-sale');
 fs.mkdirSync(outDir, { recursive: true });
 
 const api = 'https://kagoya-consul.co.jp/wp-json/wp/v2';
+const clean = (html) => html.replace(/<br\s*\/?>/gi, '／').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#038;/g, '&').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+const detailFields = (html) => {
+  const fields = {};
+  const re = /<dt[^>]*>([\s\S]*?)<\/dt>[\s\S]*?<dd[^>]*>([\s\S]*?)<\/dd>/gi;
+  let m;
+  while ((m = re.exec(html))) fields[clean(m[1])] = clean(m[2]);
+  return fields;
+};
 const posts = await (await fetch(`${api}/sale?per_page=100`)).json();
 const items = [];
 for (const post of posts) {
@@ -24,7 +32,9 @@ for (const post of posts) {
       }
     } catch {}
   }
-  items.push({ id: post.id, title: post.title?.rendered || '', date: post.date?.slice(0, 10) || '', slug: post.slug || '', image });
+  let fields = {};
+  try { fields = detailFields(await (await fetch(post.link)).text()); } catch {}
+  items.push({ id: post.id, title: post.title?.rendered || '', date: post.date?.slice(0, 10) || '', slug: post.slug || '', image, link: post.link, fields });
 }
 fs.mkdirSync(path.join(root, 'data'), { recursive: true });
 fs.writeFileSync(path.join(root, 'data', 'sale-items.json'), JSON.stringify({ source: 'https://kagoya-consul.co.jp/sale/', fetchedAt: new Date().toISOString(), count: items.length, items }, null, 2));
