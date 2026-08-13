@@ -476,8 +476,8 @@
         <div class="c-news__ttl">お知らせ</div>
         <div class="c-news__tabs">
           <button class="c-news__tab is-on" type="button">すべて</button>
-          <button class="c-news__tab" type="button">売却</button>
-          <button class="c-news__tab" type="button">相続</button>
+          <button class="c-news__tab" type="button">お知らせ</button>
+          <button class="c-news__tab" type="button">セミナー</button>
         </div>
         <div class="c-news__list" id="newsList">
           <a class="c-news__row" href="news-detail.html#news-2482"><div class="c-news__badge">お知らせ<span class="pin">01</span></div><div class="c-news__bd"><div class="t">当社管理物件オーナーの皆様、ゴールデンウィーク期間もご連絡承ります。</div><div class="d">2026.04.19</div></div><span class="ar">&rarr;</span></a>
@@ -808,7 +808,7 @@
             rows.forEach(function (row) {
               var badge = row.querySelector('.c-news__badge')?.textContent || '';
               var title = row.querySelector('.t')?.textContent || '';
-              var show = filter === 'すべて' || (filter === '売却' && /販売|成約|売却/.test(badge + title)) || (filter === '相続' && /相続/.test(badge + title));
+              var show = filter === 'すべて' || (filter === 'お知らせ' && /お知らせ/.test(badge)) || (filter === 'セミナー' && /セミナー/.test(badge));
               row.hidden = !show;
             });
           });
