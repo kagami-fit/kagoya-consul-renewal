@@ -9,7 +9,8 @@
 - 状況・価値・選択肢・リスクを整理するKAGOYAの考え方を伝える
 - 売却、相続・空き家、購入・資産形成、管理・活用、法人向け相談へ案内する
 - 権利関係を整理した相談事例と、専門家連携の体制を紹介する
-- 公開中の販売物件5件を、居住用と一棟収益に分けて確認する
+- 公開中の販売物件を、画像ギャラリー・カテゴリ・タグ・詳細情報付きで確認する
+- 元サイトの「お知らせ」20件を、一覧と個別本文ページで確認する
 - 電話、メール、公式お問い合わせフォームから相談へ進める
 - スマートフォンとPCの両方で閲覧できる
 - sample07と同じスリットFV、横スクロールサービス、円形フロー、重なり事例カード、文字点灯を体験できる
@@ -25,6 +26,7 @@
 - `templates/sample07-reference.html`：移植元sample07の構造・動きを保存した参照テンプレート
 - `scripts/build_sample07_home.py`：参照テンプレートへKAGOYAの確定内容を流し込み、トップを再生成するスクリプト
 - `scripts/update_blog_chrome.py`：ブログ3記事へsample07の共通ヘッダー・フッターを適用するスクリプト
+- `scripts/migrate-wp-news.js`：元WordPressの公開お知らせを取得し、一覧・詳細表示用JSONを生成するスクリプト
 - `scripts/qa_site.py`：3画面幅で全ページを検証し、代表スクリーンショットを保存するスクリプト
 - `scripts/qa_sample07.cjs`：sample07特有の長いスクロール演出を含め、3画面幅で主要21ページを検証するスクリプト
 - `assets/css/_shared.css`：会社案内PDFの色・余白・罫線を反映した共通デザイン
@@ -35,13 +37,15 @@
 - `scripts/build_design_variants.py`：現行トップの内容から比較用3案を再生成するスクリプト
 - `src/gen-*`：サイト専用に生成したトップ、相談、サービス、事例、会社用の写真素材
 - `src/listing-*`：現行公式サイトから取得した販売中物件の実物写真
+- `data/news-items.json`：元サイトから移行したお知らせ20件（本文HTML・カテゴリ・日付・元URL）
 - `src/generated-image-manifest.md`：生成画像の用途とプロンプト一覧
 - `src/wp-image-sources.md`：販売中物件写真の取得元URL一覧
 - `index.html`：トップページ
 - `services.html` と5つの詳細ページ：相談サービス
 - `cases.html`／`team.html`／`about.html`：事例、体制、会社情報
+- `news.html`／`news-detail.html`：移行したお知らせの一覧と個別詳細
 - `insights.html`／`blog/`：読みもの
-- `for-sale.html`：販売中物件5件の一覧
+- `for-sale.html`：販売中物件の一覧
 - `contact.html`／`privacy.html`：問い合わせと個人情報保護方針
 - `design-comparison.html`：現行版と比較案3種の一覧
 - `design-sample07.html`／`design-sample12.html`／`design-sample33.html`：参考サイト別の比較案

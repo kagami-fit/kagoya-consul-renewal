@@ -289,7 +289,7 @@
     }
 
     /* ============================================================
-       NEWS ＝ news-05（中央寄せ NEWS＋タブ＋丸い黒バッジ＋枠線ピル）
+       お知らせ ＝ news-05（中央寄せ見出し＋タブ＋丸い黒バッジ＋枠線ピル）
        テンプレ --green#4f9a72→--teal-deep, --ink黒→--navy にマッピング
        ============================================================ */
     .c-news{padding:116px 0; background:var(--bg);}
@@ -470,21 +470,21 @@
       <span class="hero-scroll">SCROLL</span>
     </section>
 
-    <!-- NEWS ＝ news-05（中央寄せ＋タブ＋丸バッジ） -->
+    <!-- お知らせ ＝ news-05（中央寄せ＋タブ＋丸バッジ） -->
     <section class="c-news" id="news">
       <div class="wrap">
-        <div class="c-news__ttl">NEWS</div>
+        <div class="c-news__ttl">お知らせ</div>
         <div class="c-news__tabs">
           <button class="c-news__tab is-on" type="button">すべて</button>
           <button class="c-news__tab" type="button">売却</button>
           <button class="c-news__tab" type="button">相続</button>
         </div>
         <div class="c-news__list" id="newsList">
-          <a class="c-news__row" href="blog/inherited-property-first-steps.html"><div class="c-news__badge">相続<span class="pin">01</span></div><div class="c-news__bd"><div class="t">不動産を相続したら最初に整理したい5つのこと</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
-          <a class="c-news__row" href="blog/rebuild-impossible-property.html"><div class="c-news__badge">調査</div><div class="c-news__bd"><div class="t">再建築不可物件は売れない？確認したい4つの条件</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
-          <a class="c-news__row" href="blog/check-before-price-cut.html"><div class="c-news__badge">売却</div><div class="c-news__bd"><div class="t">不動産の価格を下げる前に確認したい6項目</div><div class="d">2026.08.02</div></div><span class="ar">&rarr;</span></a>
+          <a class="c-news__row" href="news-detail.html#news-2482"><div class="c-news__badge">お知らせ<span class="pin">01</span></div><div class="c-news__bd"><div class="t">当社管理物件オーナーの皆様、ゴールデンウィーク期間もご連絡承ります。</div><div class="d">2026.04.19</div></div><span class="ar">&rarr;</span></a>
+          <a class="c-news__row" href="news-detail.html#news-1312"><div class="c-news__badge">お知らせ</div><div class="c-news__bd"><div class="t">新年のご挨拶</div><div class="d">2026.01.01</div></div><span class="ar">&rarr;</span></a>
+          <a class="c-news__row" href="news-detail.html#news-1310"><div class="c-news__badge">お知らせ</div><div class="c-news__bd"><div class="t">当社管理物件オーナーの皆様、年末年始もご連絡承ります。</div><div class="d">2025.12.31</div></div><span class="ar">&rarr;</span></a>
         </div>
-        <div class="c-news__more-wrap"><a class="c-news__more" href="insights.html">読みもの一覧へ</a></div>
+        <div class="c-news__more-wrap"><a class="c-news__more" href="news.html">お知らせ一覧へ</a></div>
       </div>
     </section>
 
@@ -785,7 +785,7 @@
         gsap.to(sg, { strokeDashoffset: 0, duration: 1.6, ease: 'power1.inOut', scrollTrigger: { trigger: '.c-msg__sign', start: 'top 84%', once: true } });
       })();
 
-      /* NEWS ＝ news-05（行ごと once:true＋タブ切替） */
+      /* お知らせ ＝ news-05（行ごと once:true＋タブ切替） */
       (function () {
         var list = document.getElementById('newsList'); if (!list) return;
         list.querySelectorAll('.c-news__row').forEach(function (el, i) {
@@ -793,6 +793,25 @@
         });
         document.querySelectorAll('.c-news__tab').forEach(function (t) {
           t.addEventListener('click', function () { document.querySelectorAll('.c-news__tab').forEach(function (x) { x.classList.remove('is-on'); }); t.classList.add('is-on'); });
+        });
+      })();
+
+      /* お知らせデータのカテゴリ絞り込み */
+      (function () {
+        var rows = Array.from(document.querySelectorAll('.c-news__row'));
+        var tabs = Array.from(document.querySelectorAll('.c-news__tab'));
+        if (!rows.length || !tabs.length) return;
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var filter = tab.textContent.trim();
+            tabs.forEach(function (x) { x.classList.toggle('is-on', x === tab); });
+            rows.forEach(function (row) {
+              var badge = row.querySelector('.c-news__badge')?.textContent || '';
+              var title = row.querySelector('.t')?.textContent || '';
+              var show = filter === 'すべて' || (filter === '売却' && /販売|成約|売却/.test(badge + title)) || (filter === '相続' && /相続/.test(badge + title));
+              row.hidden = !show;
+            });
+          });
         });
       })();
 
