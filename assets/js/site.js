@@ -1,5 +1,7 @@
 (() => {
   const body = document.body;
+  const script = document.querySelector('script[src$="assets/js/site.js"]');
+  const prefix = script?.getAttribute('src')?.startsWith('../') ? '../' : '';
   const toggle = document.querySelector('[data-menu-toggle]');
   const shade = document.querySelector('[data-menu-shade]');
   const drawer = document.querySelector('[data-menu-drawer]');
@@ -70,6 +72,24 @@
     hero.addEventListener('pointerleave', () => { if (copy) copy.style.transform = ''; });
   }
 
+  // 「今日の籠や」は同じHTMLを編集せず、data/today-items.jsonを差し替えて更新できる。
+  // file:// プレビューではfetchが制限されるため、HTMLに入れた初期表示をそのまま使う。
+  const todayFeed = document.querySelector('#todayFeed');
+  if (todayFeed) {
+    const kindClass = { NEW: 'new', MEETING: 'meeting', CLOSE: 'close', PARTNER: 'partner' };
+    fetch(`${prefix}data/today-items.json`, { cache: 'no-store' }).then((response) => {
+      if (!response.ok) throw new Error('today feed unavailable');
+      return response.json();
+    }).then((items) => {
+      if (!Array.isArray(items) || !items.length) return;
+      todayFeed.innerHTML = items.map((item) => {
+        const kind = String(item.kind || 'NEW').toUpperCase();
+        const klass = kindClass[kind] || 'new';
+        return `<a class="today__item" href="${item.href || 'contact.html'}"><span class="today__kind today__kind--${klass}">${kind}</span><div><strong>${item.label || kind}</strong><h3>${item.title || ''}</h3><p>${item.when || ''}｜${item.summary || ''}</p></div><span class="today__arrow">→</span></a>`;
+      }).join('');
+    }).catch(() => {});
+  }
+
   const archive = document.querySelector('[data-search-archive]');
   if (archive) {
     const params = new URLSearchParams(window.location.search);
@@ -88,8 +108,6 @@
     }
   }
 
-  const script = document.querySelector('script[src$="assets/js/site.js"]');
-  const prefix = script?.getAttribute('src')?.startsWith('../') ? '../' : '';
   if (!document.querySelector('.mobile-contact-bar')) {
     const bar = document.createElement('nav');
     bar.className = 'mobile-contact-bar';

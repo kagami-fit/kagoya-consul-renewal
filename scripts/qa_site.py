@@ -15,7 +15,6 @@ WIDTHS = (375, 768, 1280)
 SHOT_PAGES = {
     "index.html",
     "for-sale.html",
-    "cases.html",
     "contact.html",
     "design-comparison.html",
     "design-sample07.html",

@@ -8,13 +8,13 @@ const base = process.argv[2] || 'http://127.0.0.1:8770/';
 const pages = [
   'index.html', 'services.html', 'service.html', 'sale-consulting.html',
   'inheritance-vacant-house.html', 'purchase-asset.html', 'property-management.html',
-  'corporate-benefits.html', 'for-sale.html', 'properties.html', 'cases.html',
+  'corporate-benefits.html', 'for-sale.html', 'properties.html',
   'team.html', 'about.html', 'insights.html', 'news.html', 'faq.html',
   'contact.html', 'privacy.html', 'blog/inherited-property-first-steps.html',
   'blog/rebuild-impossible-property.html', 'blog/check-before-price-cut.html'
 ];
 const widths = [375, 768, 1280];
-const shots = new Set(['index.html', 'for-sale.html', 'cases.html', 'contact.html']);
+const shots = new Set(['index.html', 'for-sale.html', 'contact.html']);
 
 (async () => {
   const browser = await chromium.launch({ headless: true });

@@ -9,7 +9,6 @@
 | `purchase-asset.html` | 購入・資産形成相談 |
 | `property-management.html` | 管理・活用相談 |
 | `corporate-benefits.html` | 法人向け不動産相談 |
-| `cases.html` | 相談事例 |
 | `team.html` | 専門家・チーム |
 | `about.html` | 会社情報 |
 | `insights.html` | 知る・読みもの |
