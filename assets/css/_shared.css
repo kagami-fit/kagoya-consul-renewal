@@ -311,6 +311,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .article-index .tag { color: var(--muted); font-size: .78rem; }
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8%; }
 .contact-panel { padding: 36px; background: var(--bg); border: 1px solid var(--line); }
+.contact-intent { margin-top: 26px; padding: 18px 20px; border-left: 3px solid var(--teal, #C49A4A); background: rgba(255,255,255,.72); }
+.contact-intent[hidden] { display: none; }
+.contact-intent strong { display: block; margin-top: 5px; color: var(--ink); font-family: var(--font-display); font-size: 20px; }
+.contact-intent p { margin-top: 4px; color: var(--muted); font-size: .88rem; }
 .contact-phone { display: block; margin: 18px 0; color: var(--main); font-family: var(--font-en); font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 700; line-height: 1; text-decoration: none; }
 .form-bridge { padding: 40px; border: 1px solid var(--line); }
 .form-bridge__topics { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }

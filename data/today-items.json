@@ -1,34 +1,41 @@
-[
-  {
-    "kind": "NEW",
-    "label": "新規案件",
-    "title": "相続・空き家相談の初回面談を実施",
-    "summary": "状況と権利関係の確認からスタートしました。",
-    "when": "本日",
-    "href": "contact.html"
-  },
-  {
-    "kind": "MEETING",
-    "label": "商談",
-    "title": "協業先との新サービス企画が進行",
-    "summary": "不動産と介護をつなぐ相談窓口を検討中です。",
-    "when": "2日前",
-    "href": "contact.html"
-  },
-  {
-    "kind": "CLOSE",
-    "label": "成約",
-    "title": "不動産コンサル案件が成約",
-    "summary": "関係者と条件を整理し、実行方針が決まりました。",
-    "when": "3日前",
-    "href": "contact.html"
-  },
-  {
-    "kind": "PARTNER",
-    "label": "提携",
-    "title": "士業・介護事業者との連携を開始",
-    "summary": "相続と空き家の相談を一つの窓口へつなぎます。",
-    "when": "4日前",
-    "href": "contact.html"
-  }
-]
+{
+  "updatedAt": "2026-08-22",
+  "items": [
+    {
+      "kind": "NEW",
+      "label": "新規案件",
+      "title": "相続・空き家相談の初回面談を実施",
+      "summary": "状況と権利関係の確認からスタートしました。",
+      "when": "本日",
+      "source": "社内更新",
+      "href": "contact.html?type=project"
+    },
+    {
+      "kind": "MEETING",
+      "label": "商談",
+      "title": "協業先との新サービス企画が進行",
+      "summary": "不動産と介護をつなぐ相談窓口を検討中です。",
+      "when": "2日前",
+      "source": "社内更新",
+      "href": "contact.html?type=partner"
+    },
+    {
+      "kind": "CLOSE",
+      "label": "成約",
+      "title": "不動産コンサル案件が成約",
+      "summary": "関係者と条件を整理し、実行方針が決まりました。",
+      "when": "3日前",
+      "source": "社内更新",
+      "href": "contact.html?type=project"
+    },
+    {
+      "kind": "PARTNER",
+      "label": "提携",
+      "title": "士業・介護事業者との連携を開始",
+      "summary": "相続と空き家の相談を一つの窓口へつなぎます。",
+      "when": "4日前",
+      "source": "社内更新",
+      "href": "contact.html?type=partner"
+    }
+  ]
+}
