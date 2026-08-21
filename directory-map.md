@@ -2,7 +2,7 @@
 
 | ファイル | 内容 |
 |---|---|
-| `index.html` | トップ |
+| `index.html` | トップ（今日の籠や、8事業領域、販売中物件、サービス、相談導線） |
 | `services.html` | サービス総合 |
 | `sale-consulting.html` | 売却・調査相談 |
 | `inheritance-vacant-house.html` | 相続・空き家相談 |

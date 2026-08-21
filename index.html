@@ -315,8 +315,32 @@
     .motion-strip__rail{display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
     .motion-strip__rail span{padding:9px 14px; border:1px solid var(--line); border-radius:999px; color:var(--main); background:#fff; font-size:12px; font-weight:600;}
     .motion-strip__inner > p{grid-column:2; margin-top:-10px; color:var(--muted); font-size:12px;}
+    /* 8事業領域：大きなコンセプト説明ではなく、進行中の現場を写真で見せるポートフォリオ */
+    .domain-section{padding:96px 0 112px; background:var(--soft); border-bottom:1px solid var(--line);}
+    .domain-section > .wrap{width:min(1200px,calc(100% - 56px));}
+    .domain-section__head{display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,460px); gap:52px; align-items:end;}
+    .domain-section__head h2{margin-top:16px; font-size:clamp(36px,5vw,68px); line-height:1.24; letter-spacing:.015em;}
+    .domain-section__head h2 .mk{display:inline-block;}
+    .domain-section__lead{color:var(--muted); font-size:14px; line-height:2; max-width:34em;}
+    .domain-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:52px;}
+    .domain-card{display:flex; flex-direction:column; min-width:0; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 18px 38px -32px rgba(14,40,65,.7); transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+    .domain-card:hover{transform:translateY(-6px); border-color:rgba(21,96,130,.45); box-shadow:0 22px 44px -28px rgba(14,40,65,.55);}
+    .domain-card__media{position:relative; aspect-ratio:4/3; overflow:hidden; background:#dfeaf0;}
+    .domain-card__media::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(14,40,65,.08),transparent 48%,rgba(14,40,65,.38)); pointer-events:none;}
+    .domain-card__media img{width:100%; height:100%; object-fit:cover; transition:transform .55s cubic-bezier(.2,.7,.2,1);}
+    .domain-card:hover .domain-card__media img{transform:scale(1.045);}
+    .domain-card__index{position:absolute; z-index:1; top:13px; left:14px; color:#fff; font-family:var(--font-en); font-size:11px; font-weight:700; letter-spacing:.16em; text-shadow:0 1px 12px rgba(0,0,0,.25);}
+    .domain-card__tag{position:absolute; z-index:1; right:12px; bottom:12px; padding:5px 9px; border:1px solid rgba(255,255,255,.5); border-radius:999px; background:rgba(14,40,65,.55); color:#fff; font-family:var(--font-en); font-size:9px; letter-spacing:.12em;}
+    .domain-card__body{display:flex; flex:1; flex-direction:column; padding:18px 18px 20px;}
+    .domain-card__body h3{font-size:19px; line-height:1.45;}
+    .domain-card__body p{margin-top:8px; color:var(--muted); font-size:12px; line-height:1.8;}
+    .domain-card__link{display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:16px; color:var(--main); font-size:12px; font-weight:700;}
+    .domain-card__link::after{content:"→"; font-family:var(--font-en); transition:transform .2s ease;}
+    .domain-card:hover .domain-card__link::after{transform:translateX(4px);}
+    @media(max-width:1040px){.domain-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.domain-section__head{grid-template-columns:1fr; gap:20px;}}
     @media(max-width:900px){.entry-grid{grid-template-columns:repeat(2,1fr);}.today__entry-head{grid-template-columns:1fr;}.motion-strip__inner{grid-template-columns:1fr; gap:18px;}.motion-strip__inner > p{grid-column:auto; margin-top:-6px;}}
     @media(max-width:680px){.site-header__ticker span{max-width:46vw;}.today{padding:76px 0 80px;}.today__head{display:block;}.today__stamp{margin-top:24px;}.today__item{grid-template-columns:1fr auto; gap:12px;}.today__kind{grid-column:1 / -1;}.today__item h3{font-size:16px;}.today__source{display:block;}.today__source-link{display:inline-block; margin-top:12px;}.today__entry{padding:20px;}.entry-grid{grid-template-columns:1fr;}.today__foot{display:block;}.today__social{margin-top:10px;}.hero-live-note{font-size:11px;}}
+    @media(max-width:680px){.domain-section{padding:76px 0 84px;}.domain-section > .wrap{width:min(100% - 36px,620px);}.domain-section__head h2{font-size:clamp(34px,10vw,48px);}.domain-grid{grid-template-columns:1fr; gap:16px; margin-top:38px;}.domain-card__body h3{font-size:20px;}}
     /* /ZOROYA:MAIN */
 
     /* ============================================================
@@ -474,9 +498,28 @@
     </section>
 
     <!-- サイトイメージ：コンセプト文を説明セクションにせず、動いている領域を細く提示 -->
-    <div class="motion-strip" id="business" role="region" aria-labelledby="motion-strip-title">
-      <div class="wrap motion-strip__inner"><div><span class="eyebrow">In motion</span><h2 id="motion-strip-title">いま動いている領域</h2></div><div class="motion-strip__rail" aria-label="株式会社籠やの事業領域"><span>不動産</span><span>地上げ</span><span>開発</span><span>エフクリ</span><span>介護</span><span>コンサル</span><span>新規事業</span></div><p>完成したものだけでなく、調査・商談・提携の途中も「今日の籠や」で更新します。</p></div>
+    <div class="motion-strip" id="business-scope" role="region" aria-labelledby="motion-strip-title">
+      <div class="wrap motion-strip__inner"><div><span class="eyebrow">In motion</span><h2 id="motion-strip-title">いま動いている領域</h2></div><div class="motion-strip__rail" aria-label="株式会社籠やの事業領域"><span>不動産コンサル</span><span>買取</span><span>地上げ・開発</span><span>権利調整</span><span>エフクリ</span><span>介護・相続</span><span>賃貸経営</span><span>新規事業</span></div><p>完成したものだけでなく、調査・商談・提携の途中も「今日の籠や」で更新します。</p></div>
     </div>
+
+    <section class="domain-section" id="business" aria-labelledby="domain-title">
+      <div class="wrap">
+        <div class="domain-section__head">
+          <div><span class="eyebrow">Business in motion</span><h2 id="domain-title">8つの現場が、<br><span class="mk">次の選択肢</span>をつくる。</h2></div>
+          <p class="domain-section__lead">不動産を起点に、買取、地上げ・開発、権利調整、エフクリ、介護・相続、賃貸経営、新規事業まで。いま動いている8つの事業領域を、進行中の現場とともに紹介します。</p>
+        </div>
+        <div class="domain-grid">
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-consulting.jpg" alt="住宅模型と資料を囲んだ不動産コンサルティングの現場" loading="lazy" decoding="async"><span class="domain-card__index">01</span><span class="domain-card__tag">CONSULTING</span></div><div class="domain-card__body"><h3>不動産コンサル</h3><p>売る・買うの前に、状況と価値を整理し、判断の土台をつくります。</p><a class="domain-card__link" href="sale-consulting.html">領域を知る</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-purchase.jpg" alt="集合住宅と戸建てを見渡す買取事業の現場" loading="lazy" decoding="async"><span class="domain-card__index">02</span><span class="domain-card__tag">PURCHASE</span></div><div class="domain-card__body"><h3>買取事業</h3><p>買取という選択肢も含め、スピードと納得感のバランスを検討します。</p><a class="domain-card__link" href="contact.html?type=project">相談してみる</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-development.jpg" alt="住宅地と工事現場をつなぐ地上げ・開発の現場" loading="lazy" decoding="async"><span class="domain-card__index">03</span><span class="domain-card__tag">DEVELOPMENT</span></div><div class="domain-card__body"><h3>地上げ・開発</h3><p>土地のまとまりと街の未来を見据え、調査から事業化まで伴走します。</p><a class="domain-card__link" href="contact.html?type=project">案件を共有する</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-rights.jpg" alt="古い住宅と境界を確認する底地・借地の現場" loading="lazy" decoding="async"><span class="domain-card__index">04</span><span class="domain-card__tag">RIGHTS</span></div><div class="domain-card__body"><h3>底地・借地／権利調整</h3><p>関係者・契約・境界を確認し、複雑な権利を一つずつほどきます。</p><a class="domain-card__link" href="contact.html?type=project">状況を相談する</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-fukuri.jpg" alt="集合住宅の共用部と運営資料を確認するエフクリの現場" loading="lazy" decoding="async"><span class="domain-card__index">05</span><span class="domain-card__tag">FUKURI</span></div><div class="domain-card__body"><h3>エフクリ</h3><p>現場の課題を見つめ、住まいと運営の質を整える取り組みです。</p><a class="domain-card__link" href="contact.html?type=partner">協業を相談する</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-care.jpg" alt="地域のケア拠点と家族資産をつなぐ介護・相続連携の現場" loading="lazy" decoding="async"><span class="domain-card__index">06</span><span class="domain-card__tag">CARE &amp; ESTATE</span></div><div class="domain-card__body"><h3>介護・相続連携</h3><p>介護や相続をきっかけに、不動産・家族・専門家をつなぎます。</p><a class="domain-card__link" href="inheritance-vacant-house.html">相談の流れを見る</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-owner.jpg" alt="管理の行き届いた賃貸住宅と点検資料" loading="lazy" decoding="async"><span class="domain-card__index">07</span><span class="domain-card__tag">OWNER SUPPORT</span></div><div class="domain-card__body"><h3>賃貸経営オーナー支援</h3><p>空室・修繕・管理負担を見える化し、保有と活用の道筋を整えます。</p><a class="domain-card__link" href="property-management.html">支援内容を見る</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-new-business.jpg" alt="地図と模型を囲んで新規事業を考えるワークショップ" loading="lazy" decoding="async"><span class="domain-card__index">08</span><span class="domain-card__tag">NEW BUSINESS</span></div><div class="domain-card__body"><h3>新規事業・セミナー</h3><p>まだ名前のない相談を、対話と学びから次の事業へ育てます。</p><a class="domain-card__link" href="contact.html?type=partner">アイデアを話す</a></div></article>
+        </div>
+      </div>
+    </section>
 
     <!-- FACILITY（院内ギャラリー・維持） -->
     <section class="facility" id="properties">
