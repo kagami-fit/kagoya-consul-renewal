@@ -357,9 +357,24 @@
     .domain-card__link{display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:16px; color:var(--main); font-size:12px; font-weight:700;}
     .domain-card__link::after{content:"→"; font-family:var(--font-en); transition:transform .2s ease;}
     .domain-card:hover .domain-card__link::after{transform:translateX(4px);}
+    .social-section{padding:96px 0 104px; background:#fff; border-bottom:1px solid var(--line);}
+    .social-section > .wrap{width:min(1160px,calc(100% - 56px));}
+    .social-section__head{display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,460px); gap:52px; align-items:end;}
+    .social-section__head h2{margin-top:16px; font-size:clamp(34px,4.8vw,62px); line-height:1.3; letter-spacing:.015em;}
+    .social-section__lead{color:var(--muted); font-size:14px; line-height:2;}
+    .social-section__body{display:grid; grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr); gap:32px; margin-top:42px; align-items:stretch;}
+    .social-section__visual{min-height:280px; overflow:hidden; border-radius:12px; border:1px solid var(--line); background:var(--soft);}
+    .social-section__visual img{width:100%; height:100%; object-fit:cover; object-position:center;}
+    .social-section__cards{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px;}
+    .social-card{display:flex; flex-direction:column; min-height:280px; padding:22px 18px; border:1px solid var(--line); border-radius:10px; background:var(--soft);}
+    .social-card__label{color:var(--main); font-family:var(--font-en); font-size:10px; letter-spacing:.14em; font-weight:700;}
+    .social-card h3{margin-top:18px; font-size:19px; line-height:1.5;}
+    .social-card p{margin-top:9px; color:var(--muted); font-size:12px; line-height:1.8;}
+    .social-card a{margin-top:auto; padding-top:16px; color:var(--main); font-size:12px; font-weight:700;}
     @media(max-width:1040px){.domain-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.domain-section__head{grid-template-columns:1fr; gap:20px;}}
+    @media(max-width:900px){.social-section__head{grid-template-columns:1fr; gap:20px;}.social-section__body{grid-template-columns:1fr;}.social-section__visual{min-height:240px;}.social-section__cards{grid-template-columns:repeat(3,minmax(0,1fr));}}
     @media(max-width:900px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.entry-grid{grid-template-columns:repeat(2,1fr);}.today__entry-head{grid-template-columns:1fr;}.entry-routes__head{display:block;}.entry-routes__head p{margin-top:6px;}.motion-strip__inner{grid-template-columns:1fr; gap:18px;}.motion-strip__inner > p{grid-column:auto; margin-top:-6px;}}
-    @media(max-width:680px){.site-header__ticker span{max-width:46vw;}.today{padding:76px 0 80px;}.today__head{display:block;}.today__stamp{margin-top:24px;}.today__item{grid-template-columns:1fr auto; gap:12px;}.today__kind{grid-column:1 / -1;}.today__item h3{font-size:16px;}.today__source{display:block;}.today__source-link{display:inline-block; margin-top:12px;}.today__entry{padding:20px;}.project-grid{grid-template-columns:1fr;}.entry-grid{grid-template-columns:1fr;}.today__foot{display:block;}.today__social{margin-top:10px;}.hero-live-note{font-size:11px;}}
+    @media(max-width:680px){.site-header__ticker span{max-width:46vw;}.today{padding:76px 0 80px;}.today__head{display:block;}.today__stamp{margin-top:24px;}.today__item{grid-template-columns:1fr auto; gap:12px;}.today__kind{grid-column:1 / -1;}.today__item h3{font-size:16px;}.today__source{display:block;}.today__source-link{display:inline-block; margin-top:12px;}.today__entry{padding:20px;}.project-grid{grid-template-columns:1fr;}.entry-grid{grid-template-columns:1fr;}.social-section{padding:76px 0 84px;}.social-section > .wrap{width:min(100% - 36px,620px);}.social-section__body{margin-top:30px;}.social-section__cards{grid-template-columns:1fr;}.social-card{min-height:0;}.today__foot{display:block;}.today__social{margin-top:10px;}.hero-live-note{font-size:11px;}}
     @media(max-width:680px){.domain-section{padding:76px 0 84px;}.domain-section > .wrap{width:min(100% - 36px,620px);}.domain-section__head h2{font-size:clamp(34px,10vw,48px);}.domain-grid{grid-template-columns:1fr; gap:16px; margin-top:38px;}.domain-card__body h3{font-size:20px;}}
     /* /ZOROYA:MAIN */
 
@@ -440,7 +455,7 @@
     <div class="site-header__main">
       <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="#business">事業紹介</a><a href="#properties">販売中物件</a><a href="#services">サービス</a><a href="news.html">お知らせ</a></nav>
       <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async" fetchpriority="high"></picture></a>
-      <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="#entry">相談の入口</a><a href="about.html">会社情報</a><a href="#faq">よくある質問</a><a href="contact.html">相談する</a></nav>
+      <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="#social">社会貢献</a><a href="about.html">会社情報</a><a href="#faq">よくある質問</a><a href="contact.html">相談する</a></nav>
 
     <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
     </div>
@@ -448,7 +463,7 @@
   </header>
   <div class="drawer-shade" data-menu-shade></div>
   <aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
-    <nav aria-label="スマートフォンメニュー"><a href="index.html">ホーム<small>HOME</small></a><a href="index.html#business">事業紹介<small>BUSINESS</small></a><a href="for-sale.html">販売中物件<small>FOR SALE</small></a><a href="services.html">サービス<small>SERVICES</small></a><a href="news.html">お知らせ<small>NEWS</small></a><a href="index.html#entry">相談の入口<small>OPEN DOOR</small></a><a href="about.html">会社情報<small>ABOUT</small></a><a href="faq.html">よくある質問<small>FAQ</small></a><a href="privacy.html">プライバシー<small>PRIVACY</small></a></nav>
+    <nav aria-label="スマートフォンメニュー"><a href="index.html">ホーム<small>HOME</small></a><a href="index.html#business">事業紹介<small>BUSINESS</small></a><a href="for-sale.html">販売中物件<small>FOR SALE</small></a><a href="services.html">サービス<small>SERVICES</small></a><a href="news.html">お知らせ<small>NEWS</small></a><a href="index.html#social">社会貢献<small>SOCIAL</small></a><a href="about.html">会社情報<small>ABOUT</small></a><a href="faq.html">よくある質問<small>FAQ</small></a><a href="privacy.html">プライバシー<small>PRIVACY</small></a></nav>
     <div class="drawer-contact"><a class="btn primary" href="contact.html">選択肢を相談する</a><a class="btn ghost" href="tel:0344007994">03-4400-7994</a></div>
   </aside>
   <!-- /ZOROYA:HEADER -->
@@ -545,6 +560,23 @@
           <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-care.jpg" alt="地域のケア拠点と家族資産をつなぐ介護・相続連携の現場" loading="lazy" decoding="async"><span class="domain-card__index">06</span><span class="domain-card__tag">CARE &amp; ESTATE</span></div><div class="domain-card__body"><h3>介護・相続連携</h3><p>介護や相続をきっかけに、不動産・家族・専門家をつなぎます。</p><a class="domain-card__link" href="inheritance-vacant-house.html">相談の流れを見る</a></div></article>
           <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-owner.jpg" alt="管理の行き届いた賃貸住宅と点検資料" loading="lazy" decoding="async"><span class="domain-card__index">07</span><span class="domain-card__tag">OWNER SUPPORT</span></div><div class="domain-card__body"><h3>賃貸経営オーナー支援</h3><p>空室・修繕・管理負担を見える化し、保有と活用の道筋を整えます。</p><a class="domain-card__link" href="property-management.html">支援内容を見る</a></div></article>
           <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-new-business.jpg" alt="地図と模型を囲んで新規事業を考えるワークショップ" loading="lazy" decoding="async"><span class="domain-card__index">08</span><span class="domain-card__tag">NEW BUSINESS</span></div><div class="domain-card__body"><h3>新規事業・セミナー</h3><p>まだ名前のない相談を、対話と学びから次の事業へ育てます。</p><a class="domain-card__link" href="contact.html?type=partner">アイデアを話す</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-section" id="social" aria-labelledby="social-title">
+      <div class="wrap">
+        <div class="social-section__head">
+          <div><span class="eyebrow">Social contribution</span><h2 id="social-title">地域のこれからに、<br><span class="mk">できること</span>を。</h2></div>
+          <p class="social-section__lead">不動産の相談をきっかけに、空き家・介護・地域の担い手など、暮らしに近い課題を専門家や地域の方と一緒に考えています。</p>
+        </div>
+        <div class="social-section__body">
+          <div class="social-section__visual"><img src="src/gen-domain-care.jpg" alt="地域の住まいと支援をつなぐ取り組みのイメージ" loading="lazy" decoding="async"></div>
+          <div class="social-section__cards">
+            <article class="social-card"><span class="social-card__label">空き家・相続</span><h3>家族と地域の未来を考える。</h3><p>暮らしの状況を確認し、無理のない不動産の選択肢を整理します。</p><a href="inheritance-vacant-house.html">相談の流れを見る →</a></article>
+            <article class="social-card"><span class="social-card__label">介護・地域連携</span><h3>必要な支えへ、つなぐ。</h3><p>介護・福祉の専門家と連携し、不動産の相談を次の支援へつなげます。</p><a href="contact.html?type=partner">連携について相談する →</a></article>
+            <article class="social-card"><span class="social-card__label">次の担い手へ</span><h3>対話から、新しい取り組みを。</h3><p>地域の事業者や専門家との対話を重ね、できることを一つずつ育てます。</p><a href="contact.html?type=partner">一緒に取り組む →</a></article>
+          </div>
         </div>
       </div>
     </section>
@@ -660,7 +692,7 @@
         <div class="tel">03-4400-7994</div>
       </div>
       <div class="site-footer__col"><h4>Consulting</h4><a href="sale-consulting.html">売却・調査</a><a href="inheritance-vacant-house.html">相続・空き家</a><a href="purchase-asset.html">購入・資産形成</a><a href="property-management.html">管理・活用</a></div>
-      <div class="site-footer__col"><h4>Guide</h4><a href="index.html#business">事業紹介</a><a href="for-sale.html">販売中物件</a><a href="news.html">お知らせ</a><a href="index.html#entry">相談の入口</a><a href="about.html">会社情報</a><a href="faq.html">よくある質問</a><a href="privacy.html">プライバシー</a></div>
+      <div class="site-footer__col"><h4>Guide</h4><a href="index.html#business">事業紹介</a><a href="for-sale.html">販売中物件</a><a href="news.html">お知らせ</a><a href="index.html#social">社会貢献</a><a href="about.html">会社情報</a><a href="faq.html">よくある質問</a><a href="privacy.html">プライバシー</a></div>
     </div>
     <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
   </footer>
