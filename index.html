@@ -300,6 +300,26 @@
     .today__entry-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,420px); gap:22px; align-items:end;}
     .today__entry-head h3{font-size:clamp(22px,3vw,32px); margin-top:8px;}
     .today__entry-head p{color:var(--muted); font-size:13px;}
+    .project-demo-note{display:inline-block; margin-right:6px; padding:3px 7px; border:1px solid var(--line); border-radius:999px; color:var(--main); font-family:var(--font-en); font-size:9px; letter-spacing:.08em; vertical-align:1px;}
+    .project-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:28px;}
+    .project-card{display:flex; flex-direction:column; min-width:0; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:10px; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;}
+    .project-card:hover{transform:translateY(-4px); border-color:rgba(21,96,130,.45); box-shadow:0 16px 28px -24px rgba(14,40,65,.7);}
+    .project-card__media{position:relative; aspect-ratio:16/10; overflow:hidden; background:#dfeaf0;}
+    .project-card__media::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(14,40,65,.04),transparent 45%,rgba(14,40,65,.45)); pointer-events:none;}
+    .project-card__media img{width:100%; height:100%; object-fit:cover; transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+    .project-card:hover .project-card__media img{transform:scale(1.04);}
+    .project-card__status{position:absolute; z-index:1; left:12px; bottom:11px; padding:5px 8px; border:1px solid rgba(255,255,255,.55); border-radius:999px; background:rgba(14,40,65,.58); color:#fff; font-family:var(--font-en); font-size:9px; letter-spacing:.13em;}
+    .project-card__body{display:flex; flex:1; flex-direction:column; padding:17px 17px 18px;}
+    .project-card__meta{color:var(--main); font-family:var(--font-en); font-size:10px; letter-spacing:.1em;}
+    .project-card__body h4{margin-top:9px; color:var(--ink); font-family:var(--font-display); font-size:18px; line-height:1.55;}
+    .project-card__body p{margin-top:7px; color:var(--muted); font-size:12px; line-height:1.75;}
+    .project-card__link{display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:14px; color:var(--main); font-size:12px; font-weight:700;}
+    .project-card__link::after{content:"→"; font-family:var(--font-en); transition:transform .2s ease;}
+    .project-card:hover .project-card__link::after{transform:translateX(4px);}
+    .entry-routes{margin-top:30px; padding-top:24px; border-top:1px solid var(--line-soft);}
+    .entry-routes__head{display:flex; align-items:baseline; justify-content:space-between; gap:20px;}
+    .entry-routes__head h4{color:var(--ink); font-family:var(--font-display); font-size:20px;}
+    .entry-routes__head p{color:var(--muted); font-size:12px;}
     .entry-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:24px;}
     .entry-card{display:flex; flex-direction:column; min-height:148px; padding:18px; background:#fff; border:1px solid var(--line); border-radius:8px; transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;}
     .entry-card:hover{transform:translateY(-4px); border-color:var(--main); box-shadow:0 14px 30px -24px rgba(14,40,65,.65);}
@@ -338,8 +358,8 @@
     .domain-card__link::after{content:"→"; font-family:var(--font-en); transition:transform .2s ease;}
     .domain-card:hover .domain-card__link::after{transform:translateX(4px);}
     @media(max-width:1040px){.domain-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.domain-section__head{grid-template-columns:1fr; gap:20px;}}
-    @media(max-width:900px){.entry-grid{grid-template-columns:repeat(2,1fr);}.today__entry-head{grid-template-columns:1fr;}.motion-strip__inner{grid-template-columns:1fr; gap:18px;}.motion-strip__inner > p{grid-column:auto; margin-top:-6px;}}
-    @media(max-width:680px){.site-header__ticker span{max-width:46vw;}.today{padding:76px 0 80px;}.today__head{display:block;}.today__stamp{margin-top:24px;}.today__item{grid-template-columns:1fr auto; gap:12px;}.today__kind{grid-column:1 / -1;}.today__item h3{font-size:16px;}.today__source{display:block;}.today__source-link{display:inline-block; margin-top:12px;}.today__entry{padding:20px;}.entry-grid{grid-template-columns:1fr;}.today__foot{display:block;}.today__social{margin-top:10px;}.hero-live-note{font-size:11px;}}
+    @media(max-width:900px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.entry-grid{grid-template-columns:repeat(2,1fr);}.today__entry-head{grid-template-columns:1fr;}.entry-routes__head{display:block;}.entry-routes__head p{margin-top:6px;}.motion-strip__inner{grid-template-columns:1fr; gap:18px;}.motion-strip__inner > p{grid-column:auto; margin-top:-6px;}}
+    @media(max-width:680px){.site-header__ticker span{max-width:46vw;}.today{padding:76px 0 80px;}.today__head{display:block;}.today__stamp{margin-top:24px;}.today__item{grid-template-columns:1fr auto; gap:12px;}.today__kind{grid-column:1 / -1;}.today__item h3{font-size:16px;}.today__source{display:block;}.today__source-link{display:inline-block; margin-top:12px;}.today__entry{padding:20px;}.project-grid{grid-template-columns:1fr;}.entry-grid{grid-template-columns:1fr;}.today__foot{display:block;}.today__social{margin-top:10px;}.hero-live-note{font-size:11px;}}
     @media(max-width:680px){.domain-section{padding:76px 0 84px;}.domain-section > .wrap{width:min(100% - 36px,620px);}.domain-section__head h2{font-size:clamp(34px,10vw,48px);}.domain-grid{grid-template-columns:1fr; gap:16px; margin-top:38px;}.domain-card__body h3{font-size:20px;}}
     /* /ZOROYA:MAIN */
 
@@ -482,7 +502,7 @@
     <section class="today" id="today" aria-labelledby="today-title">
       <div class="wrap">
         <div class="today__head">
-          <div><span class="eyebrow">Live update</span><h2 id="today-title">今日の籠や</h2><p>新規案件、商談、成約、提携、新事業。いま動いていることを、できるだけそのままお知らせします。</p></div>
+          <div><span class="eyebrow">Live update</span><h2 id="today-title">今日の籠や</h2><p>不動産の調査・商談・連携など、現在進んでいる活動を公開できる範囲で紹介します。</p></div>
           <div class="today__stamp"><span>LAST UPDATE</span><strong data-live-updated>2026.08.22</strong><small>随時更新</small></div>
         </div>
         <div class="today__grid" id="todayFeed" aria-live="polite">
@@ -491,9 +511,17 @@
           <a class="today__item" href="contact.html?type=project"><span class="today__kind today__kind--close">CLOSE</span><div><strong>成約</strong><h3>不動産コンサル案件が成約</h3><p>3日前｜関係者と条件を整理し、実行方針が決まりました。</p></div><span class="today__arrow">→</span></a>
           <a class="today__item" href="contact.html?type=partner"><span class="today__kind today__kind--partner">PARTNER</span><div><strong>提携</strong><h3>士業・介護事業者との連携を開始</h3><p>4日前｜相続と空き家の相談を一つの窓口へつなぎます。</p></div><span class="today__arrow">→</span></a>
         </div>
-        <div class="today__source"><div><span class="today__source-label">更新の考え方</span><strong>現場で起きたことを、公開できる範囲で短く記録。</strong><p>SNS投稿や社内更新を集約し、公開前に内容を確認してから掲載します。</p></div><a class="today__source-link" href="about.html">運用の考え方 →</a></div>
-        <div class="today__entry" id="entry" aria-labelledby="entry-title"><div class="today__entry-head"><div><span class="eyebrow">Open door</span><h3 id="entry-title">次の仕事の入口を、4つに分けました。</h3></div><p>相談内容が固まっていなくても大丈夫です。近い入口から状況を共有いただければ、担当者が次の一歩をご案内します。</p></div><div class="entry-grid"><a class="entry-card" href="contact.html?type=project"><span>01 / PROJECT</span><strong>案件相談</strong><small>不動産・地上げ・開発・相続など</small><em>状況を共有する →</em></a><a class="entry-card" href="contact.html?type=partner"><span>02 / PARTNER</span><strong>協業</strong><small>専門家・地域事業者との連携</small><em>提携を相談する →</em></a><a class="entry-card" href="contact.html?type=investment"><span>03 / INVEST</span><strong>投資</strong><small>事業・物件の可能性を検討</small><em>投資について話す →</em></a><a class="entry-card" href="contact.html?type=recruit"><span>04 / JOIN</span><strong>採用</strong><small>動いている案件に関わる</small><em>採用について聞く →</em></a></div></div>
-        <div class="today__foot"><span>SNSの投稿を起点に、今日の更新へつなげます。</span><span class="today__social"><a href="https://www.threads.net/" target="_blank" rel="noopener">Threads</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></span></div>
+        <div class="today__source"><div><span class="today__source-label">Latest activity</span><strong>新しい動きは、随時このページに追加しています。</strong><p>案件の進捗・お知らせ・読みものをまとめてご覧いただけます。</p></div><a class="today__source-link" href="news.html">お知らせを見る →</a></div>
+        <div class="today__entry" id="entry" aria-labelledby="entry-title">
+          <div class="today__entry-head"><div><span class="eyebrow">Project snapshots</span><h3 id="entry-title">いま動いているプロジェクト。</h3></div><p><span class="project-demo-note">公開イメージ（デモ）</span>現在進行中のテーマを、写真と短いレポートで紹介しています。実際の案件は公開できる内容へ差し替えて更新します。</p></div>
+          <div class="project-grid">
+            <article class="project-card"><div class="project-card__media"><img src="src/project-development.jpg" alt="既存住宅地と整備中の土地をつなぐ開発プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">DEMO / IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">地上げ・開発　／　2026.08</span><h4>土地の可能性を読み解き、街の未来を描く。</h4><p>既存の街並みと新しい計画を見比べながら、調査と対話を重ねています。</p><a class="project-card__link" href="contact.html?type=project">このテーマを相談する</a></div></article>
+            <article class="project-card"><div class="project-card__media"><img src="src/project-inheritance-care.jpg" alt="古い家と地域の支援拠点をつなぐ相続・地域連携プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">DEMO / IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">相続・地域連携　／　2026.08</span><h4>家族のこれからを、地域の支えと一緒に考える。</h4><p>不動産だけでなく、介護や専門家との連携も含めて選択肢を整理しています。</p><a class="project-card__link" href="contact.html?type=partner">連携について相談する</a></div></article>
+            <article class="project-card"><div class="project-card__media"><img src="src/project-rental-management.jpg" alt="植栽と共用部を整えた賃貸住宅の改善プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">DEMO / IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">賃貸運営・活用　／　2026.08</span><h4>持ち続ける選択肢を、運営の現場から整える。</h4><p>空室や修繕の状況を確認し、オーナーと活用の道筋を検討しています。</p><a class="project-card__link" href="property-management.html">支援内容を見る</a></div></article>
+          </div>
+          <div class="entry-routes"><div class="entry-routes__head"><div><span class="eyebrow">Connect</span><h4>ご相談・ご一緒できること</h4></div><p>テーマが決まっていない段階でも、近い入口からご連絡ください。</p></div><div class="entry-grid"><a class="entry-card" href="contact.html?type=project"><span>案件相談</span><strong>不動産の状況を相談する</strong><small>売却・相続・開発など</small><em>相談する →</em></a><a class="entry-card" href="contact.html?type=partner"><span>協業</span><strong>専門家・地域事業者の方へ</strong><small>一緒に取り組むテーマを探す</small><em>協業を相談する →</em></a><a class="entry-card" href="contact.html?type=investment"><span>投資</span><strong>事業・物件の可能性を話す</strong><small>投資・事業提携について</small><em>話を聞く →</em></a><a class="entry-card" href="contact.html?type=recruit"><span>採用</span><strong>動いている案件に関わる</strong><small>チーム・仕事について</small><em>採用について聞く →</em></a></div></div>
+        </div>
+        <div class="today__foot"><span>新しい動きは、公式SNSでも紹介しています。</span><span class="today__social"><a href="https://www.threads.net/" target="_blank" rel="noopener">Threads</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></span></div>
       </div>
     </section>
 
