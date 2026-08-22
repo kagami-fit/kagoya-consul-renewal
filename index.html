@@ -118,8 +118,11 @@
        FACILITY（院内ギャラリー・グリッド・維持。gallery 型割当無し）
        ============================================================ */
     .facility{padding:116px 0;}
-    .facility .head{margin-bottom:44px;}
+    .facility .head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:44px;}
     .facility h2.big{font-size:clamp(28px,4vw,46px); font-weight:800; margin-top:12px;}
+    .facility__link{display:inline-flex; align-items:center; gap:8px; flex:0 0 auto; margin-bottom:3px; padding:11px 16px; border:1px solid var(--main); color:var(--main); font-size:12px; font-weight:700; text-decoration:none; transition:background .2s ease,color .2s ease,transform .2s ease;}
+    .facility__link:hover{background:var(--main); color:#fff; transform:translateY(-2px);}
+    .facility__link::after{content:"→"; font-family:var(--font-en);}
     .fac-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:190px; gap:14px;}
     .fac-grid figure{margin:0; overflow:hidden; border-radius:8px; position:relative;}
     .fac-grid img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
@@ -405,6 +408,8 @@
     @media (max-width:768px){
       body{font-size:15px;}
       .site-header__topbar .in{display:none;} .site-header__cta{display:none;}
+      .facility .head{display:block;}
+      .facility__link{margin-top:20px;}
       .fac-grid{grid-template-columns:1fr; grid-auto-rows:200px;} .fac-grid .big2,.fac-grid .wide{grid-column:span 1; grid-row:span 1;}
       .btn{width:100%;}
       .hero .trust .ti{border-right:0; border-bottom:1px solid var(--line);}
@@ -453,7 +458,7 @@
   <header class="site-header">
     <div class="site-header__topbar"><div class="in"><span class="site-header__ticker"><b>LIVE</b><span data-live-ticker>案件・商談・提携の動きを随時更新しています。</span></span><div class="right"><span>10:00–18:00／木曜定休</span><span class="tel">03-4400-7994</span><a href="contact.html">相談する</a></div></div></div>
     <div class="site-header__main">
-      <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="#business">事業紹介</a><a href="#properties">販売中物件</a><a href="#services">サービス</a><a href="news.html">お知らせ</a></nav>
+      <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="#business">事業紹介</a><a href="for-sale.html">販売中物件</a><a href="#services">サービス</a><a href="news.html">お知らせ</a></nav>
       <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async" fetchpriority="high"></picture></a>
       <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="#social">社会貢献</a><a href="about.html">会社情報</a><a href="#faq">よくある質問</a><a href="contact.html">相談する</a></nav>
 
@@ -584,7 +589,7 @@
     <!-- FACILITY（院内ギャラリー・維持） -->
     <section class="facility" id="properties">
       <div class="wrap">
-        <div class="head"><span class="eyebrow" data-reveal>Current listings</span><h2 class="big" data-reveal>販売中物件を、<span class="mk">写真</span>で。</h2></div>
+        <div class="head"><div><span class="eyebrow" data-reveal>Current listings</span><h2 class="big" data-reveal>販売中物件を、<span class="mk">写真</span>で。</h2></div><a class="facility__link" href="for-sale.html">販売中物件一覧を見る</a></div>
         <div class="fac-grid" id="facgrid">
           <figure class="big2"><picture><source type="image/webp" srcset="src/gen-for-sale.webp"><img src="src/gen-for-sale.jpg" alt="住宅と集合住宅が混在する街並みのイメージ" loading="lazy" decoding="async"></picture><figcaption>販売中物件一覧</figcaption></figure>
           <figure><picture><source type="image/webp" srcset="src/listing-cosmo-kawagoe.webp"><img src="src/listing-cosmo-kawagoe.jpg" alt="コスモシティ川越の現行公式掲載写真" loading="lazy" decoding="async"></picture><figcaption>コスモシティ川越</figcaption></figure>
