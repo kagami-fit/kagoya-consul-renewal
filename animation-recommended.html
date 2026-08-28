@@ -548,6 +548,12 @@
 
   /* Today's KAGOYA — 縦タイムライン */
   .motion-variant--recommended .today__grid{position:relative;border-top:0;padding:6px 0 8px 74px}
+  /* 読み込み順やアンカー遷移に左右されず、主要テキストは常に読める状態を保証 */
+  .motion-variant--recommended .today__head > *,
+  .motion-variant--recommended #todayFeed .today__item,
+  .motion-variant--recommended .today__source > *,
+  .motion-variant--recommended .today__entry-head > *,
+  .motion-variant--recommended .entry-card{opacity:1!important;visibility:visible!important}
   .motion-variant--recommended .rec-timeline-line{position:absolute;left:28px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,var(--main),var(--motion-accent));transform:scaleY(0);transform-origin:top}
   .motion-variant--recommended .today__item{position:relative;grid-template-columns:112px minmax(0,1fr) auto;min-height:128px;padding:25px 18px;border-top:1px solid var(--line);border-bottom:0;background:#fff}
   .motion-variant--recommended .today__item:last-child{border-bottom:1px solid var(--line)}
@@ -1197,7 +1203,8 @@
     grid._recLineTrigger=gsap.to(line,{scaleY:1,ease:'none',scrollTrigger:{trigger:grid,start:'top 76%',end:'bottom 48%',scrub:.7}}).scrollTrigger;
     items.forEach(function(item,index){
       var node=item.querySelector('.rec-timeline-node');
-      gsap.from(item,{x:28,opacity:0,duration:.62,delay:(index%2)*.04,ease:'power4.out',scrollTrigger:{trigger:item,start:'top 88%',once:true}});
+      gsap.set(item,{opacity:1});
+      gsap.fromTo(item,{x:28},{x:0,duration:.62,delay:(index%2)*.04,ease:'power4.out',scrollTrigger:{trigger:item,start:'top 88%',once:true}});
       gsap.to(node,{scale:1,duration:.42,ease:'back.out(1.6)',scrollTrigger:{trigger:item,start:'top 72%',once:true}});
     });
     ScrollTrigger.refresh();
