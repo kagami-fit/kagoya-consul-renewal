@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;700;900&family=Zen+Kaku+Gothic:wght@400;500;700;900&family=Zen+Old+Mincho:wght@600;700&display=swap");
+
 :root {
   --bg: #F4F8FA;
   --surface: #FFFFFF;
@@ -12,9 +14,9 @@
   --wrap: 1120px;
   --wide: 1320px;
   --header: 70px;
-  --font-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  --font-display: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
-  --font-en: "Inter", "Noto Sans", Arial, sans-serif;
+  --font-jp: "Zen Kaku Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-display: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-en: "Space Grotesk", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }

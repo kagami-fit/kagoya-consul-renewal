@@ -72,7 +72,7 @@
     hero.addEventListener('pointerleave', () => { if (copy) copy.style.transform = ''; });
   }
 
-  // 「今日の籠や」はJSONの差し替えだけで更新できる。
+  // 「Today’s KAGOYA」はJSONの差し替えだけで更新できる。
   // 本番ではmeta[name="kagoya-today-feed"]をWordPress REST / WorkerのURLへ差し替え可能。
   // file:// プレビューではfetchが制限されるため、HTMLに入れた初期表示をそのまま使う。
   const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -115,10 +115,10 @@
   // 4つの入口（案件相談／協業／投資／採用）は同じフォームを使い、typeだけを引き継ぐ。
   // 受付側で案件ごとのフォームを増やさず、到着時に相談目的を見える化する設計。
   const inquiryRoutes = {
-    project: { title: '案件相談をはじめる', lead: '不動産・地上げ・開発・相続など、分かる範囲からお聞かせください。', label: '案件相談', description: '所在地や現在の状況を確認し、次に必要な調査と選択肢を整理します。' },
-    partner: { title: '協業の相談をはじめる', lead: '専門家・地域事業者・介護など、連携できるテーマをお聞かせください。', label: '協業', description: 'できること、必要な役割、進め方を確認し、最初の打ち合わせへつなげます。' },
-    investment: { title: '投資について相談する', lead: '事業・物件の可能性とリスクを、対話しながら整理します。', label: '投資', description: '対象・時期・関係者を確認し、公開できる情報から検討を始めます。' },
-    recruit: { title: '採用について相談する', lead: 'いま動いている案件に、どのように関わりたいかお聞かせください。', label: '採用', description: '経験や関心のある領域を確認し、現在の募集・協働機会をご案内します。' }
+    project: { title: '物件・相続について相談する', lead: '売却・買取・底地・借地・相続など、分かる範囲からお聞かせください。', label: '物件・相続相談', description: '所在地や現在の状況を確認し、次に必要な調査と選択肢を整理します。' },
+    partner: { title: '協業・連携について相談する', lead: '専門家・地域事業者との連携や社会貢献など、ご一緒できるテーマをお聞かせください。', label: '協業・連携', description: 'できること、必要な役割、進め方を確認し、最初の打ち合わせへつなげます。' },
+    investment: { title: '事業・資産形成について相談する', lead: 'エフクリ、投資、事業提携などの可能性とリスクを、対話しながら整理します。', label: '事業・資産形成', description: '対象・時期・関係者を確認し、公開できる情報から検討を始めます。' },
+    recruit: { title: 'セミナー・採用について相談する', lead: '企業向けセミナーのご依頼や、動いている案件への関わり方をお聞かせください。', label: 'セミナー・採用', description: 'ご希望のテーマや経験を確認し、担当者から次の進め方をご案内します。' }
   };
   const route = inquiryRoutes[new URLSearchParams(window.location.search).get('type')];
   if (route) {
