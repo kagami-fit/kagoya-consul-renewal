@@ -167,6 +167,59 @@
     }
 
     /* ============================================================
+       PURCHASE AREA ＝ 買取対象・対応エリア図解
+       参考画像の3分割構成を、実テキスト＋インラインSVGで再構成。
+       ============================================================ */
+    .purchase-area{padding:118px 0 126px; overflow:hidden; background:#fff; border-bottom:1px solid var(--line);}
+    .purchase-area > .wrap{width:min(1180px,calc(100% - 56px));}
+    .purchase-area__head{max-width:880px; margin:0 auto; text-align:center;}
+    .purchase-area__building{display:grid; place-items:center; width:62px; height:62px; margin:0 auto 16px; color:var(--main);}
+    .purchase-area__building svg{width:100%; height:100%;}
+    .purchase-area__head .eyebrow{justify-content:center;}
+    .purchase-area__head h2{margin-top:18px; font-size:clamp(34px,5vw,58px); line-height:1.48; letter-spacing:.015em;}
+    .purchase-area__head h2 .mk{white-space:nowrap;}
+    .purchase-area__lead{max-width:48em; margin:20px auto 0; color:var(--muted); font-size:15px; line-height:2;}
+    .purchase-area__board{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:54px; overflow:hidden; border:1px solid var(--line); border-radius:18px; background:linear-gradient(135deg,#FAFCFD 0%,#EEF5F5 100%); box-shadow:0 28px 64px -44px rgba(14,40,65,.55);}
+    .area-card{position:relative; display:flex; min-width:0; min-height:490px; flex-direction:column; padding:24px 22px 26px;}
+    .area-card + .area-card{border-left:1px dashed rgba(21,96,130,.26);}
+    .area-card__label{position:relative; z-index:2; display:flex; min-height:88px; align-items:center; gap:12px; padding:16px 17px; border:1px solid rgba(21,96,130,.1); border-radius:10px; background:rgba(255,255,255,.94); box-shadow:0 11px 24px -18px rgba(14,40,65,.6);}
+    .area-card__pin{flex:0 0 22px; width:22px; height:22px; color:var(--main);}
+    .area-card__label strong{display:block; color:var(--ink); font-family:var(--font-display); font-size:17px; line-height:1.55;}
+    .area-card__label span{display:block; margin-top:2px; color:var(--muted); font-size:11px; line-height:1.55;}
+    .area-card__visual{position:relative; display:flex; flex:1; min-height:300px; align-items:center; justify-content:center; margin-top:20px; overflow:hidden; border-radius:10px;}
+    .area-card__visual::before{content:""; position:absolute; inset:8% 5%; border-radius:50%; background:radial-gradient(circle,rgba(21,96,130,.08),rgba(21,96,130,0) 68%);}
+    .area-card__visual svg{position:relative; z-index:1; width:100%; height:auto; max-height:310px; overflow:visible;}
+    .area-card__caption{position:relative; z-index:2; margin-top:12px; color:var(--body); font-size:12px; line-height:1.8; text-align:center;}
+    .purchase-area__foot{display:flex; align-items:center; justify-content:space-between; gap:28px; margin-top:30px;}
+    .purchase-area__note{max-width:720px; color:var(--muted); font-size:12px; line-height:1.9;}
+    .purchase-area__foot .btn{flex:0 0 auto;}
+    @media(max-width:960px){
+      .purchase-area__board{grid-template-columns:1fr; width:min(680px,100%); margin-right:auto; margin-left:auto;}
+      .area-card{display:grid; grid-template-columns:minmax(220px,.9fr) minmax(300px,1.1fr); grid-template-rows:auto auto; gap:0 24px; min-height:0; padding:24px;}
+      .area-card + .area-card{border-top:1px dashed rgba(21,96,130,.26); border-left:0;}
+      .area-card__label{grid-column:1; grid-row:1; align-self:end;}
+      .area-card__visual{grid-column:2; grid-row:1 / span 2; min-height:260px; margin-top:0;}
+      .area-card__caption{grid-column:1; grid-row:2; align-self:start; text-align:left;}
+    }
+    @media(max-width:680px){
+      .purchase-area{padding:82px 0 88px;}
+      .purchase-area > .wrap{width:min(100% - 36px,620px);}
+      .purchase-area__building{width:54px; height:54px; margin-bottom:12px;}
+      .purchase-area__head h2{font-size:clamp(28px,7.7vw,36px); line-height:1.52;}
+      .purchase-area__head h2 .mk{white-space:normal;}
+      .purchase-area__lead{font-size:14px; text-align:left;}
+      .purchase-area__board{margin-top:38px; border-radius:14px;}
+      .area-card{display:flex; padding:18px 16px 22px;}
+      .area-card__label{min-height:0; align-self:stretch; padding:14px;}
+      .area-card__label strong{font-size:16px;}
+      .area-card__visual{width:100%; min-height:245px; margin-top:14px;}
+      .area-card__visual svg{max-height:260px;}
+      .area-card__caption{text-align:center;}
+      .purchase-area__foot{align-items:stretch; flex-direction:column; margin-top:24px;}
+      .purchase-area__foot .btn{width:100%;}
+    }
+
+    /* ============================================================
        PROCESS ＝ process-01（縦ステップ・スパインのラインドロー）
        テンプレ --accent#1F7A66→--main, --accent2#D98B2B→--teal-deep にマッピング
        ============================================================ */
@@ -376,7 +429,7 @@
     .domain-card__link{display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:16px; color:var(--main); font-size:12px; font-weight:700;}
     .domain-card__link::after{content:"→"; font-family:var(--font-en); transition:transform .2s ease;}
     .domain-card:hover .domain-card__link::after{transform:translateX(4px);}
-    #social,#contact-guide{scroll-margin-top:122px;}
+    #social,#service-area,#contact-guide{scroll-margin-top:122px;}
     .social-section{padding:96px 0 104px; background:#fff; border-bottom:1px solid var(--line);}
     .social-section > .wrap{width:min(1160px,calc(100% - 56px));}
     .social-section__head{display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,460px); gap:52px; align-items:end;}
@@ -482,7 +535,7 @@
     <div class="site-header__main">
       <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="#business">事業紹介</a><a href="for-sale.html">販売中物件</a><a href="#services">サービス</a><a href="news.html">お知らせ</a></nav>
       <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async" fetchpriority="high"></picture></a>
-      <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="#social">社会貢献</a><a href="about.html">会社情報</a><a href="#contact-guide">対応エリア</a><a href="contact.html">相談する</a></nav>
+      <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="#social">社会貢献</a><a href="about.html">会社情報</a><a href="#service-area">対応エリア</a><a href="contact.html">相談する</a></nav>
 
     <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
     </div>
@@ -490,7 +543,7 @@
   </header>
   <div class="drawer-shade" data-menu-shade></div>
   <aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
-    <nav aria-label="スマートフォンメニュー"><a href="index.html">ホーム<small>HOME</small></a><a href="index.html#business">事業紹介<small>BUSINESS</small></a><a href="for-sale.html">販売中物件<small>FOR SALE</small></a><a href="services.html">サービス<small>SERVICES</small></a><a href="news.html">お知らせ<small>NEWS</small></a><a href="index.html#social">社会貢献<small>SOCIAL</small></a><a href="about.html">会社情報<small>ABOUT</small></a><a href="index.html#contact-guide">対応エリア<small>AREA</small></a><a href="privacy.html">プライバシー<small>PRIVACY</small></a></nav>
+    <nav aria-label="スマートフォンメニュー"><a href="index.html">ホーム<small>HOME</small></a><a href="index.html#business">事業紹介<small>BUSINESS</small></a><a href="for-sale.html">販売中物件<small>FOR SALE</small></a><a href="services.html">サービス<small>SERVICES</small></a><a href="news.html">お知らせ<small>NEWS</small></a><a href="index.html#social">社会貢献<small>SOCIAL</small></a><a href="about.html">会社情報<small>ABOUT</small></a><a href="index.html#service-area">対応エリア<small>AREA</small></a><a href="privacy.html">プライバシー<small>PRIVACY</small></a></nav>
     <div class="drawer-contact"><a class="btn primary" href="contact.html">選択肢を相談する</a><a class="btn ghost" href="tel:0344007994">03-4400-7994</a></div>
   </aside>
   <!-- /ZOROYA:HEADER -->
@@ -627,6 +680,108 @@
         </div>
       </div>
     </section>
+    <!-- 買取対象・対応エリア：参考図の3分割構成をサイト用に再設計 -->
+    <section class="purchase-area" id="service-area" aria-labelledby="purchase-area-title">
+      <div class="wrap">
+        <div class="purchase-area__head">
+          <span class="purchase-area__building" aria-hidden="true" data-reveal>
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 54h45M17 54V14h29v40M26 54V43h11v11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M23 21h5v6h-5zM35 21h5v6h-5zM23 32h5v6h-5zM35 32h5v6h-5z" fill="#C49A4A"/>
+              <path d="M49 47c0-6 2.5-11 6-11s6 5 6 11c0 3-2.7 5-6 5s-6-2-6-5Z" fill="#DCEFED" stroke="currentColor" stroke-width="2"/>
+              <path d="M55 43v11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="eyebrow" data-reveal>Purchase area</span>
+          <h2 id="purchase-area-title" data-reveal>収益不動産／空きビル／空き家の<br><span class="mk">売却をご相談ください。</span></h2>
+          <p class="purchase-area__lead" data-reveal>物件の種類と所在地に合わせて、買取・売却の可能性を整理します。まだ売却を決めていない段階でも、状況確認からご相談いただけます。</p>
+        </div>
+
+        <div class="purchase-area__board" aria-label="主な買取対象エリア" data-reveal>
+          <article class="area-card">
+            <div class="area-card__label">
+              <svg class="area-card__pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="#fff"/></svg>
+              <div><strong>全国の収益不動産</strong><span>買取のご相談を承ります</span></div>
+            </div>
+            <div class="area-card__visual">
+              <svg viewBox="0 0 340 300" role="img" aria-label="全国を表す日本地図のイラスト">
+                <g fill="#1C9C9B">
+                  <path d="M250 29 296 38l13 29-24 24-43-10-8-27 16-25Z"/>
+                  <path d="M221 92c18 3 36 11 45 21 7 9 3 17-8 21-19 7-27 17-33 29-8 17-20 22-38 26-18 4-29 15-41 27-13 13-31 18-49 17l-20-13 8-20 32-8c17-4 29-13 40-26 10-11 22-18 34-24 12-6 18-15 19-27l11-23Z"/>
+                  <path d="M116 238 92 252l-28-3-12-17 10-20 28-2 22 11 4 17Z"/>
+                  <path d="m139 220 50 4 13 12-21 12-47-5 5-23Z"/>
+                  <circle cx="52" cy="274" r="5"/><circle cx="37" cy="286" r="3"/>
+                </g>
+                <g transform="translate(36 64)">
+                  <path d="M4 18C4 8 12 0 22 0h79c10 0 18 8 18 18v40c0 10-8 18-18 18H58L43 91l2-15H22C12 76 4 68 4 58V18Z" fill="#fff" stroke="#D8E4E8" stroke-width="2"/>
+                  <text x="61" y="48" text-anchor="middle" fill="#0E2841" font-family="Zen Kaku Gothic, sans-serif" font-size="25" font-weight="700">全国</text>
+                </g>
+                <g transform="translate(204 180) rotate(-12)">
+                  <circle cx="30" cy="30" r="25" fill="#fff" fill-opacity=".92" stroke="#0E2841" stroke-width="7"/>
+                  <path d="m49 49 38 38" stroke="#0E2841" stroke-width="11" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+            <p class="area-card__caption">一棟収益、区分、事業用不動産など、所在地を問わずまずは概要をお聞かせください。</p>
+          </article>
+
+          <article class="area-card">
+            <div class="area-card__label">
+              <svg class="area-card__pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="#fff"/></svg>
+              <div><strong>東京23区（特に都心6区）</strong><span>収益不動産・空きビルの買取</span></div>
+            </div>
+            <div class="area-card__visual">
+              <svg viewBox="0 0 340 300" role="img" aria-label="東京23区と都心6区を表す図解">
+                <g fill="#E2EAED" stroke="#fff" stroke-width="2">
+                  <path d="M42 40h76l18 48-49 25-53-23 8-50Z"/><path d="m119 39 67-12 31 45-34 39-47-23-17-49Z"/><path d="m187 27 69 12 29 41-48 35-54-4 34-39-30-45Z"/>
+                  <path d="m34 91 53 22 14 45-60 29-24-48 17-48Z"/><path d="m237 115 48-35 38 39-12 55-67 5-7-64Z"/>
+                  <path d="m41 187 60-29 32 35-25 64-58-9-9-61Z"/><path d="m244 179 67-5 6 58-54 35-44-39 25-49Z"/>
+                </g>
+                <g fill="#1C9C9B" stroke="#fff" stroke-width="2">
+                  <path d="m101 112 42-16 32 30-15 42-44 5-24-31 9-30Z"/><path d="m143 96 40 15 20 34-43 23 15-42-32-30Z"/>
+                  <path d="m92 142 24 31-9 42-42-13 4-44 23-16Z"/><path d="m116 173 44-5 22 34-30 37-45-24 9-42Z"/>
+                  <path d="m160 168 43-23 31 23-10 43-42-9-22-34Z"/><path d="m182 202 42 9-5 43-47 12-20-27 30-37Z"/>
+                </g>
+                <g font-family="Zen Kaku Gothic, sans-serif" font-size="11" font-weight="700" text-anchor="middle">
+                  <text x="76" y="72" fill="#415563">練馬区</text><text x="168" y="62" fill="#415563">板橋区</text><text x="260" y="72" fill="#415563">足立区</text>
+                  <text x="132" y="140" fill="#fff">文京区</text><text x="174" y="136" fill="#fff">新宿区</text><text x="91" y="184" fill="#fff">渋谷区</text>
+                  <text x="136" y="204" fill="#fff">千代田区</text><text x="199" y="183" fill="#fff">中央区</text><text x="187" y="236" fill="#fff">港区</text>
+                  <text x="74" y="236" fill="#415563">世田谷区</text><text x="280" y="210" fill="#415563">江東区</text><text x="274" y="137" fill="#415563">江戸川区</text>
+                </g>
+              </svg>
+            </div>
+            <p class="area-card__caption">千代田・中央・港・新宿・文京・渋谷の都心6区を中心に、東京23区のご相談に対応します。</p>
+          </article>
+
+          <article class="area-card">
+            <div class="area-card__label">
+              <svg class="area-card__pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="#fff"/></svg>
+              <div><strong>国道16号線の内側エリア</strong><span>空き家の買取相談を承ります</span></div>
+            </div>
+            <div class="area-card__visual">
+              <svg viewBox="0 0 340 300" role="img" aria-label="国道16号線内側の主な都市を表す図解">
+                <path d="M81 66c38-36 138-43 189-3 44 34 52 103 18 151-34 49-106 75-168 49-58-24-85-82-63-137 6-17 14-41 24-60Z" fill="#1C9C9B"/>
+                <path d="M91 79c36-29 126-36 169-2 37 29 42 88 13 127-29 40-91 61-144 40-50-20-72-68-53-113 5-15 8-38 15-52Z" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="6 6" opacity=".75"/>
+                <path d="M218 108c19 17 26 41 19 64-7 25-31 45-57 47-31 3-59-15-68-43-8-24 1-53 22-69 23-18 60-18 84 1Z" fill="#fff"/>
+                <g font-family="Zen Kaku Gothic, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+                  <g transform="translate(107 48)"><rect width="93" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="46.5" y="24" fill="#0E2841">さいたま市</text></g>
+                  <g transform="translate(128 122)"><rect width="78" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="39" y="24" fill="#0E2841">新宿区</text></g>
+                  <g transform="translate(237 126)"><rect width="78" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="39" y="24" fill="#0E2841">千葉市</text></g>
+                  <g transform="translate(75 220)"><rect width="78" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="39" y="24" fill="#0E2841">横浜市</text></g>
+                </g>
+                <g fill="#0E2841" stroke="#fff" stroke-width="2"><circle cx="154" cy="86" r="5"/><circle cx="167" cy="160" r="5"/><circle cx="278" cy="165" r="5"/><circle cx="123" cy="220" r="5"/></g>
+              </svg>
+            </div>
+            <p class="area-card__caption">東京・神奈川・埼玉・千葉にまたがる、国道16号線内側の空き家を主な対象としています。</p>
+          </article>
+        </div>
+
+        <div class="purchase-area__foot" data-reveal>
+          <p class="purchase-area__note">※物件の所在地・種類・状態などにより、対応方法が異なります。対象に含まれるか分からない場合も、まずは物件概要をお知らせください。</p>
+          <a class="btn primary" href="contact.html?type=project">買取・売却を相談する <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
     <!-- 問い合わせ・対応エリア：相談目的から迷わず入れる4導線 -->
     <section class="c-cta" id="contact-guide">
       <div class="c-cta__bg"><picture><source type="image/webp" srcset="src/gen-hero.webp"><img src="src/gen-hero.jpg" alt="" loading="eager" decoding="async" fetchpriority="high"></picture></div>
@@ -638,7 +793,7 @@
             <span class="eyebrow" data-reveal>Contact / Area</span>
             <h2 data-reveal>不動産のことを、<br><span class="mk">まずは知る</span>ところから。</h2>
             <p class="lead" data-reveal>売却を決めていなくても、資料がそろっていなくても構いません。物件の所在地と現在の状況を、分かる範囲でお聞かせください。</p>
-            <div class="contact-guide__area" data-reveal><b>対応エリア</b><p>東京都目黒区を拠点に、物件所在地を問わずまずはご相談ください。案件内容を確認し、対応方法をご案内します。</p></div>
+            <div class="contact-guide__area" data-reveal><b>主な買取対象</b><p>収益不動産は全国、空きビルは東京23区、空き家は国道16号線内側を主な対象としてご相談を承ります。</p></div>
             <a class="contact-guide__phone" href="tel:0344007994">03-4400-7994 <small>10:00〜18:00／木曜定休</small></a>
           </div>
           <div class="contact-guide__routes" data-reveal>
@@ -663,7 +818,7 @@
         <a class="tel" href="tel:0344007994">03-4400-7994</a>
       </div>
       <div class="site-footer__col"><h4>Business</h4><a href="inheritance-vacant-house.html">相続コンサルティング</a><a href="sale-consulting.html">不動産コンサルティング</a><a href="contact.html?type=project">仲介・買取／底地・借地</a><a href="contact.html?type=investment">エフクリ</a><a href="property-management.html">賃貸経営オーナー支援</a><a href="corporate-benefits.html">企業向けセミナー</a></div>
-      <div class="site-footer__col"><h4>Guide</h4><a href="index.html#business">事業紹介</a><a href="for-sale.html">販売中物件</a><a href="news.html">お知らせ</a><a href="index.html#social">社会貢献</a><a href="about.html">会社情報</a><a href="index.html#contact-guide">対応エリア</a><a href="contact.html">お問い合わせ</a><a href="privacy.html">プライバシー</a></div>
+      <div class="site-footer__col"><h4>Guide</h4><a href="index.html#business">事業紹介</a><a href="for-sale.html">販売中物件</a><a href="news.html">お知らせ</a><a href="index.html#social">社会貢献</a><a href="about.html">会社情報</a><a href="index.html#service-area">対応エリア</a><a href="contact.html">お問い合わせ</a><a href="privacy.html">プライバシー</a></div>
     </div>
     <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
   </footer>
