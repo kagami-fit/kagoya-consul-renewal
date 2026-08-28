@@ -188,7 +188,17 @@
     .area-card__label span{display:block; margin-top:2px; color:var(--muted); font-size:11px; line-height:1.55;}
     .area-card__visual{position:relative; display:flex; flex:1; min-height:300px; align-items:center; justify-content:center; margin-top:20px; overflow:hidden; border-radius:10px;}
     .area-card__visual::before{content:""; position:absolute; inset:8% 5%; border-radius:50%; background:radial-gradient(circle,rgba(21,96,130,.08),rgba(21,96,130,0) 68%);}
-    .area-card__visual svg{position:relative; z-index:1; width:100%; height:auto; max-height:310px; overflow:visible;}
+    .area-card__visual picture{position:relative; z-index:1; display:block; width:100%; height:100%;}
+    .area-card__visual img{display:block; width:100%; height:100%; max-height:310px; object-fit:contain; filter:saturate(.94) contrast(1.02);}
+    .area-card__map-chip,.area-card__city{position:absolute; z-index:2; border:1px solid rgba(21,96,130,.13); background:rgba(255,255,255,.94); color:var(--ink); box-shadow:0 8px 22px -16px rgba(14,40,65,.75); backdrop-filter:blur(6px);}
+    .area-card__map-chip{left:10%; top:23%; min-width:94px; padding:10px 16px; border-radius:999px; text-align:center; font-family:var(--font-display); font-size:19px; font-weight:700;}
+    .area-card__map-chip--tokyo{left:50%; top:auto; bottom:9%; width:max-content; max-width:88%; min-width:0; padding:9px 14px; transform:translateX(-50%); border-radius:9px; font-size:13px; line-height:1.5;}
+    .area-card__map-chip--tokyo small{display:block; color:var(--muted); font-family:var(--font-body); font-size:9px; font-weight:600; letter-spacing:.02em;}
+    .area-card__city{padding:6px 9px; border-radius:7px; font-size:9px; font-weight:700; white-space:nowrap;}
+    .area-card__city--saitama{top:8%; left:50%; transform:translateX(-50%);}
+    .area-card__city--shinjuku{top:43%; left:50%; transform:translate(-50%,-50%);}
+    .area-card__city--chiba{top:48%; right:1%;}
+    .area-card__city--yokohama{left:9%; bottom:9%;}
     .area-card__caption{position:relative; z-index:2; margin-top:12px; color:var(--body); font-size:12px; line-height:1.8; text-align:center;}
     .purchase-area__foot{display:flex; align-items:center; justify-content:space-between; gap:28px; margin-top:30px;}
     .purchase-area__note{max-width:720px; color:var(--muted); font-size:12px; line-height:1.9;}
@@ -213,7 +223,8 @@
       .area-card__label{min-height:0; align-self:stretch; padding:14px;}
       .area-card__label strong{font-size:16px;}
       .area-card__visual{width:100%; min-height:245px; margin-top:14px;}
-      .area-card__visual svg{max-height:260px;}
+      .area-card__visual img{max-height:260px;}
+      .area-card__map-chip{font-size:17px;}
       .area-card__caption{text-align:center;}
       .purchase-area__foot{align-items:stretch; flex-direction:column; margin-top:24px;}
       .purchase-area__foot .btn{width:100%;}
@@ -704,23 +715,11 @@
               <div><strong>全国の収益不動産</strong><span>買取のご相談を承ります</span></div>
             </div>
             <div class="area-card__visual">
-              <svg viewBox="0 0 340 300" role="img" aria-label="全国を表す日本地図のイラスト">
-                <g fill="#1C9C9B">
-                  <path d="M250 29 296 38l13 29-24 24-43-10-8-27 16-25Z"/>
-                  <path d="M221 92c18 3 36 11 45 21 7 9 3 17-8 21-19 7-27 17-33 29-8 17-20 22-38 26-18 4-29 15-41 27-13 13-31 18-49 17l-20-13 8-20 32-8c17-4 29-13 40-26 10-11 22-18 34-24 12-6 18-15 19-27l11-23Z"/>
-                  <path d="M116 238 92 252l-28-3-12-17 10-20 28-2 22 11 4 17Z"/>
-                  <path d="m139 220 50 4 13 12-21 12-47-5 5-23Z"/>
-                  <circle cx="52" cy="274" r="5"/><circle cx="37" cy="286" r="3"/>
-                </g>
-                <g transform="translate(36 64)">
-                  <path d="M4 18C4 8 12 0 22 0h79c10 0 18 8 18 18v40c0 10-8 18-18 18H58L43 91l2-15H22C12 76 4 68 4 58V18Z" fill="#fff" stroke="#D8E4E8" stroke-width="2"/>
-                  <text x="61" y="48" text-anchor="middle" fill="#0E2841" font-family="Zen Kaku Gothic, sans-serif" font-size="25" font-weight="700">全国</text>
-                </g>
-                <g transform="translate(204 180) rotate(-12)">
-                  <circle cx="30" cy="30" r="25" fill="#fff" fill-opacity=".92" stroke="#0E2841" stroke-width="7"/>
-                  <path d="m49 49 38 38" stroke="#0E2841" stroke-width="11" stroke-linecap="round"/>
-                </g>
-              </svg>
+              <picture>
+                <source type="image/webp" srcset="src/map-purchase-japan.webp">
+                <img src="src/map-purchase-japan.png" alt="全国の収益不動産を対象とする買取エリアを表した日本地図" loading="lazy" decoding="async">
+              </picture>
+              <span class="area-card__map-chip">全国</span>
             </div>
             <p class="area-card__caption">一棟収益、区分、事業用不動産など、所在地を問わずまずは概要をお聞かせください。</p>
           </article>
@@ -731,24 +730,11 @@
               <div><strong>東京23区（特に都心6区）</strong><span>収益不動産・空きビルの買取</span></div>
             </div>
             <div class="area-card__visual">
-              <svg viewBox="0 0 340 300" role="img" aria-label="東京23区と都心6区を表す図解">
-                <g fill="#E2EAED" stroke="#fff" stroke-width="2">
-                  <path d="M42 40h76l18 48-49 25-53-23 8-50Z"/><path d="m119 39 67-12 31 45-34 39-47-23-17-49Z"/><path d="m187 27 69 12 29 41-48 35-54-4 34-39-30-45Z"/>
-                  <path d="m34 91 53 22 14 45-60 29-24-48 17-48Z"/><path d="m237 115 48-35 38 39-12 55-67 5-7-64Z"/>
-                  <path d="m41 187 60-29 32 35-25 64-58-9-9-61Z"/><path d="m244 179 67-5 6 58-54 35-44-39 25-49Z"/>
-                </g>
-                <g fill="#1C9C9B" stroke="#fff" stroke-width="2">
-                  <path d="m101 112 42-16 32 30-15 42-44 5-24-31 9-30Z"/><path d="m143 96 40 15 20 34-43 23 15-42-32-30Z"/>
-                  <path d="m92 142 24 31-9 42-42-13 4-44 23-16Z"/><path d="m116 173 44-5 22 34-30 37-45-24 9-42Z"/>
-                  <path d="m160 168 43-23 31 23-10 43-42-9-22-34Z"/><path d="m182 202 42 9-5 43-47 12-20-27 30-37Z"/>
-                </g>
-                <g font-family="Zen Kaku Gothic, sans-serif" font-size="11" font-weight="700" text-anchor="middle">
-                  <text x="76" y="72" fill="#415563">練馬区</text><text x="168" y="62" fill="#415563">板橋区</text><text x="260" y="72" fill="#415563">足立区</text>
-                  <text x="132" y="140" fill="#fff">文京区</text><text x="174" y="136" fill="#fff">新宿区</text><text x="91" y="184" fill="#fff">渋谷区</text>
-                  <text x="136" y="204" fill="#fff">千代田区</text><text x="199" y="183" fill="#fff">中央区</text><text x="187" y="236" fill="#fff">港区</text>
-                  <text x="74" y="236" fill="#415563">世田谷区</text><text x="280" y="210" fill="#415563">江東区</text><text x="274" y="137" fill="#415563">江戸川区</text>
-                </g>
-              </svg>
+              <picture>
+                <source type="image/webp" srcset="src/map-purchase-tokyo.webp">
+                <img src="src/map-purchase-tokyo.png" alt="東京23区のうち都心6区を強調した買取対象エリアの地図" loading="lazy" decoding="async">
+              </picture>
+              <span class="area-card__map-chip area-card__map-chip--tokyo">都心6区<small>千代田・中央・港・新宿・文京・渋谷</small></span>
             </div>
             <p class="area-card__caption">千代田・中央・港・新宿・文京・渋谷の都心6区を中心に、東京23区のご相談に対応します。</p>
           </article>
@@ -759,18 +745,14 @@
               <div><strong>国道16号線の内側エリア</strong><span>空き家の買取相談を承ります</span></div>
             </div>
             <div class="area-card__visual">
-              <svg viewBox="0 0 340 300" role="img" aria-label="国道16号線内側の主な都市を表す図解">
-                <path d="M81 66c38-36 138-43 189-3 44 34 52 103 18 151-34 49-106 75-168 49-58-24-85-82-63-137 6-17 14-41 24-60Z" fill="#1C9C9B"/>
-                <path d="M91 79c36-29 126-36 169-2 37 29 42 88 13 127-29 40-91 61-144 40-50-20-72-68-53-113 5-15 8-38 15-52Z" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="6 6" opacity=".75"/>
-                <path d="M218 108c19 17 26 41 19 64-7 25-31 45-57 47-31 3-59-15-68-43-8-24 1-53 22-69 23-18 60-18 84 1Z" fill="#fff"/>
-                <g font-family="Zen Kaku Gothic, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
-                  <g transform="translate(107 48)"><rect width="93" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="46.5" y="24" fill="#0E2841">さいたま市</text></g>
-                  <g transform="translate(128 122)"><rect width="78" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="39" y="24" fill="#0E2841">新宿区</text></g>
-                  <g transform="translate(237 126)"><rect width="78" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="39" y="24" fill="#0E2841">千葉市</text></g>
-                  <g transform="translate(75 220)"><rect width="78" height="38" rx="7" fill="#fff" stroke="#D8E4E8"/><text x="39" y="24" fill="#0E2841">横浜市</text></g>
-                </g>
-                <g fill="#0E2841" stroke="#fff" stroke-width="2"><circle cx="154" cy="86" r="5"/><circle cx="167" cy="160" r="5"/><circle cx="278" cy="165" r="5"/><circle cx="123" cy="220" r="5"/></g>
-              </svg>
+              <picture>
+                <source type="image/webp" srcset="src/map-purchase-route16.webp">
+                <img src="src/map-purchase-route16.png" alt="国道16号線の内側を主な対象とする空き家買取エリアの地図" loading="lazy" decoding="async">
+              </picture>
+              <span class="area-card__city area-card__city--saitama">さいたま市</span>
+              <span class="area-card__city area-card__city--shinjuku">新宿区</span>
+              <span class="area-card__city area-card__city--chiba">千葉市</span>
+              <span class="area-card__city area-card__city--yokohama">横浜市</span>
             </div>
             <p class="area-card__caption">東京・神奈川・埼玉・千葉にまたがる、国道16号線内側の空き家を主な対象としています。</p>
           </article>
