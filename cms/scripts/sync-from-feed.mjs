@@ -27,7 +27,7 @@ await writeJson('data/news-items.json', { items: content.news.map(validateNewsIt
 await writeJson('data/sale-items.json', { count: content.sale.length, items: content.sale });
 await writeJson('data/project-items.json', { updatedAt: generatedAt, items: content.projects });
 await writeJson('data/page-copy-items.json', { updatedAt: generatedAt, items: content.pageCopy.filter((item) => item.apply) });
-await writeJson('data/site-settings.json', { updatedAt: generatedAt, items: content.settings.filter((item) => item.apply) });
+await writeJson('data/site-settings.json', { updatedAt: generatedAt, items: content.settings });
 await writeJson('data/media-items.json', { updatedAt: generatedAt, items: content.media.filter((item) => item.apply) });
 await writeJson('data/cms-meta.json', {
   schemaVersion: payload.schemaVersion,

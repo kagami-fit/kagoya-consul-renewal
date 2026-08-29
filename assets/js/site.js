@@ -84,6 +84,12 @@
     } catch (_) {}
     return `${prefix}contact.html`;
   };
+  const safeContentHref = (value) => {
+    let raw = String(value || 'contact.html');
+    const hasScheme = /^[A-Za-z][A-Za-z0-9+.-]*:/.test(raw);
+    if (prefix && !hasScheme && !raw.startsWith('/') && !raw.startsWith('../') && !raw.startsWith('./') && !raw.startsWith('#')) raw = `${prefix}${raw}`;
+    return safeHref(raw);
+  };
   const safeAssetHref = (value, fallback) => {
     const raw = String(value || fallback || '');
     try {
@@ -225,7 +231,7 @@
   // ページ文章は「修正案を公開」した項目だけを上書きする。
   const pathName = window.location.pathname.split('/').filter(Boolean).pop() || 'index.html';
   const currentPage = prefix === '../' ? `blog/${pathName}` : pathName;
-  fetch(`${prefix}data/page-copy-items.json`, { cache: 'no-store' }).then((response) => {
+  const pageCopyReady = fetch(`${prefix}data/page-copy-items.json`, { cache: 'no-store' }).then((response) => {
     if (!response.ok) throw new Error('page copy unavailable');
     return response.json();
   }).then((payload) => {
@@ -245,7 +251,7 @@
       document.querySelectorAll(`[data-cms-id="${String(item.id).replace(/["\\]/g, '')}"]`).forEach((node) => {
         if (value.includes('\n')) node.innerHTML = value.split('\n').map(escapeHtml).join('<br>');
         else node.textContent = value;
-        if (item.href && node.tagName === 'A') node.setAttribute('href', safeHref(item.href));
+        if (item.href && node.tagName === 'A') node.setAttribute('href', safeContentHref(item.href));
       });
     });
   }).catch(() => {});
@@ -268,21 +274,110 @@
     });
   }).catch(() => {});
 
-  // 電話番号などの共通設定は、公開された項目だけを反映する。
-  fetch(`${prefix}data/site-settings.json`, { cache: 'no-store' }).then((response) => {
+  const replaceText = (root, before, after) => {
+    if (!root || !before || before === after) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const targets = [];
+    while (walker.nextNode()) {
+      const parent = walker.currentNode.parentElement;
+      if (!parent || parent.closest('script,style,noscript,template')) continue;
+      if (walker.currentNode.nodeValue.includes(before)) targets.push(walker.currentNode);
+    }
+    targets.forEach((node) => { node.nodeValue = node.nodeValue.split(before).join(after); });
+  };
+  const replaceAttributes = (before, after) => {
+    if (!before || before === after) return;
+    document.querySelectorAll('[alt],[title],[aria-label]').forEach((node) => {
+      ['alt', 'title', 'aria-label'].forEach((name) => {
+        const value = node.getAttribute(name);
+        if (value?.includes(before)) node.setAttribute(name, value.split(before).join(after));
+      });
+    });
+  };
+  const navigationMap = {
+    NAV_LEFT_01: { defaults: ['事業紹介'], ids: ['common_common-header_A_002', 'common_common-header_A_012'] },
+    NAV_LEFT_02: { defaults: ['販売中物件'], ids: ['common_common-header_A_003', 'common_common-header_A_013'] },
+    NAV_LEFT_03: { defaults: ['サービス'], ids: ['common_common-header_A_004', 'common_common-header_A_014'] },
+    NAV_LEFT_04: { defaults: ['お知らせ', 'ニュース'], ids: ['common_common-header_A_005', 'common_common-header_A_015'] },
+    NAV_RIGHT_01: { defaults: ['社会貢献'], ids: ['common_common-header_A_006', 'common_common-header_A_016'] },
+    NAV_RIGHT_02: { defaults: ['会社情報'], ids: ['common_common-header_A_007', 'common_common-header_A_017'] },
+    NAV_RIGHT_03: { defaults: ['対応エリア'], ids: ['common_common-header_A_008', 'common_common-header_A_018'] },
+    NAV_RIGHT_04: { defaults: ['相談する', '選択肢を相談する'], ids: ['common_common-header_A_001', 'common_common-header_A_009', 'common_common-header_A_010', 'common_common-header_A_020'] }
+  };
+  const navigationHref = (value) => {
+    let raw = String(value || 'contact.html');
+    if (raw.startsWith('#') && pathName !== 'index.html') raw = `index.html${raw}`;
+    return safeContentHref(raw);
+  };
+  const updateNavigation = (setting) => {
+    const map = navigationMap[setting.id];
+    if (!map || !setting.value) return;
+    const candidates = new Set();
+    map.ids.forEach((id) => document.querySelectorAll(`[data-cms-id="${id}"]`).forEach((node) => candidates.add(node)));
+    document.querySelectorAll('header a,footer a,[data-menu-drawer] a').forEach((node) => {
+      const text = node.textContent.replace(/\s+/g, ' ').trim();
+      if (map.defaults.some((label) => text === label || text.startsWith(`${label} `))) candidates.add(node);
+    });
+    candidates.forEach((link) => {
+      const current = link.textContent;
+      const before = map.defaults.find((label) => current.includes(label));
+      if (before) replaceText(link, before, setting.value);
+      else link.textContent = setting.value;
+      if (setting.target && setting.target !== '変更不要') link.setAttribute('href', navigationHref(setting.target));
+    });
+  };
+  const applySiteSettings = (items) => {
+    if (!Array.isArray(items)) return;
+    const settings = Object.fromEntries(items.filter((item) => item?.id && item?.value != null).map((item) => [item.id, item]));
+    const textSettings = [
+      ['COMPANY_NAME', '株式会社籠や'],
+      ['COMPANY_NAME_EN', 'KAGOYA'],
+      ['BUSINESS_HOURS', '10:00–18:00／木曜定休'],
+      ['ADDRESS', '〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号']
+    ];
+    textSettings.forEach(([id, before]) => {
+      const after = String(settings[id]?.value || '');
+      if (!after) return;
+      replaceText(document.body, before, after);
+      replaceAttributes(before, after);
+    });
+    const phone = settings.PHONE;
+    if (phone?.value) {
+      const dial = String(phone.value).replace(/[^0-9+]/g, '');
+      document.querySelectorAll('a[href^="tel:"]').forEach((link) => { link.href = `tel:${dial}`; });
+      replaceText(document.body, '03-4400-7994', String(phone.value));
+      replaceAttributes('03-4400-7994', String(phone.value));
+    }
+    Object.keys(navigationMap).forEach((id) => updateNavigation(settings[id] || {}));
+    const contact = settings.CONTACT_URL;
+    if (contact?.value) {
+      document.querySelectorAll('a[href]').forEach((link) => {
+        let current;
+        try { current = new URL(link.getAttribute('href'), window.location.href); } catch (_) { return; }
+        if (!current.pathname.endsWith('/contact.html')) return;
+        const next = new URL(safeContentHref(contact.value), window.location.href);
+        if (!next.search && current.search) next.search = current.search;
+        if (!next.hash && current.hash) next.hash = current.hash;
+        link.href = next.href;
+      });
+    }
+    const publicUrl = settings.PUBLIC_URL?.value;
+    if (publicUrl) {
+      document.querySelectorAll('link[rel="canonical"],meta[property="og:url"]').forEach((node) => {
+        if (node.tagName === 'LINK') node.setAttribute('href', publicUrl);
+        else node.setAttribute('content', publicUrl);
+      });
+    }
+  };
+  if (new URLSearchParams(window.location.search).has('cms-debug')) window.__KagoyaCmsApplySettings = applySiteSettings;
+
+  // 共通設定はページ文章より後に適用し、ナビ・電話番号などの正本を07_共通設定へ統一する。
+  pageCopyReady.then(() => fetch(`${prefix}data/site-settings.json`, { cache: 'no-store' })).then((response) => {
     if (!response.ok) throw new Error('settings feed unavailable');
     return response.json();
   }).then((payload) => {
     const items = Array.isArray(payload) ? payload : payload?.items;
-    if (!Array.isArray(items)) return;
-    const phone = items.find((item) => item?.apply && item.id === 'PHONE');
-    if (phone?.value) {
-      const dial = String(phone.value).replace(/[^0-9+]/g, '');
-      document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
-        link.href = `tel:${dial}`;
-        if (/^[0-9０-９+()\-－ー―\s]+$/.test(link.textContent.trim())) link.textContent = phone.value;
-      });
-    }
+    applySiteSettings(items);
   }).catch(() => {});
 
   // 4つの入口（案件相談／協業／投資／採用）は同じフォームを使い、typeだけを引き継ぐ。

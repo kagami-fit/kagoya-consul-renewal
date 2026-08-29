@@ -122,7 +122,7 @@ try {
       sale: [{ id: 'SALE_1', slug: 'sale-1', title: '販売中物件', status: '公開中', categories: [] }],
       projects: [],
       pageCopy: [],
-      settings: [],
+      settings: [{ id: 'PHONE', name: '電話番号', value: '03-4400-7994', kind: '電話番号', target: 'ヘッダー・問い合わせ', apply: false }],
       media: []
     }
   };
@@ -130,10 +130,12 @@ try {
   await execFileAsync(process.execPath, [path.join(projectRoot, 'cms/scripts/sync-from-feed.mjs'), `--file=${fixturePath}`, `--root=${tempRoot}`]);
   const todayOutput = JSON.parse(await fs.readFile(path.join(tempRoot, 'data/today-items.json'), 'utf8'));
   const saleOutput = JSON.parse(await fs.readFile(path.join(tempRoot, 'data/sale-items.json'), 'utf8'));
+  const settingsOutput = JSON.parse(await fs.readFile(path.join(tempRoot, 'data/site-settings.json'), 'utf8'));
   assert.equal(todayOutput.items[0].id, 'TODAY_1');
   assert.equal(todayOutput.items[0].order, 3);
   assert.equal(saleOutput.count, 1);
   assert.equal(saleOutput.items[0].status, '公開中');
+  assert.equal(settingsOutput.items[0].id, 'PHONE', '共通設定は未変更項目も正本として出力する');
 } finally {
   await fs.rm(tempRoot, { recursive: true, force: true });
 }
