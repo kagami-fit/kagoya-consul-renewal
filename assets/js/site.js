@@ -80,7 +80,7 @@
     const raw = String(value || 'contact.html');
     try {
       const url = new URL(raw, window.location.href);
-      if (url.protocol === 'http:' || url.protocol === 'https:' || url.protocol === 'file:') return url.href;
+      if (['http:', 'https:', 'file:', 'tel:', 'mailto:'].includes(url.protocol)) return url.href;
     } catch (_) {}
     return `${prefix}contact.html`;
   };

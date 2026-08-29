@@ -75,5 +75,8 @@ function validateSourceRow_(sheetName, headers, row, operation) {
 
 function isSafeUrlOrPath_(value) {
   if (/^(https?:\/\/|\.\.\/|\.\/|[A-Za-z0-9_./-]+\.html(?:[?#].*)?|[A-Za-z0-9_./-]+\.(?:jpg|jpeg|png|webp|gif|svg)(?:[?#].*)?)$/i.test(value)) return true;
+  if (/^tel:\+?[0-9() .-]{3,}$/i.test(value)) return true;
+  if (/^mailto:[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}(?:\?[^\s]*)?$/i.test(value)) return true;
+  if (/^#[A-Za-z0-9_.:-]+$/.test(value)) return true;
   return false;
 }

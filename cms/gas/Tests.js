@@ -25,6 +25,10 @@ function runCmsSelfTest() {
     const unpublishRow = statusChange.map(function (_, index) { return index === 0 ? testId : ''; });
     const unpublishErrors = validateSourceRow_('02_Today', headers, unpublishRow, { action: 'unpublish', requestedState: '非公開' });
     if (unpublishErrors.length) details.push('公開停止に不要な入力項目を要求しています：' + unpublishErrors.join('／'));
+    if (!isSafeUrlOrPath_('tel:0344007994')) details.push('電話番号リンクを安全なリンクとして認識できません');
+    if (!isSafeUrlOrPath_('mailto:info@example.com')) details.push('メールリンクを安全なリンクとして認識できません');
+    if (!isSafeUrlOrPath_('#service-area')) details.push('ページ内リンクを安全なリンクとして認識できません');
+    if (isSafeUrlOrPath_('javascript:alert(1)')) details.push('危険なリンク形式を許可しています');
     const config = CMS_CONFIG.SOURCE_SHEETS['02_Today'];
     const firstFingerprint = sourceFingerprint_(row, config);
     const statusOnly = row.slice();

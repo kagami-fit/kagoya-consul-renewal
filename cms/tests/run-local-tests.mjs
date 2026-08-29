@@ -62,6 +62,10 @@ const idOnly = Array(todayHeaders.length).fill('');
 idOnly[0] = 'TODAY_TEST';
 context.__idOnly = idOnly;
 assert.deepEqual([...evaluate("validateSourceRow_('02_Today', __headers, __idOnly, {action:'unpublish',requestedState:'非公開'})")], []);
+assert.equal(evaluate("isSafeUrlOrPath_('tel:0344007994')"), true, '電話番号リンクを許可する');
+assert.equal(evaluate("isSafeUrlOrPath_('mailto:info@example.com')"), true, 'メールリンクを許可する');
+assert.equal(evaluate("isSafeUrlOrPath_('#service-area')"), true, 'ページ内リンクを許可する');
+assert.equal(evaluate("isSafeUrlOrPath_('javascript:alert(1)')"), false, '危険なスキームを拒否する');
 
 const fingerprint = evaluate("sourceFingerprint_(__row, CMS_CONFIG.SOURCE_SHEETS['02_Today'])");
 const statusOnly = todayRow.slice();
