@@ -1115,11 +1115,11 @@
       else{
         var mm=gsap.matchMedia();
         mm.add('(min-width: 901px)',function(){
-          gsap.set(receiptPaper,{clipPath:'inset(0 0 58% 0)',y:-6,rotationX:-1});
-          var receiptTween=gsap.to(receiptPaper,{clipPath:'inset(0 0 0% 0)',y:0,rotationX:0,ease:'none',scrollTrigger:{trigger:receiptStage,start:'top 112px',end:'+=360',scrub:.35,pin:true,anticipatePin:1,invalidateOnRefresh:true}});
+          gsap.set(receiptPaper,{clipPath:'inset(0 0 76% 0)',y:-10,rotationX:-1.5});
+          var receiptTween=gsap.to(receiptPaper,{clipPath:'inset(0 0 0% 0)',y:0,rotationX:0,ease:'none',scrollTrigger:{trigger:receiptStage,start:'top 112px',end:'+=620',scrub:.5,pin:true,anticipatePin:1,invalidateOnRefresh:true}});
           return function(){receiptTween.scrollTrigger&&receiptTween.scrollTrigger.kill();receiptTween.kill();gsap.set(receiptPaper,{clearProps:'transform,clipPath'})};
         });
-        mm.add('(max-width: 900px)',function(){gsap.from(receiptPaper,{y:24,opacity:0,duration:.48,ease:'power3.out',scrollTrigger:{trigger:receiptStage,start:'top 94%',once:true}})});
+        mm.add('(max-width: 900px)',function(){gsap.from(receiptPaper,{y:38,opacity:0,duration:.75,ease:'power3.out',scrollTrigger:{trigger:receiptStage,start:'top 94%',once:true}})});
       }
     }
 
