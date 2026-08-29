@@ -8,3 +8,8 @@ _aio-check/
 *.log
 __pycache__/
 *.pyc
+outputs/
+.gas-autopilot.json
+.clasp.json
+cms/gas/.gas-autopilot.json
+cms/gas/.clasp.json

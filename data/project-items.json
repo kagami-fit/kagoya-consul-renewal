@@ -1,0 +1,35 @@
+{
+  "updatedAt": "2026-08-29T00:00:00+09:00",
+  "items": [
+    {
+      "id": "PROJECT_001",
+      "status": "IN PROGRESS",
+      "meta": "地上げ・開発　／　2026.08",
+      "title": "土地の可能性を読み解き、街の未来を描く。",
+      "summary": "既存の街並みと新しい計画を見比べながら、調査と対話を重ねています。",
+      "image": "src/project-development.jpg",
+      "href": "contact.html?type=project",
+      "order": 1
+    },
+    {
+      "id": "PROJECT_002",
+      "status": "IN PROGRESS",
+      "meta": "相続・地域連携　／　2026.08",
+      "title": "家族のこれからを、地域の支えと一緒に考える。",
+      "summary": "不動産だけでなく、介護や専門家との連携も含めて選択肢を整理しています。",
+      "image": "src/project-inheritance-care.jpg",
+      "href": "contact.html?type=partner",
+      "order": 2
+    },
+    {
+      "id": "PROJECT_003",
+      "status": "IN PROGRESS",
+      "meta": "賃貸運営・活用　／　2026.08",
+      "title": "持ち続ける選択肢を、運営の現場から整える。",
+      "summary": "空室や修繕の状況を確認し、オーナーと活用の道筋を検討しています。",
+      "image": "src/project-rental-management.jpg",
+      "href": "property-management.html",
+      "order": 3
+    }
+  ]
+}

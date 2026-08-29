@@ -112,6 +112,171 @@
     }).catch(() => {});
   }
 
+  // スプレッドシートで公開された進行中プロジェクトを表示する。
+  const projectGrid = document.querySelector('#projectGrid');
+  if (projectGrid) {
+    fetch(`${prefix}data/project-items.json`, { cache: 'no-store' }).then((response) => {
+      if (!response.ok) throw new Error('project feed unavailable');
+      return response.json();
+    }).then((payload) => {
+      const items = Array.isArray(payload) ? payload : payload?.items;
+      if (!Array.isArray(items) || !items.length) return;
+      projectGrid.innerHTML = items.map((item) => {
+        const imageUrl = safeHref(item.image || 'src/gen-company.jpg');
+        const linkUrl = safeHref(item.href || 'contact.html?type=project');
+        return `<article class="project-card"><div class="project-card__media"><img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.title || '進行中プロジェクト')}" loading="lazy" decoding="async"><span class="project-card__status">${escapeHtml(item.status || 'IN PROGRESS')}</span></div><div class="project-card__body"><span class="project-card__meta">${escapeHtml(item.meta || '')}</span><h4>${escapeHtml(item.title || '')}</h4><p>${escapeHtml(item.summary || '')}</p><a class="project-card__link" href="${escapeHtml(linkUrl)}">このテーマを相談する</a></div></article>`;
+      }).join('');
+      if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        window.gsap.utils.toArray('#projectGrid .project-card').forEach((element, index) => {
+          window.gsap.from(element, { y: 28, opacity: 0, duration: .85, delay: index * .08, ease: 'power3.out', scrollTrigger: { trigger: element, start: 'top 90%', once: true } });
+        });
+        window.ScrollTrigger.refresh();
+      }
+    }).catch(() => {});
+  }
+
+  // 物件は管理シート由来の1つのJSONから、販売中・成約実績・一覧ページへ振り分ける。
+  // 「成約済み」へ変更すると販売中から外れ、「非公開」は全表示から除外される。
+  const propertyTargets = {
+    mosaic: document.querySelector('#facgrid'),
+    currentCards: document.querySelector('.facility > .wrap > .result-grid'),
+    soldCards: document.querySelector('.result-block .result-grid'),
+    residential: document.querySelector('#residential .listing-grid'),
+    income: document.querySelector('#income .listing-grid'),
+    other: document.querySelector('#other-listings .listing-grid')
+  };
+  if (Object.values(propertyTargets).some(Boolean)) {
+    fetch(`${prefix}data/sale-items.json`, { cache: 'no-store' }).then((response) => {
+      if (!response.ok) throw new Error('property feed unavailable');
+      return response.json();
+    }).then((payload) => {
+      const items = Array.isArray(payload) ? payload : payload?.items;
+      if (!Array.isArray(items) || !items.length) return;
+      const sorted = items.slice().sort((a, b) => {
+        const orderDiff = Number(a?.order || 0) - Number(b?.order || 0);
+        if (a?.order != null && b?.order != null && orderDiff) return orderDiff;
+        return String(b?.date || '').localeCompare(String(a?.date || ''));
+      });
+      const categoriesOf = (item) => Array.isArray(item?.categories) ? item.categories.map(String) : [];
+      const isSold = (item) => item?.status === '成約済み' || categoriesOf(item).includes('成約物件');
+      const isHidden = (item) => item?.status === '非公開';
+      const current = sorted.filter((item) => !isHidden(item) && !isSold(item));
+      const sold = sorted.filter((item) => !isHidden(item) && isSold(item));
+      const residential = current.filter((item) => categoriesOf(item).includes('販売中物件(土地建物/マンション)'));
+      const income = current.filter((item) => categoriesOf(item).includes('販売中物件(一棟収益)'));
+      const grouped = new Set([...residential, ...income]);
+      const other = current.filter((item) => !grouped.has(item));
+
+      const propertyUrl = (item) => safeHref(`${prefix}property-detail.html#${encodeURIComponent(String(item?.slug || item?.id || ''))}`);
+      const imageUrl = (item) => safeHref(item?.image || `${prefix}src/gen-for-sale.jpg`);
+      const field = (item, name) => String(item?.fields?.[name] || '').trim();
+      const summary = (item) => [field(item, '種別'), field(item, '所在地')].filter(Boolean).join('／');
+      const taxonomy = (item) => [
+        ...categoriesOf(item).map((label) => ({ label, kind: 'category' })),
+        ...(Array.isArray(item?.tags) ? item.tags : []).map((label) => ({ label: `#${label}`, kind: 'hash' }))
+      ];
+      const taxonomyHtml = (item) => {
+        const tags = taxonomy(item);
+        return tags.length ? `<div class="listing-taxonomy-tags">${tags.map((tag) => `<span class="${escapeHtml(tag.kind)}">${escapeHtml(tag.label)}</span>`).join('')}</div>` : '';
+      };
+      const resultCard = (item, soldCard) => `<a class="result-card" href="${escapeHtml(propertyUrl(item))}"><div class="result-card__media"><img src="${escapeHtml(imageUrl(item))}" alt="${escapeHtml(item?.title || '物件写真')}" loading="lazy" decoding="async"><span class="result-card__badge">${soldCard ? 'SOLD' : 'FOR SALE'}</span></div><div class="result-card__body"><h4>${escapeHtml(item?.title || '')}</h4><p>${escapeHtml(summary(item))}</p><span class="result-card__more">${soldCard ? '成約物件' : '販売中物件'}の詳細を見る →</span></div></a>`;
+      const listingCard = (item, compact) => {
+        const details = [
+          ['所在地', field(item, '所在地')],
+          ['交通', field(item, '交通')],
+          ['面積', field(item, '建物面積／土地面積')]
+        ].filter((entry) => entry[1]);
+        const note = field(item, 'その他');
+        return `<article class="listing-card${compact ? ' listing-card--compact' : ''}"><div class="listing-card__image"><img src="${escapeHtml(imageUrl(item))}" alt="${escapeHtml(item?.title || '物件写真')}" loading="lazy" decoding="async"></div><div class="listing-card__body">${taxonomyHtml(item)}<span class="listing-type">${escapeHtml(field(item, '種別') || '物件')}</span><h3>${escapeHtml(item?.title || '')}</h3><p class="listing-price">${escapeHtml(field(item, '価格') || '詳細はお問い合わせください')}</p>${details.length ? `<dl>${details.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('')}</dl>` : ''}${note ? `<p class="listing-note">${escapeHtml(note)}</p>` : ''}<a class="listing-link" href="${escapeHtml(propertyUrl(item))}">物件詳細を見る <span aria-hidden="true">↗</span></a></div></article>`;
+      };
+
+      if (propertyTargets.mosaic) {
+        const layout = ['big2', '', '', 'wide'];
+        propertyTargets.mosaic.innerHTML = current.slice(0, 4).map((item, index) => {
+          const klass = layout[index] || '';
+          return `<a class="property-shot${klass ? ` ${klass}` : ''}" href="${escapeHtml(propertyUrl(item))}"><figure${klass ? ` class="${klass}"` : ''}><img src="${escapeHtml(imageUrl(item))}" alt="${escapeHtml(item?.title || '販売中物件')}" loading="lazy" decoding="async"><figcaption>${escapeHtml(item?.title || '')}</figcaption></figure></a>`;
+        }).join('');
+      }
+      if (propertyTargets.currentCards) propertyTargets.currentCards.innerHTML = current.slice(0, 4).map((item) => resultCard(item, false)).join('');
+      if (propertyTargets.soldCards) propertyTargets.soldCards.innerHTML = sold.slice(0, 4).map((item) => resultCard(item, true)).join('');
+      if (propertyTargets.residential) propertyTargets.residential.innerHTML = residential.length ? residential.map((item) => listingCard(item, false)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
+      if (propertyTargets.income) propertyTargets.income.innerHTML = income.length ? income.map((item) => listingCard(item, false)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
+      if (propertyTargets.other) propertyTargets.other.innerHTML = other.length ? other.map((item) => listingCard(item, true)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
+
+      const totalNode = document.querySelector('.page-intro__pull');
+      if (totalNode && propertyTargets.residential) totalNode.textContent = `${current.length}件`;
+      const counts = { '#residential': residential.length, '#income': income.length, '#other-listings': other.length };
+      Object.entries(counts).forEach(([href, count]) => {
+        const node = document.querySelector(`.listing-categories a[href="${href}"] span`);
+        if (node) node.textContent = String(count);
+      });
+      if (window.ScrollTrigger) window.setTimeout(() => window.ScrollTrigger.refresh(), 80);
+    }).catch(() => {});
+  }
+
+  // ページ文章は「修正案を公開」した項目だけを上書きする。
+  const pathName = window.location.pathname.split('/').filter(Boolean).pop() || 'index.html';
+  const currentPage = prefix === '../' ? `blog/${pathName}` : pathName;
+  fetch(`${prefix}data/page-copy-items.json`, { cache: 'no-store' }).then((response) => {
+    if (!response.ok) throw new Error('page copy unavailable');
+    return response.json();
+  }).then((payload) => {
+    const items = Array.isArray(payload) ? payload : payload?.items;
+    if (!Array.isArray(items)) return;
+    items.filter((item) => item?.apply && (item.page === currentPage || item.page === '共通')).forEach((item) => {
+      const value = String(item.publishedValue ?? '');
+      if (item.kind === 'TITLE') {
+        document.title = value;
+        return;
+      }
+      if (item.kind === 'META DESCRIPTION') {
+        const node = document.querySelector('meta[name="description"]');
+        if (node) node.setAttribute('content', value);
+        return;
+      }
+      document.querySelectorAll(`[data-cms-id="${String(item.id).replace(/["\\]/g, '')}"]`).forEach((node) => {
+        if (value.includes('\n')) node.innerHTML = value.split('\n').map(escapeHtml).join('<br>');
+        else node.textContent = value;
+        if (item.href && node.tagName === 'A') node.setAttribute('href', safeHref(item.href));
+      });
+    });
+  }).catch(() => {});
+
+  // 差し替え画像URLが公開された画像だけを置換する。
+  fetch(`${prefix}data/media-items.json`, { cache: 'no-store' }).then((response) => {
+    if (!response.ok) throw new Error('media feed unavailable');
+    return response.json();
+  }).then((payload) => {
+    const items = Array.isArray(payload) ? payload : payload?.items;
+    if (!Array.isArray(items)) return;
+    items.filter((item) => item?.apply && item.path && item.replacementUrl).forEach((item) => {
+      const target = String(item.path).replace(/^\.\.\//, '');
+      document.querySelectorAll('img').forEach((image) => {
+        const source = String(image.getAttribute('src') || '').replace(/^\.\.\//, '');
+        if (source !== target) return;
+        image.src = safeHref(item.replacementUrl);
+        if (item.alt) image.alt = item.alt;
+      });
+    });
+  }).catch(() => {});
+
+  // 電話番号などの共通設定は、公開された項目だけを反映する。
+  fetch(`${prefix}data/site-settings.json`, { cache: 'no-store' }).then((response) => {
+    if (!response.ok) throw new Error('settings feed unavailable');
+    return response.json();
+  }).then((payload) => {
+    const items = Array.isArray(payload) ? payload : payload?.items;
+    if (!Array.isArray(items)) return;
+    const phone = items.find((item) => item?.apply && item.id === 'PHONE');
+    if (phone?.value) {
+      const dial = String(phone.value).replace(/[^0-9+]/g, '');
+      document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+        link.href = `tel:${dial}`;
+        if (/^[0-9０-９+()\-－ー―\s]+$/.test(link.textContent.trim())) link.textContent = phone.value;
+      });
+    }
+  }).catch(() => {});
+
   // 4つの入口（案件相談／協業／投資／採用）は同じフォームを使い、typeだけを引き継ぐ。
   // 受付側で案件ごとのフォームを増やさず、到着時に相談目的を見える化する設計。
   const inquiryRoutes = {

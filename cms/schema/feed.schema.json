@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KAGOYA CMS Published Feed",
+  "type": "object",
+  "required": ["ok", "schemaVersion", "generatedAt", "content"],
+  "properties": {
+    "ok": { "const": true },
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string" },
+    "lastPublishedAt": { "type": "string" },
+    "queueIds": { "type": "array", "items": { "type": "string" } },
+    "content": {
+      "type": "object",
+      "required": ["today", "news", "sale", "projects", "pageCopy", "settings", "media"],
+      "properties": {
+        "today": { "type": "array" },
+        "news": { "type": "array" },
+        "sale": { "type": "array" },
+        "projects": { "type": "array" },
+        "pageCopy": { "type": "array" },
+        "settings": { "type": "array" },
+        "media": { "type": "array" }
+      }
+    }
+  }
+}
