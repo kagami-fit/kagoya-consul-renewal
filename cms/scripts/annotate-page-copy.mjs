@@ -16,7 +16,8 @@ let annotated = 0;
 for (const page of pages) {
   const file = path.join(root, page);
   let html = await fs.readFile(file, 'utf8');
-  html = html.replace(/\sdata-cms-id=["'][^"']+["']/gi, '');
+  // 既存IDは管理シートとの永続キーなので、再採番せず必ず保持する。
+  // 新しい要素だけにIDを付け足すことで、公開済みデータとの紐付けを切らない。
   const original = html;
   html = replaceMarkerRegion(html, 'MAIN', (main) => annotateMain(main, page));
   if (html === original) html = html.replace(/(<main\b[^>]*>)([\s\S]*?)(<\/main>)/i, (_, open, inner, close) => `${open}${annotateMain(inner, page)}${close}`);
@@ -32,22 +33,22 @@ function replaceMarkerRegion(html, marker, transform) {
 }
 
 function annotateMain(main, page) {
-  let matched = false;
   let count = 0;
   const output = main.replace(/(<section\b([^>]*)>)([\s\S]*?)(<\/section>)/gi, (_, open, attrs, inner, close) => {
-    matched = true;
     count += 1;
     const id = attr(attrs, 'id');
     const classes = attr(attrs, 'class').split(/\s+/).filter(Boolean);
     const scope = id || `${classes[0] || 'section'}-${count}`;
     return `${open}${annotateScope(inner, page, scope)}${close}`;
   });
-  return matched ? output : annotateScope(main, page, 'main');
+  // section外にある記事本文・一覧・補足文も管理対象に含める。
+  // section内で付与済みのIDはannotateScope側が保持するため、既存IDは変わらない。
+  return annotateScope(output, page, 'main');
 }
 
 function annotateScope(scopeHtml, page, scopeName) {
   let sequence = 0;
-  return scopeHtml.replace(/<(h[1-6]|p|li|button|summary|dt|dd|th|td|label|figcaption|small|address|a)\b([^>]*)>([\s\S]*?)<\/\1>/gi, (full, tag, attrs, inner) => {
+  return scopeHtml.replace(/<(h[1-6]|p|li|button|summary|dt|dd|th|td|label|figcaption|small|address|blockquote|a)\b([^>]*)>([\s\S]*?)<\/\1>/gi, (full, tag, attrs, inner) => {
     if (tag.toLowerCase() === 'a' && /<(h[1-6]|p|li|button|summary|dt|dd|figcaption)\b/i.test(inner)) return full;
     const text = cleanText(inner);
     if (!text || /^[→←↑↓↗＋+\-–—|／/\s]+$/.test(text)) return full;
