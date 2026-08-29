@@ -34,5 +34,6 @@
       prev.addEventListener('click',()=>{show(current-1);start();});next.addEventListener('click',()=>{show(current+1);start();});thumbs.forEach((thumb,i)=>thumb.addEventListener('click',()=>{show(i);start();}));slide.addEventListener('mouseenter',stop);slide.addEventListener('mouseleave',start);show(0);start();
     }).catch(()=>{document.getElementById('detail').innerHTML='<p>物件情報の読み込みに失敗しました。</p>';});
   </script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
