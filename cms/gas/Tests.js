@@ -29,6 +29,10 @@ function runCmsSelfTest() {
     if (!isSafeUrlOrPath_('mailto:info@example.com')) details.push('メールリンクを安全なリンクとして認識できません');
     if (!isSafeUrlOrPath_('#service-area')) details.push('ページ内リンクを安全なリンクとして認識できません');
     if (isSafeUrlOrPath_('javascript:alert(1)')) details.push('危険なリンク形式を許可しています');
+    if (!isSafeHttpsUrl_('https://example.com/image.jpg')) details.push('HTTPSの差し替え画像を許可できません');
+    if (isSafeHttpsUrl_('http://example.com/image.jpg')) details.push('差し替え画像でHTTPを許可しています');
+    if (!isSafeImageUrlOrPath_('src/property/example.webp')) details.push('サイト内画像パスを認識できません');
+    if (isSafeImageUrlOrPath_('tel:0344007994')) details.push('画像欄で電話リンクを許可しています');
     const config = CMS_CONFIG.SOURCE_SHEETS['02_Today'];
     const firstFingerprint = sourceFingerprint_(row, config);
     const statusOnly = row.slice();

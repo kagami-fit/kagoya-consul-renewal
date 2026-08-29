@@ -42,15 +42,27 @@ function validateSourceRow_(sheetName, headers, row, operation) {
   });
   const scheduledAt = value['公開予約日時'];
   if (scheduledAt && isNaN(new Date(scheduledAt).getTime())) errors.push('「公開予約日時」の形式を確認してください');
-  ['リンク先', '公開URL', '元ページURL', '出典URL', '差し替え画像URL'].forEach(function (name) {
+  const linkTarget = String(value['リンク先'] || '').trim();
+  if (linkTarget && !isSafeUrlOrPath_(linkTarget)) errors.push('「リンク先」のURL形式を確認してください');
+  ['公開URL', '元ページURL', '出典URL'].forEach(function (name) {
     const input = String(value[name] || '').trim();
-    if (input && !isSafeUrlOrPath_(input)) errors.push('「' + name + '」のURL形式を確認してください');
+    if (input && !isSafeHttpUrl_(input)) errors.push('「' + name + '」はhttp://またはhttps://から始まるURLにしてください');
+  });
+  const replacementUrl = String(value['差し替え画像URL'] || '').trim();
+  if (replacementUrl && !isSafeHttpsUrl_(replacementUrl)) errors.push('「差し替え画像URL」はhttps://から始まる画像URLにしてください');
+  ['画像', 'メイン画像'].forEach(function (name) {
+    const input = String(value[name] || '').trim();
+    if (input && !isSafeImageUrlOrPath_(input)) errors.push('「' + name + '」の画像URLまたはパスを確認してください');
   });
   if (sheetName === '02_Today' && String(value['表示']) === '非表示') errors.push('非表示の項目は公開申請できません');
   if (sheetName === '04_物件') {
     const gallery = String(value['ギャラリーJSON'] || '').trim();
     if (gallery) {
-      try { if (!Array.isArray(JSON.parse(gallery))) errors.push('ギャラリーJSONは画像URLの配列にしてください'); }
+      try {
+        const images = JSON.parse(gallery);
+        if (!Array.isArray(images)) errors.push('ギャラリーJSONは画像URLの配列にしてください');
+        else if (images.some(function (image) { return !isSafeImageUrlOrPath_(String(image || '')); })) errors.push('ギャラリーJSONに使用できない画像URLがあります');
+      }
       catch (_) { errors.push('ギャラリーJSONの形式が正しくありません'); }
     }
   }
@@ -74,9 +86,24 @@ function validateSourceRow_(sheetName, headers, row, operation) {
 }
 
 function isSafeUrlOrPath_(value) {
-  if (/^(https?:\/\/|\.\.\/|\.\/|[A-Za-z0-9_./-]+\.html(?:[?#].*)?|[A-Za-z0-9_./-]+\.(?:jpg|jpeg|png|webp|gif|svg)(?:[?#].*)?)$/i.test(value)) return true;
+  if (isSafeHttpUrl_(value)) return true;
+  if (/^(\.\.\/|\.\/|[A-Za-z0-9_./-]+\.html(?:[?#].*)?|[A-Za-z0-9_./-]+\.(?:jpg|jpeg|png|webp|gif|svg)(?:[?#].*)?)$/i.test(value)) return true;
   if (/^tel:\+?[0-9() .-]{3,}$/i.test(value)) return true;
   if (/^mailto:[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}(?:\?[^\s]*)?$/i.test(value)) return true;
   if (/^#[A-Za-z0-9_.:-]+$/.test(value)) return true;
   return false;
+}
+
+function isSafeHttpUrl_(value) {
+  return /^https?:\/\/[^\s"'<>]+$/i.test(String(value || ''));
+}
+
+function isSafeHttpsUrl_(value) {
+  return /^https:\/\/[^\s"'<>]+$/i.test(String(value || ''));
+}
+
+function isSafeImageUrlOrPath_(value) {
+  const input = String(value || '');
+  if (isSafeHttpUrl_(input)) return true;
+  return /^(?:\.\.\/|\.\/)?[A-Za-z0-9_./@%+~-]+\.(?:jpg|jpeg|png|webp|gif|svg)(?:[?#][^\s"'<>]*)?$/i.test(input);
 }

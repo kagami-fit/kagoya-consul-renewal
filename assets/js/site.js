@@ -84,6 +84,14 @@
     } catch (_) {}
     return `${prefix}contact.html`;
   };
+  const safeAssetHref = (value, fallback) => {
+    const raw = String(value || fallback || '');
+    try {
+      const url = new URL(raw, window.location.href);
+      if (url.protocol === 'http:' || url.protocol === 'https:' || (url.protocol === 'file:' && window.location.protocol === 'file:')) return url.href;
+    } catch (_) {}
+    return fallback ? new URL(String(fallback), window.location.href).href : '';
+  };
   const todayFeed = document.querySelector('#todayFeed');
   if (todayFeed) {
     const kindClass = { NEW: 'new', MEETING: 'meeting', CLOSE: 'close', PARTNER: 'partner' };
@@ -122,7 +130,7 @@
       const items = Array.isArray(payload) ? payload : payload?.items;
       if (!Array.isArray(items) || !items.length) return;
       projectGrid.innerHTML = items.map((item) => {
-        const imageUrl = safeHref(item.image || 'src/gen-company.jpg');
+        const imageUrl = safeAssetHref(item.image, 'src/gen-company.jpg');
         const linkUrl = safeHref(item.href || 'contact.html?type=project');
         return `<article class="project-card"><div class="project-card__media"><img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.title || '進行中プロジェクト')}" loading="lazy" decoding="async"><span class="project-card__status">${escapeHtml(item.status || 'IN PROGRESS')}</span></div><div class="project-card__body"><span class="project-card__meta">${escapeHtml(item.meta || '')}</span><h4>${escapeHtml(item.title || '')}</h4><p>${escapeHtml(item.summary || '')}</p><a class="project-card__link" href="${escapeHtml(linkUrl)}">このテーマを相談する</a></div></article>`;
       }).join('');
@@ -168,7 +176,7 @@
       const other = current.filter((item) => !grouped.has(item));
 
       const propertyUrl = (item) => safeHref(`${prefix}property-detail.html#${encodeURIComponent(String(item?.slug || item?.id || ''))}`);
-      const imageUrl = (item) => safeHref(item?.image || `${prefix}src/gen-for-sale.jpg`);
+      const imageUrl = (item) => safeAssetHref(item?.image, `${prefix}src/gen-for-sale.jpg`);
       const field = (item, name) => String(item?.fields?.[name] || '').trim();
       const summary = (item) => [field(item, '種別'), field(item, '所在地')].filter(Boolean).join('／');
       const taxonomy = (item) => [
@@ -254,7 +262,7 @@
       document.querySelectorAll('img').forEach((image) => {
         const source = String(image.getAttribute('src') || '').replace(/^\.\.\//, '');
         if (source !== target) return;
-        image.src = safeHref(item.replacementUrl);
+        image.src = safeAssetHref(item.replacementUrl, image.src);
         if (item.alt) image.alt = item.alt;
       });
     });

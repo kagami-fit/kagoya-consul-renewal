@@ -66,6 +66,10 @@ assert.equal(evaluate("isSafeUrlOrPath_('tel:0344007994')"), true, '電話番号
 assert.equal(evaluate("isSafeUrlOrPath_('mailto:info@example.com')"), true, 'メールリンクを許可する');
 assert.equal(evaluate("isSafeUrlOrPath_('#service-area')"), true, 'ページ内リンクを許可する');
 assert.equal(evaluate("isSafeUrlOrPath_('javascript:alert(1)')"), false, '危険なスキームを拒否する');
+assert.equal(evaluate("isSafeHttpsUrl_('https://example.com/image.jpg')"), true, 'HTTPSの差し替え画像を許可する');
+assert.equal(evaluate("isSafeHttpsUrl_('http://example.com/image.jpg')"), false, '差し替え画像はHTTPSに限定する');
+assert.equal(evaluate("isSafeImageUrlOrPath_('src/property/example.webp')"), true, 'サイト内画像パスを許可する');
+assert.equal(evaluate("isSafeImageUrlOrPath_('tel:0344007994')"), false, '画像欄では電話リンクを拒否する');
 
 const fingerprint = evaluate("sourceFingerprint_(__row, CMS_CONFIG.SOURCE_SHEETS['02_Today'])");
 const statusOnly = todayRow.slice();
