@@ -363,9 +363,14 @@
     }
     const publicUrl = settings.PUBLIC_URL?.value;
     if (publicUrl) {
+      let canonicalUrl = String(publicUrl);
+      try {
+        const baseUrl = new URL(canonicalUrl.endsWith('/') ? canonicalUrl : `${canonicalUrl}/`);
+        canonicalUrl = new URL(currentPage === 'index.html' ? '' : currentPage, baseUrl).href;
+      } catch (_) {}
       document.querySelectorAll('link[rel="canonical"],meta[property="og:url"]').forEach((node) => {
-        if (node.tagName === 'LINK') node.setAttribute('href', publicUrl);
-        else node.setAttribute('content', publicUrl);
+        if (node.tagName === 'LINK') node.setAttribute('href', canonicalUrl);
+        else node.setAttribute('content', canonicalUrl);
       });
     }
   };
