@@ -30,7 +30,7 @@
   <div class="drawer-contact"><a class="btn primary" href="contact.html" data-cms-id="common_common-header_A_020">選択肢を相談する</a><a class="btn ghost" href="tel:0344007994" data-cms-id="common_common-header_A_021">03-4400-7994</a></div>
 </aside>
 <!-- /ZOROYA:HEADER -->
-  <main id="main"><section class="detail-hero"><div class="wrap"><p class="crumb"><a href="index.html">ホーム</a> ／ <a href="news.html">お知らせ</a> ／ 詳細</p><span class="eyebrow">NOTICE DETAILS</span><h1>お知らせ詳細</h1><p class="lead">元サイトのお知らせ本文を、このサイト内で確認できます。</p></div></section><section class="page-sec"><div class="wrap news-detail" id="newsDetail"></div></section></main>
+  <main id="main"><section class="detail-hero"><div class="wrap"><p class="crumb"><a href="index.html">ホーム</a> ／ <a href="news.html">お知らせ</a> ／ 詳細</p><span class="eyebrow">NOTICE DETAILS</span><h1>お知らせ詳細</h1><p class="lead">株式会社籠やからのお知らせを、こちらでご覧いただけます。</p></div></section><section class="page-sec"><div class="wrap news-detail" id="newsDetail"></div></section></main>
   <!-- ZOROYA:FOOTER -->
 <footer class="site-footer">
   <div class="site-footer__info">
@@ -44,12 +44,19 @@
   <script>
     const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const requested=decodeURIComponent(location.hash.slice(1));
+    const imageFor=item=>{
+      const kind=item.kind||item.category||'お知らせ';
+      if(kind==='セミナー') return {stem:'gen-domain-new-business',alt:'企業向けセミナーで参加者が学び意見を交わす様子'};
+      if(kind==='販売'||kind==='成約') return {stem:'gen-domain-purchase',alt:'不動産の販売や成約に関する物件イメージ'};
+      return {stem:'gen-company',alt:'株式会社籠やの落ち着いた打ち合わせ空間'};
+    };
     fetch('data/news-items.json').then(r=>r.json()).then(data=>{
       const item=data.items.find(x=>x.slug===requested)||data.items[0];
       const root=document.getElementById('newsDetail');
       if(!item){root.innerHTML='<p class="news-empty">お知らせが見つかりません。</p>';return;}
+      const image=imageFor(item);
       document.title=`${item.title}｜お知らせ｜株式会社籠や`;
-      root.innerHTML=`<article id="${esc(item.slug)}"><div class="news-detail__meta"><time datetime="${esc(item.date)}">${esc(item.date.replaceAll('-','.'))}</time><span class="tag">${esc(item.kind||item.category||'お知らせ')}</span></div><h2>${esc(item.title)}</h2><div class="news-detail__body">${item.contentHtml||`<p>${esc(item.excerpt||'')}</p>`}</div><p class="news-detail__source">出典：元サイト「お知らせ」／ <a href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">公式ページを確認する</a></p></article><a class="news-detail__back" href="news.html">← お知らせ一覧へ戻る</a>`;
+      root.innerHTML=`<article id="${esc(item.slug)}"><div class="news-detail__meta"><time datetime="${esc(item.date)}">${esc(item.date.replaceAll('-','.'))}</time><span class="tag">${esc(item.kind||item.category||'お知らせ')}</span></div><h2>${esc(item.title)}</h2><figure class="news-detail__visual"><picture><source type="image/webp" srcset="src/${image.stem}.webp"><img src="src/${image.stem}.jpg" alt="${image.alt}" loading="eager" decoding="async"></picture></figure><div class="news-detail__body">${item.contentHtml||`<p>${esc(item.excerpt||'')}</p>`}</div><p class="news-detail__source">関連情報：<a href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">公式掲載ページを見る</a></p></article><a class="news-detail__back" href="news.html">← お知らせ一覧へ戻る</a>`;
     }).catch(()=>{document.getElementById('newsDetail').innerHTML='<p class="news-empty">お知らせデータの読み込みに失敗しました。</p>';});
   </script>
 <script src="assets/js/site.js"></script>
