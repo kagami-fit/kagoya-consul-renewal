@@ -19,8 +19,12 @@ ROOT_PAGES = [
     "service.html",
     "sale-consulting.html",
     "inheritance-vacant-house.html",
+    "brokerage-purchase.html",
+    "rights-coordination.html",
+    "fukuri.html",
     "purchase-asset.html",
     "property-management.html",
+    "corporate-seminars.html",
     "corporate-benefits.html",
     "team.html",
     "features.html",
@@ -49,15 +53,22 @@ def current_key(relative_path: str) -> str:
         return "company"
     if name == "business.html":
         return "business"
+    if name in {
+        "inheritance-vacant-house.html",
+        "sale-consulting.html",
+        "brokerage-purchase.html",
+        "rights-coordination.html",
+        "fukuri.html",
+        "property-management.html",
+        "corporate-seminars.html",
+    }:
+        return "business"
     if name in {"for-sale.html", "properties.html", "wp-sale.html", "property-detail.html"}:
         return "property"
     if name in {
         "services.html",
         "service.html",
-        "sale-consulting.html",
-        "inheritance-vacant-house.html",
         "purchase-asset.html",
-        "property-management.html",
         "corporate-benefits.html",
         "team.html",
         "features.html",
@@ -148,8 +159,8 @@ def footer(prefix: str) -> str:
 <footer class="site-footer">
   <div class="site-footer__info">
     <div class="site-footer__nap"><div class="nm">株式会社籠や</div><p data-cms-id="common_common-footer_P_001">不動産売買・仲介・管理、不動産コンサルティング<br>〒152-0032 東京都目黒区平町1丁目26-17<br>ソシアル都立大学駅前201号<br>10:00〜18:00／水曜定休</p><a class="tel" href="tel:0344007994" data-cms-id="common_common-footer_A_002">03-4400-7994</a></div>
-    <div class="site-footer__col"><h4 data-cms-id="common_common-footer_H4_003">Business</h4><a href="{prefix}business.html" data-cms-id="common_common-footer_A_004">事業紹介</a><a href="{prefix}inheritance-vacant-house.html" data-cms-id="common_common-footer_A_005">相続コンサルティング</a><a href="{prefix}sale-consulting.html" data-cms-id="common_common-footer_A_006">不動産コンサルティング</a><a href="{prefix}property-management.html" data-cms-id="common_common-footer_A_007">賃貸経営オーナー支援</a><a href="{prefix}corporate-benefits.html" data-cms-id="common_common-footer_A_008">企業向けセミナー</a><a href="{prefix}social-contribution.html" data-cms-id="common_common-footer_A_009">社会貢献</a></div>
-    <div class="site-footer__col"><h4 data-cms-id="common_common-footer_H4_010">Guide</h4><a href="{prefix}about.html" data-cms-id="common_common-footer_A_011">会社情報</a><a href="{prefix}for-sale.html" data-cms-id="common_common-footer_A_012">販売物件</a><a href="{prefix}services.html" data-cms-id="common_common-footer_A_013">サービス</a><a href="{prefix}index.html#service-area" data-cms-id="common_common-footer_A_014">対応エリア</a><a href="{prefix}news.html" data-cms-id="common_common-footer_A_015">お知らせ</a><a href="{prefix}contact.html" data-cms-id="common_common-footer_A_016">相談する</a><a href="{prefix}privacy.html" data-cms-id="common_common-footer_A_017">プライバシー</a></div>
+    <div class="site-footer__col"><h4 data-cms-id="common_common-footer_H4_003">Business</h4><a href="{prefix}business.html" data-cms-id="common_common-footer_A_004">事業紹介</a><a href="{prefix}inheritance-vacant-house.html" data-cms-id="common_common-footer_A_005">相続コンサルティング</a><a href="{prefix}sale-consulting.html" data-cms-id="common_common-footer_A_006">不動産コンサルティング</a><a href="{prefix}brokerage-purchase.html" data-cms-id="common_common-footer_A_007">仲介・買取</a><a href="{prefix}rights-coordination.html" data-cms-id="common_common-footer_A_008">底地・借地／権利調整</a><a href="{prefix}fukuri.html" data-cms-id="common_common-footer_A_009">エフクリ</a><a href="{prefix}property-management.html" data-cms-id="common_common-footer_A_010">賃貸経営オーナー支援</a><a href="{prefix}corporate-seminars.html" data-cms-id="common_common-footer_A_011">企業向けセミナー</a><a href="{prefix}social-contribution.html" data-cms-id="common_common-footer_A_012">社会貢献</a></div>
+    <div class="site-footer__col"><h4 data-cms-id="common_common-footer_H4_020">Guide</h4><a href="{prefix}about.html" data-cms-id="common_common-footer_A_021">会社情報</a><a href="{prefix}for-sale.html" data-cms-id="common_common-footer_A_022">販売物件</a><a href="{prefix}services.html" data-cms-id="common_common-footer_A_023">サービス</a><a href="{prefix}index.html#service-area" data-cms-id="common_common-footer_A_024">対応エリア</a><a href="{prefix}news.html" data-cms-id="common_common-footer_A_025">お知らせ</a><a href="{prefix}contact.html" data-cms-id="common_common-footer_A_026">相談する</a><a href="{prefix}privacy.html" data-cms-id="common_common-footer_A_027">プライバシー</a></div>
   </div>
   <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
 </footer>

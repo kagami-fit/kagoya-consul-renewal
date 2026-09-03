@@ -32,6 +32,7 @@
 - `scripts/build_site.py`：確定仕様から主要HTMLを再生成するスクリプト
 - `templates/sample07-reference.html`：移植元sample07の構造・動きを保存した参照テンプレート
 - `scripts/build_sample07_home.py`：参照テンプレートへKAGOYAの確定内容を流し込み、トップを再生成するスクリプト
+- `scripts/build_business_pages.mjs`：8事業の一覧ページと、PDF確定原稿を展開した7つの事業別ページを再生成するスクリプト
 - `scripts/update_blog_chrome.py`：ブログ3記事へsample07の共通ヘッダー・フッターを適用するスクリプト
 - `scripts/update_common_chrome.py`：全公開ページのナビゲーション、営業時間、フッターを一括で揃えるスクリプト
 - `scripts/enrich_subpages.py`：主要下層ページへ、内容に合わせた写真セクションを一括追加する再実行可能なスクリプト
@@ -55,7 +56,8 @@
 - `src/generated-image-manifest.md`：生成画像の用途とプロンプト一覧
 - `src/wp-image-sources.md`：販売中物件写真の取得元URL一覧
 - `index.html`：トップページ
-- `business.html`：8つの事業領域を詳しく紹介する統合ページ
+- `business.html`：8つの事業領域を短く紹介し、各専用ページへ案内する一覧ページ
+- `inheritance-vacant-house.html`／`sale-consulting.html`／`brokerage-purchase.html`／`rights-coordination.html`／`fukuri.html`／`property-management.html`／`corporate-seminars.html`：事業別の詳しい説明、確認項目、選択肢、進め方、連携体制
 - `social-contribution.html`：NBCジュニアの授業と社会貢献活動を紹介する専用ページ
 - `animation-recommended.html`：縦タイムライン、追従ビジュアル、背景連動インデックス、一覧型サービスを採用した推奨モーション案
 - `animation-dynamic.html`：採用したB案の確認用URL。内容は正式トップ `index.html` と同期
@@ -75,10 +77,11 @@
 
 1. 公開版は `https://kagami-fit.github.io/kagoya-consul-renewal/` を開く。
 2. ローカル確認はプロジェクト直下で `python3 -m http.server 8765` を実行し、`http://127.0.0.1:8765/` を開く。
-3. 共通ナビゲーションや営業時間を更新する場合は `python3 scripts/update_common_chrome.py` を実行する。
-4. ローカルサーバー起動後、`node scripts/qa_sample07.cjs http://127.0.0.1:8765/`で3画面幅の品質確認を行う。
-5. 現行トップを旧比較案3種へ反映する場合は `python3 scripts/build_design_variants.py` を実行する。
-6. 修正後は品質確認を行い、GitHubへpushする。
+3. 事業紹介の文章や構成を更新した場合は `node scripts/build_business_pages.mjs` を実行する。
+4. 共通ナビゲーションや営業時間を更新する場合は `python3 scripts/update_common_chrome.py` を実行する。
+5. ローカルサーバー起動後、`node scripts/qa_sample07.cjs http://127.0.0.1:8765/`で3画面幅の品質確認を行う。
+6. 現行トップを旧比較案3種へ反映する場合は `python3 scripts/build_design_variants.py` を実行する。
+7. 修正後は品質確認を行い、GitHubへpushする。
 
 ## 状態
 
@@ -89,7 +92,8 @@
 - トップページ：B案を正式採用し、自動紙送りを含むデザイン・演出へ変更済み（ファーストビューは静止）
 - Today’s KAGOYA・動いている領域の表示・4つの相談入口：反映済み
 - 社会貢献を8事業領域の一つとして表示し、共通ナビゲーションから遷移：反映済み
-- 8事業領域の見出し・写真カード・領域別導線：反映済み
+- 8事業領域の見出し・写真カード・領域別導線：一覧を簡潔化し、各専用ページへ接続済み
+- 事業別ページ：最新修正指示PDFの確定原稿をもとに、確認項目・選択肢・進め方・連携体制まで詳しく反映済み
 - 進行中プロジェクト表示・目的別問い合わせ導線・対応エリア案内：反映済み
 - 買取対象・対応エリアの3分割図解（全国／東京23区／国道16号線内側）：反映済み
 - トップの相談フロー・代表メッセージ・FAQ：修正指示により削除済み

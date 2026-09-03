@@ -3,11 +3,17 @@
 | ファイル | 内容 |
 |---|---|
 | `index.html` | トップ（今日の籠や、8事業領域、販売中物件、サービス、相談導線） |
+| `business.html` | 事業紹介一覧（8事業の短い概要と専用ページへの入口） |
+| `inheritance-vacant-house.html` | 相続コンサルティング |
+| `sale-consulting.html` | 不動産コンサルティング |
+| `brokerage-purchase.html` | 仲介事業・買取事業 |
+| `rights-coordination.html` | 底地・借地／権利調整 |
+| `fukuri.html` | 資産形成ラウンジ「エフクリ」 |
+| `property-management.html` | 賃貸経営オーナー支援 |
+| `corporate-seminars.html` | 企業向けセミナー事業 |
+| `social-contribution.html` | 社会貢献（NBCジュニア） |
 | `services.html` | サービス総合 |
-| `sale-consulting.html` | 売却・調査相談 |
-| `inheritance-vacant-house.html` | 相続・空き家相談 |
 | `purchase-asset.html` | 購入・資産形成相談 |
-| `property-management.html` | 管理・活用相談 |
 | `corporate-benefits.html` | 法人向け不動産相談 |
 | `team.html` | 専門家・チーム |
 | `about.html` | 会社情報 |

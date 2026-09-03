@@ -7,7 +7,8 @@ const root = path.resolve(__dirname, '..');
 const base = process.argv[2] || 'http://127.0.0.1:8770/';
 const defaultPages = [
   'index.html', 'services.html', 'service.html', 'sale-consulting.html',
-  'inheritance-vacant-house.html', 'purchase-asset.html', 'property-management.html',
+  'inheritance-vacant-house.html', 'brokerage-purchase.html', 'rights-coordination.html',
+  'fukuri.html', 'purchase-asset.html', 'property-management.html', 'corporate-seminars.html',
   'corporate-benefits.html', 'for-sale.html', 'properties.html',
   'team.html', 'about.html', 'business.html', 'social-contribution.html', 'insights.html', 'news.html', 'faq.html',
   'contact.html', 'privacy.html', 'blog/inherited-property-first-steps.html',
@@ -16,7 +17,7 @@ const defaultPages = [
 const requestedPages = process.argv.slice(3);
 const pages = requestedPages.length ? requestedPages : defaultPages;
 const widths = [375, 768, 1280];
-const shots = new Set(['index.html', 'business.html', 'social-contribution.html', 'for-sale.html', 'contact.html']);
+const shots = new Set(['index.html', 'business.html', 'inheritance-vacant-house.html', 'brokerage-purchase.html', 'fukuri.html', 'corporate-seminars.html', 'social-contribution.html', 'for-sale.html', 'contact.html']);
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
