@@ -18,7 +18,7 @@
 - 電話、メール、公式お問い合わせフォームから相談へ進める
 - スマートフォンとPCの両方で閲覧できる
 - sample07と同じ横スクロールサービスとカード表示演出を体験できる（ファーストビューは静止表示）
-- 現行内容を変えず、信頼感重視の「推奨版」と写真・パネルの動きを強めた「別案版」を比較できる
+- B案の紙面出力・写真展開・カード展開・伸縮パネルを採用した正式トップを閲覧できる
 - GitHub Pagesで公開し、ZIPでも再配布できる
 - Google スプレッドシートで日々の更新、公開確認、更新履歴を一元管理できる
 - HTMLやGitHubを開かずにToday・お知らせ・物件・プロジェクト・文章・画像を更新できる
@@ -33,6 +33,7 @@
 - `templates/sample07-reference.html`：移植元sample07の構造・動きを保存した参照テンプレート
 - `scripts/build_sample07_home.py`：参照テンプレートへKAGOYAの確定内容を流し込み、トップを再生成するスクリプト
 - `scripts/update_blog_chrome.py`：ブログ3記事へsample07の共通ヘッダー・フッターを適用するスクリプト
+- `scripts/update_common_chrome.py`：全公開ページのナビゲーション、営業時間、フッターを一括で揃えるスクリプト
 - `scripts/migrate-wp-news.js`：元WordPressの公開お知らせを取得し、一覧・詳細表示用JSONを生成するスクリプト
 - `scripts/qa_site.py`：3画面幅で全ページを検証し、代表スクリーンショットを保存するスクリプト
 - `scripts/qa_sample07.cjs`：sample07特有の長いスクロール演出を含め、3画面幅で主要21ページを検証するスクリプト
@@ -47,13 +48,16 @@
 - `src/hero-kagoya-consultation.*`：指定されたファーストビュー背景写真
 - `src/gen-*`：サイト専用に生成した相談、サービス、事例、会社用の写真素材
 - `src/gen-domain-*`：8つの事業領域カード用に生成した写真素材
+- `src/nbc-junior-workshop-*`：クライアント提供のNBCジュニア授業写真（Web表示用WebPを併記）
 - `src/listing-*`：現行公式サイトから取得した販売中物件の実物写真
 - `data/news-items.json`：元サイトから移行したお知らせ20件（本文HTML・カテゴリ・日付・元URL）
 - `src/generated-image-manifest.md`：生成画像の用途とプロンプト一覧
 - `src/wp-image-sources.md`：販売中物件写真の取得元URL一覧
 - `index.html`：トップページ
+- `business.html`：8つの事業領域を詳しく紹介する統合ページ
+- `social-contribution.html`：NBCジュニアの授業と社会貢献活動を紹介する専用ページ
 - `animation-recommended.html`：縦タイムライン、追従ビジュアル、背景連動インデックス、一覧型サービスを採用した推奨モーション案
-- `animation-dynamic.html`：紙面出力、写真展開、カードファン、伸縮パネルを採用した動き強めの別案（比較用・検索除外）
+- `animation-dynamic.html`：採用したB案の確認用URL。内容は正式トップ `index.html` と同期
 - `services.html` と5つの詳細ページ：相談サービス
 - `team.html`／`about.html`：体制、会社情報（相談事例ページは廃止）
 - `news.html`／`news-detail.html`：移行したお知らせの一覧と個別詳細
@@ -70,7 +74,7 @@
 
 1. 公開版は `https://kagami-fit.github.io/kagoya-consul-renewal/` を開く。
 2. ローカル確認はプロジェクト直下で `python3 -m http.server 8765` を実行し、`http://127.0.0.1:8765/` を開く。
-3. 確定仕様から再生成する場合は `python3 scripts/build_site.py` → `python3 scripts/build_sample07_home.py` → `python3 scripts/update_blog_chrome.py` の順に実行する。
+3. 共通ナビゲーションや営業時間を更新する場合は `python3 scripts/update_common_chrome.py` を実行する。
 4. ローカルサーバー起動後、`node scripts/qa_sample07.cjs http://127.0.0.1:8765/`で3画面幅の品質確認を行う。
 5. 現行トップを旧比較案3種へ反映する場合は `python3 scripts/build_design_variants.py` を実行する。
 6. 修正後は品質確認を行い、GitHubへpushする。
@@ -81,7 +85,7 @@
 - 会社案内PDFのカラー・トンマナ反映：完了
 - PDF由来画像の不使用・主要写真の新規生成：完了
 - 販売中物件ページ：稼働中
-- トップページ：sample07デザイン・演出へ変更済み
+- トップページ：B案を正式採用し、自動紙送りを含むデザイン・演出へ変更済み（ファーストビューは静止）
 - Today’s KAGOYA・動いている領域の表示・4つの相談入口：反映済み
 - 社会貢献を8事業領域の一つとして表示し、共通ナビゲーションから遷移：反映済み
 - 8事業領域の見出し・写真カード・領域別導線：反映済み
@@ -94,7 +98,7 @@
 - ブログ3記事：sample07共通ヘッダー・配色・書体へ変更済み
 - GitHub Pages：稼働中
 - モーション比較A・推奨版：実装・PC／スマホ相当幅QA完了
-- モーション比較B・動き強め版：実装・PC／スマホ相当幅QA完了
+- モーションB案：正式トップへ反映済み
 - 参考サイト別デザイン比較3案：旧比較資料として維持（検索除外）
 - 納品ZIP：今回の公開時に再生成
 - WordPress移行：未着手

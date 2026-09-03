@@ -5,16 +5,18 @@ const { chromium } = require('playwright');
 
 const root = path.resolve(__dirname, '..');
 const base = process.argv[2] || 'http://127.0.0.1:8770/';
-const pages = [
+const defaultPages = [
   'index.html', 'services.html', 'service.html', 'sale-consulting.html',
   'inheritance-vacant-house.html', 'purchase-asset.html', 'property-management.html',
   'corporate-benefits.html', 'for-sale.html', 'properties.html',
-  'team.html', 'about.html', 'insights.html', 'news.html', 'faq.html',
+  'team.html', 'about.html', 'business.html', 'social-contribution.html', 'insights.html', 'news.html', 'faq.html',
   'contact.html', 'privacy.html', 'blog/inherited-property-first-steps.html',
   'blog/rebuild-impossible-property.html', 'blog/check-before-price-cut.html'
 ];
+const requestedPages = process.argv.slice(3);
+const pages = requestedPages.length ? requestedPages : defaultPages;
 const widths = [375, 768, 1280];
-const shots = new Set(['index.html', 'for-sale.html', 'contact.html']);
+const shots = new Set(['index.html', 'business.html', 'social-contribution.html', 'for-sale.html', 'contact.html']);
 
 (async () => {
   const browser = await chromium.launch({ headless: true });

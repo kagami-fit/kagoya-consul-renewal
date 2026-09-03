@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>株式会社籠や｜売る前に、不動産の選択肢を知る</title>
+  <title>株式会社籠や｜まずは「知る」ことを大切にしています</title>
   <meta name="description" content="東京都目黒区の株式会社籠やは、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続の納得できる判断を支えます。">
   <meta name="kagoya-today-feed" content="data/today-items.json">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -12,10 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;700;900&family=Zen+Kaku+Gothic:wght@400;500;700;900&family=Zen+Old+Mincho:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --main:#156082; --main-deep:#0E4E6A; --navy:#0E2841; --navy-deep:#091D30;
+      --main:#156082; --main-deep:#0E4E6A; --navy:#657681; --navy-deep:#53636C;
       --teal:#C49A4A; --teal-deep:#876520; --silver:#D9E3E8;
       --bg:#FFFFFF; --soft:#F4F8FA; --paper:#FAFCFE;
-      --ink:#0E2841; --body:#415563; --muted:#657681; --font-body:"Zen Kaku Gothic",sans-serif; --font-display:"Shippori Mincho","Yu Mincho",serif; --font-en:"Space Grotesk",sans-serif;
+      --ink:#415563; --body:#415563; --muted:#657681; --font-body:"Zen Kaku Gothic",sans-serif; --font-display:"Shippori Mincho","Yu Mincho",serif; --font-en:"Space Grotesk",sans-serif;
       --line:rgba(21,96,130,.18); --line-soft:rgba(21,96,130,.09); --line-white:rgba(255,255,255,.16);
     }
     *{box-sizing:border-box;}
@@ -50,10 +50,10 @@
        テンプレ色 --accent#13406B→--main / --ink→--navy にマッピング
        ============================================================ */
     .site-header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94); backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
-    .site-header__topbar{background:var(--navy); color:rgba(255,255,255,.85);}
+    .site-header__topbar{background:var(--navy); color:rgba(255,255,255,.95);}
     .site-header__topbar .in{width:min(1280px,calc(100% - 48px)); margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:8px 0; font-size:12px; letter-spacing:.04em;}
-    .site-header__ticker{display:inline-flex; align-items:center; gap:8px; min-width:0; color:rgba(255,255,255,.9);}
-    .site-header__ticker b{display:inline-flex; align-items:center; gap:5px; color:var(--teal); font-family:var(--font-en); font-size:9px; letter-spacing:.18em; white-space:nowrap;}
+    .site-header__ticker{display:inline-flex; align-items:center; gap:8px; min-width:0; color:#fff;}
+    .site-header__ticker b{display:inline-flex; align-items:center; gap:5px; color:#fff; font-family:var(--font-en); font-size:9px; letter-spacing:.18em; white-space:nowrap;}
     .site-header__ticker b::before{content:""; width:6px; height:6px; border-radius:50%; background:#8ad4ca; box-shadow:0 0 0 4px rgba(138,212,202,.12);}
     .site-header__ticker span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
     .site-header__topbar .right{display:flex; gap:18px; align-items:center;}
@@ -114,16 +114,6 @@
     .facility__link{display:inline-flex; align-items:center; gap:8px; flex:0 0 auto; margin-bottom:3px; padding:11px 16px; border:1px solid var(--main); color:var(--main); font-size:12px; font-weight:700; text-decoration:none; transition:background .2s ease,color .2s ease,transform .2s ease;}
     .facility__link:hover{background:var(--main); color:#fff; transform:translateY(-2px);}
     .facility__link::after{content:"→"; font-family:var(--font-en);}
-    .fac-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:190px; gap:14px;}
-    .fac-grid figure{margin:0; overflow:hidden; border-radius:8px; position:relative;}
-    .fac-grid img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease;}
-    .fac-grid figure:hover img{transform:scale(1.05);}
-    .fac-grid figure figcaption{position:absolute; left:0; bottom:0; background:rgba(14,40,65,.78); color:#fff; font-size:11px; padding:6px 12px; border-radius:0 8px 0 0;}
-    .fac-grid .big2{grid-column:span 2; grid-row:span 2;}
-    .fac-grid .wide{grid-column:span 2;}
-    .property-shot{display:block; min-width:0;}
-    .property-shot figure{height:100%;}
-    .property-shot:hover figcaption{background:var(--main);}
     .result-block{margin-top:84px; padding-top:68px; border-top:1px solid var(--line);}
     .result-block__head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:32px;}
     .result-block__head h3{margin-top:12px; font-size:clamp(26px,3.4vw,40px);}
@@ -134,10 +124,11 @@
     .result-card__media{position:relative; aspect-ratio:4/3; overflow:hidden; background:#e6eef3;}
     .result-card__media img{width:100%; height:100%; object-fit:cover; transition:transform .55s cubic-bezier(.2,.7,.2,1);}
     .result-card:hover .result-card__media img{transform:scale(1.045);}
-    .result-card__badge{position:absolute; left:12px; top:12px; padding:5px 9px; border-radius:999px; background:rgba(14,40,65,.88); color:#fff; font-family:var(--font-en); font-size:9px; font-weight:700; letter-spacing:.14em;}
+    .result-card__badge{position:absolute; left:12px; top:12px; padding:5px 9px; border-radius:999px; background:rgba(101,118,129,.94); color:#fff; font-family:var(--font-en); font-size:9px; font-weight:700; letter-spacing:.14em;}
     .result-card__body{display:flex; flex:1; flex-direction:column; padding:18px;}
     .result-card__body h4{margin:0; color:var(--ink); font-family:var(--font-display); font-size:18px; line-height:1.55;}
     .result-card__body p{margin-top:8px; color:var(--muted); font-size:12px; line-height:1.75;}
+    .result-card__body .result-card__price{color:var(--main); font-family:var(--font-en); font-size:18px; font-weight:700; letter-spacing:.02em;}
     .result-card__more{margin-top:auto; padding-top:16px; color:var(--main); font-size:12px; font-weight:700;}
 
     /* ============================================================
@@ -328,23 +319,23 @@
        ============================================================ */
     .c-cta{width:100vw; position:relative; left:50%; margin-left:-50vw; min-height:88vh; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--navy-deep);}
     .c-cta__bg{position:absolute; inset:0;} .c-cta__bg img{width:100%; height:100%; object-fit:cover; filter:saturate(.9) brightness(.5);}
-    .c-cta__ov{position:absolute; inset:0; background:linear-gradient(180deg,rgba(13,36,54,.82),rgba(13,36,54,.66) 50%,rgba(13,36,54,.92));}
+    .c-cta__ov{position:absolute; inset:0; background:linear-gradient(180deg,rgba(65,85,99,.82),rgba(83,99,108,.68) 50%,rgba(65,85,99,.9));}
     .c-cta__glow{position:absolute; width:54vw; height:54vw; border-radius:50%; filter:blur(92px); mix-blend-mode:screen; opacity:.55; background:radial-gradient(circle,var(--teal),transparent 64%); left:8%; top:8%;}
     .c-cta__glow.g2{background:radial-gradient(circle,var(--main),transparent 64%); right:6%; bottom:4%; left:auto; top:auto;}
     .c-cta__inner{position:relative; z-index:3; width:min(1160px,calc(100% - 56px)); padding:104px 0;}
-    .c-cta__inner .eyebrow{color:var(--teal);} .c-cta__inner .eyebrow::before{background:var(--teal);}
+    .c-cta__inner .eyebrow{color:#fff;} .c-cta__inner .eyebrow::before{background:var(--teal);}
     .c-cta__inner h2{color:#fff; font-weight:700; font-size:clamp(32px,5vw,60px); line-height:1.38; margin:22px 0 0; text-shadow:0 4px 40px rgba(0,0,0,.5);}
     .c-cta__inner h2 .mk{color:var(--teal);}
     .c-cta__inner p.lead{color:rgba(255,255,255,.88); font-size:17px; margin:22px 0 0; max-width:39em;}
     .contact-guide__layout{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(380px,.95fr); gap:64px; align-items:end;}
     .contact-guide__routes{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-    .contact-route{display:flex; flex-direction:column; min-height:172px; padding:22px; border:1px solid rgba(255,255,255,.24); border-radius:10px; background:rgba(9,29,48,.66); backdrop-filter:blur(8px); transition:transform .25s ease,background .25s ease,border-color .25s ease;}
+    .contact-route{display:flex; flex-direction:column; min-height:172px; padding:22px; border:1px solid rgba(255,255,255,.24); border-radius:10px; background:rgba(65,85,99,.68); backdrop-filter:blur(8px); transition:transform .25s ease,background .25s ease,border-color .25s ease;}
     .contact-route:hover{transform:translateY(-4px); background:rgba(255,255,255,.13); border-color:rgba(255,255,255,.5);}
-    .contact-route span{color:var(--teal); font-family:var(--font-en); font-size:10px; letter-spacing:.14em;}
+    .contact-route span{color:#fff; font-family:var(--font-en); font-size:10px; letter-spacing:.14em;}
     .contact-route strong{margin-top:14px; color:#fff; font-family:var(--font-display); font-size:20px; line-height:1.55;}
     .contact-route small{margin-top:auto; padding-top:14px; color:rgba(255,255,255,.68); font-size:12px;}
     .contact-guide__area{display:grid; grid-template-columns:130px 1fr; gap:16px; align-items:start; margin-top:32px; padding-top:22px; border-top:1px solid rgba(255,255,255,.24);}
-    .contact-guide__area b{color:var(--teal); font-family:var(--font-en); font-size:11px; letter-spacing:.14em;}
+    .contact-guide__area b{color:#fff; font-family:var(--font-en); font-size:11px; letter-spacing:.14em;}
     .contact-guide__area p{color:rgba(255,255,255,.78); font-size:13px; line-height:1.9;}
     .contact-guide__phone{display:inline-flex; align-items:center; gap:12px; margin-top:28px; color:#fff; font-family:var(--font-en); font-size:clamp(20px,2.6vw,30px); font-weight:700; letter-spacing:.04em;}
     .contact-guide__phone small{font-family:var(--font-body); font-size:11px; font-weight:500; color:rgba(255,255,255,.65); letter-spacing:0;}
@@ -374,11 +365,11 @@
     .today__item p{color:var(--muted); font-size:13px; margin-top:4px;}
     .today__meta{display:block; margin-top:4px; color:var(--muted); font-family:var(--font-en); font-size:10px; letter-spacing:.08em; text-transform:uppercase;}
     .today__arrow{font-family:var(--font-en); color:var(--main); font-size:24px; transition:transform .25s ease;}.today__item:hover .today__arrow{transform:translateX(4px);}
-    .today__source{display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:28px; padding:18px 0; border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
-    .today__source-label{display:block; color:var(--main); font-family:var(--font-en); font-size:10px; letter-spacing:.16em; text-transform:uppercase;}
-    .today__source strong{display:block; margin-top:4px; color:var(--ink); font-size:14px;}
-    .today__source p{margin-top:2px; color:var(--muted); font-size:12px;}
-    .today__source-link{color:var(--main); font-size:12px; font-weight:700; white-space:nowrap;}
+    .today__news-cta{text-align:center; margin-top:34px;}
+    .today__news-button{display:inline-flex; align-items:center; justify-content:center; gap:16px; min-width:270px; min-height:60px; padding:15px 34px; border:1px solid var(--ink); border-radius:999px; color:var(--ink); background:#fff; font-size:14px; font-weight:700; letter-spacing:.04em; transition:transform .25s ease,background .25s ease,color .25s ease;}
+    .today__news-button span{font-family:var(--font-en); font-size:19px; transition:transform .25s ease;}
+    .today__news-button:hover{transform:translateY(-3px); background:var(--ink); color:#fff;}
+    .today__news-button:hover span{transform:translateX(4px);}
     .today__entry{margin-top:46px; padding:28px; background:var(--soft); border:1px solid var(--line); border-radius:12px;}
     .today__entry-head{display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,420px); gap:22px; align-items:end;}
     .today__entry-head h3{font-size:clamp(22px,3vw,32px); margin-top:8px;}
@@ -412,12 +403,6 @@
     .entry-card em{margin-top:auto; padding-top:12px; color:var(--main); font-size:12px; font-style:normal; font-weight:700;}
     .today__foot{display:flex; justify-content:space-between; gap:20px; margin-top:24px; color:var(--muted); font-size:12px;}
     .today__social{display:flex; gap:14px; font-family:var(--font-en);}.today__social a{color:var(--main); text-decoration:underline; text-underline-offset:3px;}
-    .motion-strip{padding:42px 0 48px; background:var(--paper); border-bottom:1px solid var(--line);}
-    .motion-strip__inner{display:grid; grid-template-columns:170px 1fr; align-items:center; gap:28px;}
-    .motion-strip h2{margin-top:6px; font-size:18px;}
-    .motion-strip__rail{display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
-    .motion-strip__rail span{padding:9px 14px; border:1px solid var(--line); border-radius:999px; color:var(--main); background:#fff; font-size:12px; font-weight:600;}
-    .motion-strip__inner > p{grid-column:2; margin-top:-10px; color:var(--muted); font-size:12px;}
     /* 8事業領域：大きなコンセプト説明ではなく、進行中の現場を写真で見せるポートフォリオ */
     .domain-section{padding:96px 0 112px; background:var(--soft); border-bottom:1px solid var(--line);}
     .domain-section > .wrap{width:min(1200px,calc(100% - 56px));}
@@ -425,6 +410,7 @@
     .domain-section__head h2{margin-top:16px; font-size:clamp(36px,5vw,68px); line-height:1.24; letter-spacing:.015em;}
     .domain-section__head h2 .mk{display:inline-block;}
     .domain-section__lead{color:var(--muted); font-size:14px; line-height:2; max-width:34em;}
+    .domain-section__more{display:block;width:max-content;margin-top:18px;color:var(--main);font-weight:700;border-bottom:1px solid currentColor;text-underline-offset:4px;}
     .domain-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:52px;}
     .domain-card{display:flex; flex-direction:column; min-width:0; overflow:hidden; background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 18px 38px -32px rgba(14,40,65,.7); transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
     .domain-card:hover{transform:translateY(-6px); border-color:rgba(21,96,130,.45); box-shadow:0 22px 44px -28px rgba(14,40,65,.55);}
@@ -457,8 +443,8 @@
     .social-card a{margin-top:auto; padding-top:16px; color:var(--main); font-size:12px; font-weight:700;}
     @media(max-width:1040px){.domain-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.domain-section__head{grid-template-columns:1fr; gap:20px;}.result-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
     @media(max-width:900px){.social-section__head{grid-template-columns:1fr; gap:20px;}.social-section__body{grid-template-columns:1fr;}.social-section__visual{min-height:240px;}.social-section__cards{grid-template-columns:repeat(3,minmax(0,1fr));}}
-    @media(max-width:900px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.entry-grid{grid-template-columns:repeat(2,1fr);}.today__entry-head{grid-template-columns:1fr;}.entry-routes__head{display:block;}.entry-routes__head p{margin-top:6px;}.motion-strip__inner{grid-template-columns:1fr; gap:18px;}.motion-strip__inner > p{grid-column:auto; margin-top:-6px;}}
-    @media(max-width:680px){.site-header__ticker span{max-width:46vw;}.today{padding:76px 0 80px;}.today__head{display:block;}.today__stamp{margin-top:24px;}.today__item{grid-template-columns:1fr auto; gap:12px;}.today__kind{grid-column:1 / -1;}.today__item h3{font-size:16px;}.today__source{display:block;}.today__source-link{display:inline-block; margin-top:12px;}.today__entry{padding:20px;}.project-grid{grid-template-columns:1fr;}.entry-grid{grid-template-columns:1fr;}.social-section{padding:76px 0 84px;}.social-section > .wrap{width:min(100% - 36px,620px);}.social-section__body{margin-top:30px;}.social-section__cards{grid-template-columns:1fr;}.social-card{min-height:0;}.today__foot{display:block;}.today__social{margin-top:10px;}.hero-live-note{font-size:11px;}}
+    @media(max-width:900px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.entry-grid{grid-template-columns:repeat(2,1fr);}.today__entry-head{grid-template-columns:1fr;}.entry-routes__head{display:block;}.entry-routes__head p{margin-top:6px;}}
+    @media(max-width:680px){.site-header__ticker span{max-width:46vw;}.today{padding:76px 0 80px;}.today__head{display:block;}.today__stamp{margin-top:24px;}.today__item{grid-template-columns:1fr auto; gap:12px;}.today__kind{grid-column:1 / -1;}.today__item h3{font-size:16px;}.today__news-button{width:100%; min-width:0;}.today__entry{padding:20px;}.project-grid{grid-template-columns:1fr;}.entry-grid{grid-template-columns:1fr;}.social-section{padding:76px 0 84px;}.social-section > .wrap{width:min(100% - 36px,620px);}.social-section__body{margin-top:30px;}.social-section__cards{grid-template-columns:1fr;}.social-card{min-height:0;}.today__foot{display:block;}.today__social{margin-top:10px;}.hero-live-note{font-size:11px;}}
     @media(max-width:680px){.domain-section{padding:76px 0 84px;}.domain-section > .wrap{width:min(100% - 36px,620px);}.domain-section__head h2{font-size:clamp(34px,10vw,48px);}.domain-grid{grid-template-columns:1fr; gap:16px; margin-top:38px;}.domain-card__body h3{font-size:21px;}.result-block__head{display:block;}.result-block__head p{margin-top:12px;}.result-grid{grid-template-columns:1fr;}.result-block{margin-top:64px; padding-top:50px;}}
     /* /ZOROYA:MAIN */
 
@@ -467,16 +453,16 @@
        ※直前に最終CTA があるため footer-03 の CTA帯は持ち込まず情報部のみ採用
        テンプレ --ink#13161D→--navy, --gold→--teal にマッピング
        ============================================================ */
-    .site-footer{background:var(--navy); color:rgba(255,255,255,.74); padding:0 0 0;}
+    .site-footer{background:var(--navy); color:rgba(255,255,255,.9); padding:0 0 0;}
     .site-footer__info{width:min(1200px,calc(100% - 56px)); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding:58px 0 30px;}
     .site-footer__nap .nm{font-family:var(--font-display); font-weight:700; font-size:24px; color:#fff;}
-    .site-footer__nap p{color:rgba(255,255,255,.74); font-size:14px; line-height:1.9; margin:14px 0 0;}
+    .site-footer__nap p{color:rgba(255,255,255,.9); font-size:14px; line-height:1.9; margin:14px 0 0;}
     .site-footer__nap .tel{font-family:var(--font-en); color:#fff; font-weight:700; font-size:18px; letter-spacing:.04em; margin-top:10px;}
-    .site-footer__col h4{font-family:var(--font-en); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); margin:0 0 14px;}
+    .site-footer__col h4{font-family:var(--font-en); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#fff; margin:0 0 14px;}
     .site-footer__col a{display:block; color:#fff; text-decoration:none; font-size:14px; padding:6px 0; opacity:.85;}
-    .site-footer__col a:hover{opacity:1; color:var(--teal);}
+    .site-footer__col a:hover{opacity:1; color:#fff; text-decoration:underline; text-underline-offset:4px;}
     .site-footer__cp{border-top:1px solid var(--line-white);}
-    .site-footer__cp .in{width:min(1200px,calc(100% - 56px)); margin:0 auto; padding:20px 0; font-size:12px; color:rgba(255,255,255,.55); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+    .site-footer__cp .in{width:min(1200px,calc(100% - 56px)); margin:0 auto; padding:20px 0; font-size:12px; color:rgba(255,255,255,.78); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
     @media(max-width:820px){ .site-footer__info{grid-template-columns:1fr; gap:30px;} }
 
     @media (max-width:960px){
@@ -484,14 +470,12 @@
       .site-header__nav{display:none;}
       .site-header__cta{display:inline-flex;}
       .site-header__brand{text-align:left;} .site-header__brand img{margin:0;}
-      .fac-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:170px;}
     }
     @media (max-width:768px){
       body{font-size:15px;}
       .site-header__topbar .in{display:none;} .site-header__cta{display:none;}
       .facility .head{display:block;}
       .facility__link{margin-top:20px;}
-      .fac-grid{grid-template-columns:1fr; grid-auto-rows:200px;} .fac-grid .big2,.fac-grid .wide{grid-column:span 1; grid-row:span 1;}
       .btn{width:100%;}
       .hero .trust .ti{border-right:0; border-bottom:1px solid var(--line);}
       .hero-scrim{background:linear-gradient(180deg, rgba(248,252,254,.92) 0%, rgba(248,252,254,.7) 38%, rgba(248,252,254,.86) 100%);}
@@ -512,7 +496,7 @@
     .skip-link{position:fixed;left:-9999px;top:0;z-index:200;padding:10px 16px;background:var(--teal);color:var(--navy);font-weight:700}.skip-link:focus{left:8px;top:8px}
     a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:3px}
     .hamburger{display:none;width:46px;height:46px;padding:11px;border:1px solid var(--line);background:#fff;cursor:pointer;justify-self:end}.hamburger span{display:block;height:1px;margin:5px 0;background:var(--navy);transition:.25s}.menu-open .hamburger span:nth-child(1){transform:translateY(6px) rotate(45deg)}.menu-open .hamburger span:nth-child(2){opacity:0}.menu-open .hamburger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-    .drawer-shade{position:fixed;inset:0;z-index:89;background:rgba(9,29,48,.48);opacity:0;pointer-events:none;transition:opacity .25s}.drawer{position:fixed;z-index:90;top:0;right:0;bottom:0;width:min(420px,90vw);padding:96px 32px 32px;background:#fff;transform:translateX(101%);transition:transform .3s cubic-bezier(.2,.7,.2,1);overflow-y:auto}.drawer nav{border-top:1px solid var(--navy)}.drawer nav a{display:flex;align-items:center;justify-content:space-between;min-height:58px;border-bottom:1px solid var(--line);font-weight:700}.drawer nav small{font-family:var(--font-en);font-size:.66rem;letter-spacing:.14em;color:var(--main)}.drawer-contact{display:grid;gap:10px;margin-top:28px}.menu-open .drawer-shade{opacity:1;pointer-events:auto}.menu-open .drawer{transform:translateX(0)}
+    .drawer-shade{position:fixed;inset:0;z-index:89;background:rgba(65,85,99,.45);opacity:0;pointer-events:none;transition:opacity .25s}.drawer{position:fixed;z-index:90;top:0;right:0;bottom:0;width:min(420px,90vw);padding:96px 32px 32px;background:#fff;transform:translateX(101%);transition:transform .3s cubic-bezier(.2,.7,.2,1);overflow-y:auto}.drawer nav{border-top:1px solid var(--navy)}.drawer nav a{display:flex;align-items:center;justify-content:space-between;min-height:58px;border-bottom:1px solid var(--line);font-weight:700}.drawer nav small{font-family:var(--font-en);font-size:.66rem;letter-spacing:.14em;color:var(--main)}.drawer-contact{display:grid;gap:10px;margin-top:28px}.menu-open .drawer-shade{opacity:1;pointer-events:auto}.menu-open .drawer{transform:translateX(0)}
     @media(max-width:960px){.site-header__main{grid-template-columns:auto 1fr auto}.site-header__cta{display:none}.hamburger{display:block}}
   </style>
   <script>document.documentElement.className+=" j";</script>
@@ -537,27 +521,112 @@
 {"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/","description":"株式会社籠やは、東京都目黒区を拠点に、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続などの判断を支える不動産コンサルティング会社です。","logo":"https://kagami-fit.github.io/kagoya-consul-renewal/src/logo.png","telephone":"03-4400-7994","address":{"@type":"PostalAddress","streetAddress":"〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号"},"openingHours":"10:00〜18:00"},{"@type":"WebSite","name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/"}]}
 </script>
 <!-- /ZOROYA:SEO -->
+<style id="motion-dynamic">
+  /* 採用モーション — sec-news-11 / sec-gallery-04 / sec-services-13 / sec-links-10 を案件用に再構成 */
+  body.motion-variant--dynamic{--motion-accent:#C49A4A;overflow-x:clip}
+  .motion-variant--dynamic .today,.motion-variant--dynamic .purchase-area{overflow:hidden}
+  .motion-variant--dynamic .hero,.motion-variant--dynamic .hero *{animation:none!important}
+
+  /* Today's KAGOYA — レシートプリンタ型 */
+  .motion-variant--dynamic .today{padding-top:110px;background:linear-gradient(180deg,#fff 0%,#F4F8FA 100%)}
+  .motion-variant--dynamic .dyn-receipt-stage{position:relative;display:grid;place-items:start center;min-height:900px;padding:86px clamp(20px,6vw,84px) 68px;overflow:hidden;border-radius:28px;background:linear-gradient(145deg,#657681,#829099 64%,#AAB5BB);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 38px 80px -52px rgba(65,85,99,.55)}
+  .motion-variant--dynamic .dyn-receipt-stage::before{content:"KAGOYA ACTIVITY TERMINAL";position:absolute;left:50%;top:28px;transform:translateX(-50%);color:rgba(255,255,255,.9);font-family:var(--font-en);font-size:10px;letter-spacing:.22em;white-space:nowrap}
+  .motion-variant--dynamic .dyn-receipt-stage::after{content:"";position:absolute;z-index:3;left:12%;right:12%;top:57px;height:18px;border-radius:999px;background:#415563;box-shadow:inset 0 4px 8px rgba(0,0,0,.46),0 1px 0 rgba(255,255,255,.22)}
+  .motion-variant--dynamic .dyn-receipt-paper{position:relative;z-index:2;width:min(820px,92%);padding:58px clamp(24px,5vw,62px) 74px;background:#fff;box-shadow:0 28px 54px rgba(0,0,0,.28);transform-origin:top center;will-change:transform}
+  .motion-variant--dynamic .dyn-receipt-paper::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:16px;background:linear-gradient(135deg,#fff 8px,transparent 0) 0 0/16px 16px repeat-x}
+  .motion-variant--dynamic .dyn-receipt-paper .today__head{display:grid;grid-template-columns:1fr auto;margin-bottom:26px;padding-bottom:30px;border-bottom:2px solid var(--navy)}
+  .motion-variant--dynamic .dyn-receipt-paper .today__head h2{font-size:clamp(34px,5vw,56px)}
+  .motion-variant--dynamic .dyn-receipt-paper .today__grid{border-top:0}
+  .motion-variant--dynamic .dyn-receipt-paper .today__item{grid-template-columns:98px minmax(0,1fr) auto;padding:21px 0;background:#fff}
+  .motion-variant--dynamic .dyn-receipt-paper .today__news-cta{margin-top:30px}
+  .motion-variant--dynamic .today__entry{margin-top:92px;padding:clamp(24px,4vw,46px);border-radius:22px;background:#fff;box-shadow:0 28px 70px -54px rgba(65,85,99,.55)}
+
+  /* プロジェクト — 重なった写真が横一列へ開く */
+  .motion-variant--dynamic .project-grid{position:relative;gap:18px;margin-top:48px;perspective:1400px}
+  .motion-variant--dynamic .project-card{border-radius:2px;box-shadow:0 26px 54px -36px rgba(9,29,48,.75);transform-origin:center bottom}
+  .motion-variant--dynamic .project-card__media{aspect-ratio:4/3}
+  .motion-variant--dynamic .project-card__body{padding:21px 20px 24px}
+  .motion-variant--dynamic .project-card__body h4{font-size:20px}
+  .motion-variant--dynamic .entry-routes{margin-top:58px}
+  .motion-variant--dynamic .entry-grid{gap:0;border:1px solid var(--line)}
+  .motion-variant--dynamic .entry-card{min-height:185px;border:0;border-right:1px solid var(--line);border-radius:0;background:#fff}
+  .motion-variant--dynamic .entry-card:last-child{border-right:0}
+  .motion-variant--dynamic .entry-card:hover{z-index:2;transform:translateY(-8px) scale(1.025);border-color:var(--main);box-shadow:0 24px 48px -30px rgba(9,29,48,.6)}
+
+  /* 8事業領域 — カードファン */
+  .motion-variant--dynamic .domain-section{padding-top:120px;background:#fff;overflow:hidden}
+  .motion-variant--dynamic .domain-section__head{padding-bottom:42px;border-bottom:1px solid var(--navy)}
+  .motion-variant--dynamic .domain-grid{gap:18px;perspective:1600px}
+  .motion-variant--dynamic .domain-card{border-radius:3px;box-shadow:0 28px 52px -42px rgba(9,29,48,.7);transform-origin:50% 120%}
+  .motion-variant--dynamic .domain-card__media{aspect-ratio:5/4}
+  .motion-variant--dynamic .domain-card__body{padding:22px}
+
+  /* 販売中物件／成約実績 — 共通カード表示 */
+  .motion-variant--dynamic .facility{overflow:hidden}
+  .motion-variant--dynamic .facility .head{padding-bottom:24px;border-bottom:1px solid var(--line)}
+  .motion-variant--dynamic .facility>.wrap>.result-grid{margin-top:0}
+  .motion-variant--dynamic .result-card{border-radius:3px;box-shadow:0 26px 54px -42px rgba(65,85,99,.48)}
+
+  /* 相談サービス — 横にめくるスナップレール（pinなし） */
+  .motion-variant--dynamic .c-feat__pin{height:auto;min-height:0;display:block;overflow:hidden;padding:8px 0 112px}
+  .motion-variant--dynamic .c-feat__track{display:flex;width:100%;padding:0 max(28px,calc((100vw - 1160px)/2));gap:20px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--main) transparent;transform:none!important}
+  .motion-variant--dynamic .c-feat__card{flex:0 0 min(440px,84vw);scroll-snap-align:center;border-radius:3px;box-shadow:0 26px 54px -40px rgba(9,29,48,.72)}
+  .motion-variant--dynamic .c-feat__card .ph{aspect-ratio:5/3}
+
+  /* 対応エリア — ピンが順に立つ */
+  .motion-variant--dynamic .purchase-area__board{position:relative;isolation:isolate;background:linear-gradient(135deg,#F3F8FA,#fff)}
+  .motion-variant--dynamic .area-card{transition:transform .35s ease,background .35s ease}
+  .motion-variant--dynamic .area-card:hover{z-index:2;transform:translateY(-10px);background:#fff}
+  .motion-variant--dynamic .area-card__visual img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .motion-variant--dynamic .area-card:hover .area-card__visual img{transform:scale(1.055)}
+
+  /* 問い合わせ — sec-links-10 の伸縮パネル */
+  .motion-variant--dynamic .c-cta{min-height:820px}
+  .motion-variant--dynamic .contact-guide__layout{display:block}
+  .motion-variant--dynamic .contact-guide__layout>div:first-child{max-width:820px}
+  .motion-variant--dynamic .contact-guide__routes{display:flex;height:350px;gap:8px;margin-top:58px}
+  .motion-variant--dynamic .contact-route{position:relative;flex:1 1 0;display:flex;min-width:0;min-height:0;justify-content:flex-end;padding:26px 24px;border-radius:2px;background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.04));overflow:hidden;transition:flex .62s cubic-bezier(.18,.82,.18,1),background .3s ease}
+  .motion-variant--dynamic.motion-ready .contact-route{clip-path:inset(0 0 100% 0)}
+  .motion-variant--dynamic .contact-route::before{content:attr(data-dyn-number);position:absolute;left:16px;top:8px;color:rgba(255,255,255,.12);font-family:var(--font-en);font-size:clamp(76px,8vw,126px);font-weight:900;line-height:1}
+  .motion-variant--dynamic .contact-route:hover,.motion-variant--dynamic .contact-route:focus-visible,.motion-variant--dynamic .contact-route.is-active{flex:2.6 1 0;background:linear-gradient(145deg,rgba(101,118,129,.88),rgba(65,85,99,.58))}
+  .motion-variant--dynamic .contact-route strong{font-size:clamp(18px,2vw,28px)}
+  .motion-variant--dynamic .contact-route small{max-width:24em}
+
+  @media(max-width:900px){
+    .motion-variant--dynamic .dyn-receipt-stage{min-height:0;padding:62px 18px 42px;border-radius:18px}.motion-variant--dynamic .dyn-receipt-stage::after{left:9%;right:9%;top:43px}.motion-variant--dynamic .dyn-receipt-stage::before{top:15px}.motion-variant--dynamic .dyn-receipt-paper{width:96%;padding:38px 24px 58px;transform:none!important}.motion-variant--dynamic .dyn-receipt-paper .today__head{display:block}.motion-variant--dynamic .dyn-receipt-paper .today__stamp{margin-top:22px}.motion-variant--dynamic .dyn-receipt-paper .today__item{grid-template-columns:1fr auto}.motion-variant--dynamic .dyn-receipt-paper .today__kind{grid-column:1/-1}
+    .motion-variant--dynamic .entry-grid{grid-template-columns:1fr 1fr}.motion-variant--dynamic .entry-card:nth-child(2){border-right:0}.motion-variant--dynamic .entry-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .motion-variant--dynamic .contact-guide__routes{height:auto;display:grid;grid-template-columns:1fr 1fr}.motion-variant--dynamic .contact-route{min-height:220px}.motion-variant--dynamic .contact-route:hover,.motion-variant--dynamic .contact-route.is-active{transform:translateY(-4px)}
+  }
+  @media(max-width:680px){
+    .motion-variant--dynamic .today>.wrap{width:min(100% - 24px,620px)}.motion-variant--dynamic .dyn-receipt-stage{padding-left:10px;padding-right:10px}.motion-variant--dynamic .dyn-receipt-paper{width:98%;padding-left:18px;padding-right:18px}
+    .motion-variant--dynamic .entry-grid{grid-template-columns:1fr}.motion-variant--dynamic .entry-card{border-right:0;border-bottom:1px solid var(--line)}
+    .motion-variant--dynamic .contact-guide__routes{grid-template-columns:1fr}.motion-variant--dynamic .contact-route{min-height:190px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .motion-variant--dynamic .dyn-receipt-paper{transform:none!important}.motion-variant--dynamic.motion-ready .contact-route{clip-path:none!important}
+  }
+</style>
 </head>
-<body class="sample07-production">
+<body class="sample07-production motion-variant motion-variant--dynamic">
   <a class="skip-link" href="#main">本文へスキップ</a>
   <!-- ZOROYA:HEADER -->
-  <header class="site-header">
-    <div class="site-header__topbar"><div class="in"><span class="site-header__ticker"><b>LIVE</b><span data-live-ticker>案件・商談・提携の動きを随時更新しています。</span></span><div class="right"><span>10:00–18:00／木曜定休</span><span class="tel">03-4400-7994</span><a href="contact.html" data-cms-id="common_common-header_A_001">相談する</a></div></div></div>
-    <div class="site-header__main">
-      <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="#business" data-cms-id="common_common-header_A_002">事業紹介</a><a href="for-sale.html" data-cms-id="common_common-header_A_003">販売中物件</a><a href="#services" data-cms-id="common_common-header_A_004">サービス</a><a href="news.html" data-cms-id="common_common-header_A_005">お知らせ</a></nav>
-      <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async" fetchpriority="high"></picture></a>
-      <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="#social" data-cms-id="common_common-header_A_006">社会貢献</a><a href="about.html" data-cms-id="common_common-header_A_007">会社情報</a><a href="#service-area" data-cms-id="common_common-header_A_008">対応エリア</a><a href="contact.html" data-cms-id="common_common-header_A_009">相談する</a></nav>
-
+<header class="site-header">
+  <div class="site-header__topbar"><div class="in"><span class="site-header__ticker"><b>LIVE</b><span data-live-ticker>案件・商談・提携の動きを随時更新しています。</span></span><div class="right"><span>10:00–18:00／水曜定休</span><span class="tel">03-4400-7994</span><a href="contact.html" data-cms-id="common_common-header_A_001">相談する</a></div></div></div>
+  <div class="site-header__main">
+    <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="about.html" data-cms-id="common_common-header_A_002">会社情報</a><a href="business.html" data-cms-id="common_common-header_A_003">事業紹介</a><a href="for-sale.html" data-cms-id="common_common-header_A_004">販売物件</a><a href="services.html" data-cms-id="common_common-header_A_005">サービス</a></nav>
+    <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async"></picture></a>
+    <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="index.html#service-area" data-cms-id="common_common-header_A_006">対応エリア</a><a href="news.html" data-cms-id="common_common-header_A_007">お知らせ</a><a href="social-contribution.html" data-cms-id="common_common-header_A_008">社会貢献</a><a href="contact.html" data-cms-id="common_common-header_A_009">相談する</a></nav>
+    <a class="site-header__cta" href="contact.html" data-cms-id="common_common-header_A_010">相談する</a>
     <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
-    </div>
-    <div class="site-header__strip"></div>
-  </header>
-  <div class="drawer-shade" data-menu-shade></div>
-  <aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
-    <nav aria-label="スマートフォンメニュー"><a href="index.html" data-cms-id="common_common-header_A_010">ホーム<small>HOME</small></a><a href="index.html#business" data-cms-id="common_common-header_A_011">事業紹介<small>BUSINESS</small></a><a href="for-sale.html" data-cms-id="common_common-header_A_012">販売中物件<small>FOR SALE</small></a><a href="services.html" data-cms-id="common_common-header_A_013">サービス<small>SERVICES</small></a><a href="news.html" data-cms-id="common_common-header_A_014">お知らせ<small>NEWS</small></a><a href="index.html#social" data-cms-id="common_common-header_A_015">社会貢献<small>SOCIAL</small></a><a href="about.html" data-cms-id="common_common-header_A_016">会社情報<small>ABOUT</small></a><a href="index.html#service-area" data-cms-id="common_common-header_A_017">対応エリア<small>AREA</small></a><a href="privacy.html" data-cms-id="common_common-header_A_018">プライバシー<small>PRIVACY</small></a></nav>
-    <div class="drawer-contact"><a class="btn primary" href="contact.html" data-cms-id="common_common-header_A_019">選択肢を相談する</a><a class="btn ghost" href="tel:0344007994" data-cms-id="common_common-header_A_020">03-4400-7994</a></div>
-  </aside>
-  <!-- /ZOROYA:HEADER -->
+  </div>
+  <div class="site-header__strip"></div>
+</header>
+<div class="drawer-shade" data-menu-shade></div>
+<aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
+  <nav aria-label="スマートフォンメニュー"><a href="index.html" data-cms-id="common_common-header_A_011">ホーム<small>HOME</small></a><a href="about.html" data-cms-id="common_common-header_A_012">会社情報<small>ABOUT</small></a><a href="business.html" data-cms-id="common_common-header_A_013">事業紹介<small>BUSINESS</small></a><a href="for-sale.html" data-cms-id="common_common-header_A_014">販売物件<small>FOR SALE</small></a><a href="services.html" data-cms-id="common_common-header_A_015">サービス<small>SERVICES</small></a><a href="index.html#service-area" data-cms-id="common_common-header_A_016">対応エリア<small>AREA</small></a><a href="news.html" data-cms-id="common_common-header_A_017">お知らせ<small>NEWS</small></a><a href="social-contribution.html" data-cms-id="common_common-header_A_018">社会貢献<small>SOCIAL</small></a><a href="privacy.html" data-cms-id="common_common-header_A_019">プライバシー<small>PRIVACY</small></a></nav>
+  <div class="drawer-contact"><a class="btn primary" href="contact.html" data-cms-id="common_common-header_A_020">選択肢を相談する</a><a class="btn ghost" href="tel:0344007994" data-cms-id="common_common-header_A_021">03-4400-7994</a></div>
+</aside>
+<!-- /ZOROYA:HEADER -->
 
   <!-- ZOROYA:MAIN -->
   <main id="main">
@@ -568,46 +637,28 @@
       <div class="hero-frame"></div>
       <div class="hero-inner">
         <span class="tagcode">不動産コンサルティング</span>
-        <h1 id="hero-title" data-cms-id="index_hero-1_H1_001_hero-title"><span style="display:block;white-space:nowrap">まずは「<span class="mk">知る</span>」ことを</span><span style="display:block;white-space:nowrap">大切にしています。</span></h1>
-        <p class="lead" data-cms-id="index_hero-1_P_002">査定額を出す前に、状況・価値・選択肢・リスクを整理します。売却を急がず、納得できる判断を支える不動産コンサルティング会社です。</p>
+        <h1 id="hero-title"><span style="display:block;white-space:nowrap">まずは「<span class="mk">知る</span>」ことを</span><span style="display:block;white-space:nowrap">大切にしています。</span></h1>
+        <p class="lead">査定額を出す前に、状況・価値・選択肢・リスクを整理します。売却を急がず、納得できる判断を支える不動産コンサルティング会社です。</p>
         <div class="btn-row">
-          <a class="btn ghost" href="contact.html" data-cms-id="index_hero-1_A_003">選択肢を相談する</a>
-          <a class="btn ghost" href="#today" data-cms-id="index_hero-1_A_004">Today’s KAGOYAを見る</a>
+          <a class="btn ghost" href="contact.html">選択肢を相談する</a>
+          <a class="btn ghost" href="#today">Today’s KAGOYAを見る</a>
         </div>
         <div class="trust">
           <div class="ti"><strong>売却未定でも</strong><span>相談できます</span></div>
           <div class="ti"><strong>東京都目黒区</strong><span>都立大学駅前</span></div>
           <div class="ti"><strong>宅建業免許</strong><span>東京都知事（1）108542号</span></div>
         </div>
-        <div class="hero-live-note"><span class="dot" aria-hidden="true"></span><span>案件・商談・提携の動きを、公開できる範囲で更新</span><a href="#today" data-cms-id="index_hero-1_A_005">最新の動き →</a></div>
+        <div class="hero-live-note"><span class="dot" aria-hidden="true"></span><span>案件・商談・提携の動きを、公開できる範囲で更新</span><a href="#today">最新の動き →</a></div>
       </div>
       <span class="hero-scroll">SCROLL</span>
-    </section>
-
-    <!-- お知らせ ＝ news-05（中央寄せ＋タブ＋丸バッジ） -->
-    <section class="c-news" id="news">
-      <div class="wrap">
-        <div class="c-news__ttl">お知らせ</div>
-        <div class="c-news__tabs">
-          <button class="c-news__tab is-on" type="button" data-cms-id="index_news_BUTTON_001">すべて</button>
-          <button class="c-news__tab" type="button" data-cms-id="index_news_BUTTON_002">お知らせ</button>
-          <button class="c-news__tab" type="button" data-cms-id="index_news_BUTTON_003">セミナー</button>
-        </div>
-        <div class="c-news__list" id="newsList">
-          <a class="c-news__row" href="news-detail.html#news-2482" data-cms-id="index_news_A_004"><div class="c-news__badge">お知らせ</div><div class="c-news__bd"><div class="t">当社管理物件オーナーの皆様、ゴールデンウィーク期間もご連絡承ります。</div><div class="d">2026.04.19</div></div><span class="ar">&rarr;</span></a>
-          <a class="c-news__row" href="news-detail.html#news-1312" data-cms-id="index_news_A_005"><div class="c-news__badge">お知らせ</div><div class="c-news__bd"><div class="t">新年のご挨拶</div><div class="d">2026.01.01</div></div><span class="ar">&rarr;</span></a>
-          <a class="c-news__row" href="news-detail.html#news-1310" data-cms-id="index_news_A_006"><div class="c-news__badge">お知らせ</div><div class="c-news__bd"><div class="t">当社管理物件オーナーの皆様、年末年始もご連絡承ります。</div><div class="d">2025.12.31</div></div><span class="ar">&rarr;</span></a>
-        </div>
-        <div class="c-news__more-wrap"><a class="c-news__more" href="news.html" data-cms-id="index_news_A_007">お知らせ一覧へ</a></div>
-      </div>
     </section>
 
     <!-- Today’s KAGOYA：更新の起点になるライブフィード -->
     <section class="today" id="today" aria-labelledby="today-title">
       <div class="wrap">
         <div class="today__head">
-          <div><span class="eyebrow">Live update</span><h2 id="today-title" data-cms-id="index_today_H2_001_today-title">Today’s KAGOYA</h2><p data-cms-id="index_today_P_002">不動産の調査・商談・連携など、現在進んでいる活動を公開できる範囲で紹介します。</p></div>
-          <div class="today__stamp"><span>LAST UPDATE</span><strong data-live-updated>2026.08.22</strong><small data-cms-id="index_today_SMALL_003">随時更新</small></div>
+          <div><span class="eyebrow">Live update</span><h2 id="today-title">Today’s KAGOYA</h2><p>不動産の調査・商談・連携など、現在進んでいる活動を公開できる範囲で紹介します。</p></div>
+          <div class="today__stamp"><span>LAST UPDATE</span><strong data-live-updated>2026.08.22</strong><small>随時更新</small></div>
         </div>
         <div class="today__grid" id="todayFeed" aria-live="polite">
           <a class="today__item" href="contact.html?type=project"><span class="today__kind today__kind--new">NEW</span><div><strong>新規案件</strong><h3>相続・空き家相談の初回面談を実施</h3><p>本日｜状況と権利関係の確認からスタートしました。</p></div><span class="today__arrow">→</span></a>
@@ -615,56 +666,51 @@
           <a class="today__item" href="contact.html?type=project"><span class="today__kind today__kind--close">CLOSE</span><div><strong>成約</strong><h3>不動産コンサル案件が成約</h3><p>3日前｜関係者と条件を整理し、実行方針が決まりました。</p></div><span class="today__arrow">→</span></a>
           <a class="today__item" href="contact.html?type=partner"><span class="today__kind today__kind--partner">PARTNER</span><div><strong>提携</strong><h3>士業・介護事業者との連携を開始</h3><p>4日前｜相続と空き家の相談を一つの窓口へつなぎます。</p></div><span class="today__arrow">→</span></a>
         </div>
-        <div class="today__source"><div><span class="today__source-label">Latest activity</span><strong>新しい動きは、随時このページに追加しています。</strong><p data-cms-id="index_today_P_004">案件の進捗とお知らせをまとめてご覧いただけます。</p></div><a class="today__source-link" href="news.html" data-cms-id="index_today_A_005">お知らせを見る →</a></div>
+        <div class="today__news-cta"><a class="today__news-button" href="news.html">ニュース一覧を見る <span aria-hidden="true">→</span></a></div>
         <div class="today__entry" id="entry" aria-labelledby="entry-title">
-          <div class="today__entry-head"><div><span class="eyebrow">Project snapshots</span><h3 id="entry-title" data-cms-id="index_today_H3_006_entry-title">いま動いているプロジェクト。</h3></div><p data-cms-id="index_today_P_007">現在進行中のテーマを、写真と短いレポートで紹介しています。</p></div>
-          <div class="project-grid" id="projectGrid">
-            <article class="project-card"><div class="project-card__media"><img src="src/project-development.jpg" alt="既存住宅地と整備中の土地をつなぐ開発プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">地上げ・開発　／　2026.08</span><h4 data-cms-id="index_today_H4_008">土地の可能性を読み解き、街の未来を描く。</h4><p data-cms-id="index_today_P_009">既存の街並みと新しい計画を見比べながら、調査と対話を重ねています。</p><a class="project-card__link" href="contact.html?type=project" data-cms-id="index_today_A_010">このテーマを相談する</a></div></article>
-            <article class="project-card"><div class="project-card__media"><img src="src/project-inheritance-care.jpg" alt="古い家と地域の支援拠点をつなぐ相続・地域連携プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">相続・地域連携　／　2026.08</span><h4 data-cms-id="index_today_H4_011">家族のこれからを、地域の支えと一緒に考える。</h4><p data-cms-id="index_today_P_012">不動産だけでなく、介護や専門家との連携も含めて選択肢を整理しています。</p><a class="project-card__link" href="contact.html?type=partner" data-cms-id="index_today_A_013">連携について相談する</a></div></article>
-            <article class="project-card"><div class="project-card__media"><img src="src/project-rental-management.jpg" alt="植栽と共用部を整えた賃貸住宅の改善プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">賃貸運営・活用　／　2026.08</span><h4 data-cms-id="index_today_H4_014">持ち続ける選択肢を、運営の現場から整える。</h4><p data-cms-id="index_today_P_015">空室や修繕の状況を確認し、オーナーと活用の道筋を検討しています。</p><a class="project-card__link" href="property-management.html" data-cms-id="index_today_A_016">支援内容を見る</a></div></article>
+          <div class="today__entry-head"><div><span class="eyebrow">Project snapshots</span><h3 id="entry-title">いま動いているプロジェクト。</h3></div><p>現在進行中のテーマを、写真と短いレポートで紹介しています。</p></div>
+          <div class="project-grid">
+            <article class="project-card"><div class="project-card__media"><img src="src/project-development.jpg" alt="既存住宅地と整備中の土地をつなぐ開発プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">地上げ・開発　／　2026.08</span><h4>土地の可能性を読み解き、街の未来を描く。</h4><p>既存の街並みと新しい計画を見比べながら、調査と対話を重ねています。</p><a class="project-card__link" href="contact.html?type=project">このテーマを相談する</a></div></article>
+            <article class="project-card"><div class="project-card__media"><img src="src/project-inheritance-care.jpg" alt="古い家と地域の支援拠点をつなぐ相続・地域連携プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">相続・地域連携　／　2026.08</span><h4>家族のこれからを、地域の支えと一緒に考える。</h4><p>不動産だけでなく、介護や専門家との連携も含めて選択肢を整理しています。</p><a class="project-card__link" href="contact.html?type=partner">連携について相談する</a></div></article>
+            <article class="project-card"><div class="project-card__media"><img src="src/project-rental-management.jpg" alt="植栽と共用部を整えた賃貸住宅の改善プロジェクト" loading="lazy" decoding="async"><span class="project-card__status">IN PROGRESS</span></div><div class="project-card__body"><span class="project-card__meta">賃貸運営・活用　／　2026.08</span><h4>持ち続ける選択肢を、運営の現場から整える。</h4><p>空室や修繕の状況を確認し、オーナーと活用の道筋を検討しています。</p><a class="project-card__link" href="property-management.html">支援内容を見る</a></div></article>
           </div>
-          <div class="entry-routes"><div class="entry-routes__head"><div><span class="eyebrow">Connect</span><h4 data-cms-id="index_today_H4_017">ご相談・ご一緒できること</h4></div><p data-cms-id="index_today_P_018">テーマが決まっていない段階でも、近い入口からご連絡ください。</p></div><div class="entry-grid"><a class="entry-card" href="contact.html?type=project" data-cms-id="index_today_A_019"><span>案件相談</span><strong>不動産の状況を相談する</strong><small>売却・相続・開発など</small><em>相談する →</em></a><a class="entry-card" href="contact.html?type=partner" data-cms-id="index_today_A_020"><span>協業</span><strong>専門家・地域事業者の方へ</strong><small>一緒に取り組むテーマを探す</small><em>協業を相談する →</em></a><a class="entry-card" href="contact.html?type=investment" data-cms-id="index_today_A_021"><span>投資</span><strong>事業・物件の可能性を話す</strong><small>投資・事業提携について</small><em>話を聞く →</em></a><a class="entry-card" href="contact.html?type=recruit" data-cms-id="index_today_A_022"><span>採用</span><strong>動いている案件に関わる</strong><small>チーム・仕事について</small><em>採用について聞く →</em></a></div></div>
+          <div class="entry-routes"><div class="entry-routes__head"><div><span class="eyebrow">Connect</span><h4>ご相談・ご一緒できること</h4></div><p>テーマが決まっていない段階でも、近い入口からご連絡ください。</p></div><div class="entry-grid"><a class="entry-card" href="contact.html?type=project"><span>案件相談</span><strong>不動産の状況を相談する</strong><small>売却・相続・開発など</small><em>相談する →</em></a><a class="entry-card" href="contact.html?type=partner"><span>協業</span><strong>専門家・地域事業者の方へ</strong><small>一緒に取り組むテーマを探す</small><em>協業を相談する →</em></a><a class="entry-card" href="contact.html?type=investment"><span>投資</span><strong>事業・物件の可能性を話す</strong><small>投資・事業提携について</small><em>話を聞く →</em></a><a class="entry-card" href="contact.html?type=recruit"><span>採用</span><strong>動いている案件に関わる</strong><small>チーム・仕事について</small><em>採用について聞く →</em></a></div></div>
         </div>
-        <div class="today__foot"><span>新しい動きは、公式SNSでも紹介しています。</span><span class="today__social"><a href="https://www.threads.net/" target="_blank" rel="noopener" data-cms-id="index_today_A_023">Threads</a><a href="https://www.instagram.com/" target="_blank" rel="noopener" data-cms-id="index_today_A_024">Instagram</a><a href="https://www.youtube.com/" target="_blank" rel="noopener" data-cms-id="index_today_A_025">YouTube</a></span></div>
+        <div class="today__foot"><span>新しい動きは、公式SNSでも紹介しています。</span><span class="today__social"><a href="https://www.threads.net/" target="_blank" rel="noopener">Threads</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></span></div>
       </div>
     </section>
-
-    <!-- サイトイメージ：コンセプト文を説明セクションにせず、動いている領域を細く提示 -->
-    <div class="motion-strip" id="business-scope" role="region" aria-labelledby="motion-strip-title">
-      <div class="wrap motion-strip__inner"><div><span class="eyebrow">In motion</span><h2 id="motion-strip-title" data-cms-id="index_main_H2_038_motion-strip-title">いま動いている領域</h2></div><div class="motion-strip__rail" aria-label="株式会社籠やの事業領域"><span>相続コンサル</span><span>不動産コンサル</span><span>仲介・買取</span><span>底地・借地</span><span>エフクリ</span><span>賃貸経営</span><span>企業向けセミナー</span><span>社会貢献</span></div><p data-cms-id="index_main_P_039">完成したものだけでなく、調査・商談・提携の途中も「Today’s KAGOYA」で更新します。</p></div>
-    </div>
 
     <section class="domain-section" id="business" aria-labelledby="domain-title">
       <div class="wrap">
         <div class="domain-section__head">
-          <div><span class="eyebrow">Business in motion</span><h2 id="domain-title" data-cms-id="index_business_H2_001_domain-title">不動産を中心とした、<br><span class="mk">8つの事業領域。</span></h2></div>
-          <p class="domain-section__lead" data-cms-id="index_business_P_002">相続と不動産の相談を起点に、仲介・買取、複雑な権利の調整、資産形成、賃貸経営、企業研修、社会貢献へ。専門家や地域の方と連携しながら、次の選択肢を形にします。</p>
+          <div><span class="eyebrow">Business in motion</span><h2 id="domain-title">不動産を中心とした、<br><span class="mk">8つの事業領域。</span></h2></div>
+          <p class="domain-section__lead">相続と不動産の相談を起点に、仲介・買取、複雑な権利の調整、資産形成、賃貸経営、企業研修、社会貢献へ。専門家や地域の方と連携しながら、次の選択肢を形にします。<a class="domain-section__more" href="business.html">8事業の詳細を見る →</a></p>
         </div>
         <div class="domain-grid">
-          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-care.jpg" alt="相続した住まいと家族の状況を整理する相続コンサルティング" loading="lazy" decoding="async"><span class="domain-card__index">01</span><span class="domain-card__tag">INHERITANCE</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_003">相続コンサルティング</h3><p data-cms-id="index_business_P_004">弁護士・税理士に加え、寺院や介護の専門家とも連携。不動産と家族の状況を一つの窓口で整理します。</p><a class="domain-card__link" href="inheritance-vacant-house.html" data-cms-id="index_business_A_005">相続相談を知る</a></div></article>
-          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-consulting.jpg" alt="住宅模型と資料を囲んだ不動産コンサルティングの現場" loading="lazy" decoding="async"><span class="domain-card__index">02</span><span class="domain-card__tag">CONSULTING</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_006">不動産コンサルティング</h3><p data-cms-id="index_business_P_007">売る・買うを決める前に、状況・価値・選択肢・リスクを整理し、納得できる判断の土台をつくります。</p><a class="domain-card__link" href="sale-consulting.html" data-cms-id="index_business_A_008">相談内容を知る</a></div></article>
-          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-purchase.jpg" alt="集合住宅と戸建てを見渡す仲介・買取事業の現場" loading="lazy" decoding="async"><span class="domain-card__index">03</span><span class="domain-card__tag">BROKERAGE</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_009">仲介事業・買取事業</h3><p data-cms-id="index_business_P_010">市場での売却と直接買取を比較し、スピード・条件・手取りのバランスから進め方を検討します。</p><a class="domain-card__link" href="contact.html?type=project" data-cms-id="index_business_A_011">売却を相談する</a></div></article>
-          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-rights.jpg" alt="古い住宅と境界を確認する底地・借地の現場" loading="lazy" decoding="async"><span class="domain-card__index">04</span><span class="domain-card__tag">RIGHTS</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_012">底地・借地／権利調整</h3><p data-cms-id="index_business_P_013">契約、境界、関係者それぞれの意向を確認し、複雑な権利関係を一つずつ整理して解決への道筋をつくります。</p><a class="domain-card__link" href="contact.html?type=project" data-cms-id="index_business_A_014">状況を相談する</a></div></article>
-          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-fukuri.jpg" alt="住まいと資産形成について学び相談できるラウンジ" loading="lazy" decoding="async"><span class="domain-card__index">05</span><span class="domain-card__tag">FUKURI</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_015">資産形成ラウンジ「エフクリ」</h3><p data-cms-id="index_business_P_016">不動産とお金について学び、専門家へ相談できる場として、暮らしに合った資産形成を支えます。</p><a class="domain-card__link" href="contact.html?type=investment" data-cms-id="index_business_A_017">エフクリを相談する</a></div></article>
-          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-owner.jpg" alt="管理の行き届いた賃貸住宅と点検資料" loading="lazy" decoding="async"><span class="domain-card__index">06</span><span class="domain-card__tag">OWNER SUPPORT</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_018">賃貸経営オーナー支援</h3><p data-cms-id="index_business_P_019">空室、修繕、管理負担、収支を見える化し、持ち続ける・活用するための運営方針を一緒に整えます。</p><a class="domain-card__link" href="property-management.html" data-cms-id="index_business_A_020">支援内容を見る</a></div></article>
-          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-new-business.jpg" alt="企業向け不動産セミナーで意見を交わす参加者" loading="lazy" decoding="async"><span class="domain-card__index">07</span><span class="domain-card__tag">SEMINAR</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_021">企業向けセミナー事業</h3><p data-cms-id="index_business_P_022">住宅購入、相続、資産形成など、従業員の暮らしに役立つ不動産知識を企業研修やセミナーで届けます。</p><a class="domain-card__link" href="corporate-benefits.html" data-cms-id="index_business_A_023">法人向け内容を見る</a></div></article>
-          <article class="domain-card" id="social"><div class="domain-card__media"><img src="src/project-inheritance-care.jpg" alt="地域の住まいと支援をつなぐ社会貢献の取り組み" loading="lazy" decoding="async"><span class="domain-card__index">08</span><span class="domain-card__tag">SOCIAL</span></div><div class="domain-card__body"><h3 data-cms-id="index_business_H3_024">社会貢献</h3><p data-cms-id="index_business_P_025">空き家、相続、介護など地域に近い課題に向き合い、専門家や事業者との連携から新しい支え方を育てます。</p><a class="domain-card__link" href="contact.html?type=partner" data-cms-id="index_business_A_026">取り組みを相談する</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-care.jpg" alt="相続した住まいと家族の状況を整理する相続コンサルティング" loading="lazy" decoding="async"><span class="domain-card__index">01</span><span class="domain-card__tag">INHERITANCE</span></div><div class="domain-card__body"><h3>相続コンサルティング</h3><p>弁護士・税理士に加え、寺院や介護の専門家とも連携。不動産と家族の状況を一つの窓口で整理します。</p><a class="domain-card__link" href="inheritance-vacant-house.html">相続相談を知る</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-consulting.jpg" alt="住宅模型と資料を囲んだ不動産コンサルティングの現場" loading="lazy" decoding="async"><span class="domain-card__index">02</span><span class="domain-card__tag">CONSULTING</span></div><div class="domain-card__body"><h3>不動産コンサルティング</h3><p>売る・買うを決める前に、状況・価値・選択肢・リスクを整理し、納得できる判断の土台をつくります。</p><a class="domain-card__link" href="sale-consulting.html">相談内容を知る</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-purchase.jpg" alt="集合住宅と戸建てを見渡す仲介・買取事業の現場" loading="lazy" decoding="async"><span class="domain-card__index">03</span><span class="domain-card__tag">BROKERAGE</span></div><div class="domain-card__body"><h3>仲介事業・買取事業</h3><p>市場での売却と直接買取を比較し、スピード・条件・手取りのバランスから進め方を検討します。</p><a class="domain-card__link" href="contact.html?type=project">売却を相談する</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-rights.jpg" alt="古い住宅と境界を確認する底地・借地の現場" loading="lazy" decoding="async"><span class="domain-card__index">04</span><span class="domain-card__tag">RIGHTS</span></div><div class="domain-card__body"><h3>底地・借地／権利調整</h3><p>契約、境界、関係者それぞれの意向を確認し、複雑な権利関係を一つずつ整理して解決への道筋をつくります。</p><a class="domain-card__link" href="contact.html?type=project">状況を相談する</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-fukuri.jpg" alt="住まいと資産形成について学び相談できるラウンジ" loading="lazy" decoding="async"><span class="domain-card__index">05</span><span class="domain-card__tag">FUKURI</span></div><div class="domain-card__body"><h3>資産形成ラウンジ「エフクリ」</h3><p>不動産とお金について学び、専門家へ相談できる場として、暮らしに合った資産形成を支えます。</p><a class="domain-card__link" href="contact.html?type=investment">エフクリを相談する</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-owner.jpg" alt="管理の行き届いた賃貸住宅と点検資料" loading="lazy" decoding="async"><span class="domain-card__index">06</span><span class="domain-card__tag">OWNER SUPPORT</span></div><div class="domain-card__body"><h3>賃貸経営オーナー支援</h3><p>空室、修繕、管理負担、収支を見える化し、持ち続ける・活用するための運営方針を一緒に整えます。</p><a class="domain-card__link" href="property-management.html">支援内容を見る</a></div></article>
+          <article class="domain-card"><div class="domain-card__media"><img src="src/gen-domain-new-business.jpg" alt="企業向け不動産セミナーで意見を交わす参加者" loading="lazy" decoding="async"><span class="domain-card__index">07</span><span class="domain-card__tag">SEMINAR</span></div><div class="domain-card__body"><h3>企業向けセミナー事業</h3><p>住宅購入、相続、資産形成など、従業員の暮らしに役立つ不動産知識を企業研修やセミナーで届けます。</p><a class="domain-card__link" href="corporate-benefits.html">法人向け内容を見る</a></div></article>
+          <article class="domain-card" id="social"><div class="domain-card__media"><picture><source type="image/webp" srcset="src/nbc-junior-workshop-01.webp"><img src="src/nbc-junior-workshop-01.jpg" alt="NBCジュニアで子どもたちの会社づくりに伴走する授業の様子" loading="lazy" decoding="async"></picture><span class="domain-card__index">08</span><span class="domain-card__tag">SOCIAL</span></div><div class="domain-card__body"><h3>社会貢献（NBCジュニア）</h3><p>経営者メンターとして、子どもたちが仲間と考え、試し、失敗から学ぶ起業家教育に取り組んでいます。</p><a class="domain-card__link" href="social-contribution.html">活動を詳しく見る</a></div></article>
         </div>
       </div>
     </section>
 
-    <!-- 販売中物件／成約実績：sample07の写真グリッドを物件表示へ転用 -->
+    <!-- 販売中物件／成約実績：同じカード形式で比較しやすく表示 -->
     <section class="facility" id="properties">
       <div class="wrap">
-        <div class="head"><div><span class="eyebrow" data-reveal>Current listings</span><h2 class="big" data-reveal data-cms-id="index_properties_H2_001">販売中物件</h2></div><a class="facility__link" href="for-sale.html" data-cms-id="index_properties_A_002">販売中物件一覧を見る</a></div>
-        <div class="fac-grid" id="facgrid">
-          <a class="property-shot big2" href="property-detail.html#cosumosithykawagoe5120"><figure class="big2"><picture><source type="image/webp" srcset="src/listing-cosmo-kawagoe.webp"><img src="src/listing-cosmo-kawagoe.jpg" alt="コスモシティ川越 1階" loading="lazy" decoding="async"></picture><figcaption>コスモシティ川越 1階</figcaption></figure></a>
-          <a class="property-shot" href="property-detail.html#touwashityikopuhatudai"><figure><picture><source type="image/webp" srcset="src/listing-hatsudai.webp"><img src="src/listing-hatsudai.jpg" alt="藤和シティコープ初台" loading="lazy" decoding="async"></picture><figcaption>藤和シティコープ初台</figcaption></figure></a>
-          <a class="property-shot" href="property-detail.html#haimuyakouguthi8900"><figure><picture><source type="image/webp" srcset="src/listing-heim-yaguchidai.webp"><img src="src/listing-heim-yaguchidai.jpg" alt="ハイム矢口台" loading="lazy" decoding="async"></picture><figcaption>ハイム矢口台</figcaption></figure></a>
-          <a class="property-shot wide" href="property-detail.html#sugitaittyoumetennpobill12500"><figure class="wide"><picture><source type="image/webp" srcset="src/listing-sugita-building.webp"><img src="src/listing-sugita-building.jpg" alt="杉田一丁目店舗ビル" loading="lazy" decoding="async"></picture><figcaption>杉田一丁目店舗ビル</figcaption></figure></a>
+        <div class="head"><div><span class="eyebrow" data-reveal>Current listings</span><h2 class="big" data-reveal>販売中物件</h2></div><a class="facility__link" href="for-sale.html">販売中物件一覧を見る</a></div>
+        <div class="result-grid" aria-label="販売中物件の一部">
+          <a class="result-card" href="property-detail.html#cosumosithykawagoe5120"><div class="result-card__media"><picture><source type="image/webp" srcset="src/listing-cosmo-kawagoe.webp"><img src="src/listing-cosmo-kawagoe.jpg" alt="コスモシティ川越 1階" loading="lazy" decoding="async"></picture><span class="result-card__badge">FOR SALE</span></div><div class="result-card__body"><h4>コスモシティ川越 1階</h4><p class="result-card__price">5,120万円</p><p>マンション／埼玉県川越市</p><span class="result-card__more">販売物件の詳細を見る →</span></div></a>
+          <a class="result-card" href="property-detail.html#touwashityikopuhatudai"><div class="result-card__media"><picture><source type="image/webp" srcset="src/listing-hatsudai.webp"><img src="src/listing-hatsudai.jpg" alt="藤和シティコープ初台" loading="lazy" decoding="async"></picture><span class="result-card__badge">FOR SALE</span></div><div class="result-card__body"><h4>藤和シティコープ初台</h4><p class="result-card__price">8,933万円</p><p>マンション／東京都渋谷区</p><span class="result-card__more">販売物件の詳細を見る →</span></div></a>
+          <a class="result-card" href="property-detail.html#haimuyakouguthi8900"><div class="result-card__media"><picture><source type="image/webp" srcset="src/listing-heim-yaguchidai.webp"><img src="src/listing-heim-yaguchidai.jpg" alt="ハイム矢口台" loading="lazy" decoding="async"></picture><span class="result-card__badge">FOR SALE</span></div><div class="result-card__body"><h4>ハイム矢口台</h4><p class="result-card__price">8,900万円</p><p>一棟収益アパート／横浜市中区</p><span class="result-card__more">販売物件の詳細を見る →</span></div></a>
+          <a class="result-card" href="property-detail.html#sugitaittyoumetennpobill12500"><div class="result-card__media"><picture><source type="image/webp" srcset="src/listing-sugita-building.webp"><img src="src/listing-sugita-building.jpg" alt="杉田一丁目店舗ビル" loading="lazy" decoding="async"></picture><span class="result-card__badge">FOR SALE</span></div><div class="result-card__body"><h4>杉田一丁目店舗ビル</h4><p class="result-card__price">1億2,500万円</p><p>一棟収益ビル／横浜市磯子区</p><span class="result-card__more">販売物件の詳細を見る →</span></div></a>
         </div>
         <div class="result-block" aria-labelledby="result-title">
-          <div class="result-block__head"><div><span class="eyebrow" data-reveal>Closed deals</span><h3 id="result-title" data-reveal data-cms-id="index_properties_H3_003_result-title">成約実績</h3></div><p data-reveal data-cms-id="index_properties_P_004">公開可能な成約物件の一部をご紹介します。未公開物件は掲載していません。</p></div>
+          <div class="result-block__head"><div><span class="eyebrow" data-reveal>Closed deals</span><h3 id="result-title" data-reveal>成約実績</h3></div><p data-reveal>公開可能な成約物件の一部をご紹介します。未公開物件は掲載していません。</p></div>
           <div class="result-grid">
             <a class="result-card" href="property-detail.html#megurokusimomegurokodateb"><div class="result-card__media"><img src="src/wp-sale/2362-01.jpg" alt="目黒区下目黒4丁目戸建てB" loading="lazy" decoding="async"><span class="result-card__badge">SOLD</span></div><div class="result-card__body"><h4>目黒区下目黒4丁目戸建てB</h4><p>中古戸建て／目黒区下目黒</p><span class="result-card__more">成約物件の詳細を見る →</span></div></a>
             <a class="result-card" href="property-detail.html#megurokushimomegurokodate"><div class="result-card__media"><img src="src/wp-sale/1135-01.jpg" alt="目黒区下目黒4丁目戸建てA" loading="lazy" decoding="async"><span class="result-card__badge">SOLD</span></div><div class="result-card__body"><h4>目黒区下目黒4丁目戸建てA</h4><p>中古戸建て／目黒区下目黒</p><span class="result-card__more">成約物件の詳細を見る →</span></div></a>
@@ -679,15 +725,15 @@
     <section class="c-feat" id="services">
       <div class="wrap c-feat__head" id="featHead">
         <span class="eyebrow">Services</span>
-        <h2 data-cms-id="index_services_H2_001">不動産相談の<span class="mk">ご案内</span></h2>
-        <p class="c-feat__lead" data-cms-id="index_services_P_002">不動産において重要なことは、まずは「知る」ことです。状況が固まっていない段階でも、お気軽にお問い合わせください。</p>
+        <h2>不動産相談の<span class="mk">ご案内</span></h2>
+        <p class="c-feat__lead">不動産において重要なことは、まずは「知る」ことです。状況が固まっていない段階でも、お気軽にお問い合わせください。</p>
       </div>
       <div class="c-feat__pin" id="featPin">
         <div class="c-feat__track" id="featTrack">
-          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-sale.webp"><img src="src/gen-sale.jpg" alt="不動産売却前に状況と条件を整理するイメージ" loading="lazy" decoding="async"></picture><span class="n">01</span></div><div class="body"><h3 data-cms-id="index_services_H3_003">売却・調査相談</h3><p data-cms-id="index_services_P_004">査定額だけでなく、権利関係や接道、管理状況まで確認し、売却前の判断材料を整理します。</p><span class="price">状況整理から相談</span></div></div>
-          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-inheritance.webp"><img src="src/gen-inheritance.jpg" alt="相続した不動産や空き家について相談するイメージ" loading="lazy" decoding="async"></picture><span class="n">02</span></div><div class="body"><h3 data-cms-id="index_services_H3_005">相続・空き家相談</h3><p data-cms-id="index_services_P_006">利用状況、権利関係、管理負担を確認し、売却・保有・活用の可能性を整理します。</p><span class="price">資料が未整理でも可</span></div></div>
-          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-consultation.webp"><img src="src/gen-consultation.jpg" alt="収益不動産の購入判断と資金計画を確認するイメージ" loading="lazy" decoding="async"></picture><span class="n">03</span></div><div class="body"><h3 data-cms-id="index_services_H3_007">購入・資産形成相談</h3><p data-cms-id="index_services_P_008">購入予定物件の利点とリスクを整理し、融資・収支・出口まで含めて比較します。</p><span class="price">状況整理から相談</span></div></div>
-          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-investment.webp"><img src="src/gen-investment.jpg" alt="底地・借地の契約や権利関係を整理するイメージ" loading="lazy" decoding="async"></picture><span class="n">04</span></div><div class="body"><h3 data-cms-id="index_services_H3_009">底地・借地相談</h3><p data-cms-id="index_services_P_010">契約、更新、地代、境界、関係者の意向を確認し、複雑な権利関係を整理して進め方を検討します。</p><span class="price">権利関係の整理から相談</span></div></div>
+          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-sale.webp"><img src="src/gen-sale.jpg" alt="不動産売却前に状況と条件を整理するイメージ" loading="lazy" decoding="async"></picture><span class="n">01</span></div><div class="body"><h3>売却・調査相談</h3><p>査定額だけでなく、権利関係や接道、管理状況まで確認し、売却前の判断材料を整理します。</p><span class="price">状況整理から相談</span></div></div>
+          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-inheritance.webp"><img src="src/gen-inheritance.jpg" alt="相続した不動産や空き家について相談するイメージ" loading="lazy" decoding="async"></picture><span class="n">02</span></div><div class="body"><h3>相続・空き家相談</h3><p>利用状況、権利関係、管理負担を確認し、売却・保有・活用の可能性を整理します。</p><span class="price">資料が未整理でも可</span></div></div>
+          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-consultation.webp"><img src="src/gen-consultation.jpg" alt="収益不動産の購入判断と資金計画を確認するイメージ" loading="lazy" decoding="async"></picture><span class="n">03</span></div><div class="body"><h3>購入・資産形成相談</h3><p>購入予定物件の利点とリスクを整理し、融資・収支・出口まで含めて比較します。</p><span class="price">状況整理から相談</span></div></div>
+          <div class="c-feat__card"><div class="ph"><picture><source type="image/webp" srcset="src/gen-investment.webp"><img src="src/gen-investment.jpg" alt="底地・借地の契約や権利関係を整理するイメージ" loading="lazy" decoding="async"></picture><span class="n">04</span></div><div class="body"><h3>底地・借地相談</h3><p>契約、更新、地代、境界、関係者の意向を確認し、複雑な権利関係を整理して進め方を検討します。</p><span class="price">権利関係の整理から相談</span></div></div>
         </div>
       </div>
     </section>
@@ -704,11 +750,11 @@
             </svg>
           </span>
           <span class="eyebrow" data-reveal>Purchase area</span>
-          <h2 id="purchase-area-title" data-reveal data-cms-id="index_service-area_H2_001_purchase-area-title">収益不動産／空きビル／空き家の<br><span class="mk">売却をご相談ください。</span></h2>
-          <p class="purchase-area__lead" data-reveal data-cms-id="index_service-area_P_002">物件の種類と所在地に合わせて、買取・売却の可能性を整理します。まだ売却を決めていない段階でも、状況確認からご相談いただけます。</p>
+          <h2 id="purchase-area-title" data-reveal>収益不動産／空きビル／空き家の<br><span class="mk">売却をご相談ください。</span></h2>
+          <p class="purchase-area__lead" data-reveal>物件の種類と所在地に合わせて、買取・売却の可能性を整理します。まだ売却を決めていない段階でも、状況確認からご相談いただけます。</p>
         </div>
 
-        <div class="purchase-area__board" aria-label="主な買取対象エリア" data-reveal>
+        <div class="purchase-area__board" aria-label="対応エリアのご案内" data-reveal>
           <article class="area-card">
             <div class="area-card__label">
               <svg class="area-card__pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="#fff"/></svg>
@@ -721,7 +767,7 @@
               </picture>
               <span class="area-card__map-chip">全国</span>
             </div>
-            <p class="area-card__caption" data-cms-id="index_service-area_P_003">一棟収益、区分、事業用不動産など、所在地を問わずまずは概要をお聞かせください。</p>
+            <p class="area-card__caption">一棟収益、区分、事業用不動産など、所在地を問わずまずは概要をお聞かせください。</p>
           </article>
 
           <article class="area-card">
@@ -734,9 +780,9 @@
                 <source type="image/webp" srcset="src/map-purchase-tokyo.webp">
                 <img src="src/map-purchase-tokyo.png" alt="東京23区のうち都心6区を強調した買取対象エリアの地図" loading="lazy" decoding="async">
               </picture>
-              <span class="area-card__map-chip area-card__map-chip--tokyo">都心6区<small data-cms-id="index_service-area_SMALL_004">千代田・中央・港・新宿・文京・渋谷</small></span>
+              <span class="area-card__map-chip area-card__map-chip--tokyo">都心6区<small>千代田・中央・港・新宿・文京・渋谷</small></span>
             </div>
-            <p class="area-card__caption" data-cms-id="index_service-area_P_005">千代田・中央・港・新宿・文京・渋谷の都心6区を中心に、東京23区のご相談に対応します。</p>
+            <p class="area-card__caption">千代田・中央・港・新宿・文京・渋谷の都心6区を中心に、東京23区のご相談に対応します。</p>
           </article>
 
           <article class="area-card">
@@ -754,13 +800,13 @@
               <span class="area-card__city area-card__city--chiba">千葉市</span>
               <span class="area-card__city area-card__city--yokohama">横浜市</span>
             </div>
-            <p class="area-card__caption" data-cms-id="index_service-area_P_006">東京・神奈川・埼玉・千葉にまたがる、国道16号線内側の空き家を主な対象としています。</p>
+            <p class="area-card__caption">東京・神奈川・埼玉・千葉にまたがる、国道16号線内側の空き家を主な対象としています。</p>
           </article>
         </div>
 
         <div class="purchase-area__foot" data-reveal>
-          <p class="purchase-area__note" data-cms-id="index_service-area_P_007">※物件の所在地・種類・状態などにより、対応方法が異なります。対象に含まれるか分からない場合も、まずは物件概要をお知らせください。</p>
-          <a class="btn primary" href="contact.html?type=project" data-cms-id="index_service-area_A_008">買取・売却を相談する <span aria-hidden="true">→</span></a>
+          <p class="purchase-area__note">※物件の所在地・種類・状態などにより、対応方法が異なります。対象に含まれるか分からない場合も、まずは物件概要をお知らせください。</p>
+          <a class="btn primary" href="contact.html?type=project">買取・売却を相談する <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -773,16 +819,16 @@
         <div class="contact-guide__layout">
           <div>
             <span class="eyebrow" data-reveal>Contact / Area</span>
-            <h2 data-reveal data-cms-id="index_contact-guide_H2_001">不動産のことを、<br><span class="mk">まずは知る</span>ところから。</h2>
-            <p class="lead" data-reveal data-cms-id="index_contact-guide_P_002">売却を決めていなくても、資料がそろっていなくても構いません。物件の所在地と現在の状況を、分かる範囲でお聞かせください。</p>
-            <div class="contact-guide__area" data-reveal><b>主な買取対象</b><p data-cms-id="index_contact-guide_P_003">収益不動産は全国、空きビルは東京23区、空き家は国道16号線内側を主な対象としてご相談を承ります。</p></div>
-            <a class="contact-guide__phone" href="tel:0344007994" data-cms-id="index_contact-guide_A_004">03-4400-7994 <small>10:00〜18:00／木曜定休</small></a>
+            <h2 data-reveal>不動産のことを、<br><span class="mk">まずは知る</span>ところから。</h2>
+            <p class="lead" data-reveal>売却を決めていなくても、資料がそろっていなくても構いません。物件の所在地と現在の状況を、分かる範囲でお聞かせください。</p>
+            <div class="contact-guide__area" data-reveal><b>主な買取対象</b><p>収益不動産は全国、空きビルは東京23区、空き家は国道16号線内側を主な対象としてご相談を承ります。</p></div>
+            <a class="contact-guide__phone" href="tel:0344007994">03-4400-7994 <small>10:00〜18:00／水曜定休</small></a>
           </div>
           <div class="contact-guide__routes" data-reveal>
-            <a class="contact-route" href="contact.html?type=project" data-cms-id="index_contact-guide_A_005"><span>01 / PROPERTY</span><strong>物件・相続について相談</strong><small>売却、買取、底地・借地、相続など →</small></a>
-            <a class="contact-route" href="contact.html?type=partner" data-cms-id="index_contact-guide_A_006"><span>02 / PARTNER</span><strong>協業・連携について相談</strong><small>専門家、地域事業者、社会貢献など →</small></a>
-            <a class="contact-route" href="contact.html?type=investment" data-cms-id="index_contact-guide_A_007"><span>03 / BUSINESS</span><strong>事業・資産形成について相談</strong><small>エフクリ、投資、事業提携など →</small></a>
-            <a class="contact-route" href="contact.html?type=recruit" data-cms-id="index_contact-guide_A_008"><span>04 / SEMINAR</span><strong>セミナー・採用について相談</strong><small>企業研修、講演、採用など →</small></a>
+            <a class="contact-route" href="contact.html?type=project"><span>01 / PROPERTY</span><strong>物件・相続について相談</strong><small>売却、買取、底地・借地、相続など →</small></a>
+            <a class="contact-route" href="contact.html?type=partner"><span>02 / PARTNER</span><strong>協業・連携について相談</strong><small>専門家、地域事業者、社会貢献など →</small></a>
+            <a class="contact-route" href="contact.html?type=investment"><span>03 / BUSINESS</span><strong>事業・資産形成について相談</strong><small>エフクリ、投資、事業提携など →</small></a>
+            <a class="contact-route" href="contact.html?type=recruit"><span>04 / SEMINAR</span><strong>セミナー・採用について相談</strong><small>企業研修、講演、採用など →</small></a>
           </div>
         </div>
       </div>
@@ -792,23 +838,22 @@
   <!-- /ZOROYA:MAIN -->
 
   <!-- ZOROYA:FOOTER ＝ footer-03（情報部） -->
-  <footer class="site-footer" id="access">
-    <div class="site-footer__info">
-      <div class="site-footer__nap">
-        <div class="nm">株式会社籠や</div>
-        <p>不動産売買・仲介・管理、不動産コンサルティング<br>〒152-0032 東京都目黒区平町1丁目26-17<br>ソシアル都立大学駅前201号<br>10:00〜18:00／木曜定休</p>
-        <a class="tel" href="tel:0344007994">03-4400-7994</a>
-      </div>
-      <div class="site-footer__col"><h4>Business</h4><a href="inheritance-vacant-house.html">相続コンサルティング</a><a href="sale-consulting.html">不動産コンサルティング</a><a href="contact.html?type=project">仲介・買取／底地・借地</a><a href="contact.html?type=investment">エフクリ</a><a href="property-management.html">賃貸経営オーナー支援</a><a href="corporate-benefits.html">企業向けセミナー</a></div>
-      <div class="site-footer__col"><h4>Guide</h4><a href="index.html#business">事業紹介</a><a href="for-sale.html">販売中物件</a><a href="news.html">お知らせ</a><a href="index.html#social">社会貢献</a><a href="about.html">会社情報</a><a href="index.html#service-area">対応エリア</a><a href="contact.html">お問い合わせ</a><a href="privacy.html">プライバシー</a></div>
-    </div>
-    <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
-  </footer>
+  <!-- ZOROYA:FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__info">
+    <div class="site-footer__nap"><div class="nm">株式会社籠や</div><p data-cms-id="common_common-footer_P_001">不動産売買・仲介・管理、不動産コンサルティング<br>〒152-0032 東京都目黒区平町1丁目26-17<br>ソシアル都立大学駅前201号<br>10:00〜18:00／水曜定休</p><a class="tel" href="tel:0344007994" data-cms-id="common_common-footer_A_002">03-4400-7994</a></div>
+    <div class="site-footer__col"><h4 data-cms-id="common_common-footer_H4_003">Business</h4><a href="business.html" data-cms-id="common_common-footer_A_004">事業紹介</a><a href="inheritance-vacant-house.html" data-cms-id="common_common-footer_A_005">相続コンサルティング</a><a href="sale-consulting.html" data-cms-id="common_common-footer_A_006">不動産コンサルティング</a><a href="property-management.html" data-cms-id="common_common-footer_A_007">賃貸経営オーナー支援</a><a href="corporate-benefits.html" data-cms-id="common_common-footer_A_008">企業向けセミナー</a><a href="social-contribution.html" data-cms-id="common_common-footer_A_009">社会貢献</a></div>
+    <div class="site-footer__col"><h4 data-cms-id="common_common-footer_H4_010">Guide</h4><a href="about.html" data-cms-id="common_common-footer_A_011">会社情報</a><a href="for-sale.html" data-cms-id="common_common-footer_A_012">販売物件</a><a href="services.html" data-cms-id="common_common-footer_A_013">サービス</a><a href="index.html#service-area" data-cms-id="common_common-footer_A_014">対応エリア</a><a href="news.html" data-cms-id="common_common-footer_A_015">お知らせ</a><a href="contact.html" data-cms-id="common_common-footer_A_016">相談する</a><a href="privacy.html" data-cms-id="common_common-footer_A_017">プライバシー</a></div>
+  </div>
+  <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
+</footer>
+<!-- /ZOROYA:FOOTER -->
   <!-- /ZOROYA:FOOTER -->
 
   <!-- 演出スクリプト（GSAP/ScrollTrigger は1回だけ登録・各演出はブロックrootから） -->
   <script>
     window.addEventListener('load', function () {
+      if (document.body.classList.contains('motion-variant')) return;
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!window.gsap) return;
       gsap.registerPlugin(ScrollTrigger);
@@ -912,6 +957,7 @@
   <!-- reveal safety-net: ScrollTrigger refresh後もカードが透明のまま残らないように復旧 -->
   <script>
   (function () {
+    if (document.body.classList.contains('motion-variant')) return;
     var SEL = ['.c-news__row', '#facgrid figure', '.project-card', '.entry-card', '.domain-card', '.result-card', '.c-feat__card'].join(',');
     function recover(el) {
       var o = parseFloat(getComputedStyle(el).opacity);
@@ -939,5 +985,127 @@
   </script>
 
 <script src="assets/js/site.js"></script>
+<script id="motion-dynamic-script">
+(function(){
+  var body=document.body;
+  if(!body.classList.contains('motion-variant--dynamic')) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* sec-news-11：ライブフィードを紙面としてプリンタから送り出す */
+  var todayWrap=document.querySelector('.today>.wrap');
+  var receiptPaper=null;
+  var receiptStage=null;
+  if(todayWrap){
+    var receiptNodes=['.today__head','.today__grid','.today__news-cta'].map(function(selector){return todayWrap.querySelector(selector)}).filter(Boolean);
+    if(receiptNodes.length){
+      receiptStage=document.createElement('div');receiptStage.className='dyn-receipt-stage';
+      receiptPaper=document.createElement('div');receiptPaper.className='dyn-receipt-paper';
+      receiptNodes.forEach(function(node){receiptPaper.appendChild(node)});
+      receiptStage.appendChild(receiptPaper);
+      todayWrap.insertBefore(receiptStage,todayWrap.firstChild);
+    }
+  }
+
+  /* sec-links-10：問い合わせ4導線を伸縮パネルにする */
+  var contactRoutes=Array.from(document.querySelectorAll('.contact-guide__routes .contact-route'));
+  contactRoutes.forEach(function(route,index){
+    route.dataset.dynNumber=String(index+1).padStart(2,'0');
+    if(index===0)route.classList.add('is-active');
+    ['pointerenter','focusin'].forEach(function(eventName){route.addEventListener(eventName,function(){contactRoutes.forEach(function(item){item.classList.toggle('is-active',item===route)})})});
+  });
+
+  /* お知らせタブは比較ページでも操作可能にする */
+  var newsRows=Array.from(document.querySelectorAll('.c-news__row'));
+  var newsTabs=Array.from(document.querySelectorAll('.c-news__tab'));
+  newsTabs.forEach(function(tab){tab.addEventListener('click',function(){
+    var filter=tab.textContent.trim();newsTabs.forEach(function(item){item.classList.toggle('is-on',item===tab)});
+    newsRows.forEach(function(row){var badgeText=(row.querySelector('.c-news__badge')||{}).textContent||'';row.hidden=!(filter==='すべて'||(filter==='お知らせ'&&/お知らせ/.test(badgeText))||(filter==='セミナー'&&/セミナー/.test(badgeText)))});
+  })});
+
+  var feed=document.getElementById('todayFeed');
+  if(feed)new MutationObserver(function(mutations){
+    var changed=mutations.some(function(mutation){return Array.from(mutation.addedNodes).some(function(node){return node.nodeType===1&&node.classList&&node.classList.contains('today__item')})});
+    if(changed&&window.ScrollTrigger)setTimeout(function(){ScrollTrigger.refresh()},80);
+  }).observe(feed,{childList:true});
+
+  window.addEventListener('load',function(){
+    if(!window.gsap)return;
+    gsap.registerPlugin(ScrollTrigger);
+    if(!reduce)body.classList.add('motion-ready');
+
+    function revealEach(selector,vars){
+      gsap.utils.toArray(selector).forEach(function(el,index){gsap.from(el,Object.assign({y:26,opacity:0,duration:.72,delay:(index%4)*.04,ease:'power4.out',scrollTrigger:{trigger:el,start:'top 89%',once:true}},vars||{}))});
+    }
+    revealEach('.c-news__head > *',{y:24,duration:.68});
+    gsap.utils.toArray('.c-news__row').forEach(function(row,index){gsap.from(row,{x:index%2?-44:44,opacity:0,duration:.7,ease:'power4.out',scrollTrigger:{trigger:row,start:'top 90%',once:true}})});
+
+    /* 採用案02：画面に入ると自動で紙面を送り出す */
+    if(receiptPaper&&receiptStage){
+      if(reduce){gsap.set(receiptPaper,{clearProps:'transform'})}
+      else{
+        var mm=gsap.matchMedia();
+        mm.add('(min-width: 901px)',function(){
+          var receiptTween=null;
+          var receiptTrigger=null;
+          gsap.set(receiptPaper,{clipPath:'inset(0 0 88% 0)',y:-14,rotationX:-1.6});
+          receiptTween=gsap.to(receiptPaper,{clipPath:'inset(0 0 0% 0)',y:0,rotationX:0,duration:1.7,ease:'power2.inOut',paused:true});
+          receiptTrigger=ScrollTrigger.create({trigger:receiptStage,start:'top 78%',once:true,onEnter:function(){receiptTween.play()}});
+          return function(){
+            if(receiptTrigger)receiptTrigger.kill();
+            if(receiptTween)receiptTween.kill();
+            gsap.set(receiptPaper,{clearProps:'transform,clipPath,opacity'});
+          };
+        });
+        mm.add('(max-width: 900px)',function(){
+          var mobileTween=gsap.from(receiptPaper,{clipPath:'inset(0 0 76% 0)',y:-10,duration:1.35,ease:'power2.inOut',scrollTrigger:{trigger:receiptStage,start:'top 94%',once:true}});
+          return function(){if(mobileTween.scrollTrigger)mobileTween.scrollTrigger.kill();mobileTween.kill();gsap.set(receiptPaper,{clearProps:'transform,clipPath,opacity'})};
+        });
+      }
+    }
+
+    revealEach('.today__entry-head > *',{y:28,duration:.76});
+    var projectGrid=document.querySelector('.project-grid');
+    var projectCards=projectGrid?Array.from(projectGrid.querySelectorAll('.project-card')):[];
+    if(projectGrid&&projectCards.length){
+      var spread=Math.min(360,Math.max(150,projectGrid.getBoundingClientRect().width*.28));
+      projectCards.forEach(function(card,index){
+        var offset=(1-index)*spread;
+        gsap.from(card,{x:offset,rotation:(index-1)*8,y:Math.abs(index-1)*28,opacity:index===1?1:.72,duration:1.15,ease:'power4.inOut',scrollTrigger:{trigger:projectGrid,start:'top 78%',once:true}});
+      });
+    }
+    revealEach('.entry-routes__head > *',{y:22,duration:.68});
+    revealEach('.entry-card',{y:30,duration:.72});
+    revealEach('.domain-section__head > *',{y:30,duration:.8});
+    var domainGrid=document.querySelector('.domain-grid');
+    var domainCards=domainGrid?Array.from(domainGrid.querySelectorAll('.domain-card')):[];
+    if(domainGrid&&domainCards.length){
+      domainCards.forEach(function(card,index){
+        var column=index%4;var row=Math.floor(index/4);
+        gsap.from(card,{x:(1.5-column)*74,y:70+row*24,rotation:(column-1.5)*5,opacity:.18,duration:1.05,delay:(index%4)*.055,ease:'power4.inOut',scrollTrigger:{trigger:domainGrid,start:'top 78%',once:true}});
+      });
+    }
+
+    revealEach('.facility .head > *',{y:24,duration:.72});
+    revealEach('.result-block__head > *, .result-card',{y:28,duration:.72});
+
+    revealEach('.c-feat__head > *',{y:28,duration:.78});
+    gsap.utils.toArray('.c-feat__card').forEach(function(card,index){gsap.from(card,{y:42,rotation:index%2?1.6:-1.6,opacity:0,duration:.8,delay:index*.06,ease:'power4.out',scrollTrigger:{trigger:card,start:'top 90%',once:true}})});
+
+    revealEach('.purchase-area__head > *',{y:26,duration:.72});
+    var areaBoard=document.querySelector('.purchase-area__board');
+    gsap.utils.toArray('.area-card').forEach(function(card,index){
+      gsap.from(card,{x:(index-1)*42,y:34,opacity:0,duration:.84,delay:index*.09,ease:'power4.out',scrollTrigger:{trigger:areaBoard,start:'top 82%',once:true}});
+      var pin=card.querySelector('.area-card__pin');if(pin)gsap.from(pin,{y:-28,scale:.3,opacity:0,duration:.62,delay:.28+index*.1,ease:'bounce.out',scrollTrigger:{trigger:areaBoard,start:'top 80%',once:true}});
+    });
+    revealEach('.purchase-area__foot > *',{y:22,duration:.68});
+
+    revealEach('.contact-guide__layout>div:first-child>*',{y:30,duration:.76});
+    contactRoutes.forEach(function(route,index){gsap.to(route,{clipPath:'inset(0 0 0% 0)',duration:.8,delay:index*.09,ease:'power4.inOut',scrollTrigger:{trigger:'.contact-guide__routes',start:'top 82%',once:true}})});
+    gsap.to('.c-cta__bg',{scale:1.1,ease:'none',scrollTrigger:{trigger:'.c-cta',start:'top bottom',end:'bottom top',scrub:true}});
+    if(!reduce){gsap.to('#ctaGlow1',{xPercent:34,yPercent:28,scale:1.28,duration:8,ease:'sine.inOut',yoyo:true,repeat:-1});gsap.to('#ctaGlow2',{xPercent:-28,yPercent:-24,scale:1.34,duration:10,ease:'sine.inOut',yoyo:true,repeat:-1})}
+    ScrollTrigger.refresh();
+  },{once:true});
+})();
+</script>
 </body>
 </html>

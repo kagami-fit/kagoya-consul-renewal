@@ -295,13 +295,13 @@
     });
   };
   const navigationMap = {
-    NAV_LEFT_01: { defaults: ['事業紹介'], ids: ['common_common-header_A_002', 'common_common-header_A_012'] },
-    NAV_LEFT_02: { defaults: ['販売中物件'], ids: ['common_common-header_A_003', 'common_common-header_A_013'] },
-    NAV_LEFT_03: { defaults: ['サービス'], ids: ['common_common-header_A_004', 'common_common-header_A_014'] },
-    NAV_LEFT_04: { defaults: ['お知らせ', 'ニュース'], ids: ['common_common-header_A_005', 'common_common-header_A_015'] },
-    NAV_RIGHT_01: { defaults: ['社会貢献'], ids: ['common_common-header_A_006', 'common_common-header_A_016'] },
-    NAV_RIGHT_02: { defaults: ['会社情報'], ids: ['common_common-header_A_007', 'common_common-header_A_017'] },
-    NAV_RIGHT_03: { defaults: ['対応エリア'], ids: ['common_common-header_A_008', 'common_common-header_A_018'] },
+    NAV_LEFT_01: { defaults: ['会社情報'], ids: ['common_common-header_A_002', 'common_common-header_A_012'] },
+    NAV_LEFT_02: { defaults: ['事業紹介'], ids: ['common_common-header_A_003', 'common_common-header_A_013'] },
+    NAV_LEFT_03: { defaults: ['販売物件', '販売中物件'], ids: ['common_common-header_A_004', 'common_common-header_A_014'] },
+    NAV_LEFT_04: { defaults: ['サービス'], ids: ['common_common-header_A_005', 'common_common-header_A_015'] },
+    NAV_RIGHT_01: { defaults: ['対応エリア'], ids: ['common_common-header_A_006', 'common_common-header_A_016'] },
+    NAV_RIGHT_02: { defaults: ['お知らせ', 'ニュース'], ids: ['common_common-header_A_007', 'common_common-header_A_017'] },
+    NAV_RIGHT_03: { defaults: ['社会貢献'], ids: ['common_common-header_A_008', 'common_common-header_A_018'] },
     NAV_RIGHT_04: { defaults: ['相談する', '選択肢を相談する'], ids: ['common_common-header_A_001', 'common_common-header_A_009', 'common_common-header_A_010', 'common_common-header_A_020'] }
   };
   const navigationHref = (value) => {
@@ -332,7 +332,7 @@
     const textSettings = [
       ['COMPANY_NAME', '株式会社籠や'],
       ['COMPANY_NAME_EN', 'KAGOYA'],
-      ['BUSINESS_HOURS', '10:00–18:00／木曜定休'],
+      ['BUSINESS_HOURS', '10:00–18:00／水曜定休'],
       ['ADDRESS', '〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号']
     ];
     textSettings.forEach(([id, before]) => {
