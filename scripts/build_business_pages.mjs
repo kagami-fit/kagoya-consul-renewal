@@ -612,17 +612,17 @@ function detailPage(item) {
   const scope = item.scope.map(([title, copy], index) => {
     const visual = pickVisual(scopeVisuals, index);
     const thumb = visual ? `<figure class="biz-card-thumb numbered-row__media">${picture(visual[0], visual[1])}</figure>` : '';
-    return `<div class="numbered-row">${thumb}<h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`;
+    return `<div class="numbered-row numbered-row--image-a">${thumb}<div class="numbered-row__body"><h3>${esc(title)}</h3><p>${esc(copy)}</p></div></div>`;
   }).join('');
   const choices = item.choices.map(([title, copy], index) => {
     const visual = pickVisual(optionVisuals, index);
     const thumb = visual ? `<figure class="biz-card-thumb biz-choice__media">${picture(visual[0], visual[1])}</figure>` : '';
-    return `<article class="biz-choice"><div class="biz-choice__meta"><span>${String(index + 1).padStart(2, '0')}</span>${thumb}</div><h3>${esc(title)}</h3><p>${esc(copy)}</p></article>`;
+    return `<article class="biz-choice biz-choice--image-b">${thumb}<div class="biz-choice__body"><span>${String(index + 1).padStart(2, '0')}</span><h3>${esc(title)}</h3><p>${esc(copy)}</p></div></article>`;
   }).join('');
   const process = item.process.map(([title, copy], index) => {
     const visual = pickVisual(processVisuals, index);
     const thumb = visual ? `<figure class="biz-card-thumb biz-process__media">${picture(visual[0], visual[1])}</figure>` : '';
-    return `<div class="biz-process__step">${thumb}<h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`;
+    return `<div class="biz-process__step biz-process__step--image-c">${thumb}<div class="biz-process__shade"></div><div class="biz-process__body"><span class="biz-process__number">${String(index + 1).padStart(2, '0')}</span><h3>${esc(title)}</h3><p>${esc(copy)}</p></div></div>`;
   }).join('');
   const visuals = item.visuals.map(([image, alt, label, code]) => `<figure class="visual-journal__figure">${picture(image, alt)}<figcaption><span>${esc(label)}</span><small>${esc(code)}</small></figcaption></figure>`).join('');
   const tags = item.networkTags.map((tag) => `<span>${esc(tag)}</span>`).join('');
