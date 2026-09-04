@@ -6,6 +6,12 @@
   const shade = document.querySelector('[data-menu-shade]');
   const drawer = document.querySelector('[data-menu-drawer]');
 
+  // ホームの導線は「対応エリア」から「不動産相談」へ自然につながる順番に統一する。
+  const homeMain = document.querySelector('main#main');
+  const serviceAreaSection = homeMain?.querySelector('#service-area');
+  const servicesSection = homeMain?.querySelector('#services');
+  if (homeMain && serviceAreaSection && servicesSection) homeMain.insertBefore(serviceAreaSection, servicesSection);
+
   const closeMenu = () => {
     body.classList.remove('menu-open');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');

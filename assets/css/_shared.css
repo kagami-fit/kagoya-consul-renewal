@@ -569,11 +569,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .social-promise__copy p { color: var(--muted); font-size: 1.02rem; line-height: 2; }
 .social-promise__quote { margin: 42px 0; padding: 34px 0 34px 36px; border-left: 2px solid var(--accent); color: var(--main); font-family: var(--font-display); font-size: clamp(1.45rem,3vw,2.1rem); line-height: 1.65; }
 
-.manifesto-layout { display: grid; grid-template-columns: 38% 1fr; gap: 9%; align-items: start; }
-.manifesto-sticky { position: sticky; top: 118px; }
-.manifesto-en { margin: 20px 0 0; color: var(--main); font-family: var(--font-en); font-size: clamp(3.4rem,7.6vw,6.9rem); font-weight: 700; line-height: .84; letter-spacing: -.065em; }
+.manifesto-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(44px, 7vw, 84px); align-items: start; }
+.manifesto-sticky { position: sticky; top: 118px; min-width: 0; }
+.manifesto-en { max-width: 100%; margin: 20px 0 0; color: var(--main); font-family: var(--font-en); font-size: clamp(3.15rem, 5.1vw, 4.4rem); font-weight: 700; line-height: .84; letter-spacing: -.065em; overflow-wrap: anywhere; }
 .manifesto-sticky .small-note { max-width: 27em; margin-top: 30px; }
-.manifesto-copy { padding-top: 8px; border-top: 1px solid var(--main); }
+.manifesto-copy { min-width: 0; padding-top: 8px; border-top: 1px solid var(--main); }
 .manifesto-copy p { margin: 0 0 1.35em; color: var(--muted); font-size: clamp(1rem,1.4vw,1.12rem); line-height: 2.02; }
 .manifesto-copy .manifesto-lead { color: var(--main); font-family: var(--font-display); font-size: clamp(1.7rem,3.2vw,2.6rem); line-height: 1.65; }
 .manifesto-copy .manifesto-beat { margin: 42px 0; padding: 32px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--main); font-family: var(--font-display); font-size: clamp(1.35rem,2.5vw,2rem); line-height: 1.8; }
@@ -719,7 +719,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .social-program { padding: 76px 0; }
   .social-gallery figure:first-child,
   .social-gallery figure:last-child { min-height: 300px; }
-  .manifesto-en { font-size: clamp(3rem,15vw,4.8rem); }
+  .manifesto-en { font-size: clamp(2.7rem,11vw,4rem); }
   .sample07-subpage .page-hero__art { min-height: 250px; box-shadow: 10px 10px 0 rgba(21,96,130,.07); }
   .visual-journal__head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 32px; }
   .visual-journal__gallery,
@@ -911,6 +911,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .biz-more .biz-local-nav { margin-top: 0; }
 
 @media (max-width: 900px) {
+  .manifesto-layout { grid-template-columns: 1fr; gap: 38px; }
+  .manifesto-sticky { position: static; }
   .biz-local-nav { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .biz-process { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
