@@ -1264,6 +1264,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 }
 
 /* 2026-09 production mix: A for checks, B for options, C for process */
+.biz-process-intro--solo { display: block; }
+.biz-process-intro--solo .section-head { max-width: 42em; margin-bottom: 48px; }
 .numbered-row--image-a {
   grid-template-columns: 46px 164px minmax(0,1fr);
   gap: 22px;
