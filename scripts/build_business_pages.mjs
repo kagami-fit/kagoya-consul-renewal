@@ -384,6 +384,57 @@ const businesses = [
   }
 ];
 
+// 下層の確認項目・選択肢・進め方・連携体制に添える、内容対応の既存ビジュアル。
+// 既存の生成画像を役割ごとに再配置し、ページごとに同じ写真が続かないようにする。
+const lowerVisuals = {
+  inheritance: {
+    check: ['src/gen-inheritance.jpg', '相続した住まいの資料と鍵を確認する様子', '名義・期限・建物', 'PROPERTY CHECK'],
+    options: ['src/project-inheritance-care.jpg', '家族と専門家が住まいの選択肢を話し合う様子', '家族の選択肢', 'FAMILY / CARE'],
+    process: ['src/gen-site-survey.jpg', '建物と周辺環境を現地で確認する様子', '資料と現地を照合', 'FIELD CHECK'],
+    network: ['src/gen-consultation.jpg', '家族と専門家が相続不動産について相談する様子', '一つの窓口から連携', 'ADVISORY']
+  },
+  consulting: {
+    check: ['src/gen-site-survey.jpg', '建物と接道を現地で確認する不動産調査の様子', '現地の事実', 'SITE SURVEY'],
+    options: ['src/gen-consultation.jpg', '資料を広げて不動産の選択肢を相談する様子', '判断材料を共有', 'CONSULTATION'],
+    process: ['src/gen-finance.jpg', '資料と数字を見ながら不動産の条件を整理する様子', '数字と条件を比較', 'ANALYSIS'],
+    network: ['src/gen-domain-consulting.jpg', '住宅模型と資料を囲み専門家が検討する様子', '論点を横断して検討', 'TEAM APPROACH']
+  },
+  brokerage: {
+    check: ['src/gen-sale.jpg', '物件資料と模型を使って売却方法を検討する様子', '価格・条件・手取り', 'SELLING PLAN'],
+    options: ['src/gen-purchase.jpg', '購入予定物件の条件と資金計画を確認する様子', '購入後まで確認', 'PURCHASE'],
+    process: ['src/gen-site-survey.jpg', '物件の周辺環境と状態を現地で調査する様子', '物件を調査', 'FIELD SURVEY'],
+    network: ['src/gen-consultation.jpg', '売主と専門家が物件資料を見ながら相談する様子', '取引後までつなぐ', 'AFTER CLOSING']
+  },
+  rights: {
+    check: ['src/gen-site-survey.jpg', '土地の境界と接道を現地で確認する様子', '契約・境界・接道', 'RIGHTS CHECK'],
+    options: ['src/project-development.jpg', '複数の土地を一体利用する開発計画を検討する様子', '一体利用・開発', 'DEVELOPMENT'],
+    process: ['src/gen-domain-rights.jpg', '土地と周辺の権利関係を調査する現場', '図面と現況を照合', 'FIELD SURVEY'],
+    network: ['src/gen-consultation.jpg', '関係者と専門家が土地の条件を話し合う様子', '関係者と専門家をつなぐ', 'COORDINATION']
+  },
+  fukuri: {
+    check: ['src/gen-finance.jpg', '資料と数字を見ながら将来の収支を確認する様子', '収支と目的を確認', 'SIMULATION'],
+    options: ['src/gen-consultation.jpg', '専門家と住まいや資産形成について相談する様子', '学びを相談へ', 'ADVISORY'],
+    process: ['src/gen-domain-fukuri.jpg', '資産形成について学び相談できるラウンジの様子', '体験を設計', 'LEARNING'],
+    network: ['src/gen-finance.jpg', '将来の家計と資産形成を資料で検討する様子', '必要な専門家へ', 'FINANCIAL WELL-BEING']
+  },
+  owner: {
+    check: ['src/gen-management.jpg', '管理の行き届いた賃貸住宅の外観', '建物と管理の現状', 'PROPERTY CARE'],
+    options: ['src/project-rental-management.jpg', '賃貸経営の収支と運用方針を検討する様子', '運用と出口', 'ASSET OPERATION'],
+    process: ['src/gen-domain-owner.jpg', '賃貸住宅の管理と入居状況を確認する様子', '現場を確認', 'PROPERTY MANAGEMENT'],
+    network: ['src/gen-consultation.jpg', 'オーナーと専門家が賃貸経営の方針を相談する様子', '運用を継続して見直す', 'OWNER SUPPORT']
+  },
+  seminar: {
+    check: ['src/gen-domain-new-business.jpg', '企業向けセミナーで参加者が学ぶ様子', 'テーマと対象者', 'SEMINAR DESIGN'],
+    options: ['src/gen-finance.jpg', '資料と数字を見ながら資産形成を学ぶ様子', '実生活に置き換える', 'FINANCIAL LITERACY'],
+    process: ['src/gen-domain-fukuri.jpg', '少人数でお金と不動産について学ぶセミナーの様子', '学びの場を設計', 'LEARNING'],
+    network: ['src/gen-consultation.jpg', '企業担当者と専門家がセミナー内容を相談する様子', '専門家が登壇', 'EXPERT NETWORK']
+  }
+};
+
+businesses.forEach((item) => {
+  item.lowerVisuals = lowerVisuals[item.id] || {};
+});
+
 const esc = (value) => String(value).replace(/[&<>\"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
 const webp = (path) => path.replace(/\.(?:jpg|png)$/i, '.webp');
 const picture = (path, alt, eager = false) => `<picture><source type="image/webp" srcset="${esc(webp(path))}"><img src="${esc(path)}" alt="${esc(alt)}" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></picture>`;
@@ -493,6 +544,15 @@ function detailPage(item) {
   const process = item.process.map(([title, copy]) => `<div class="biz-process__step"><h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`).join('');
   const visuals = item.visuals.map(([image, alt, label, code]) => `<figure class="visual-journal__figure">${picture(image, alt)}<figcaption><span>${esc(label)}</span><small>${esc(code)}</small></figcaption></figure>`).join('');
   const tags = item.networkTags.map((tag) => `<span>${esc(tag)}</span>`).join('');
+  const sectionFigure = (visual, modifier = '') => {
+    if (!visual) return '';
+    const [image, alt, label, code] = visual;
+    return `<figure class="biz-section-visual${modifier ? ` ${modifier}` : ''}">${picture(image, alt)}<figcaption><span>${esc(label)}</span><small>${esc(code)}</small></figcaption></figure>`;
+  };
+  const checkFigure = sectionFigure(item.lowerVisuals.check, 'biz-section-visual--check');
+  const optionsFigure = sectionFigure(item.lowerVisuals.options, 'biz-section-visual--options');
+  const processFigure = sectionFigure(item.lowerVisuals.process, 'biz-section-visual--process');
+  const networkFigure = sectionFigure(item.lowerVisuals.network, 'biz-section-visual--network');
   return `${head({ title: item.title, description: item.description, page: item.page, image: item.heroImage })}
 <body class="sample07-subpage business-detail-page">
 <a class="skip-link" href="#main">本文へスキップ</a>
@@ -518,17 +578,17 @@ ${header()}
       <div class="visual-journal__gallery visual-journal__gallery--duo">${visuals}</div>
     </div>
   </section>
-  <section class="page-sec alt">
-    <div class="wrap"><div class="section-head section-head--split"><div><span class="eyebrow">What we check</span><h2>${esc(item.scopeTitle)}</h2></div><p class="lead">${esc(item.scopeLead)}</p></div><div class="numbered-list">${scope}</div></div>
+  <section class="page-sec alt biz-check-section">
+    <div class="wrap"><div class="section-head section-head--split"><div><span class="eyebrow">What we check</span><h2>${esc(item.scopeTitle)}</h2></div><p class="lead">${esc(item.scopeLead)}</p></div><div class="biz-check-layout"><div class="numbered-list">${scope}</div>${checkFigure}</div></div>
   </section>
   <section class="page-sec biz-decisions">
-    <div class="wrap"><div class="section-head"><span class="eyebrow">Options</span><h2>${esc(item.choicesTitle)}</h2><p class="lead">${esc(item.choicesLead)}</p></div><div class="biz-choice-grid">${choices}</div></div>
+    <div class="wrap"><div class="section-head"><span class="eyebrow">Options</span><h2>${esc(item.choicesTitle)}</h2><p class="lead">${esc(item.choicesLead)}</p></div><div class="biz-options-layout"><div class="biz-choice-grid">${choices}</div>${optionsFigure}</div></div>
   </section>
   <section class="biz-process-section">
-    <div class="wrap"><div class="section-head"><span class="eyebrow">How we proceed</span><h2>相談から実行までの進め方</h2><p class="lead">案件ごとに必要な確認は異なります。状況を把握し、選択肢を比べてから実行へ進みます。</p></div><div class="biz-process">${process}</div></div>
+    <div class="wrap"><div class="biz-process-intro"><div class="section-head"><span class="eyebrow">How we proceed</span><h2>相談から実行までの進め方</h2><p class="lead">案件ごとに必要な確認は異なります。状況を把握し、選択肢を比べてから実行へ進みます。</p></div>${processFigure}</div><div class="biz-process">${process}</div></div>
   </section>
   <section class="page-sec alt">
-    <div class="wrap biz-network"><div><span class="eyebrow">Team approach</span><h2>${esc(item.networkTitle)}</h2></div><div><p>${esc(item.networkCopy)}</p><div class="biz-network__tags">${tags}</div></div></div>
+    <div class="wrap biz-network"><div><span class="eyebrow">Team approach</span><h2>${esc(item.networkTitle)}</h2>${networkFigure}</div><div><p>${esc(item.networkCopy)}</p><div class="biz-network__tags">${tags}</div></div></div>
   </section>
   <section class="page-sec"><div class="wrap"><div class="mini-cta"><div><span class="eyebrow">Consultation</span><h2>${esc(item.ctaTitle)}</h2><p>${esc(item.ctaCopy)}</p></div><a class="btn btn-light" href="contact.html?type=${esc(item.ctaType)}">この事業について相談する</a></div></div></section>
   <section class="page-sec biz-more"><div class="wrap"><div class="section-head"><span class="eyebrow">More business</span><h2>ほかの事業を見る</h2></div>${businessNav(item.id)}</div></section>
