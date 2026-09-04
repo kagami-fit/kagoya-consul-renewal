@@ -682,6 +682,127 @@ ${footer()}
 </html>\n`;
 }
 
+const imageComparisonData = {
+  check: [
+    ['登記名義と関係者', '相続人・共有者を確認し、それぞれの意向と話し合いが必要な範囲を整理します。', 'src/gen-inheritance.jpg', '相続した住まいの資料と鍵を確認する手元'],
+    ['建物と管理負担', '空き家・賃貸物件の状態、設備、維持費、近隣への影響を確認します。', 'src/gen-management.jpg', '管理の行き届いた集合住宅を確認する様子'],
+    ['期限と資金', '手続きの期限や納税資金など、先に確認すべき条件を切り分けます。', 'src/gen-finance.jpg', '収支資料と計算機を使って将来の資金を確認する手元'],
+    ['売却以外の選択肢', '保有・賃貸・活用も含め、家族にとって無理のない選択肢を比較します。', 'src/gen-site-survey.jpg', '敷地と図面を現地で照合する不動産調査']
+  ],
+  options: [
+    ['生前の準備', '認知症への備えや、将来誰が管理するかを早めに整理します。', 'src/project-inheritance-care.jpg', '家族と専門家が相続と介護の選択肢を話し合う様子'],
+    ['相続発生後', '名義・期限・家族の意向を確認し、次の行動を順番にします。', 'src/gen-domain-care.jpg', '相続した家の状態を確認する落ち着いた住まい'],
+    ['空き家の管理', '維持負担と建物の状態を把握し、保有・活用・売却を比べます。', 'src/gen-consultation.jpg', '専門家と家族が不動産資料を見ながら相談する様子'],
+    ['専門家との連携', '法務・税務・介護など、不動産だけでは完結しない確認をつなぎます。', 'src/gen-domain-consulting.jpg', '住宅模型と資料を囲み不動産の条件を検討する様子']
+  ],
+  process: [
+    ['状況を伺う', '分かる範囲で、家族・物件・期限について伺います。', 'src/gen-consultation.jpg', '専門家と家族が不動産資料を見ながら相談する様子'],
+    ['資料と現地を確認', '登記名義や建物の状態など、判断に必要な事実を集めます。', 'src/gen-site-survey.jpg', '敷地と図面を現地で照合する不動産調査'],
+    ['選択肢を比較', '売却・保有・賃貸・活用を同じ条件で並べます。', 'src/gen-finance.jpg', '収支資料と計算機を使って将来の資金を確認する手元'],
+    ['実行を支援', '必要な専門家と連携し、選んだ方針の実行へつなぎます。', 'src/project-inheritance-care.jpg', '家族と専門家が相続と介護の選択肢を話し合う様子']
+  ]
+};
+
+const comparisonMedia = (entry, className = '') => {
+  const [, , image, alt] = entry;
+  return `<figure class="image-compare-media${className ? ` ${className}` : ''}">${picture(image, alt, true)}</figure>`;
+};
+
+const comparisonNumber = (index) => String(index + 1).padStart(2, '0');
+
+function comparisonItems(entries, variant, type) {
+  if (variant === 'a') {
+    if (type === 'check') return `<div class="image-compare-a__rows">${entries.map((entry, index) => `<article class="image-compare-a__row"><span class="image-compare-a__number">${comparisonNumber(index)}</span>${comparisonMedia(entry, 'image-compare-a__media')}<div><h3>${esc(entry[0])}</h3><p>${esc(entry[1])}</p></div></article>`).join('')}</div>`;
+    if (type === 'options') return `<div class="image-compare-a__cards">${entries.map((entry, index) => `<article class="image-compare-a__card"><div class="image-compare-a__card-top"><span>${comparisonNumber(index)}</span>${comparisonMedia(entry, 'image-compare-a__card-media')}</div><h3>${esc(entry[0])}</h3><p>${esc(entry[1])}</p></article>`).join('')}</div>`;
+    return `<div class="image-compare-a__steps">${entries.map((entry, index) => `<article class="image-compare-a__step"><span class="image-compare-a__number">${comparisonNumber(index)}</span>${comparisonMedia(entry, 'image-compare-a__step-media')}<div><h3>${esc(entry[0])}</h3><p>${esc(entry[1])}</p></div></article>`).join('')}</div>`;
+  }
+  if (variant === 'b') {
+    return `<div class="image-compare-b__grid">${entries.map((entry, index) => `<article class="image-compare-b__card">${comparisonMedia(entry, 'image-compare-b__media')}<div class="image-compare-b__body"><span>${comparisonNumber(index)}</span><h3>${esc(entry[0])}</h3><p>${esc(entry[1])}</p></div></article>`).join('')}</div>`;
+  }
+  return `<div class="image-compare-c__grid">${entries.map((entry, index) => `<article class="image-compare-c__card">${comparisonMedia(entry, 'image-compare-c__bg')}<div class="image-compare-c__shade"></div><div class="image-compare-c__body"><span>${comparisonNumber(index)}</span><h3>${esc(entry[0])}</h3><p>${esc(entry[1])}</p></div></article>`).join('')}</div>`;
+}
+
+function imageComparisonPage() {
+  const variants = [
+    {
+      id: 'variant-a',
+      label: 'A / 横長サイド',
+      title: '横長画像を、情報の横に置く。',
+      copy: '今の一覧性を残しながら画像の面積を広げる案。確認項目は行の左、選択肢と進め方はカード上部に画像を置きます。'
+    },
+    {
+      id: 'variant-b',
+      label: 'B / カード上部',
+      title: '画像を主役に、カードで見せる。',
+      copy: '写真をカード上部いっぱいに見せ、タイトルと説明を下にまとめる案。内容をざっと眺めるときに直感的です。'
+    },
+    {
+      id: 'variant-c',
+      label: 'C / 背景オーバーレイ',
+      title: '写真の上に、判断材料を重ねる。',
+      copy: '画像を全面に敷き、番号・見出し・要約を重ねる案。ブランドの印象を強めたい箇所や、プロジェクト紹介に向きます。'
+    }
+  ];
+  const panels = variants.map((variant) => `<section class="image-compare-panel" data-compare-panel="${variant.id}" id="${variant.id}" hidden>
+    <div class="image-compare-panel__head"><div><span class="eyebrow">${esc(variant.label)}</span><h2>${esc(variant.title)}</h2></div><p>${esc(variant.copy)}</p></div>
+    <section class="image-compare-group"><div class="image-compare-group__head"><span class="eyebrow">01 / What we check</span><h3>最初に整理する4つのこと</h3></div>${comparisonItems(imageComparisonData.check, variant.id.slice(-1), 'check')}</section>
+    <section class="image-compare-group"><div class="image-compare-group__head"><span class="eyebrow">02 / Options</span><h3>相続の前後を、切れ目なく支える。</h3></div>${comparisonItems(imageComparisonData.options, variant.id.slice(-1), 'options')}</section>
+    <section class="image-compare-group image-compare-group--process"><div class="image-compare-group__head"><span class="eyebrow">03 / How we proceed</span><h3>相談から実行までの進め方</h3></div>${comparisonItems(imageComparisonData.process, variant.id.slice(-1), 'process')}</section>
+  </section>`).join('\n');
+  return `${head({ title: 'カード画像の見せ方比較', description: '事業詳細ページの確認項目・選択肢・進め方で使う画像レイアウトを3案で比較するデモページです。', page: 'image-layout-comparison.html', image: 'src/gen-inheritance.jpg' })}
+<body class="sample07-subpage image-compare-page">
+<a class="skip-link" href="#main">本文へスキップ</a>
+${header()}
+<!-- ZOROYA:MAIN -->
+<main id="main">
+  <section class="page-hero editorial-hero image-compare-hero">
+    <div class="wrap page-hero__grid">
+      <div><p class="crumb"><a href="index.html">ホーム</a> ／ 画像レイアウト比較</p><span class="eyebrow">Image direction lab</span><h1>カード画像の見せ方を、<br>3つの案で比べる。</h1><p class="lead">小さなサムネイルより画像の存在感を上げた場合の、見え方・情報量・読みやすさを比較できます。</p></div>
+      <div class="page-hero__art">${picture('src/gen-inheritance.jpg', '相続した住まいの資料と鍵を確認する手元', true)}<span class="page-hero__caption">KAGOYA / IMAGE STUDY</span></div>
+    </div>
+  </section>
+  <section class="page-sec alt image-compare-controls">
+    <div class="wrap"><div class="image-compare-controls__head"><div><span class="eyebrow">Choose a direction</span><h2>同じ内容で、画像の使い方だけを比較。</h2></div><p>相続コンサルティングページの内容をサンプルに、3つのレイアウトを切り替えて確認できます。気に入った案を選んだ後、7つの事業ページへ展開します。</p></div><div class="image-compare-tabs" role="tablist" aria-label="画像レイアウトの比較"><button type="button" role="tab" data-compare-tab="variant-a" aria-controls="variant-a" aria-selected="true">A <small>横長サイド</small></button><button type="button" role="tab" data-compare-tab="variant-b" aria-controls="variant-b" aria-selected="false">B <small>カード上部</small></button><button type="button" role="tab" data-compare-tab="variant-c" aria-controls="variant-c" aria-selected="false">C <small>背景オーバーレイ</small></button></div></div>
+  </section>
+  <section class="page-sec image-compare-stage"><div class="wrap">${panels}</div></section>
+</main>
+<!-- /ZOROYA:MAIN -->
+${footer()}
+<script src="assets/js/site.js"></script>
+<script>
+(() => {
+  const tabs = [...document.querySelectorAll('[data-compare-tab]')];
+  const panels = [...document.querySelectorAll('[data-compare-panel]')];
+  const setVariant = (id, updateHash = true) => {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.compareTab === id;
+      tab.setAttribute('aria-selected', active ? 'true' : 'false');
+      tab.tabIndex = active ? 0 : -1;
+    });
+    panels.forEach((panel) => {
+      const active = panel.dataset.comparePanel === id;
+      panel.hidden = !active;
+      panel.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+    if (updateHash) history.replaceState(null, '', '#' + id);
+  };
+  tabs.forEach((tab) => tab.addEventListener('click', () => setVariant(tab.dataset.compareTab)));
+  tabs.forEach((tab, index) => tab.addEventListener('keydown', (event) => {
+    if (!['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp'].includes(event.key)) return;
+    event.preventDefault();
+    const direction = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1 : -1;
+    tabs[(index + direction + tabs.length) % tabs.length].focus();
+    setVariant(tabs[(index + direction + tabs.length) % tabs.length].dataset.compareTab);
+  }));
+  const requested = location.hash.slice(1);
+  setVariant(tabs.some((tab) => tab.dataset.compareTab === requested) ? requested : 'variant-a', false);
+})();
+</script>
+</body>
+</html>\n`;
+}
+
 writeFileSync(resolve(root, 'business.html'), overviewPage(), 'utf8');
 businesses.filter((item) => item.intro).forEach((item) => writeFileSync(resolve(root, item.page), detailPage(item), 'utf8'));
+writeFileSync(resolve(root, 'image-layout-comparison.html'), imageComparisonPage(), 'utf8');
 console.log(`generated: business.html + ${businesses.filter((item) => item.intro).length} business detail pages`);

@@ -1110,3 +1110,155 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .biz-process__step { padding-right: 86px; }
   .biz-process__media { width: 62px; height: 46px; right: 12px; }
 }
+
+/* 2026-09 image direction comparison demo */
+.image-compare-page { background: #F7F9FA; }
+.image-compare-hero { background: #EEF3F5; }
+.image-compare-hero .page-hero__art { min-height: 300px; }
+.image-compare-controls { padding-top: 72px; padding-bottom: 72px; }
+.image-compare-controls__head {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(280px,.72fr);
+  gap: clamp(28px,6vw,90px);
+  align-items: end;
+}
+.image-compare-controls__head h2 { margin: 14px 0 0; max-width: 18em; }
+.image-compare-controls__head p { margin: 0; color: var(--muted); line-height: 2; }
+.image-compare-tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 46px;
+  border-bottom: 1px solid var(--line);
+}
+.image-compare-tabs button {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: -1px;
+  padding: 15px 22px 14px;
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.image-compare-tabs button[aria-selected="true"] {
+  border-color: var(--line);
+  border-bottom-color: var(--main);
+  background: #FFFFFF;
+  color: var(--main);
+}
+.image-compare-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.image-compare-tabs small { font-size: .7rem; font-weight: 500; }
+.image-compare-stage { padding-top: 96px; padding-bottom: 132px; }
+.image-compare-panel[hidden] { display: none; }
+.image-compare-panel__head {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(280px,.8fr);
+  gap: clamp(28px,6vw,90px);
+  align-items: end;
+  margin-bottom: 72px;
+}
+.image-compare-panel__head h2 { margin: 14px 0 0; max-width: 18em; }
+.image-compare-panel__head p { margin: 0; color: var(--muted); line-height: 2; }
+.image-compare-group {
+  margin-top: 72px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+.image-compare-group--process { padding-bottom: 10px; }
+.image-compare-group__head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.image-compare-group__head h3 { margin: 0; }
+.image-compare-group__head .eyebrow { flex: 0 0 auto; }
+.image-compare-media { margin: 0; overflow: hidden; background: #DDE7EB; }
+.image-compare-media picture { display: block; width: 100%; height: 100%; }
+.image-compare-media img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.02); }
+.image-compare-media img { transition: transform .65s cubic-bezier(.2,.8,.2,1), filter .65s ease; }
+.image-compare-media:hover img { transform: scale(1.04); filter: saturate(.94) contrast(1.03); }
+
+/* A: keep list rhythm, give each row a clear image anchor */
+.image-compare-a__rows { border-top: 1px solid var(--main); }
+.image-compare-a__row {
+  display: grid;
+  grid-template-columns: 52px 176px minmax(0,1fr);
+  gap: 22px;
+  align-items: center;
+  min-height: 132px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.image-compare-a__number { color: var(--sub); font-family: var(--font-en); font-size: .75rem; letter-spacing: .15em; }
+.image-compare-a__media { width: 176px; height: 98px; }
+.image-compare-a__row h3 { margin: 0 0 8px; }
+.image-compare-a__row p,
+.image-compare-a__card p,
+.image-compare-a__step p { margin: 0; color: var(--muted); line-height: 1.8; }
+.image-compare-a__cards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border-top: 1px solid var(--main); border-left: 1px solid var(--line); }
+.image-compare-a__card { padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #FFFFFF; }
+.image-compare-a__card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; min-height: 92px; margin-bottom: 20px; }
+.image-compare-a__card-top > span { color: var(--accent); font-family: var(--font-en); font-size: .72rem; letter-spacing: .15em; }
+.image-compare-a__card-media { flex: 0 0 146px; width: 146px; height: 92px; }
+.image-compare-a__card h3 { margin: 0 0 8px; }
+.image-compare-a__steps { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--main); border-left: 1px solid var(--line); }
+.image-compare-a__step { min-height: 260px; padding: 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #FFFFFF; }
+.image-compare-a__step > .image-compare-a__number { display: block; margin-bottom: 14px; }
+.image-compare-a__step-media { width: 100%; height: 96px; margin-bottom: 20px; }
+.image-compare-a__step h3 { margin: 0 0 8px; }
+
+/* B: make the image the first, generous scan point of every card */
+.image-compare-b__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.image-compare-b__card { overflow: hidden; border: 1px solid var(--line); background: #FFFFFF; }
+.image-compare-b__media { width: 100%; height: 190px; }
+.image-compare-b__body { padding: 24px 26px 28px; }
+.image-compare-b__body > span { display: block; margin-bottom: 20px; color: var(--accent); font-family: var(--font-en); font-size: .72rem; letter-spacing: .15em; }
+.image-compare-b__body h3 { margin: 0 0 10px; }
+.image-compare-b__body p { margin: 0; color: var(--muted); line-height: 1.85; }
+
+/* C: use the photo as atmosphere, with a readable information layer */
+.image-compare-c__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.image-compare-c__card { position: relative; min-height: 250px; overflow: hidden; border: 1px solid var(--line); background: var(--main); color: #FFFFFF; }
+.image-compare-c__bg { position: absolute; inset: 0; }
+.image-compare-c__bg img { opacity: .84; }
+.image-compare-c__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,31,47,.08), rgba(8,31,47,.92)); }
+.image-compare-c__body { position: relative; z-index: 1; display: flex; min-height: 250px; flex-direction: column; justify-content: end; padding: 28px; }
+.image-compare-c__body > span { margin-bottom: 54px; color: #E5C36D; font-family: var(--font-en); font-size: .72rem; letter-spacing: .15em; }
+.image-compare-c__body h3 { margin: 0 0 10px; color: #FFFFFF; }
+.image-compare-c__body p { margin: 0; color: #E1E9ED; line-height: 1.8; }
+
+@media (max-width: 900px) {
+  .image-compare-controls__head,
+  .image-compare-panel__head { grid-template-columns: 1fr; gap: 24px; }
+  .image-compare-panel__head { margin-bottom: 50px; }
+  .image-compare-a__row { grid-template-columns: 44px 150px minmax(0,1fr); gap: 16px; }
+  .image-compare-a__media { width: 150px; height: 90px; }
+  .image-compare-a__steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 640px) {
+  .image-compare-controls { padding-top: 56px; padding-bottom: 56px; }
+  .image-compare-tabs { overflow-x: auto; margin-top: 32px; }
+  .image-compare-tabs button { flex: 0 0 auto; padding-inline: 16px; }
+  .image-compare-stage { padding-top: 64px; padding-bottom: 88px; }
+  .image-compare-group { margin-top: 52px; padding-top: 26px; }
+  .image-compare-group__head { display: block; margin-bottom: 20px; }
+  .image-compare-group__head h3 { margin-top: 8px; }
+  .image-compare-a__row { grid-template-columns: 34px 112px minmax(0,1fr); gap: 10px; min-height: 104px; padding: 12px 0; }
+  .image-compare-a__media { width: 112px; height: 74px; }
+  .image-compare-a__row h3 { font-size: .94rem; }
+  .image-compare-a__row p { font-size: .78rem; line-height: 1.6; }
+  .image-compare-a__cards,
+  .image-compare-a__steps,
+  .image-compare-b__grid,
+  .image-compare-c__grid { grid-template-columns: 1fr; }
+  .image-compare-a__card { padding: 20px; }
+  .image-compare-a__card-media { flex-basis: 126px; width: 126px; height: 80px; }
+  .image-compare-a__step { min-height: 0; padding: 20px; }
+  .image-compare-b__media { height: 160px; }
+  .image-compare-b__body { padding: 20px 22px 24px; }
+  .image-compare-c__card,
+  .image-compare-c__body { min-height: 220px; }
+  .image-compare-c__body { padding: 22px; }
+  .image-compare-c__body > span { margin-bottom: 40px; }
+}
