@@ -431,8 +431,74 @@ const lowerVisuals = {
   }
 };
 
+const imageAltByPath = {
+  'src/gen-inheritance.jpg': '相続した住まいの資料と鍵を確認する手元',
+  'src/gen-management.jpg': '管理の行き届いた集合住宅を確認する様子',
+  'src/gen-finance.jpg': '収支資料と計算機を使って将来の資金を確認する手元',
+  'src/gen-consultation.jpg': '専門家と家族が不動産資料を見ながら相談する様子',
+  'src/project-inheritance-care.jpg': '家族と専門家が相続と介護の選択肢を話し合う様子',
+  'src/gen-site-survey.jpg': '敷地と図面を現地で照合する不動産調査',
+  'src/gen-domain-care.jpg': '相続した家の状態を確認する落ち着いた住まい',
+  'src/gen-domain-consulting.jpg': '住宅模型と資料を囲み不動産の条件を検討する様子',
+  'src/gen-sale.jpg': '売却資料と住宅模型を使って販売方法を検討する様子',
+  'src/gen-purchase.jpg': '購入予定物件の資料と模型を確認する様子',
+  'src/gen-domain-purchase.jpg': '集合住宅と戸建ての売却・購入を検討する不動産の現場',
+  'src/project-development.jpg': '土地の一体利用と開発計画を検討する様子',
+  'src/gen-domain-rights.jpg': '土地の権利関係と境界を確認する現場',
+  'src/gen-domain-development.jpg': '土地の活用計画を地図と模型で検討する様子',
+  'src/gen-domain-fukuri.jpg': '資産形成について学び相談できるラウンジ',
+  'src/gen-domain-new-business.jpg': '企業向けセミナーで参加者が学ぶ様子',
+  'src/gen-domain-owner.jpg': '賃貸住宅の管理と運用資料を確認する様子',
+  'src/project-rental-management.jpg': '賃貸経営の収支と運用方針を検討する様子',
+  'src/gen-renovation.jpg': '改修前後の住まいの状態を確認する様子',
+  'src/gen-investment.jpg': '投資と資産形成の資料を確認する様子'
+};
+
+const cardImagePools = {
+  inheritance: {
+    check: ['src/gen-inheritance.jpg', 'src/gen-management.jpg', 'src/gen-finance.jpg', 'src/gen-site-survey.jpg'],
+    options: ['src/project-inheritance-care.jpg', 'src/gen-domain-care.jpg', 'src/gen-consultation.jpg', 'src/gen-domain-consulting.jpg'],
+    process: ['src/gen-consultation.jpg', 'src/gen-site-survey.jpg', 'src/gen-finance.jpg', 'src/project-inheritance-care.jpg']
+  },
+  consulting: {
+    check: ['src/gen-site-survey.jpg', 'src/gen-domain-consulting.jpg', 'src/gen-finance.jpg', 'src/gen-sale.jpg'],
+    options: ['src/gen-consultation.jpg', 'src/gen-purchase.jpg', 'src/project-development.jpg', 'src/gen-domain-purchase.jpg'],
+    process: ['src/gen-site-survey.jpg', 'src/gen-finance.jpg', 'src/gen-consultation.jpg', 'src/project-development.jpg']
+  },
+  brokerage: {
+    check: ['src/gen-sale.jpg', 'src/gen-purchase.jpg', 'src/gen-site-survey.jpg', 'src/gen-finance.jpg', 'src/gen-renovation.jpg'],
+    options: ['src/gen-domain-purchase.jpg', 'src/gen-domain-consulting.jpg', 'src/gen-management.jpg', 'src/project-rental-management.jpg'],
+    process: ['src/gen-site-survey.jpg', 'src/gen-consultation.jpg', 'src/gen-sale.jpg', 'src/gen-purchase.jpg']
+  },
+  rights: {
+    check: ['src/gen-domain-rights.jpg', 'src/gen-site-survey.jpg', 'src/gen-domain-development.jpg', 'src/project-development.jpg', 'src/gen-consultation.jpg'],
+    options: ['src/project-development.jpg', 'src/gen-domain-rights.jpg', 'src/gen-site-survey.jpg', 'src/gen-consultation.jpg'],
+    process: ['src/gen-site-survey.jpg', 'src/gen-consultation.jpg', 'src/project-development.jpg', 'src/gen-domain-rights.jpg']
+  },
+  fukuri: {
+    check: ['src/gen-finance.jpg', 'src/gen-investment.jpg', 'src/gen-consultation.jpg', 'src/gen-domain-fukuri.jpg'],
+    options: ['src/gen-domain-fukuri.jpg', 'src/gen-finance.jpg', 'src/gen-consultation.jpg', 'src/gen-inheritance.jpg'],
+    process: ['src/gen-domain-fukuri.jpg', 'src/gen-finance.jpg', 'src/gen-consultation.jpg', 'src/gen-investment.jpg']
+  },
+  owner: {
+    check: ['src/gen-management.jpg', 'src/project-rental-management.jpg', 'src/gen-site-survey.jpg', 'src/gen-finance.jpg'],
+    options: ['src/gen-domain-owner.jpg', 'src/gen-renovation.jpg', 'src/project-rental-management.jpg', 'src/gen-consultation.jpg'],
+    process: ['src/gen-domain-owner.jpg', 'src/gen-site-survey.jpg', 'src/gen-management.jpg', 'src/project-rental-management.jpg']
+  },
+  seminar: {
+    check: ['src/gen-domain-new-business.jpg', 'src/gen-domain-fukuri.jpg', 'src/gen-finance.jpg', 'src/gen-consultation.jpg'],
+    options: ['src/gen-finance.jpg', 'src/gen-investment.jpg', 'src/gen-domain-fukuri.jpg', 'src/gen-consultation.jpg'],
+    process: ['src/gen-domain-fukuri.jpg', 'src/gen-domain-new-business.jpg', 'src/gen-finance.jpg', 'src/gen-consultation.jpg']
+  }
+};
+
 businesses.forEach((item) => {
   item.lowerVisuals = lowerVisuals[item.id] || {};
+  const pool = cardImagePools[item.id] || {};
+  item.cardVisuals = Object.fromEntries(Object.entries(pool).map(([key, paths]) => [
+    key,
+    paths.map((path) => [path, imageAltByPath[path] || '事業内容をイメージした相談の様子'])
+  ]));
 });
 
 const esc = (value) => String(value).replace(/[&<>\"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
@@ -539,9 +605,25 @@ ${footer()}
 }
 
 function detailPage(item) {
-  const scope = item.scope.map(([title, copy]) => `<div class="numbered-row"><h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`).join('');
-  const choices = item.choices.map(([title, copy], index) => `<article class="biz-choice"><span>${String(index + 1).padStart(2, '0')}</span><h3>${esc(title)}</h3><p>${esc(copy)}</p></article>`).join('');
-  const process = item.process.map(([title, copy]) => `<div class="biz-process__step"><h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`).join('');
+  const scopeVisuals = item.cardVisuals?.check || [];
+  const optionVisuals = item.cardVisuals?.options || [];
+  const processVisuals = item.cardVisuals?.process || [];
+  const pickVisual = (visuals, index) => visuals.length ? visuals[index % visuals.length] : null;
+  const scope = item.scope.map(([title, copy], index) => {
+    const visual = pickVisual(scopeVisuals, index);
+    const thumb = visual ? `<figure class="biz-card-thumb numbered-row__media">${picture(visual[0], visual[1])}</figure>` : '';
+    return `<div class="numbered-row">${thumb}<h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`;
+  }).join('');
+  const choices = item.choices.map(([title, copy], index) => {
+    const visual = pickVisual(optionVisuals, index);
+    const thumb = visual ? `<figure class="biz-card-thumb biz-choice__media">${picture(visual[0], visual[1])}</figure>` : '';
+    return `<article class="biz-choice"><div class="biz-choice__meta"><span>${String(index + 1).padStart(2, '0')}</span>${thumb}</div><h3>${esc(title)}</h3><p>${esc(copy)}</p></article>`;
+  }).join('');
+  const process = item.process.map(([title, copy], index) => {
+    const visual = pickVisual(processVisuals, index);
+    const thumb = visual ? `<figure class="biz-card-thumb biz-process__media">${picture(visual[0], visual[1])}</figure>` : '';
+    return `<div class="biz-process__step">${thumb}<h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`;
+  }).join('');
   const visuals = item.visuals.map(([image, alt, label, code]) => `<figure class="visual-journal__figure">${picture(image, alt)}<figcaption><span>${esc(label)}</span><small>${esc(code)}</small></figcaption></figure>`).join('');
   const tags = item.networkTags.map((tag) => `<span>${esc(tag)}</span>`).join('');
   const sectionFigure = (visual, modifier = '') => {
