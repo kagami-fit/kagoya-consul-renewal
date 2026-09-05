@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>お知らせ詳細｜株式会社籠や</title>
   <link rel="stylesheet" href="assets/css/_shared.css">
-  <link rel="stylesheet" href="assets/css/sample07-theme.css">
+  <link rel="stylesheet" href="assets/css/sample07-theme.css?v=20260905-contact">
   <style>
     main{padding-bottom:80px}.detail-hero{padding:90px 0 55px;background:#eef6f8}.news-detail{display:grid;gap:18px}.news-detail article{background:#fff;border-bottom:1px solid #d9e2e8;padding:34px 0 40px;scroll-margin-top:30px}.news-detail__meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.news-detail time{color:#55798e;font-family:var(--font-en);font-size:13px}.news-detail .tag{display:inline-flex;padding:4px 11px;border:1px solid #b8ced9;border-radius:99px;color:#14647f;font-size:11px}.news-detail h2{margin:12px 0 22px;font-size:clamp(21px,3vw,32px);line-height:1.55}.news-detail__body{max-width:760px;color:#536873;line-height:2}.news-detail__body p{margin:0 0 1em}.news-detail__body p:last-child{margin-bottom:0}.news-detail__body a{color:#14647f;text-decoration:underline}.news-detail__body img{max-width:100%;height:auto}.news-detail__source{margin-top:28px;font-size:12px;color:#7a8d97}.news-detail__source a{color:#14647f}.news-detail__back{display:inline-flex;margin-top:32px;color:#14647f;text-decoration:none;font-weight:700}.news-detail__back:hover{text-decoration:underline}.news-empty{padding:60px 0;color:#536873}
   </style>
@@ -59,6 +59,6 @@
       root.innerHTML=`<article id="${esc(item.slug)}"><div class="news-detail__meta"><time datetime="${esc(item.date)}">${esc(item.date.replaceAll('-','.'))}</time><span class="tag">${esc(item.kind||item.category||'お知らせ')}</span></div><h2>${esc(item.title)}</h2><figure class="news-detail__visual"><picture><source type="image/webp" srcset="src/${image.stem}.webp"><img src="src/${image.stem}.jpg" alt="${image.alt}" loading="eager" decoding="async"></picture></figure><div class="news-detail__body">${item.contentHtml||`<p>${esc(item.excerpt||'')}</p>`}</div><p class="news-detail__source">関連情報：<a href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">公式掲載ページを見る</a></p></article><a class="news-detail__back" href="news.html">← お知らせ一覧へ戻る</a>`;
     }).catch(()=>{document.getElementById('newsDetail').innerHTML='<p class="news-empty">お知らせデータの読み込みに失敗しました。</p>';});
   </script>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=20260905-contact"></script>
 </body>
 </html>

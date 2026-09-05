@@ -1,7 +1,171 @@
 (() => {
   const body = document.body;
-  const script = document.querySelector('script[src$="assets/js/site.js"]');
+  const script = document.querySelector('script[src*="assets/js/site.js"]');
   const prefix = script?.getAttribute('src')?.startsWith('../') ? '../' : '';
+
+  // 共通の問い合わせ窓口。PCは05、767px以下は03をCSSで切り替える。
+  // 比較ページ・問い合わせページには追加せず、既存の目的別相談導線は保持する。
+  const siteContactPages = new Set([
+    'index.html', 'animation-dynamic.html', 'business.html', 'social-contribution.html',
+    'about.html', 'services.html', 'service.html', 'sale-consulting.html',
+    'inheritance-vacant-house.html', 'brokerage-purchase.html', 'rights-coordination.html',
+    'fukuri.html', 'purchase-asset.html', 'property-management.html', 'corporate-seminars.html',
+    'corporate-benefits.html', 'team.html', 'features.html', 'for-sale.html', 'properties.html',
+    'wp-sale.html', 'sold-properties.html', 'property-detail.html', 'news.html', 'news-detail.html',
+    'insights.html', 'faq.html', 'check-before-price-cut.html', 'inherited-property-first-steps.html',
+    'rebuild-impossible-property.html'
+  ]);
+  const siteContactPage = window.location.pathname.split('/').pop() || 'index.html';
+  const siteContactMain = document.querySelector('main');
+  if (siteContactPages.has(siteContactPage) && siteContactMain &&
+      document.querySelector('.site-footer') && !document.querySelector('#site-contact')) {
+    siteContactMain.insertAdjacentHTML('beforeend', `
+<div class="site-contact" id="site-contact">
+<div class="site-contact__desktop">
+<section class="contact-demo contact-demo--focus" aria-labelledby="site-contact-title-desktop">
+<div class="contact-inner">
+<div class="contact-focus-heading">
+<header class="contact-heading">
+<p class="contact-eyebrow">LET’S TALK</p>
+<h2 id="site-contact-title-desktop">お問い合わせはこちら</h2>
+<p class="contact-lead">些細なことでも、お気軽にご相談ください。</p>
+</header>
+<span class="contact-online">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<rect x="3" y="6" width="12" height="12" rx="2"/>
+<path d="m15 10 6-3v10l-6-3"/>
+</svg>
+<span>オンライン相談も可能です</span>
+</span>
+</div>
+<div class="contact-focus-grid">
+<div class="contact-primary">
+<div class="contact-primary-copy">
+<p class="contact-eyebrow">CONTACT FORM</p>
+<h3>相談のはじまりは、<br>ひとつのお話から。</h3>
+<p>売却を決める前でも、資料がそろっていなくても。<br>いま気になっていることをお聞かせください。</p>
+<a class="contact-form-link" href="${prefix}contact.html">
+<span>フォームで相談する</span>
+<span class="contact-link-arrow">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<path d="M5 12h14m-6-6 6 6-6 6"/>
+</svg>
+</span>
+</a>
+</div>
+<figure class="contact-primary-photo">
+<picture>
+<source type="image/webp" srcset="${prefix}src/gen-consultation.webp">
+<img src="${prefix}src/gen-consultation.jpg" alt="資料を見ながら話し合う相談のイメージ" width="1536" height="1024" loading="lazy" decoding="async">
+</picture>
+</figure>
+</div>
+<div class="contact-secondary">
+<div class="contact-channel contact-channel--phone">
+<span class="contact-channel__icon">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<path d="M7 3H4.7C3.8 3 3 3.8 3 4.7 3 13.7 10.3 21 19.3 21c.9 0 1.7-.8 1.7-1.7V17l-5-2-1.8 2.1a14 14 0 0 1-7.3-7.3L9 8 7 3Z"/>
+</svg>
+</span>
+<p class="contact-channel__label">お電話で相談</p>
+<a class="contact-phone" href="tel:0344007994">03-4400-7994</a>
+<p class="contact-hours">10:00–18:00／水曜定休</p>
+</div>
+<div class="contact-channel contact-channel--line">
+<span class="contact-channel__icon">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<path d="M21 11.3c0 4.1-4 7.3-9 7.3l-4 2 .5-2.6C5.2 17 3 14.4 3 11.3 3 7.3 7 4 12 4s9 3.3 9 7.3Z"/>
+<path d="M8 11h.01M12 11h.01M16 11h.01" stroke-width="2.5"/>
+</svg>
+</span>
+<p class="contact-channel__label">公式LINE</p>
+<div class="contact-line-body">
+<a class="contact-qr" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=096igviz" target="_blank" rel="noopener" aria-label="公式LINEを開く（新しいタブ）">
+<img src="${prefix}src/kagoya-line-qr.webp" alt="KAGOYA公式LINEのQRコード" width="176" height="178" loading="lazy" decoding="async">
+</a>
+<div>
+<p class="contact-channel__note">スマートフォンから<br>ご相談いただけます。</p>
+<a class="contact-line-link" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=096igviz" target="_blank" rel="noopener">LINEを開く <span aria-hidden="true">↗</span>
+<span class="contact-sr-only">（新しいタブ）</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="site-contact__mobile">
+<section class="contact-demo contact-demo--cards" aria-labelledby="site-contact-title-mobile">
+<div class="contact-inner">
+<header class="contact-heading">
+<p class="contact-eyebrow">LET’S TALK</p>
+<h2 id="site-contact-title-mobile">お問い合わせはこちら</h2>
+<p class="contact-lead">些細なことでも、お気軽にご相談ください。</p>
+</header>
+<span class="contact-online">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<rect x="3" y="6" width="12" height="12" rx="2"/>
+<path d="m15 10 6-3v10l-6-3"/>
+</svg>
+<span>オンライン相談も可能です</span>
+</span>
+<div class="contact-channels">
+<div class="contact-channel contact-channel--phone">
+<span class="contact-channel__icon">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<path d="M7 3H4.7C3.8 3 3 3.8 3 4.7 3 13.7 10.3 21 19.3 21c.9 0 1.7-.8 1.7-1.7V17l-5-2-1.8 2.1a14 14 0 0 1-7.3-7.3L9 8 7 3Z"/>
+</svg>
+</span>
+<p class="contact-channel__label">お電話で相談</p>
+<a class="contact-phone" href="tel:0344007994">03-4400-7994</a>
+<p class="contact-hours">10:00–18:00／水曜定休</p>
+</div>
+<div class="contact-channel contact-channel--form">
+<span class="contact-channel__icon">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<rect x="3" y="5" width="18" height="14" rx="2"/>
+<path d="m3 6 9 7 9-7"/>
+</svg>
+</span>
+<p class="contact-channel__label">お問い合わせフォーム</p>
+<p class="contact-channel__note">ご相談内容を、分かる範囲で。</p>
+<a class="contact-form-link" href="${prefix}contact.html">
+<span>フォームで相談する</span>
+<span class="contact-link-arrow">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<path d="M5 12h14m-6-6 6 6-6 6"/>
+</svg>
+</span>
+</a>
+</div>
+<div class="contact-channel contact-channel--line">
+<span class="contact-channel__icon">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
+<path d="M21 11.3c0 4.1-4 7.3-9 7.3l-4 2 .5-2.6C5.2 17 3 14.4 3 11.3 3 7.3 7 4 12 4s9 3.3 9 7.3Z"/>
+<path d="M8 11h.01M12 11h.01M16 11h.01" stroke-width="2.5"/>
+</svg>
+</span>
+<p class="contact-channel__label">公式LINE</p>
+<div class="contact-line-body">
+<a class="contact-qr" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=096igviz" target="_blank" rel="noopener" aria-label="公式LINEを開く（新しいタブ）">
+<img src="${prefix}src/kagoya-line-qr.webp" alt="KAGOYA公式LINEのQRコード" width="176" height="178" loading="lazy" decoding="async">
+</a>
+<div>
+<p class="contact-channel__note">スマートフォンから<br>ご相談いただけます。</p>
+<a class="contact-line-link" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=096igviz" target="_blank" rel="noopener">LINEを開く <span aria-hidden="true">↗</span>
+<span class="contact-sr-only">（新しいタブ）</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>`);
+  }
   const toggle = document.querySelector('[data-menu-toggle]');
   const shade = document.querySelector('[data-menu-shade]');
   const drawer = document.querySelector('[data-menu-drawer]');
