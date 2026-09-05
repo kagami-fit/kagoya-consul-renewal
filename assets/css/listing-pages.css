@@ -1,4 +1,4 @@
-/* サービス・お知らせは、大きなヒーローを挟まず一覧から表示する。 */
+/* 一覧上部の余白。サービスはヒーロー直後、お知らせはページ先頭に配置する。 */
 .page-listing-first { padding-top: clamp(36px, 5vw, 64px); }
 .listing-heading-hidden {
   position: absolute;

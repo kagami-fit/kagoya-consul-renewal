@@ -17,7 +17,12 @@
 <link rel="apple-touch-icon" href="src/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/_shared.css">
 <link rel="stylesheet" href="assets/css/sample07-theme.css?v=20260905-contact">
-<style>@media(max-width:768px){.zoroya-breakpoint{display:block}}</style>
+<style>
+.company-profile-first{padding-top:clamp(36px,5vw,64px)}
+.company-profile-first .section-head h1{margin:14px 0 16px;font-size:clamp(1.85rem,3.7vw,2.65rem)}
+.company-intro-title{max-width:14em;font-size:clamp(32px,5vw,56px);margin:.18em 0 .28em}
+@media(max-width:768px){.zoroya-breakpoint{display:block}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/","telephone":"03-4400-7994","address":{"@type":"PostalAddress","postalCode":"152-0032","addressRegion":"東京都","addressLocality":"目黒区","streetAddress":"平町1丁目26-17 ソシアル都立大学駅前201号"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"18:00"}]},{"@type":"WebSite","name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/"}]}</script>
 </head>
 <body class="sample07-subpage">
@@ -42,12 +47,33 @@
 <!-- /ZOROYA:HEADER -->
 <!-- ZOROYA:MAIN -->
 <main id="main">
+  <section class="page-sec alt company-profile-first" aria-labelledby="company-profile-title">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Company profile</span><h1 id="company-profile-title">会社概要</h1></div>
+      <table class="company-table">
+        <tbody>
+          <tr><th>会社名</th><td>株式会社籠や</td></tr>
+          <tr><th>代表者</th><td>代表取締役 内田 豊</td></tr>
+          <tr><th>所在地</th><td>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</td></tr>
+          <tr><th>電話</th><td><a href="tel:0344007994">03-4400-7994</a></td></tr>
+          <tr><th>FAX</th><td>03-4400-7995</td></tr>
+          <tr><th>メール</th><td><a href="mailto:info@kagoya-consul.com">info@kagoya-consul.com</a></td></tr>
+          <tr><th>営業時間</th><td>10:00〜18:00／定休日：水曜日</td></tr>
+          <tr><th>設立</th><td>令和3年2月1日</td></tr>
+          <tr><th>資本金</th><td>3,000,000円</td></tr>
+          <tr><th>宅建業免許</th><td>東京都知事（1）第108542号</td></tr>
+          <tr><th>事業内容</th><td>不動産売買・仲介・管理、不動産コンサルティング</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="page-hero editorial-hero">
     <div class="wrap page-hero__grid">
       <div>
         <p class="crumb"><a href="index.html">ホーム</a> ／ 会社情報</p>
         <span class="eyebrow">About us</span>
-        <h1>難しい不動産ほど、<br>籠やへ。</h1>
+        <h2 class="company-intro-title">難しい不動産ほど、<br>籠やへ。</h2>
         <p class="lead">不動産を動かすだけではなく、不動産の問題を解決する。それが、籠やです。</p>
       </div>
       <div class="page-hero__art">
@@ -106,27 +132,6 @@
   </div>
 </section>
 <!-- /SUBPAGE:VISUALS -->
-<section class="page-sec alt" aria-labelledby="company-profile-title">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Company profile</span><h2 id="company-profile-title">会社概要</h2></div>
-      <table class="company-table">
-        <tbody>
-          <tr><th>会社名</th><td>株式会社籠や</td></tr>
-          <tr><th>代表者</th><td>代表取締役 内田 豊</td></tr>
-          <tr><th>所在地</th><td>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</td></tr>
-          <tr><th>電話</th><td><a href="tel:0344007994">03-4400-7994</a></td></tr>
-          <tr><th>FAX</th><td>03-4400-7995</td></tr>
-          <tr><th>メール</th><td><a href="mailto:info@kagoya-consul.com">info@kagoya-consul.com</a></td></tr>
-          <tr><th>営業時間</th><td>10:00〜18:00／定休日：水曜日</td></tr>
-          <tr><th>設立</th><td>令和3年2月1日</td></tr>
-          <tr><th>資本金</th><td>3,000,000円</td></tr>
-          <tr><th>宅建業免許</th><td>東京都知事（1）第108542号</td></tr>
-          <tr><th>事業内容</th><td>不動産売買・仲介・管理、不動産コンサルティング</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
   <section class="page-sec">
     <div class="wrap"><div class="mini-cta"><div><h2>難しい不動産のことを、お聞かせください。</h2><p>資料がそろっていない段階でも、現状を知るところから始められます。</p></div><a class="btn btn-light" href="contact.html">相談する</a></div></div>
   </section>

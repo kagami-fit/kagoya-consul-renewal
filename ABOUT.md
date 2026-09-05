@@ -72,8 +72,9 @@
 - `animation-recommended.html`：縦タイムライン、追従ビジュアル、背景連動インデックス、一覧型サービスを採用した推奨モーション案
 - `animation-dynamic.html`：採用したB案の確認用URL。内容は正式トップ `index.html` と同期
 - `services.html` と5つの詳細ページ：相談サービス
-- `assets/css/listing-pages.css`：サービス・お知らせ一覧をヘッダー直下に配置する専用スタイル。両ページの大きなタイトル・写真ヒーローは削除し、サービスの6項目とニュースの絞り込みを先頭に表示
+- `assets/css/listing-pages.css`：サービス・お知らせ一覧の専用スタイル。サービスはタイトル・写真のヒーローを復元し、その直後に6項目の一覧を表示。お知らせはヒーローなしで絞り込み付き一覧を先頭に表示
 - `team.html`／`about.html`：体制、会社情報（相談事例ページは廃止）
+- `about.html`：会社概要の表を最上部へ配置。会社紹介・私たちの考え方・現場の写真は、その後に続けて掲載
 - `news.html`／`news-detail.html`：移行したお知らせの一覧と個別詳細
 - `insights.html`／`blog/`：読みもの
 - `for-sale.html`：販売中物件の一覧
