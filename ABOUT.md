@@ -63,6 +63,9 @@
 - `assets/css/social-contribution.css`：社会貢献ページ専用の画像・学習ステップ・活動レポートのレイアウト
 - `consultation-button-comparison.html`：相談ボタン3案の比較ページ。選択すると実際のヘッダー表示が切り替わる（本番のボタンには影響しない）
 - `assets/css/consultation-button-comparison.css`／`assets/js/consultation-button-comparison.js`：輪郭線・塗り分け・丸みの3案と、比較ページ内だけの切り替え
+- `contact-section-comparison.html`：電話・フォーム・公式LINEをまとめたお問い合わせセクション5案。番号で実寸プレビューを切り替え、`?design=1`〜`5`で各案を直接開ける
+- `assets/css/contact-section-comparison.css`／`assets/js/contact-section-comparison.js`：写真パネル・写真分割・3カード・グレー帯・フォーム中心の5レイアウトと比較操作。本番の問い合わせセクションは選定後に追加する
+- `src/kagoya-line-qr.webp`／`src/kagoya-contact-background.webp`：元公式サイトから取得したLINEのQRコードと問い合わせ背景（出典は`src/contact-asset-sources.md`）
 - `animation-recommended.html`：縦タイムライン、追従ビジュアル、背景連動インデックス、一覧型サービスを採用した推奨モーション案
 - `animation-dynamic.html`：採用したB案の確認用URL。内容は正式トップ `index.html` と同期
 - `services.html` と5つの詳細ページ：相談サービス
@@ -97,7 +100,8 @@
 - Today’s KAGOYA・動いている領域の表示・4つの相談入口：反映済み
 - 社会貢献を8事業領域の一つとして表示し、共通ナビゲーションから遷移：反映済み
 - 社会貢献ページ：実際の授業写真を使った大きなビジュアル、2枚組の活動レポート、学習ステップのアイコンを反映済み。JET-ALL以降は引き続き非掲載
-- 相談ボタン3案：比較ページで選定待ち。本番ヘッダーは現在のデザインを維持
+- 相談ボタン：①「上品な輪郭線」を共通ヘッダーに採用。ロゴ左端固定と販売・成約物件の並びを維持
+- お問い合わせセクション5案：比較ページを作成。電話・フォーム・公式LINE付き。デザインは選定待ちで、本番セクションには未追加
 - 8事業領域の見出し・写真カード・領域別導線：一覧を簡潔化し、各専用ページへ接続済み
 - 事業別ページ：最新修正指示PDFの確定原稿をもとに、確認項目・選択肢・進め方・連携体制まで詳しく反映済み
 - 進行中プロジェクト表示・目的別問い合わせ導線・対応エリア案内：反映済み

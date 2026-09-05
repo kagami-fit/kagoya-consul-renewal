@@ -1,4 +1,4 @@
-/* 比較ページだけで有効。本番の相談ボタンは選定するまで変更しない。 */
+/* 比較ページだけで有効。01はsite-header.cssにも正式採用済み。 */
 .cta-comparison-page{background:#f5f7f7;color:#415563}
 .cta-comparison{width:min(1240px,calc(100% - 56px));margin:0 auto;padding:44px 0 64px}
 .cta-comparison h1,.cta-comparison h2{color:#415563}
@@ -43,7 +43,7 @@
 .cta-design .site-header__cta-arrow svg{width:18px;height:18px;transition:transform .22s ease}
 .cta-design[data-cta-variant="line"] .site-header__cta-arrow{background:#156082;color:#fff;border-radius:50%}
 .cta-design[data-cta-variant="solid"],.site-header .site-header__cta.cta-design[data-cta-variant="solid"]{--cta-bg:#156082;--cta-color:#fff;--cta-border:#156082;--cta-radius:4px;--cta-padding:0 0 0 20px;--cta-shadow:0 7px 16px -12px rgba(21,96,130,.75)}
-.cta-design[data-cta-variant="solid"] .site-header__cta-arrow{height:52px;width:46px;flex-basis:46px;border-left:1px solid rgba(255,255,255,.27);background:rgba(255,255,255,.07)}
+.cta-design[data-cta-variant="solid"] .site-header__cta-arrow{height:52px;width:46px;flex-basis:46px;border-left:1px solid rgba(255,255,255,.27);border-radius:0;color:#fff;background:rgba(255,255,255,.07)}
 .cta-design[data-cta-variant="soft"],.site-header .site-header__cta.cta-design[data-cta-variant="soft"]{--cta-bg:#eaf0f1;--cta-color:#415563;--cta-border:#d0dcdf;--cta-radius:999px;--cta-padding:9px 12px 9px 22px;--cta-shadow:inset 0 1px 0 #fff,0 6px 12px -10px rgba(53,79,88,.5)}
 .cta-design[data-cta-variant="soft"] .site-header__cta-arrow{background:#fff;color:#156082;border-radius:50%;box-shadow:0 2px 5px rgba(53,79,88,.07)}
 .cta-design:focus-visible,.site-header .site-header__cta.cta-design:focus-visible{outline:3px solid #526976;outline-offset:4px}
