@@ -411,7 +411,30 @@ ${contactRoutes}
   const homeMain = document.querySelector('main#main');
   const serviceAreaSection = homeMain?.querySelector('#service-area');
   const servicesSection = homeMain?.querySelector('#services');
-  if (homeMain && serviceAreaSection && servicesSection) homeMain.insertBefore(serviceAreaSection, servicesSection);
+  if (homeMain && serviceAreaSection && servicesSection) {
+    homeMain.insertBefore(serviceAreaSection, servicesSection);
+
+    // DOMの並び替えは、ブラウザがハッシュへ移動した後に行われることがある。
+    // その場合でも「index.html#service-area」が先頭で止まらないよう、
+    // 最終レイアウト確定後に対応エリアへ明示的に合わせ直す。
+    const restoreServiceAreaHash = () => {
+      if (window.location.hash !== '#service-area') return;
+      const target = document.getElementById('service-area');
+      if (!target) return;
+      const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
+      const scrollMargin = parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+      const offset = Math.max(headerHeight, scrollMargin);
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: Math.max(0, top), left: 0, behavior: 'auto' });
+    };
+
+    if (window.location.hash === '#service-area') {
+      // 2フレーム待って、インライン演出スクリプトによるレイアウト変更も反映する。
+      window.requestAnimationFrame(() => window.requestAnimationFrame(restoreServiceAreaHash));
+      window.addEventListener('load', restoreServiceAreaHash, { once: true });
+    }
+    window.addEventListener('hashchange', restoreServiceAreaHash);
+  }
 
   const closeMenu = () => {
     body.classList.remove('menu-open');
