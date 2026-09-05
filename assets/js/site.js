@@ -41,7 +41,7 @@
       });
       if (!cta.querySelector('.site-header__cta-label')) {
         const label = cta.textContent.trim();
-        cta.innerHTML = '<span class="site-header__cta-copy"><small>ご相談・お問い合わせ</small><span class="site-header__cta-label"></span></span><span class="site-header__cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>';
+        cta.innerHTML = '<span class="site-header__cta-label"></span><span class="site-header__cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>';
         cta.querySelector('.site-header__cta-label').textContent = !label || label === '相談する' ? 'まずは相談する' : label;
       }
     });

@@ -1,0 +1,103 @@
+/* NBCジュニア：本文は参照サイトのPARTNERSHIPまでを掲載。共通ヘッダーとは分離する。 */
+.nbc-page{--nbc-ink:#415563;--nbc-soft:#edf2f3;color:var(--nbc-ink);background:#fff}
+.nbc-page section[id]{scroll-margin-top:150px}
+.nbc-page h1,.nbc-page h2,.nbc-page h3{color:var(--nbc-ink)}
+.nbc-page h2{font-size:clamp(28px,3.2vw,40px);line-height:1.65}
+.nbc-page h3{font-size:22px;line-height:1.6}
+.nbc-page p{font-size:16px;line-height:2}
+.nbc-page picture{display:block}
+.nbc-page img{display:block;width:100%;height:auto}
+.nbc-page svg{flex-shrink:0}
+.nbc-crumb{padding-top:28px;font-size:13px!important;color:var(--muted)}
+.nbc-crumb a:hover{color:var(--main)}
+.nbc-hero,.nbc-section,.nbc-jump-nav{width:min(1160px,calc(100% - 56px));margin-inline:auto}
+.nbc-hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(28px,4.5vw,64px);align-items:center;padding-block:54px 64px}
+.nbc-hero-copy{min-width:0}
+.nbc-page .nbc-eyebrow{font:700 12px/1.8 var(--font-en);letter-spacing:.15em;color:var(--main)}
+.nbc-hero h1{font-size:clamp(30px,3.6vw,46px);line-height:1.6;margin:22px 0 24px;letter-spacing:.01em;text-wrap:initial;word-break:normal}
+.nbc-hero h1 span{display:block;color:var(--main)}
+.nbc-hero-lead{max-width:32em}
+.nbc-text-link,.nbc-source-link{display:inline-flex;align-items:center;gap:12px;color:var(--main);border-bottom:1px solid var(--line);padding-block:8px;font-size:14px;font-weight:700;text-decoration:none}
+.nbc-text-link{margin-top:22px}
+.nbc-source-link{margin-top:22px}
+.nbc-text-link:hover,.nbc-source-link:hover{border-color:var(--main);color:var(--main-deep)}
+.nbc-text-link:focus-visible,.nbc-source-link:focus-visible,.nbc-jump-nav a:focus-visible{outline:2px solid var(--main);outline-offset:5px}
+.nbc-hero-image-wrap{position:relative;padding-bottom:28px;min-width:0}
+.nbc-hero-image-wrap picture{background:var(--nbc-soft)}
+.nbc-hero-image-wrap .nbc-hero-image{aspect-ratio:4/3;object-fit:cover}
+.nbc-hero-note{position:relative;display:flex;align-items:center;gap:18px;width:fit-content;max-width:calc(100% - 24px);margin:-30px 0 0 24px;padding:18px 24px;background:#fff;border:1px solid var(--line)}
+.nbc-hero-note>span{font:500 32px/1 var(--font-en);color:var(--main)}
+.nbc-hero-note p{font-size:12px;line-height:1.8;letter-spacing:.06em}
+.nbc-jump-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 36px;padding-block:22px;border-block:1px solid var(--line)}
+.nbc-jump-nav a{font-size:14px;color:var(--main)}
+.nbc-jump-nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.nbc-section{padding-block:88px}
+.nbc-section-label{display:flex;align-items:center;gap:13px;margin-bottom:26px;font:700 12px/1.7 var(--font-en);letter-spacing:.18em;color:var(--main)}
+.nbc-section-label>span{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--line);font-weight:500;letter-spacing:0}
+.nbc-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,88px)}
+.nbc-body-copy p+p,.nbc-activity-copy>p+p{margin-top:18px}
+.nbc-principles{width:100%;padding-inline:max(28px,calc((100% - 1160px)/2));display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,7vw,100px);background:var(--nbc-soft)}
+.nbc-principles-heading>p{margin-top:24px;max-width:30em}
+.nbc-principle-list article{position:relative;padding:24px 0;border-top:1px solid var(--line)}
+.nbc-principle-list article:last-child{border-bottom:1px solid var(--line)}
+.nbc-principle-list article>span{display:block;margin-bottom:8px;font:500 12px/1.5 var(--font-en);letter-spacing:.16em;color:var(--main)}
+.nbc-principle-list h3{margin-bottom:8px}
+.nbc-program-title{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:32px 72px;margin-bottom:36px}
+.nbc-steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.nbc-step-card{padding:28px;min-width:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nbc-step-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;color:var(--main)}
+.nbc-step-top>span{font:500 14px/1.5 var(--font-en)}
+.nbc-step-card h3{margin-bottom:12px}
+.nbc-step-card p{font-size:15px}
+.nbc-page .nbc-program-note{margin-top:24px;font-size:13px;color:var(--muted)}
+.nbc-quote-band{padding:56px 28px;text-align:center;background:var(--nbc-soft);border-block:1px solid var(--line-soft)}
+.nbc-quote-band .nbc-quote-en{font:500 12px/1.8 var(--font-en);letter-spacing:.2em;color:var(--main);margin-bottom:18px}
+.nbc-quote-band>p:last-child{font-family:var(--font-display);font-size:clamp(26px,3.1vw,38px);font-weight:600;line-height:1.8;color:var(--main)}
+.nbc-activity-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.nbc-activity-image{min-width:0}
+.nbc-activity-image img{aspect-ratio:4/3;object-fit:cover}
+.nbc-image-index{padding:14px 0;font:500 12px/1.8 var(--font-en);letter-spacing:.1em;color:var(--main);border-bottom:1px solid var(--line)}
+.nbc-page .nbc-activity-kicker{font-size:14px;color:var(--main);font-weight:700}
+.nbc-activity-copy h2{font-size:clamp(27px,2.8vw,35px);margin:14px 0 24px}
+.nbc-activity-data{display:grid;grid-template-columns:.6fr 1.5fr 1fr;margin:28px 0 0;padding:20px 0;border-block:1px solid var(--line);gap:12px}
+.nbc-activity-data dt{font-size:12px;color:var(--muted);margin-bottom:8px}
+.nbc-activity-data dd{margin:0;font-size:14px;font-weight:700;line-height:1.8}
+.nbc-partnership{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,88px);border-top:1px solid var(--line)}
+.nbc-partnership-body>p{margin-top:52px}
+.nbc-partnership-points{display:grid;gap:0;margin-top:24px;border-top:1px solid var(--line)}
+.nbc-partnership-points>div{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--main);font-size:15px}
+@media(max-width:900px){
+  .nbc-hero{grid-template-columns:1fr 1fr;gap:28px}
+  .nbc-hero h1{font-size:34px}
+  .nbc-hero-note{margin-left:12px;padding:14px 18px}
+  .nbc-intro-grid,.nbc-principles,.nbc-activity-grid,.nbc-partnership{gap:36px}
+  .nbc-program-title{gap:32px}
+  .nbc-step-card{padding:22px}
+  .nbc-activity-data{grid-template-columns:1fr}
+  .nbc-activity-data>div{display:grid;grid-template-columns:48px 1fr;align-items:baseline}
+  .nbc-activity-data dt{margin:0}
+}
+@media(max-width:700px){
+  .nbc-hero,.nbc-section,.nbc-jump-nav{width:calc(100% - 40px)}
+  .nbc-page section[id]{scroll-margin-top:88px}
+  .nbc-hero{grid-template-columns:1fr;padding-block:34px 20px;gap:32px}
+  .nbc-hero h1{font-size:clamp(29px,6.6vw,40px);margin-block:18px}
+  .nbc-hero-image-wrap{padding-bottom:12px}
+  .nbc-hero-note{margin-left:16px}
+  .nbc-jump-nav{gap:8px 18px;padding-block:16px}
+  .nbc-section{padding-block:56px}
+  .nbc-intro-grid,.nbc-principles,.nbc-program-title,.nbc-activity-grid,.nbc-partnership{grid-template-columns:1fr;gap:28px}
+  .nbc-principles{width:100%;padding-inline:20px}
+  .nbc-steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nbc-step-card{padding:22px 18px}
+  .nbc-step-card h3{font-size:19px}
+  .nbc-step-card p{font-size:14px}
+  .nbc-step-top{margin-bottom:18px}
+  .nbc-quote-band{padding:40px 20px}
+  .nbc-partnership-body>p{margin-top:0}
+}
+@media(max-width:400px){
+  .nbc-steps-grid{grid-template-columns:1fr}
+  .nbc-step-card h3{font-size:22px}
+  .nbc-step-card p{font-size:16px}
+}

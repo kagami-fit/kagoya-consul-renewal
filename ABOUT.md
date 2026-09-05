@@ -59,7 +59,8 @@
 - `index.html`：トップページ
 - `business.html`：8つの事業領域を短く紹介し、各専用ページへ案内する一覧ページ
 - `inheritance-vacant-house.html`／`sale-consulting.html`／`brokerage-purchase.html`／`rights-coordination.html`／`fukuri.html`／`property-management.html`／`corporate-seminars.html`：事業別の詳しい説明、確認項目、選択肢、進め方、連携体制
-- `social-contribution.html`：NBCジュニアの授業と社会貢献活動を紹介する専用ページ
+- `social-contribution.html`：NBCジュニアの授業と社会貢献活動を紹介する専用ページ。2026-09-05に指定サイトの冒頭からPARTNERSHIPまで7セクションを本文どおりに移行（JET-ALLとその後の参加案内は除外）
+- `assets/css/social-contribution.css`：社会貢献ページ専用の画像・学習ステップ・活動レポートのレイアウト
 - `animation-recommended.html`：縦タイムライン、追従ビジュアル、背景連動インデックス、一覧型サービスを採用した推奨モーション案
 - `animation-dynamic.html`：採用したB案の確認用URL。内容は正式トップ `index.html` と同期
 - `services.html` と5つの詳細ページ：相談サービス
