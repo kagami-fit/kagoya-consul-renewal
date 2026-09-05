@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>成約物件一覧｜株式会社籠や</title>
+  <meta name="description" content="株式会社籠やがこれまでに成約した物件を、掲載可能な範囲でご紹介します。各物件の詳細情報と写真をご覧いただけます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/_shared.css">
+  <link rel="stylesheet" href="assets/css/sample07-theme.css">
+  <link rel="canonical" href="https://kagami-fit.github.io/kagoya-consul-renewal/sold-properties.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="成約物件一覧｜株式会社籠や">
+  <meta property="og:description" content="株式会社籠やがこれまでに成約した物件を、掲載可能な範囲でご紹介します。">
+  <meta property="og:url" content="https://kagami-fit.github.io/kagoya-consul-renewal/sold-properties.html">
+  <meta property="og:site_name" content="株式会社籠や">
+  <meta property="og:image" content="https://kagami-fit.github.io/kagoya-consul-renewal/src/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="成約物件一覧｜株式会社籠や">
+  <meta name="twitter:description" content="株式会社籠やがこれまでに成約した物件を、掲載可能な範囲でご紹介します。">
+  <meta name="twitter:image" content="https://kagami-fit.github.io/kagoya-consul-renewal/src/ogp.jpg">
+  <link rel="icon" type="image/png" href="src/favicon.png">
+  <link rel="apple-touch-icon" href="src/apple-touch-icon.png">
+  <style>
+    .sold-page .page-hero{background:#eef5f7}
+    .sold-page .page-hero__art{border:1px solid var(--line)}
+    .sold-page .page-hero__art img{aspect-ratio:4/3;object-fit:cover}
+    .sold-page .listing-intro{padding-bottom:72px}
+    .sold-page .listing-intro .page-intro__pull{color:rgba(101,118,129,.24)}
+    .sold-page .listing-heading{align-items:end}
+    .sold-archive-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .sold-archive-grid .listing-card{box-shadow:0 18px 45px rgba(65,85,99,.09);transition:transform .25s ease,box-shadow .25s ease}
+    .sold-archive-grid .listing-card:hover{transform:translateY(-4px);box-shadow:0 24px 52px rgba(65,85,99,.16)}
+    .sold-archive-grid .listing-card__image img{aspect-ratio:4/3;object-fit:cover}
+    .sold-archive-grid .listing-card__body{padding:22px 22px 24px}
+    .sold-archive-grid .listing-card h3{font-size:clamp(1.1rem,1.8vw,1.45rem);line-height:1.55}
+    .sold-archive-grid .listing-price{font-size:1.35rem;margin-bottom:18px;color:#657681}
+    .sold-archive-grid .listing-type{color:#657681}
+    .sold-archive-grid .listing-taxonomy-tags{margin-bottom:9px}
+    .sold-page .listing-source{padding-top:0}
+    .sold-page .listing-empty{grid-column:1/-1;padding:56px 20px;border:1px dashed var(--line);color:var(--muted);text-align:center}
+    @media(max-width:960px){.sold-archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.sold-archive-grid{grid-template-columns:1fr}.sold-page .listing-intro{padding-bottom:56px}}
+  </style>
+</head>
+<body class="sample07-subpage sold-page">
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <!-- ZOROYA:HEADER -->
+  <header class="site-header">
+    <div class="site-header__topbar"><div class="in"><span class="site-header__ticker"><b>LIVE</b><span data-live-ticker>案件・商談・提携の動きを随時更新しています。</span></span><div class="right"><span>10:00–18:00／水曜定休</span><span class="tel">03-4400-7994</span><a href="contact.html">相談する</a></div></div></div>
+    <div class="site-header__main">
+      <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="about.html">会社情報</a><a href="business.html">事業紹介</a><a href="for-sale.html">販売物件</a><a href="services.html">サービス</a></nav>
+      <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async"></picture></a>
+      <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="index.html#service-area">対応エリア</a><a href="news.html">お知らせ</a><a href="social-contribution.html">社会貢献</a><a href="sold-properties.html" data-site-nav="sold-properties" aria-current="page">成約物件</a><a href="contact.html">相談する</a></nav>
+      <a class="site-header__cta" href="contact.html">相談する</a>
+      <button class="hamburger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    </div>
+    <div class="site-header__strip"></div>
+  </header>
+  <div class="drawer-shade" data-menu-shade></div>
+  <aside class="drawer" id="mobile-menu" data-menu-drawer aria-hidden="true">
+    <nav aria-label="スマートフォンメニュー"><a href="index.html">ホーム<small>HOME</small></a><a href="about.html">会社情報<small>ABOUT</small></a><a href="business.html">事業紹介<small>BUSINESS</small></a><a href="for-sale.html">販売物件<small>FOR SALE</small></a><a href="sold-properties.html" data-site-nav="sold-properties" aria-current="page">成約物件<small>SOLD</small></a><a href="services.html">サービス<small>SERVICES</small></a><a href="index.html#service-area">対応エリア<small>AREA</small></a><a href="news.html">お知らせ<small>NEWS</small></a><a href="social-contribution.html">社会貢献<small>SOCIAL</small></a><a href="privacy.html">プライバシー<small>PRIVACY</small></a></nav>
+    <div class="drawer-contact"><a class="btn primary" href="contact.html">選択肢を相談する</a><a class="btn ghost" href="tel:0344007994">03-4400-7994</a></div>
+  </aside>
+  <!-- /ZOROYA:HEADER -->
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap page-hero__grid">
+        <div>
+          <p class="crumb"><a href="index.html">ホーム</a> ／ 成約物件</p>
+          <span class="eyebrow">Closed deals</span>
+          <h1>成約物件一覧</h1>
+          <p class="lead">これまでに成約した物件を、掲載可能な範囲でご紹介します。</p>
+        </div>
+        <div class="page-hero__art"><picture><source type="image/webp" srcset="src/gen-for-sale.webp"><img src="src/gen-for-sale.jpg" alt="成約した不動産を振り返る街並みのイメージ" loading="eager" decoding="async"></picture></div>
+      </div>
+    </section>
+
+    <section class="page-sec listing-intro">
+      <div class="wrap page-intro">
+        <div class="page-intro__pull">60件</div>
+        <div class="page-intro__body">
+          <span class="eyebrow">Track record</span>
+          <h2>成約実績を、一覧でご覧いただけます。</h2>
+          <p>物件ごとの写真・所在地・交通・面積など、公開できる情報を整理して掲載しています。個別ページでは、移行したギャラリーと詳細情報をご確認いただけます。</p>
+          <p class="small-note">※価格や条件は成約時点の掲載情報です。現在の募集状況とは異なる場合があります。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-sec alt sold-archive" id="sold-listings">
+      <div class="wrap">
+        <div class="listing-heading">
+          <div><span class="eyebrow">Closed property archive</span><h2>これまでの成約物件</h2></div>
+          <p>不動産の種類やエリアを問わず、公開可能な成約実績をまとめています。カードから各物件の詳細へ進めます。</p>
+        </div>
+        <div class="listing-grid sold-archive-grid" aria-label="成約物件一覧">
+          <p class="listing-empty">成約物件を読み込んでいます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-sec listing-source">
+      <div class="wrap">
+        <div class="notice"><strong>成約実績の掲載について</strong><p>掲載情報は、株式会社籠やの公式サイトに掲載されていた物件データをもとに整理しています。非公開物件や個人情報を含む情報は掲載していません。</p><a class="text-link" href="for-sale.html">現在の販売中物件を見る →</a></div>
+        <div class="mini-cta"><div><h2>次の不動産の選択肢を相談する。</h2><p>売却・購入・相続など、状況が固まっていない段階からお聞かせください。</p></div><a class="btn btn-light" href="contact.html">相談を始める</a></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ZOROYA:FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__info">
+      <div class="site-footer__nap"><div class="nm">株式会社籠や</div><p>不動産売買・仲介・管理、不動産コンサルティング<br>〒152-0032 東京都目黒区平町1丁目26-17<br>ソシアル都立大学駅前201号<br>10:00〜18:00／水曜定休</p><a class="tel" href="tel:0344007994">03-4400-7994</a></div>
+      <div class="site-footer__col"><h4>Business</h4><a href="business.html">事業紹介</a><a href="inheritance-vacant-house.html">相続コンサルティング</a><a href="sale-consulting.html">不動産コンサルティング</a><a href="brokerage-purchase.html">仲介・買取</a><a href="rights-coordination.html">底地・借地／権利調整</a><a href="fukuri.html">エフクリ</a><a href="property-management.html">賃貸経営オーナー支援</a><a href="corporate-seminars.html">企業向けセミナー</a><a href="social-contribution.html">社会貢献</a></div>
+      <div class="site-footer__col"><h4>Guide</h4><a href="about.html">会社情報</a><a href="for-sale.html">販売物件</a><a href="sold-properties.html">成約物件</a><a href="services.html">サービス</a><a href="index.html#service-area">対応エリア</a><a href="news.html">お知らせ</a><a href="contact.html">相談する</a><a href="privacy.html">プライバシー</a></div>
+    </div>
+    <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
+  </footer>
+  <!-- /ZOROYA:FOOTER -->
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

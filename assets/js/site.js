@@ -6,6 +6,46 @@
   const shade = document.querySelector('[data-menu-shade]');
   const drawer = document.querySelector('[data-menu-drawer]');
 
+  // 共通ヘッダーは、ロゴを左端に置き、成約実績への入口を全ページで表示する。
+  // 既存ページにも同じスクリプトを読み込んでいるため、個別HTMLを増やさずにナビを統一できる。
+  const normalizeHeader = () => {
+    document.querySelectorAll('.site-header__main').forEach((main) => {
+      const brand = main.querySelector('.site-header__brand');
+      if (brand && main.firstElementChild !== brand) main.insertBefore(brand, main.firstElementChild);
+    });
+
+    const soldHref = `${prefix}sold-properties.html`;
+    const makeLink = (mobile = false) => {
+      const link = document.createElement('a');
+      link.href = soldHref;
+      link.textContent = mobile ? '成約物件' : '成約物件';
+      link.setAttribute('data-site-nav', 'sold-properties');
+      if (mobile) {
+        const small = document.createElement('small');
+        small.textContent = 'SOLD';
+        link.appendChild(small);
+      }
+      if (window.location.pathname.endsWith('/sold-properties.html') || window.location.pathname.endsWith('sold-properties.html')) link.setAttribute('aria-current', 'page');
+      return link;
+    };
+
+    const desktopNav = document.querySelector('.site-header__nav.is-right');
+    if (desktopNav && !desktopNav.querySelector('[data-site-nav="sold-properties"]')) {
+      const link = makeLink();
+      const contactLink = [...desktopNav.querySelectorAll('a')].find((node) => node.getAttribute('href') === 'contact.html' && node.textContent.trim() === '相談する');
+      desktopNav.insertBefore(link, contactLink || null);
+    }
+
+    const drawerNav = drawer?.querySelector('nav');
+    if (drawerNav && !drawerNav.querySelector('[data-site-nav="sold-properties"]')) {
+      const link = makeLink(true);
+      const forSaleLink = [...drawerNav.querySelectorAll('a')].find((node) => node.getAttribute('href')?.endsWith('for-sale.html'));
+      if (forSaleLink?.nextSibling) drawerNav.insertBefore(link, forSaleLink.nextSibling);
+      else drawerNav.appendChild(link);
+    }
+  };
+  normalizeHeader();
+
   // ホームの導線は「対応エリア」から「不動産相談」へ自然につながる順番に統一する。
   const homeMain = document.querySelector('main#main');
   const serviceAreaSection = homeMain?.querySelector('#service-area');
@@ -161,6 +201,7 @@
     mosaic: document.querySelector('#facgrid'),
     currentCards: document.querySelector('.facility > .wrap > .result-grid'),
     soldCards: document.querySelector('.result-block .result-grid'),
+    soldArchive: document.querySelector('#sold-listings .listing-grid'),
     residential: document.querySelector('#residential .listing-grid'),
     income: document.querySelector('#income .listing-grid'),
     other: document.querySelector('#other-listings .listing-grid')
@@ -219,12 +260,16 @@
       }
       if (propertyTargets.currentCards) propertyTargets.currentCards.innerHTML = current.slice(0, 4).map((item) => resultCard(item, false)).join('');
       if (propertyTargets.soldCards) propertyTargets.soldCards.innerHTML = sold.slice(0, 4).map((item) => resultCard(item, true)).join('');
+      if (propertyTargets.soldArchive) propertyTargets.soldArchive.innerHTML = sold.length ? sold.map((item) => listingCard(item, true)).join('') : '<p class="listing-empty">成約物件はありません。</p>';
       if (propertyTargets.residential) propertyTargets.residential.innerHTML = residential.length ? residential.map((item) => listingCard(item, false)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
       if (propertyTargets.income) propertyTargets.income.innerHTML = income.length ? income.map((item) => listingCard(item, false)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
       if (propertyTargets.other) propertyTargets.other.innerHTML = other.length ? other.map((item) => listingCard(item, true)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
 
       const totalNode = document.querySelector('.page-intro__pull');
-      if (totalNode && propertyTargets.residential) totalNode.textContent = `${current.length}件`;
+      if (totalNode) {
+        const visibleCurrentCount = residential.length + income.length;
+        totalNode.textContent = propertyTargets.soldArchive ? `${sold.length}件` : `${propertyTargets.other ? current.length : visibleCurrentCount}件`;
+      }
       const counts = { '#residential': residential.length, '#income': income.length, '#other-listings': other.length };
       Object.entries(counts).forEach(([href, count]) => {
         const node = document.querySelector(`.listing-categories a[href="${href}"] span`);
