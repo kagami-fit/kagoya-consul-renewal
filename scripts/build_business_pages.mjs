@@ -547,7 +547,7 @@ ${header()}
   </section>
   <section class="page-sec alt" aria-labelledby="business-index-title"><div class="wrap"><div class="section-head"><span class="eyebrow">Choose a field</span><h2 id="business-index-title">気になる事業から、詳しいページへ。</h2><p class="lead">相談分野が一つに決まっていない場合も、近いテーマからご覧ください。</p></div>${businessNav('')}</div></section>
   <section class="business-stories"><div class="wrap">${stories}</div></section>
-  <section class="page-sec"><div class="wrap"><div class="mini-cta"><div><span class="eyebrow">Consultation</span><h2>どの事業に当てはまるか分からなくても、構いません。</h2><p>今の状況を伺い、必要な確認と相談先を一緒に整理します。</p></div><a class="btn btn-light" href="contact.html">相談の入口へ</a></div></div></section>
+  <!-- 末尾の問い合わせはsite.jsのページ別共通窓口に統合 -->
 </main>
 <!-- /ZOROYA:MAIN -->
 ${footer()}
@@ -615,7 +615,7 @@ ${header()}
   <section class="page-sec alt">
     <div class="wrap biz-network"><div><span class="eyebrow">Team approach</span><h2>${esc(item.networkTitle)}</h2></div><div><p>${esc(item.networkCopy)}</p><div class="biz-network__tags">${tags}</div></div></div>
   </section>
-  <section class="page-sec"><div class="wrap"><div class="mini-cta"><div><span class="eyebrow">Consultation</span><h2>${esc(item.ctaTitle)}</h2><p>${esc(item.ctaCopy)}</p></div><a class="btn btn-light" href="contact.html?type=${esc(item.ctaType)}">この事業について相談する</a></div></div></section>
+  <!-- 末尾の問い合わせ文面・相談目的はsite.jsでページ別に管理 -->
   <section class="page-sec biz-more"><div class="wrap"><div class="section-head"><span class="eyebrow">More business</span><h2>ほかの事業を見る</h2></div>${businessNav(item.id)}</div></section>
 </main>
 <!-- /ZOROYA:MAIN -->

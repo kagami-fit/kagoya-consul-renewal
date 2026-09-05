@@ -4,18 +4,205 @@
   const prefix = script?.getAttribute('src')?.startsWith('../') ? '../' : '';
 
   // 共通の問い合わせ窓口。PCは05、767px以下は03をCSSで切り替える。
-  // 比較ページ・問い合わせページには追加せず、既存の目的別相談導線は保持する。
-  const siteContactPages = new Set([
-    'index.html', 'animation-dynamic.html', 'business.html', 'social-contribution.html',
-    'about.html', 'services.html', 'service.html', 'sale-consulting.html',
-    'inheritance-vacant-house.html', 'brokerage-purchase.html', 'rights-coordination.html',
-    'fukuri.html', 'purchase-asset.html', 'property-management.html', 'corporate-seminars.html',
-    'corporate-benefits.html', 'team.html', 'features.html', 'for-sale.html', 'properties.html',
-    'wp-sale.html', 'sold-properties.html', 'property-detail.html', 'news.html', 'news-detail.html',
-    'insights.html', 'faq.html', 'check-before-price-cut.html', 'inherited-property-first-steps.html',
-    'rebuild-impossible-property.html'
-  ]);
+  // ページ末尾の旧CTAはこの窓口へ統合。文面はPC・モバイルで同じ設定を使う。
+  // 比較ページ・問い合わせページ・プライバシーページには追加しない。
+  const siteContactPages = new Map(Object.entries({
+    'index.html': {
+      heading: '不動産・事業のご相談',
+      lead: '売却・購入・相続から、協業・資産形成・セミナーまで。まずは今の状況をお聞かせください。',
+      title: '不動産のことを、\nまずは知るところから。',
+      copy: '売却を決めていなくても、資料がそろっていなくても構いません。物件の所在地や現在の状況、ご希望を分かる範囲でお聞かせください。',
+      routes: true
+    },
+    'business.html': {
+      heading: '事業・サービスのご相談',
+      lead: '相続から不動産の活用、企業向けの支援まで、必要な相談先を一緒に整理します。',
+      title: '相談先が決まる前から、\nお話しください。',
+      copy: 'どの事業に当てはまるか分からなくても構いません。今の状況とご希望を伺い、必要な確認や支援につなぎます。'
+    },
+    'about.html': {
+      heading: '籠やへのお問い合わせ',
+      lead: '不動産のお困りごとや、事業の連携について、お気軽にお問い合わせください。',
+      title: '難しい不動産のことを、\nお聞かせください。',
+      copy: '資料がそろっていない段階でも、現状を知るところから始められます。案件のご相談だけでなく、協業・連携のお話も承ります。'
+    },
+    'services.html': {
+      heading: '不動産の選択肢をご相談ください',
+      lead: '売却・相続・購入・管理。相談内容が一つに決まっていなくても構いません。',
+      title: '売ることだけが、\n相談の出口ではありません。',
+      copy: '保有、管理、賃貸、改修、売却。時間や費用も含めて比較し、納得できる方針を選ぶための土台を一緒につくります。',
+      type: 'project'
+    },
+    'sale-consulting.html': {
+      heading: '不動産コンサルティングのご相談',
+      lead: '状況・価値・選択肢・リスクを整理し、判断から実行まで支援します。',
+      title: '答えが見つかる前に、\nお話しください。',
+      copy: '「どうすればいいか分からない」段階で構いません。売却や購入を決める前に、物件の状況と選択肢を一緒に整理します。',
+      type: 'project'
+    },
+    'inheritance-vacant-house.html': {
+      heading: '相続・空き家のご相談',
+      lead: '名義やご家族の意向、建物の管理、期限のこと。気になっていることからお聞かせください。',
+      title: '相続の状況が、\n固まる前から。',
+      copy: '資料がそろっていなくても構いません。誰が、何を、いつまでに確認するかを整理し、売却・保有・賃貸・活用を一緒に考えます。',
+      type: 'project'
+    },
+    'brokerage-purchase.html': {
+      heading: '仲介・買取のご相談',
+      lead: '価格・時期・条件のうち、何を大切にしたいかをお聞かせください。',
+      title: '仲介か、買取か。\n迷っている段階から。',
+      copy: '物件の状況と優先条件を確認し、比較できる材料から整えます。購入をご検討の方も、希望条件や資金計画からご相談いただけます。',
+      type: 'project'
+    },
+    'rights-coordination.html': {
+      heading: '底地・借地・権利調整のご相談',
+      lead: '共有、接道、境界、契約関係など、複雑な条件を一つずつ確認します。',
+      title: '複雑だからと、\n諦める前に。',
+      copy: '契約書や図面がそろっていない場合も、分かる範囲からお聞かせください。現地と関係者の状況を踏まえ、調査の入口を整理します。',
+      type: 'project'
+    },
+    'fukuri.html': {
+      heading: 'エフクリ導入・活用のご相談',
+      lead: '従業員の住まいと資産形成を支える、学びと相談の機会をつくります。',
+      title: '従業員の学びと相談を、\n福利厚生の中へ。',
+      copy: '対象者や社内の課題に合わせて、導入方法や周知、個別相談へのつなぎ方を一緒に考えます。具体的な制度が決まる前でもご相談ください。',
+      type: 'investment', label: '導入について相談する'
+    },
+    'purchase-asset.html': {
+      heading: '購入・資産形成のご相談',
+      lead: '物件の利点だけでなく、収支・修繕・融資・将来の出口まで確認します。',
+      title: '買う前に、\n条件とリスクを整理する。',
+      copy: '気になる物件や、ご希望の暮らし・資金計画をお聞かせください。物件が決まっていない段階でも、比較する条件から一緒に考えます。',
+      type: 'investment'
+    },
+    'property-management.html': {
+      heading: '賃貸経営・管理のご相談',
+      lead: '空室、修繕、収支、管理負担など、オーナー様のお悩みを伺います。',
+      title: '一室の悩みから、\n一棟の運用まで。',
+      copy: '管理資料がまとまっていない場合も、今ある情報から確認の順番をつくります。日々の管理と、将来の活用・売却をつなげて考えます。',
+      type: 'project'
+    },
+    'corporate-seminars.html': {
+      heading: '企業向けセミナーのご相談',
+      lead: '住まい・資産形成・相続など、企業と従業員の課題に合わせてご相談いただけます。',
+      title: '企業の課題に合わせた、\n学びの場を。',
+      copy: 'テーマや対象者が固まっていなくても構いません。開催の目的やご希望を伺い、内容・形式・実施後の相談まで一緒に考えます。',
+      type: 'recruit', label: 'セミナーについて相談する'
+    },
+    'corporate-benefits.html': {
+      heading: '法人向け不動産相談のご案内',
+      lead: '従業員の住まいや資産形成の悩みを、専門窓口へつなぎます。',
+      title: '住まいの安心を、\n働く人の支えに。',
+      copy: '制度の目的や対象となる方を確認し、社内への案内と個別相談の進め方を整理します。企業に合った支援の形からご相談ください。',
+      type: 'investment'
+    },
+    'social-contribution.html': {
+      heading: '社会貢献活動のお問い合わせ',
+      lead: 'NBCジュニアでの取り組みや、次世代を支える活動への連携について承ります。',
+      title: '子どもたちの挑戦を、\n一緒に支えるために。',
+      copy: '籠やのメンター活動へのご質問や、教育・地域活動での連携のお話をお聞かせください。ご相談の内容を確認し、担当者からご案内します。',
+      type: 'partner', label: '活動について問い合わせる'
+    },
+    'team.html': {
+      heading: '専門家との連携・ご相談',
+      lead: '不動産・法務・税務・資金計画など、複数の領域にまたがる課題もお聞かせください。',
+      title: '必要な専門知識を、\n一つの窓口から。',
+      copy: 'どの専門家に相談すべきか分からない場合も、状況から確認します。案件のご相談に加え、専門家・事業者の皆様からの連携のご提案も承ります。'
+    },
+    'features.html': {
+      heading: '不動産の判断に迷ったら',
+      lead: '答えを急ぐ前に、状況・価値・選択肢・リスクを一緒に確認します。',
+      title: '決める前に、\n知ることから。',
+      copy: '今の状況と、気になっていることをお聞かせください。現地と資料、対話を重ね、納得して選ぶための材料を整えます。',
+      type: 'project'
+    },
+    'for-sale.html': {
+      heading: '販売中物件のお問い合わせ',
+      lead: '募集状況や物件の詳細、内見、購入のご相談を承ります。',
+      title: '気になる物件を、\n条件から相談する。',
+      copy: '物件名と気になっている点をお知らせください。購入判断や資金計画、ご希望の時期も含めて、分かる範囲からご相談いただけます。',
+      type: 'project', label: '物件について相談する'
+    },
+    'sold-properties.html': {
+      heading: '成約実績を参考にしたご相談',
+      lead: '似た条件の物件の売却や、新たな物件探しについてご相談いただけます。',
+      title: '次の不動産の選択肢を、\n一緒に考える。',
+      copy: '掲載物件は成約済みです。気になる実績があれば、物件名やご自身の状況をお聞かせください。売却・購入・相続の次の一歩を整理します。',
+      type: 'project'
+    },
+    'property-detail.html': {
+      heading: '物件についてのお問い合わせ',
+      lead: '掲載内容の確認や、購入・売却のご相談を承ります。',
+      title: '物件のことを、\nもう少し詳しく。',
+      copy: '物件名と確認したいことをお知らせください。募集状況を確認のうえご案内します。成約済みの場合も、似た条件の物件探しをご相談いただけます。',
+      type: 'project', label: '物件について相談する'
+    },
+    'news.html': {
+      heading: 'お知らせ・セミナーのお問い合わせ',
+      lead: '掲載しているニュースやセミナーについて、確認したいことがあればお寄せください。',
+      title: '気になるお知らせを、\nもう少し詳しく。',
+      copy: '記事のタイトルや開催日、ご質問の内容をお知らせください。過去の開催情報を含むため、現在の受付状況を確認のうえご案内します。',
+      label: '掲載内容を問い合わせる'
+    },
+    'news-detail.html': {
+      heading: 'この記事についてのお問い合わせ',
+      lead: '掲載内容やセミナーの開催・受付状況について、ご質問を承ります。',
+      title: '記事を読んで、\n気になったことから。',
+      copy: '記事のタイトルと、確認したいことをお知らせください。開催日や募集条件などは掲載当時の情報を含むため、現在の状況を確認してお伝えします。',
+      label: '記事について問い合わせる'
+    },
+    'insights.html': {
+      heading: '読みものから、個別のご相談へ',
+      lead: '記事で気になったことを、ご自身の物件や状況に合わせて確認できます。',
+      title: '自分の場合はどうか、\n一緒に確かめる。',
+      copy: '同じテーマでも、物件やご家族の事情によって選択肢は変わります。気になった記事と今の状況を、分かる範囲でお聞かせください。',
+      type: 'project'
+    },
+    'faq.html': {
+      heading: '解決しなかった疑問はこちらへ',
+      lead: 'よくある質問に載っていないことや、個別の事情についてもご相談ください。',
+      title: '小さな疑問から、\nお話しください。',
+      copy: '何を聞けばよいか分からない段階でも構いません。売却の予定や資料の有無にかかわらず、気になっていることから一緒に整理します。'
+    },
+    'check-before-price-cut.html': {
+      heading: '売却価格・販売方法のご相談',
+      lead: '値下げを決める前に、物件の条件と現在の販売状況を確認します。',
+      title: '価格を変える前に、\n確かめたいことを。',
+      copy: '売り出し中の反響や物件の状態、ご希望の時期をお聞かせください。価格だけでなく、伝え方や条件を含めて選択肢を整理します。',
+      type: 'project'
+    },
+    'inherited-property-first-steps.html': {
+      heading: '相続した不動産のご相談',
+      lead: '記事の確認項目を、ご家族や物件の状況に合わせて一緒に整理します。',
+      title: '相続したその後を、\n分かることから。',
+      copy: '名義、管理、期限など、まだ確認できていないことがあっても構いません。売却ありきではなく、保有や管理も含めた選択肢を考えます。',
+      type: 'project'
+    },
+    'rebuild-impossible-property.html': {
+      heading: '再建築不可物件のご相談',
+      lead: '接道や権利関係、建物の状態から、実行できる方法を確認します。',
+      title: '売れないと決める前に、\n条件を確かめる。',
+      copy: '所在地や、分かっている範囲の条件をお聞かせください。売却だけでなく、保有・賃貸・改修の可能性も含めて整理します。',
+      type: 'project'
+    }
+  }));
+  for (const [alias, page] of [
+    ['animation-dynamic.html', 'index.html'], ['service.html', 'services.html'],
+    ['properties.html', 'for-sale.html'], ['wp-sale.html', 'for-sale.html']
+  ]) siteContactPages.set(alias, siteContactPages.get(page));
   const siteContactPage = window.location.pathname.split('/').pop() || 'index.html';
+  const contactContent = siteContactPages.get(siteContactPage);
+  const contactEscape = (value) => String(value).replace(/[&<>"']/g, (char) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[char]));
+  const contactLines = (value) => contactEscape(value).replace(/\n/g, '<br>');
+  const contactHref = `${prefix}contact.html${contactContent?.type ? `?type=${contactContent.type}` : ''}`;
+  const contactLabel = contactContent?.label || 'フォームで相談する';
+  const contactRoutes = contactContent?.routes ? `<nav class="site-contact__routes" aria-label="ご相談のテーマから選ぶ">
+    <span>ご相談のテーマ</span>
+    <a href="${prefix}contact.html?type=project">物件・相続 <span aria-hidden="true">→</span></a>
+    <a href="${prefix}contact.html?type=partner">協業・連携 <span aria-hidden="true">→</span></a>
+    <a href="${prefix}contact.html?type=investment">事業・資産形成 <span aria-hidden="true">→</span></a>
+    <a href="${prefix}contact.html?type=recruit">セミナー・採用 <span aria-hidden="true">→</span></a>
+  </nav>` : '';
   const siteContactMain = document.querySelector('main');
   if (siteContactPages.has(siteContactPage) && siteContactMain &&
       document.querySelector('.site-footer') && !document.querySelector('#site-contact')) {
@@ -27,8 +214,8 @@
 <div class="contact-focus-heading">
 <header class="contact-heading">
 <p class="contact-eyebrow">LET’S TALK</p>
-<h2 id="site-contact-title-desktop">お問い合わせはこちら</h2>
-<p class="contact-lead">些細なことでも、お気軽にご相談ください。</p>
+<h2 id="site-contact-title-desktop">${contactEscape(contactContent.heading)}</h2>
+<p class="contact-lead">${contactEscape(contactContent.lead)}</p>
 </header>
 <span class="contact-online">
 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
@@ -42,10 +229,10 @@
 <div class="contact-primary">
 <div class="contact-primary-copy">
 <p class="contact-eyebrow">CONTACT FORM</p>
-<h3>相談のはじまりは、<br>ひとつのお話から。</h3>
-<p>売却を決める前でも、資料がそろっていなくても。<br>いま気になっていることをお聞かせください。</p>
-<a class="contact-form-link" href="${prefix}contact.html">
-<span>フォームで相談する</span>
+<h3>${contactLines(contactContent.title)}</h3>
+<p>${contactEscape(contactContent.copy)}</p>
+<a class="contact-form-link" href="${contactHref}">
+<span>${contactEscape(contactLabel)}</span>
 <span class="contact-link-arrow">
 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
 <path d="M5 12h14m-6-6 6 6-6 6"/>
@@ -101,8 +288,8 @@
 <div class="contact-inner">
 <header class="contact-heading">
 <p class="contact-eyebrow">LET’S TALK</p>
-<h2 id="site-contact-title-mobile">お問い合わせはこちら</h2>
-<p class="contact-lead">些細なことでも、お気軽にご相談ください。</p>
+<h2 id="site-contact-title-mobile">${contactEscape(contactContent.heading)}</h2>
+<p class="contact-lead">${contactEscape(contactContent.lead)}</p>
 </header>
 <span class="contact-online">
 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
@@ -129,10 +316,10 @@
 <path d="m3 6 9 7 9-7"/>
 </svg>
 </span>
-<p class="contact-channel__label">お問い合わせフォーム</p>
-<p class="contact-channel__note">ご相談内容を、分かる範囲で。</p>
-<a class="contact-form-link" href="${prefix}contact.html">
-<span>フォームで相談する</span>
+<h3 class="contact-channel__label">${contactLines(contactContent.title)}</h3>
+<p class="contact-channel__note">${contactEscape(contactContent.copy)}</p>
+<a class="contact-form-link" href="${contactHref}">
+<span>${contactEscape(contactLabel)}</span>
 <span class="contact-link-arrow">
 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" >
 <path d="M5 12h14m-6-6 6 6-6 6"/>
@@ -164,6 +351,7 @@
 </div>
 </section>
 </div>
+${contactRoutes}
 </div>`);
   }
   const toggle = document.querySelector('[data-menu-toggle]');

@@ -316,13 +316,13 @@ def service_detail(en: str, title: str, lead: str, art: str, alt: str, pull: str
 <section class="page-sec"><div class="wrap page-intro"><div class="page-intro__pull">{pull}</div><div class="page-intro__body"><span class="eyebrow">Our approach</span><h2>結論を急ぐ前に、判断の材料をそろえます。</h2><p>{intro}</p></div></div></section>
 <section class="page-sec alt"><div class="wrap"><div class="section-head"><span class="eyebrow">What we check</span><h2>最初に確認すること</h2></div><div class="numbered-list">{check_html}</div></div></section>
 <section class="page-sec"><div class="wrap"><div class="section-head"><span class="eyebrow">What you gain</span><h2>相談後に目指す状態</h2></div><div class="content-grid">{out_html}</div></div></section>
-<section class="page-sec"><div class="wrap"><div class="mini-cta"><div><h2>分かる範囲から相談する</h2><p>資料が未整理でも構いません。必要な確認事項からご案内します。</p></div><a class="btn btn-light" href="contact.html">選択肢を相談する</a></div></div></section>'''
+<!-- 末尾の相談案内はsite.jsのページ別共通窓口へ統合 -->'''
 
 
 SERVICES = page_hero("Services", "サービス", "相談内容に合わせて、必要な道筋を組み立てます。", "gen-sale.jpg", "住宅模型と資料を使って不動産の価値と選択肢を検討するイメージ") + '''
 <section class="page-sec"><div class="wrap page-intro"><div class="page-intro__pull">6</div><div class="page-intro__body"><span class="eyebrow">One desk</span><h2>不動産を起点に、判断に必要な支援をつなぎます。</h2><p>売却だけ、管理だけと区切る前に、今の状況と将来の希望を確認します。複数の選択肢があるときは、条件とリスクを比べられる形に整理します。</p></div></div></section>
 <section class="page-sec alt"><div class="wrap"><div class="numbered-list"><a class="numbered-row" href="sale-consulting.html"><h3>売却・調査相談</h3><p>価値を左右する条件を調べ、売却・保有・活用を比較します。</p></a><a class="numbered-row" href="inheritance-vacant-house.html"><h3>相続・空き家相談</h3><p>名義、共有、管理負担、期限などを整理します。</p></a><a class="numbered-row" href="purchase-asset.html"><h3>購入・資産形成相談</h3><p>物件の利点とリスク、資金計画を一緒に確認します。</p></a><a class="numbered-row" href="property-management.html"><h3>管理・活用相談</h3><p>空室、修繕、賃貸管理、将来の活用方法を整理します。</p></a><a class="numbered-row" href="corporate-benefits.html"><h3>法人向け不動産相談</h3><p>従業員の住まいと資産形成を福利厚生へつなげます。</p></a><a class="numbered-row" href="team.html"><h3>専門家連携</h3><p>法務・税務・資金計画など、必要な領域へつなぎます。</p></a></div></div></section>
-<section class="page-sec"><div class="wrap image-split"><div class="image-split__image">''' + img("gen-inheritance.jpg", "相続した住まいと鍵・資料を整理するイメージ") + '''</div><div class="image-split__body"><span class="eyebrow">Not one answer</span><h2>売ることだけが、相談の出口ではありません。</h2><p>保有、管理、賃貸、改修、売却。時間や費用を含めて比較し、納得できる方針を選ぶための土台をつくります。</p><a class="btn" href="contact.html">相談を始める</a></div></div></section>'''
+<!-- 末尾の相談案内はsite.jsのページ別共通窓口へ統合 -->'''
 
 
 DETAILS = {
@@ -338,7 +338,7 @@ CASES = page_hero("Cases", "相談事例", "難しい案件ほど、状況を分
 <section class="page-sec"><div class="wrap page-intro"><div class="page-intro__pull">9筆</div><div class="page-intro__body"><span class="eyebrow">Rights coordination</span><h2>複数所有者の意思と条件を、一つずつ整理。</h2><p>会社案内で紹介している、複数所有者の土地を調整した一例です。約1年半をかけて現地、権利関係、所有者の意向、実行条件を確認しました。</p><div class="notice">事例の結果は個別条件によって異なります。同じ結果を保証するものではなく、調査・調整の考え方をご紹介しています。</div></div></div></section>
 <section class="page-sec alt"><div class="wrap"><div class="case-board"><figure>{img("gen-site-survey.jpg", "住宅地で敷地条件を調査するイメージ")}<figcaption>01 / 現地と境界条件を確認</figcaption></figure><figure>{img("gen-finance.jpg", "図面と資料を精査するイメージ")}<figcaption>02 / 資料と費用条件を整理</figcaption></figure><figure>{img("gen-renovation.jpg", "改修後の住戸イメージ")}<figcaption>03 / 利用状態と活用可能性を検討</figcaption></figure></div></div></section>
 <section class="page-sec"><div class="wrap"><div class="section-head"><span class="eyebrow">Process</span><h2>複雑さを、順番にほどく。</h2></div><div class="numbered-list"><div class="numbered-row"><h3>現地と資料の確認</h3><p>図面、登記、現況を見比べ、事実をそろえます。</p></div><div class="numbered-row"><h3>関係者の整理</h3><p>誰の意思と同意が必要かを明確にします。</p></div><div class="numbered-row"><h3>条件の比較</h3><p>実行可能性、時間、費用、リスクを比べます。</p></div><div class="numbered-row"><h3>合意と実行</h3><p>説明と対話を重ね、納得できる方針へ進みます。</p></div></div></div></section>
-<section class="page-sec"><div class="wrap"><div class="mini-cta"><div><h2>似た状況かもしれない、という段階から。</h2><p>資料がそろっていなくても、分かることからお聞かせください。</p></div><a class="btn btn-light" href="contact.html">状況を相談する</a></div></div></section>'''
+<!-- 末尾の相談案内はsite.jsのページ別共通窓口へ統合 -->'''
 
 
 TEAM = page_hero("Team", "専門家・チーム", "不動産を起点に、必要な専門知識へつなぎます。", "gen-consultation.jpg", "不動産について相談する夫婦と担当者のイメージ") + f'''
@@ -349,7 +349,7 @@ TEAM = page_hero("Team", "専門家・チーム", "不動産を起点に、必�
 ABOUT = page_hero("About", "会社情報", "不動産は、まず“知る”こと。", "gen-company.jpg", "不動産相談スペースのイメージ") + f'''
 <section class="page-sec"><div class="wrap page-intro"><div class="page-intro__pull">KAGOYA</div><div class="page-intro__body"><span class="eyebrow">Company</span><h2>不動産を中心に、あらゆる選択肢をつくる会社。</h2><p>{NAP_NAME}は、東京都目黒区を拠点に、不動産の状況・価値・選択肢・リスクを整理し、売却・購入・管理・相続などの判断を支える不動産コンサルティング会社です。</p></div></div></section>
 <section class="page-sec alt"><div class="wrap"><div class="section-head"><span class="eyebrow">Company profile</span><h2>会社概要</h2></div><table class="company-table"><tbody><tr><th>会社名</th><td>{NAP_NAME}</td></tr><tr><th>代表者</th><td>代表取締役 内田 豊</td></tr><tr><th>所在地</th><td>{NAP_ADDRESS}</td></tr><tr><th>電話</th><td><a href="tel:0344007994">03-4400-7994</a></td></tr><tr><th>FAX</th><td>03-4400-7995</td></tr><tr><th>メール</th><td><a href="mailto:info@kagoya-consul.com">info@kagoya-consul.com</a></td></tr><tr><th>営業時間</th><td>10:00〜18:00／定休日：木曜日</td></tr><tr><th>設立</th><td>令和3年2月1日</td></tr><tr><th>資本金</th><td>3,000,000円</td></tr><tr><th>宅建業免許</th><td>東京都知事（1）第108542号</td></tr><tr><th>事業内容</th><td>不動産売買・仲介・管理、不動産コンサルティング</td></tr></tbody></table></div></section>
-<section class="page-sec"><div class="wrap"><div class="mini-cta"><div><h2>売る前の相談から、お聞かせください。</h2><p>状況を知り、選択肢を比較するところから始めます。</p></div><a class="btn btn-light" href="contact.html">お問い合わせ</a></div></div></section>'''
+<!-- 末尾の相談案内はsite.jsのページ別共通窓口へ統合 -->'''
 
 
 INSIGHTS = page_hero("Insights", "知る・読みもの", "不動産の判断を急ぐ前に、確認したいこと。", "gen-finance.jpg", "図面・予定・費用を確認しながら不動産の条件を整理するイメージ") + '''
@@ -361,7 +361,7 @@ FOR_SALE = page_hero("For sale", "販売中の物件", "居住用から一棟収
 <section class="page-sec listing-intro"><div class="wrap page-intro"><div class="page-intro__pull">5件</div><div class="page-intro__body"><span class="eyebrow">Current listings</span><h2>現在公開中の物件情報です。</h2><p>価格・面積・募集状況は、株式会社籠やの現行公式サイトに基づき2026年8月11日時点で整理しています。条件は変更されることがあるため、検討時は各物件の公式詳細ページをご確認ください。</p><nav class="listing-categories" aria-label="物件カテゴリ"><a href="#residential">土地建物・マンション <span>2</span></a><a href="#income">一棟収益 <span>3</span></a></nav></div></div></section>
 <section class="page-sec alt" id="residential"><div class="wrap"><div class="listing-heading"><div><span class="eyebrow">Residential</span><h2>販売中物件<br>土地建物・マンション</h2></div><p>住み心地だけでなく、建物の状態や管理、将来の売却可能性まで含めてご相談いただけます。</p></div><div class="listing-grid">{listing_cards([item for item in LISTINGS if item["category"] == "residential"])}</div></div></section>
 <section class="page-sec" id="income"><div class="wrap"><div class="listing-heading"><div><span class="eyebrow">Income property</span><h2>販売中物件<br>一棟収益</h2></div><p>現況収入だけでなく、修繕、空室、融資、出口まで整理して判断を支えます。</p></div><div class="listing-grid">{listing_cards([item for item in LISTINGS if item["category"] == "income"])}</div></div></section>
-<section class="page-sec listing-source"><div class="wrap"><div class="notice"><strong>掲載情報について</strong><p>物件写真4枚は、対象を正確に伝えるため現行公式サイトの掲載写真を使用しています。未公開物件とページ上部の街並みは新規生成したイメージ画像です。価格・面積・利回り・販売状況は変更または成約となる場合があります。</p><a class="text-link" href="https://kagoya-consul.co.jp/sale/" target="_blank" rel="noopener">現行公式サイトの販売中物件一覧を見る ↗</a></div><div class="mini-cta"><div><h2>気になる物件を、条件から相談する。</h2><p>購入判断や資金計画も含めて、分かる範囲からお聞かせください。</p></div><a class="btn btn-light" href="contact.html">物件について相談する</a></div></div></section>'''
+<section class="page-sec listing-source"><div class="wrap"><div class="notice"><strong>掲載情報について</strong><p>物件写真4枚は、対象を正確に伝えるため現行公式サイトの掲載写真を使用しています。未公開物件とページ上部の街並みは新規生成したイメージ画像です。価格・面積・利回り・販売状況は変更または成約となる場合があります。</p><a class="text-link" href="https://kagoya-consul.co.jp/sale/" target="_blank" rel="noopener">現行公式サイトの販売中物件一覧を見る ↗</a></div></div></section>'''
 
 PROPERTIES = FOR_SALE
 

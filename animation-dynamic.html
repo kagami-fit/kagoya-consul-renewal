@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <link rel="stylesheet" href="assets/css/site-header.css?v=20260905-line">
-  <link rel="stylesheet" href="assets/css/site-contact.css?v=20260905-responsive">
+  <link rel="stylesheet" href="assets/css/site-contact.css?v=20260905-unified">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>株式会社籠や｜まずは「知る」ことを大切にしています</title>
@@ -812,29 +812,7 @@
         </div>
       </div>
     </section>
-    <!-- 問い合わせ・対応エリア：相談目的から迷わず入れる4導線 -->
-    <section class="c-cta" id="contact-guide">
-      <div class="c-cta__bg"><picture><source type="image/webp" srcset="src/gen-hero.webp"><img src="src/gen-hero.jpg" alt="" loading="eager" decoding="async" fetchpriority="high"></picture></div>
-      <div class="c-cta__ov"></div>
-      <span class="c-cta__glow" id="ctaGlow1"></span><span class="c-cta__glow g2" id="ctaGlow2"></span>
-      <div class="c-cta__inner">
-        <div class="contact-guide__layout">
-          <div>
-            <span class="eyebrow" data-reveal>Contact / Area</span>
-            <h2 data-reveal>不動産のことを、<br><span class="mk">まずは知る</span>ところから。</h2>
-            <p class="lead" data-reveal>売却を決めていなくても、資料がそろっていなくても構いません。物件の所在地と現在の状況を、分かる範囲でお聞かせください。</p>
-            <div class="contact-guide__area" data-reveal><b>主な買取対象</b><p>収益不動産は全国、空きビルは東京23区、空き家は国道16号線内側を主な対象としてご相談を承ります。</p></div>
-            <a class="contact-guide__phone" href="tel:0344007994">03-4400-7994 <small>10:00〜18:00／水曜定休</small></a>
-          </div>
-          <div class="contact-guide__routes" data-reveal>
-            <a class="contact-route" href="contact.html?type=project"><span>01 / PROPERTY</span><strong>物件・相続について相談</strong><small>売却、買取、底地・借地、相続など →</small></a>
-            <a class="contact-route" href="contact.html?type=partner"><span>02 / PARTNER</span><strong>協業・連携について相談</strong><small>専門家、地域事業者、社会貢献など →</small></a>
-            <a class="contact-route" href="contact.html?type=investment"><span>03 / BUSINESS</span><strong>事業・資産形成について相談</strong><small>エフクリ、投資、事業提携など →</small></a>
-            <a class="contact-route" href="contact.html?type=recruit"><span>04 / SEMINAR</span><strong>セミナー・採用について相談</strong><small>企業研修、講演、採用など →</small></a>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
   </main>
   <!-- /ZOROYA:MAIN -->
@@ -947,12 +925,6 @@
         });
       })();
 
-      /* 問い合わせ導線 ＝ sample07 / cta-01（背景パララックス＋動く光） */
-      gsap.to('.c-cta__bg', { scale: 1.08, ease: 'none', scrollTrigger: { trigger: '.c-cta', start: 'top bottom', end: 'bottom top', scrub: true } });
-      if (!reduce) {
-        gsap.to('#ctaGlow1', { xPercent: 30, yPercent: 25, scale: 1.25, duration: 9, ease: 'sine.inOut', yoyo: true, repeat: -1 });
-        gsap.to('#ctaGlow2', { xPercent: -25, yPercent: -20, scale: 1.3, duration: 11, ease: 'sine.inOut', yoyo: true, repeat: -1 });
-      }
     });
   </script>
 
@@ -986,7 +958,7 @@
   })();
   </script>
 
-<script src="assets/js/site.js?v=20260905-contact"></script>
+<script src="assets/js/site.js?v=20260905-contact-unified"></script>
 <script id="motion-dynamic-script">
 (function(){
   var body=document.body;
@@ -1008,13 +980,6 @@
     }
   }
 
-  /* sec-links-10：問い合わせ4導線を伸縮パネルにする */
-  var contactRoutes=Array.from(document.querySelectorAll('.contact-guide__routes .contact-route'));
-  contactRoutes.forEach(function(route,index){
-    route.dataset.dynNumber=String(index+1).padStart(2,'0');
-    if(index===0)route.classList.add('is-active');
-    ['pointerenter','focusin'].forEach(function(eventName){route.addEventListener(eventName,function(){contactRoutes.forEach(function(item){item.classList.toggle('is-active',item===route)})})});
-  });
 
   /* お知らせタブは比較ページでも操作可能にする */
   var newsRows=Array.from(document.querySelectorAll('.c-news__row'));
@@ -1101,10 +1066,6 @@
     });
     revealEach('.purchase-area__foot > *',{y:22,duration:.68});
 
-    revealEach('.contact-guide__layout>div:first-child>*',{y:30,duration:.76});
-    contactRoutes.forEach(function(route,index){gsap.to(route,{clipPath:'inset(0 0 0% 0)',duration:.8,delay:index*.09,ease:'power4.inOut',scrollTrigger:{trigger:'.contact-guide__routes',start:'top 82%',once:true}})});
-    gsap.to('.c-cta__bg',{scale:1.1,ease:'none',scrollTrigger:{trigger:'.c-cta',start:'top bottom',end:'bottom top',scrub:true}});
-    if(!reduce){gsap.to('#ctaGlow1',{xPercent:34,yPercent:28,scale:1.28,duration:8,ease:'sine.inOut',yoyo:true,repeat:-1});gsap.to('#ctaGlow2',{xPercent:-28,yPercent:-24,scale:1.34,duration:10,ease:'sine.inOut',yoyo:true,repeat:-1})}
     ScrollTrigger.refresh();
   },{once:true});
 })();
