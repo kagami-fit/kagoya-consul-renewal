@@ -35,6 +35,7 @@
 - `scripts/build_business_pages.mjs`：8事業の一覧ページと、PDF確定原稿を展開した7つの事業別ページを再生成するスクリプト
 - `scripts/update_blog_chrome.py`：ブログ3記事へsample07の共通ヘッダー・フッターを適用するスクリプト
 - `scripts/update_common_chrome.py`：全公開ページのナビゲーション、営業時間、フッターを一括で揃えるスクリプト
+- `assets/css/site-header.css`：トップ・下層共通の左寄せロゴ、ナビ配置、相談ボタンの表示。下層は`sample07-theme.css`から読み込む
 - `scripts/enrich_subpages.py`：主要下層ページへ、内容に合わせた写真セクションを一括追加する再実行可能なスクリプト
 - `scripts/migrate-wp-news.js`：元WordPressの公開お知らせを取得し、一覧・詳細表示用JSONを生成するスクリプト
 - `scripts/qa_site.py`：3画面幅で全ページを検証し、代表スクリーンショットを保存するスクリプト

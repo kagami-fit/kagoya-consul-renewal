@@ -6,43 +6,46 @@
   const shade = document.querySelector('[data-menu-shade]');
   const drawer = document.querySelector('[data-menu-drawer]');
 
-  // 共通ヘッダーは、ロゴを左端に置き、成約実績への入口を全ページで表示する。
-  // 既存ページにも同じスクリプトを読み込んでいるため、個別HTMLを増やさずにナビを統一できる。
+  // 共通ヘッダー：ロゴ → 販売・成約を隣接させたナビ → 相談ボタン。
   const normalizeHeader = () => {
-    document.querySelectorAll('.site-header__main').forEach((main) => {
-      const brand = main.querySelector('.site-header__brand');
-      if (brand && main.firstElementChild !== brand) main.insertBefore(brand, main.firstElementChild);
-    });
-
-    const soldHref = `${prefix}sold-properties.html`;
     const makeLink = (mobile = false) => {
       const link = document.createElement('a');
-      link.href = soldHref;
-      link.textContent = mobile ? '成約物件' : '成約物件';
+      link.href = `${prefix}sold-properties.html`;
+      link.textContent = '成約物件';
       link.setAttribute('data-site-nav', 'sold-properties');
       if (mobile) {
         const small = document.createElement('small');
         small.textContent = 'SOLD';
         link.appendChild(small);
       }
-      if (window.location.pathname.endsWith('/sold-properties.html') || window.location.pathname.endsWith('sold-properties.html')) link.setAttribute('aria-current', 'page');
+      if (window.location.pathname.endsWith('/sold-properties.html')) link.setAttribute('aria-current', 'page');
       return link;
     };
+    const placeSoldAfterSale = (root, mobile = false) => {
+      if (!root) return;
+      const forSaleLink = [...root.querySelectorAll('a')].find((node) => node.getAttribute('href')?.endsWith('for-sale.html'));
+      if (!forSaleLink) return;
+      const soldLink = root.querySelector('[data-site-nav="sold-properties"]') || makeLink(mobile);
+      if (forSaleLink.nextElementSibling !== soldLink) forSaleLink.after(soldLink);
+    };
 
-    const desktopNav = document.querySelector('.site-header__nav.is-right');
-    if (desktopNav && !desktopNav.querySelector('[data-site-nav="sold-properties"]')) {
-      const link = makeLink();
-      const contactLink = [...desktopNav.querySelectorAll('a')].find((node) => node.getAttribute('href') === 'contact.html' && node.textContent.trim() === '相談する');
-      desktopNav.insertBefore(link, contactLink || null);
-    }
+    document.querySelectorAll('.site-header__main').forEach((main) => {
+      const brand = main.querySelector('.site-header__brand');
+      if (brand && main.firstElementChild !== brand) main.insertBefore(brand, main.firstElementChild);
+      placeSoldAfterSale(main);
 
-    const drawerNav = drawer?.querySelector('nav');
-    if (drawerNav && !drawerNav.querySelector('[data-site-nav="sold-properties"]')) {
-      const link = makeLink(true);
-      const forSaleLink = [...drawerNav.querySelectorAll('a')].find((node) => node.getAttribute('href')?.endsWith('for-sale.html'));
-      if (forSaleLink?.nextSibling) drawerNav.insertBefore(link, forSaleLink.nextSibling);
-      else drawerNav.appendChild(link);
-    }
+      const cta = main.querySelector('.site-header__cta');
+      if (!cta) return;
+      main.querySelectorAll('.site-header__nav a').forEach((link) => {
+        if (link.getAttribute('data-cms-id') === 'common_common-header_A_009' || link.getAttribute('href') === cta.getAttribute('href')) link.classList.add('site-header__nav-contact');
+      });
+      if (!cta.querySelector('.site-header__cta-label')) {
+        const label = cta.textContent.trim();
+        cta.innerHTML = '<span class="site-header__cta-copy"><small>ご相談・お問い合わせ</small><span class="site-header__cta-label"></span></span><span class="site-header__cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>';
+        cta.querySelector('.site-header__cta-label').textContent = !label || label === '相談する' ? 'まずは相談する' : label;
+      }
+    });
+    placeSoldAfterSale(drawer?.querySelector('nav'), true);
   };
   normalizeHeader();
 
@@ -370,9 +373,11 @@
       if (map.defaults.some((label) => text === label || text.startsWith(`${label} `))) candidates.add(node);
     });
     candidates.forEach((link) => {
+      const ctaLabel = link.querySelector('.site-header__cta-label');
       const current = link.textContent;
       const before = map.defaults.find((label) => current.includes(label));
-      if (before) replaceText(link, before, setting.value);
+      if (ctaLabel) ctaLabel.textContent = setting.value === '相談する' ? 'まずは相談する' : setting.value;
+      else if (before) replaceText(link, before, setting.value);
       else link.textContent = setting.value;
       if (setting.target && setting.target !== '変更不要') link.setAttribute('href', navigationHref(setting.target));
     });
@@ -434,7 +439,7 @@
   }).then((payload) => {
     const items = Array.isArray(payload) ? payload : payload?.items;
     applySiteSettings(items);
-  }).catch(() => {});
+  }).catch(() => {}).finally(normalizeHeader);
 
   // 4つの入口（案件相談／協業／投資／採用）は同じフォームを使い、typeだけを引き継ぐ。
   // 受付側で案件ごとのフォームを増やさず、到着時に相談目的を見える化する設計。
