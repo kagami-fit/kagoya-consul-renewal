@@ -3,6 +3,11 @@
   const script = document.querySelector('script[src*="assets/js/site.js"]');
   const prefix = script?.getAttribute('src')?.startsWith('../') ? '../' : '';
 
+  // ページ遷移時はブラウザの履歴位置復元より、URLハッシュの位置を優先する。
+  // 特に GitHub Pages では画像やフォントの読み込み後にレイアウトが変わるため、
+  // 対応エリアのハッシュ移動は下の共通処理で最終位置へ合わせ直す。
+  if (window.history && 'scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
+
   // 共通の問い合わせ窓口。PCは05、767px以下は03をCSSで切り替える。
   // ページ末尾の旧CTAはこの窓口へ統合。文面はPC・モバイルで同じ設定を使う。
   // 比較ページ・問い合わせページ・プライバシーページには追加しない。
@@ -412,28 +417,50 @@ ${contactRoutes}
   const serviceAreaSection = homeMain?.querySelector('#service-area');
   const servicesSection = homeMain?.querySelector('#services');
   if (homeMain && serviceAreaSection && servicesSection) {
-    homeMain.insertBefore(serviceAreaSection, servicesSection);
+    const ensureServiceAreaOrder = () => {
+      // すでに正しい順番ならノードを動かさない。ハッシュ移動後の不要な再配置を防ぐ。
+      if (serviceAreaSection.nextElementSibling !== servicesSection) {
+        homeMain.insertBefore(serviceAreaSection, servicesSection);
+      }
+    };
+    ensureServiceAreaOrder();
 
-    // DOMの並び替えは、ブラウザがハッシュへ移動した後に行われることがある。
-    // その場合でも「index.html#service-area」が先頭で止まらないよう、
-    // 最終レイアウト確定後に対応エリアへ明示的に合わせ直す。
+    // DOMの並び替え・画像・フォントの読み込みでレイアウトが変わっても、
+    // 「index.html#service-area」が先頭で止まらず、最終的な対応エリアへ着地させる。
     const restoreServiceAreaHash = () => {
       if (window.location.hash !== '#service-area') return;
+      ensureServiceAreaOrder();
       const target = document.getElementById('service-area');
       if (!target) return;
       const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
       const scrollMargin = parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
       const offset = Math.max(headerHeight, scrollMargin);
       const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: Math.max(0, top), left: 0, behavior: 'auto' });
+      const root = document.documentElement;
+      const previousBehavior = root.style.scrollBehavior;
+      // index.html は smooth scroll を指定しているため、補正中だけ即時移動にする。
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, Math.max(0, top));
+      window.requestAnimationFrame(() => { root.style.scrollBehavior = previousBehavior; });
     };
 
-    if (window.location.hash === '#service-area') {
-      // 2フレーム待って、インライン演出スクリプトによるレイアウト変更も反映する。
-      window.requestAnimationFrame(() => window.requestAnimationFrame(restoreServiceAreaHash));
-      window.addEventListener('load', restoreServiceAreaHash, { once: true });
-    }
-    window.addEventListener('hashchange', restoreServiceAreaHash);
+    const scheduleServiceAreaRestore = () => {
+      if (window.location.hash !== '#service-area') return;
+      // ハッシュがセットされる順番はブラウザにより異なるため、複数のタイミングで確認する。
+      restoreServiceAreaHash();
+      window.requestAnimationFrame(() => {
+        restoreServiceAreaHash();
+        window.requestAnimationFrame(restoreServiceAreaHash);
+      });
+      [120, 400, 900, 1600].forEach((delay) => window.setTimeout(restoreServiceAreaHash, delay));
+    };
+
+    // 初回ロード、履歴復元、ハッシュ変更のすべてを対象にする。
+    scheduleServiceAreaRestore();
+    window.addEventListener('DOMContentLoaded', scheduleServiceAreaRestore, { once: true });
+    window.addEventListener('load', scheduleServiceAreaRestore);
+    window.addEventListener('pageshow', scheduleServiceAreaRestore);
+    window.addEventListener('hashchange', scheduleServiceAreaRestore);
   }
 
   const closeMenu = () => {
