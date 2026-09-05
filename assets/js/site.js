@@ -101,7 +101,10 @@
       lead: 'NBCジュニアでの取り組みや、次世代を支える活動への連携について承ります。',
       title: '子どもたちの挑戦を、\n一緒に支えるために。',
       copy: '籠やのメンター活動へのご質問や、教育・地域活動での連携のお話をお聞かせください。ご相談の内容を確認し、担当者からご案内します。',
-      type: 'partner', label: '活動について問い合わせる'
+      type: 'partner', label: '活動について問い合わせる',
+      image: 'gen-nbc-education-contact',
+      imageAlt: '教材と試作品を囲み、教育活動の連携を話し合うイメージ',
+      imageNote: '教育活動の連携イメージ（AI生成）'
     },
     'team.html': {
       heading: '専門家との連携・ご相談',
@@ -196,6 +199,8 @@
   const contactLines = (value) => contactEscape(value).replace(/\n/g, '<br>');
   const contactHref = `${prefix}contact.html${contactContent?.type ? `?type=${contactContent.type}` : ''}`;
   const contactLabel = contactContent?.label || 'フォームで相談する';
+  const contactImage = contactContent?.image || 'gen-consultation';
+  const contactImageAlt = contactContent?.imageAlt || '資料を見ながら話し合う相談のイメージ';
   const contactRoutes = contactContent?.routes ? `<nav class="site-contact__routes" aria-label="ご相談のテーマから選ぶ">
     <span>ご相談のテーマ</span>
     <a href="${prefix}contact.html?type=project">物件・相続 <span aria-hidden="true">→</span></a>
@@ -242,9 +247,10 @@
 </div>
 <figure class="contact-primary-photo">
 <picture>
-<source type="image/webp" srcset="${prefix}src/gen-consultation.webp">
-<img src="${prefix}src/gen-consultation.jpg" alt="資料を見ながら話し合う相談のイメージ" width="1536" height="1024" loading="lazy" decoding="async">
+<source type="image/webp" srcset="${prefix}src/${contactEscape(contactImage)}.webp">
+<img src="${prefix}src/${contactEscape(contactImage)}.jpg" alt="${contactEscape(contactImageAlt)}" width="1536" height="1024" loading="lazy" decoding="async">
 </picture>
+${contactContent.imageNote ? `<figcaption class="nbc-image-note">${contactEscape(contactContent.imageNote)}</figcaption>` : ''}
 </figure>
 </div>
 <div class="contact-secondary">

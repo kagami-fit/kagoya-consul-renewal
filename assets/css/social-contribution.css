@@ -1,4 +1,4 @@
-/* NBCジュニア：実際の授業写真と、参照サイトのPARTNERSHIPまでの本文を使用。 */
+/* NBCジュニア：活動記録は実写、学び・連携の補足は生成イメージと明記して使い分ける。 */
 .nbc-page{--nbc-ink:#415563;--nbc-soft:#edf2f3;color:var(--nbc-ink);background:#fff}
 .nbc-page section[id]{scroll-margin-top:150px}
 .nbc-page h1,.nbc-page h2,.nbc-page h3{color:var(--nbc-ink)}
@@ -28,6 +28,8 @@
 .nbc-hero-image-wrap .nbc-hero-image{aspect-ratio:6/5;object-fit:cover;object-position:48% center}
 .nbc-hero-note{position:relative;display:flex;align-items:center;width:fit-content;max-width:calc(100% - 24px);margin:-34px 24px 0 auto;padding:20px 28px;background:#fff;border-left:2px solid #c49a4a;box-shadow:0 12px 28px -20px rgba(50,72,82,.25)}
 .nbc-hero-note p{font-size:13px;line-height:1.9;letter-spacing:.08em}
+.nbc-page .nbc-image-note{display:block;margin-top:8px;font:400 11px/1.7 var(--font-body,sans-serif);letter-spacing:.02em;color:#637986}
+.nbc-page .contact-primary-photo .nbc-image-note{position:absolute;z-index:1;right:12px;bottom:12px;max-width:calc(100% - 24px);margin:0;padding:4px 9px;background:rgba(255,255,255,.92);color:#415563}
 .nbc-jump-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 0;padding-block:14px;border-block:1px solid var(--line)}
 .nbc-jump-nav a{padding:8px 32px;font-size:14px;color:var(--main)}
 .nbc-jump-nav a+a{border-left:1px solid var(--line)}
@@ -37,11 +39,11 @@
 .nbc-section-label>span{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--line);font-weight:500;letter-spacing:0}
 .nbc-intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,88px)}
 .nbc-body-copy p+p,.nbc-activity-body p+p{margin-top:18px}
-/* 一枚の大きな授業写真と、三つの学びを縦に対比させる。 */
+/* 考える場面の縦長イメージと、三つの学びを対比させる。 */
 .nbc-principles{width:100%;padding-inline:max(28px,calc((100% - 1160px)/2));display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-areas:"photo heading" "photo values";column-gap:clamp(32px,5.5vw,80px);row-gap:28px;background:var(--nbc-soft)}
 .nbc-approach-visual{grid-area:photo;align-self:stretch;position:relative;display:grid;grid-template-rows:1fr auto;min-height:620px}
 .nbc-approach-visual picture{min-height:0;position:relative}
-.nbc-approach-visual img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:36% center}
+.nbc-approach-visual img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:50% 42%}
 .nbc-approach-visual figcaption{position:relative;margin:-70px 24px 0 0;padding:22px 26px;background:white;align-self:end;font-size:16px;line-height:1.8;color:var(--main)}
 .nbc-approach-visual figcaption span{display:block;font:500 12px/1.7 var(--font-en);letter-spacing:.16em;margin-bottom:6px;color:var(--muted)}
 .nbc-principles-heading{grid-area:heading}

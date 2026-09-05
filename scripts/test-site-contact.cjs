@@ -80,7 +80,8 @@ for (const [page, [heading, type]] of Object.entries(expectedPages)) {
   const pageSource = fs.readFileSync(path.join(root, page), 'utf8');
   const main = pageSource.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1];
   assert.doesNotMatch(main, /class="mini-cta"|class="c-cta"|Not one answer|class="post-foot__cta"|class="widget w-cta"/, page + ' duplicate CTA removed');
-  assert.match(pageSource, /site\.js\?v=20260905-contact-unified/, page + ' cache refreshed');
+  const expectedVersion = page === 'social-contribution.html' ? '20260905-social-images' : '20260905-contact-unified';
+  assert.ok(pageSource.includes('site.js?v=' + expectedVersion), page + ' cache refreshed');
 }
 assert.equal(mount(''), mount('index.html'));
 assert.equal(mount('animation-dynamic.html'), mount('index.html'));
@@ -90,6 +91,10 @@ assert.equal(mount('properties.html'), mount('for-sale.html'));
 const homeRoutes = mount('index.html').match(/<nav class="site-contact__routes"[\s\S]*?<\/nav>/)[0];
 for (const type of ['project', 'partner', 'investment', 'recruit']) assert.ok(homeRoutes.includes(`contact.html?type=${type}`));
 assert.doesNotMatch(mount('services.html'), /class="site-contact__routes"/);
+assert.match(mount('social-contribution.html'), /src="src\/gen-nbc-education-contact\.jpg"/);
+assert.match(mount('social-contribution.html'), /教育活動の連携イメージ（AI生成）/);
+assert.doesNotMatch(mount('social-contribution.html'), /gen-consultation/);
+assert.match(mount('services.html'), /src="src\/gen-consultation\.jpg"/);
 for (const page of ['contact.html', 'privacy.html', 'contact-section-comparison.html', 'consultation-button-comparison.html', 'animation-recommended.html']) assert.equal(mount(page), '', page);
 assert.equal(mount('index.html', {existing:true}), '');
 assert.equal(mount('index.html', {footer:false}), '');

@@ -63,10 +63,10 @@
 
 | ファイル | 用途 | 出典 |
 |---|---|---|
-| `nbc-junior-workshop-01.*` | 社会貢献ページのファーストビュー、授業ギャラリー、トップの事業カード | クライアント提供 `S__490987526.jpg` |
+| `nbc-junior-workshop-01.*` | 社会貢献ページの活動レポート、トップの事業カード | クライアント提供 `S__490987526.jpg` |
 | `nbc-junior-workshop-02.*` | 社会貢献ページの授業ギャラリー | クライアント提供 `S__490987528.jpg` |
 
-実際の授業写真を優先して使用し、架空のNBCジュニア写真は生成していない。JPEGは長辺1,800pxへ最適化し、Web表示用のWebPを併記する。
+実際の授業を伝える活動レポートでは、この2枚を各1回だけ使用する。2026-09-05の画像重複解消に伴い、冒頭・学び・連携紹介の補足は、別途生成した一般的な教育イメージに差し替えた。実在のNBCジュニア活動記録として生成写真を掲載しない。実写のJPEGは長辺1,800pxへ最適化し、Web表示用のWebPを併記する。
 
 ## 買取対象エリア地図（2026-08-28）
 
@@ -77,3 +77,42 @@
 | `map-purchase-route16.*` | 国道16号線内側の空き家 | 東京湾を白抜きし、国道16号線を点線で示した首都圏エリア図 |
 
 共通指定：`infographic-diagram`、正方形、参考画像は構成と色の参照に限定。画像内文字・数字・地名・ロゴ・透かしは入れず、正確な地域名はHTMLで重ねる。生成方法はCodex内蔵 `image_gen`（built-in mode／image-gen2）。PNG原本とWeb表示用WebPを保存する。
+
+## 社会貢献ページ・重複解消用の生成画像（2026-09-05）
+
+生成方法：Codex内蔵 `image_gen`（built-in mode）。分類：`photorealistic-natural`。いずれも架空の教育イメージであり、実在のNBCジュニアの開催風景・参加者を再現していない。参照画像なしで新規生成。ページではAI生成のイメージと注記し、実写の活動レポートと分けて使用する。
+
+保存先：このプロジェクトの `src/`。JPEG（品質84）と配信用WebP（品質82）を保存。生成原本はCodexの生成画像フォルダに保持。
+
+| 素材 | 配置 | 画像サイズ |
+|---|---|---|
+| [gen-nbc-learning-hero.jpg](gen-nbc-learning-hero.jpg) / [WebP](gen-nbc-learning-hero.webp) | 冒頭：仲間と試作品をつくる | 1536×1024 |
+| [gen-nbc-learning-approach.jpg](gen-nbc-learning-approach.jpg) / [WebP](gen-nbc-learning-approach.webp) | 学びの紹介：付箋で自分の考えを整理する | 1024×1536 |
+| [gen-nbc-mentor-partnership.jpg](gen-nbc-mentor-partnership.jpg) / [WebP](gen-nbc-mentor-partnership.webp) | 連携紹介：メンターと試作品について話す | 1536×1024 |
+| [gen-nbc-education-contact.jpg](gen-nbc-education-contact.jpg) / [WebP](gen-nbc-education-contact.webp) | 社会貢献専用のお問い合わせ：教材を囲んで連携を準備する | 1536×1024 |
+
+### 最終プロンプト
+
+#### gen-nbc-learning-hero
+
+```text
+Create one premium photorealistic editorial photograph for the hero of a Japanese company's youth entrepreneurship education page. Landscape 3:2 aspect ratio, 1536x1024 if supported. A bright contemporary Japanese classroom, a small group of four fictional Japanese schoolchildren approximately 10–13 years old collaborating around a light wood table on a handmade product prototype: small folded kraft-paper packaging, colored paper, simple wooden components, pencils and sketch sheets. Eye-level diagonal candid view, children mostly in three-quarter rear view or natural side profiles, the project and their collaboration are the visual focus, no one looks at the camera. Place the key children and prototype within the central 70 percent so a 6:5 crop also works. Natural window light, clean soft off-white and warm light-gray palette, quiet teal details, realistic paper and skin textures, authentic slightly imperfect classroom work, restrained color saturation, sophisticated Japanese corporate editorial art direction. Not a staged stock-photo high-five, not glamorous, not a collage. Fictional illustrative scene only, not any real NBC Junior event, no real person likeness, no school or organization logos, no watermarks, no readable text, no overlays. Use no supplied conversation images as references.
+```
+
+#### gen-nbc-learning-approach
+
+```text
+Create one photorealistic premium editorial photograph illustrating how children turn ideas into learning. Portrait 2:3 aspect ratio, 1024x1536 if supported. A fictional Japanese preteen girl seen naturally from behind and slightly to the side, wearing a simple light-gray casual sweater, placing a small blank pastel-yellow sticky note on a classroom idea board. The board contains a few hand-drawn product sketches and simple arrows rather than readable words, with pale-blue and pale-yellow sticky notes. The child holds a pencil, another child's hand with a sketch is softly visible at the edge, naturally proportioned hands. Focus on the exploratory thinking process, a quietly attentive atmosphere, not a posed portrait. Bright window daylight on the right, clean white board, subtle warm gray and teal accents, realistic photographic paper texture and believable school environment, premium Japanese education editorial photography, gentle depth of field, no beauty retouch. Medium view with head, arm, and board visible, generous breathing room around the action; key action in central area so a mobile landscape crop remains useful. Fictional illustrative scene, not documentary evidence of a real event, no real person's likeness, no school or NBC Junior branding, no legible text, no added captions or watermark, no collage. Do not use conversation photos as references.
+```
+
+#### gen-nbc-mentor-partnership
+
+```text
+Create one photorealistic editorial image for a Japanese corporate social contribution page about business mentors supporting young people's ideas. Landscape 3:2 ratio, 1536x1024 if supported. In a light-filled modest Japanese classroom, a fictional Japanese boy and girl around 11–13 explain a small cardboard product prototype to a female adult business mentor in her 40s wearing a natural cream blouse and charcoal-gray trousers. Side-on candid composition: one child holds the prototype, the mentor sits at the children's eye level, attentively listens with a warm subtle expression and points gently to a detail, the second child holds a sketch sheet. Capture a thoughtful exchange, not applause, high-five, handshake, or corporate posing. Different scene and framing from children collaborating around a table: closer medium view with the mentor on the right and prototype at the center, keep principal subjects safe inside a central 4:3 crop. Natural soft daylight, soft white and warm gray room, muted teal on a chair, real skin and cardboard texture, authentic Japanese education magazine photography, tasteful shallow depth of field and restrained colors. Fictional educational illustration only, do not resemble specific people or suggest a documented real NBC Junior event. No real organization or school logos, no readable text, no watermark or graphic overlays, not a collage. Do not use any conversation images as reference.
+```
+
+#### gen-nbc-education-contact
+
+```text
+Create one premium photorealistic editorial photograph for an inquiry section about partnering on children's educational workshops. Landscape 3:2 aspect ratio, 1536x1024 if supported. A close candid tabletop scene in a bright Japanese meeting room: two adult education coordinators in off-white and light-gray sleeves preparing a youth entrepreneurship lesson together, one hand organizing colorful plain paper materials and a small handmade kraft-cardboard prototype while the other hand writes in an open notebook. Include a few pencils, modest blank sticky notes, and a simple lesson-plan sheet with only indistinct small lines, no readable writing. No faces, no children, no house model or real-estate documents, no laptop as main subject. Main hands and workshop materials occupy center-right and right two-thirds, quiet light-gray negative space at left for the website's existing fade. Slightly elevated 45-degree view, natural side window light, realistic anatomy and subtle texture, sophisticated understated Japanese corporate editorial aesthetic, warm neutral gray and ivory palette with restrained blue-green and ochre accents. Clearly a fictional illustrative photograph, no actual event claim, no logos, no watermark, no overlay text, no collage. Do not use supplied conversation images as references.
+```
