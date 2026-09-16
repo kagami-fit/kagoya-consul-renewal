@@ -22,8 +22,8 @@ const businesses = [
     hero: '家と家族のこれからを、<br>手続きの前から整える。',
     summary: '実家・賃貸物件・空き家の名義や管理負担を整理し、売却・保有・賃貸・活用を同じ条件で比較します。',
     description: '相続不動産の名義、家族の意向、建物、期限を整理し、売却・保有・賃貸・活用の選択肢を専門家とともに検討します。',
-    heroImage: 'src/gen-domain-care.jpg',
-    heroAlt: '相続した住まいと家族の状況を整理する相談の様子',
+    heroImage: 'src/client-0912-inheritance.jpg',
+    heroAlt: '和室で家族が専門家に相続について相談するイメージ',
     introTitle: '相続は、財産を引き継ぐ手続きだけではありません。',
     intro: [
       '実家や賃貸物件、空き家を「誰が、いつ、どのように引き継ぐか」。共有名義や管理負担、納税資金まで含めて考える必要があります。籠やでは、まず登記名義、相続人・共有者の意向、建物の状態、期限を整理します。',
@@ -73,8 +73,8 @@ const businesses = [
     hero: '売る・買うを決める前に、<br>現状と選択肢を見える化する。',
     summary: '査定額や物件紹介だけで終わらず、状況・価値・選択肢・リスクを順番に見える化します。',
     description: '登記、接道、境界、建築条件、収益性、将来の出口まで調査し、不動産の売却・保有・活用・購入を比較します。',
-    heroImage: 'src/gen-domain-consulting.jpg',
-    heroAlt: '住宅模型と資料を見ながら不動産の価値と選択肢を検討する様子',
+    heroImage: 'src/client-0912-consulting.jpg',
+    heroAlt: '住宅模型と資料を囲み、家族と専門家が不動産について相談するイメージ',
     introTitle: 'まず、現状を正しく知ることから。',
     intro: [
       '不動産の判断で大切なのは、いきなり「売る・買う」を決めることではありません。籠やは、お客様の希望と背景を伺い、物件の状況・価値・選択肢・リスクを順番に見える化します。',
@@ -124,8 +124,8 @@ const businesses = [
     hero: '売り方・買い方を、<br>物件ごとに組み立てる。',
     summary: '居住用から収益・事業用まで、仲介と買取を価格・速さ・条件・取引後の負担から比較します。',
     description: 'マンション、戸建て、土地、一棟アパート・ビルの仲介と買取を、価格、スピード、契約条件、取引後まで見据えて支援します。',
-    heroImage: 'src/gen-domain-purchase.jpg',
-    heroAlt: '集合住宅と戸建ての売却・買取を検討する不動産の現場',
+    heroImage: 'src/client-0912-brokerage.jpg',
+    heroAlt: 'マンションの前で専門家が二人に物件を案内するイメージ',
     introTitle: '契約と引渡しを、ゴールにしない。',
     intro: [
       'マンション、戸建て、土地、一棟アパート・ビルなど、居住用から収益・事業用不動産まで、購入と売却を支援します。売却では、市場に広く情報を届けて買主を探す「仲介」と、当社または買取事業者が直接取得する「買取」を比較します。',
@@ -176,8 +176,8 @@ const businesses = [
     hero: '複雑な権利関係をほどき、<br>土地の次の可能性へ。',
     summary: '契約・登記・境界・接道と関係者の意向を整理し、売買・同時売却・一体利用・開発を検討します。',
     description: '底地・借地、共有地、境界・接道に課題がある土地を調査し、関係者と専門家をつないで実行可能な選択肢を検討します。',
-    heroImage: 'src/gen-domain-rights.jpg',
-    heroAlt: '底地・借地や土地の境界を現地で確認する様子',
+    heroImage: 'src/client-0912-rights.jpg',
+    heroAlt: '住宅と空き地が隣接し、敷地の境界や道路との位置関係が分かる風景',
     introTitle: '価格の前に、契約と関係者を整理する。',
     intro: [
       '底地・借地、共有地、境界や接道に課題がある土地は、価格だけでなく、契約内容と関係者の意向を丁寧に整理することが出発点です。借地契約、地代・更新、登記、公図、測量、境界、越境、道路、再建築の可否などを確認します。',
@@ -228,8 +228,8 @@ const businesses = [
     hero: '学ぶ。見える化する。<br>必要なとき、専門家へ相談する。',
     summary: '記事・動画・セミナー・シミュレーション・個別相談をつなぐ、法人向け福利厚生サービスです。',
     description: '資産形成ラウンジ「エフクリ」は、記事、動画、セミナー、シミュレーション、専門家相談を通じて従業員の金融ウェルビーイングを支えます。',
-    heroImage: 'src/gen-domain-fukuri.jpg',
-    heroAlt: '資産形成について学び専門家へ相談できるラウンジ',
+    heroImage: 'src/client-0912-fukuri.jpg',
+    heroAlt: '資産形成ラウンジ「エフクリ」。学びから、将来設計、専門家相談まで。「学ぶ・将来を知る・相談する」を表すイラスト',
     introTitle: '将来のお金を、一人で抱え込まないために。',
     intro: [
       '資産形成ラウンジ「エフクリ」は、日々の暮らしや将来のお金について、気軽に学び、必要なときに専門家へ相談できる法人向け福利厚生サービスです。SCSK株式会社との業務提携を通じ、従業員一人ひとりのファイナンシャルウェルビーイング向上を支援します。',
@@ -278,8 +278,8 @@ const businesses = [
     hero: '日々の運営と、<br>中長期の資産価値を一つに。',
     summary: '一室から一棟まで、空室・修繕・管理・収支を確認し、保有・改修・売却・買い増しを比較します。',
     description: '一室から一棟まで、契約・入居状況、管理体制、収支、修繕履歴を確認し、賃貸経営の運用と出口戦略を支援します。',
-    heroImage: 'src/gen-domain-owner.jpg',
-    heroAlt: '管理の行き届いた賃貸住宅と点検資料',
+    heroImage: 'src/project-rental-management.jpg',
+    heroAlt: '植栽や共用部が整えられた賃貸住宅のエントランス',
     introTitle: '賃貸経営は、家賃を集めるだけではありません。',
     intro: [
       '空室、募集条件、入居者対応、修繕、清掃、点検、固定費。日々の運営と中長期の資産価値を一体で考える必要があります。籠やでは、一室から一棟まで、契約・入居状況、管理体制、収支、修繕履歴を確認します。',
@@ -329,8 +329,8 @@ const businesses = [
     hero: '知ったその日から、<br>判断に使える学びを。',
     summary: '不動産・法律・税務・資産形成を、専門家が実生活に結びつけて分かりやすく解説します。',
     description: '住宅、不動産、相続税、家族信託、資産形成、投資リスクなど、実生活に直結する企業向けセミナーを企画・開催します。',
-    heroImage: 'src/gen-domain-new-business.jpg',
-    heroAlt: '企業向け不動産セミナーで意見を交わす参加者',
+    heroImage: 'src/client-0912-seminar.jpg',
+    heroAlt: '講師がスクリーンを使い、受講者に不動産や資産形成を説明するセミナーのイメージ',
     introTitle: '暮らしの判断に使える、不動産とお金の知識を。',
     intro: [
       '不動産やお金の知識は、従業員の暮らしを守り、将来への不安を減らすための大切な基盤です。籠やでは、住宅の買い方・売り方・受け取り方、相続税、家族信託、不動産を活用した資産形成、投資リスクや詐欺対策など、実生活に直結するテーマでセミナーを企画・開催しています。',
@@ -379,8 +379,8 @@ const businesses = [
     en: 'Social contribution',
     summary: '経営者メンターとして、子どもたちが問い、考え、試し、失敗から学ぶ会社づくりに伴走します。',
     description: '起業家教育プロジェクト「NBCジュニア」への参加と、次世代の挑戦を支える株式会社籠やの社会貢献活動をご紹介します。',
-    heroImage: 'src/nbc-junior-workshop-01.jpg',
-    heroAlt: 'NBCジュニアの授業で子どもたちと経営者メンターが話し合う様子'
+    heroImage: 'src/nbc-junior-workshop-02.jpg',
+    heroAlt: 'NBCジュニアの活動で子どもたちをサポートするメンター'
   }
 ];
 
@@ -455,7 +455,11 @@ businesses.forEach((item) => {
 
 const esc = (value) => String(value).replace(/[&<>\"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
 const webp = (path) => path.replace(/\.(?:jpg|png)$/i, '.webp');
-const picture = (path, alt, eager = false) => `<picture><source type="image/webp" srcset="${esc(webp(path))}"><img src="${esc(path)}" alt="${esc(alt)}" loading="${eager ? 'eager' : 'lazy'}" decoding="async"></picture>`;
+const imageClasses = (item) => item.heroImage.startsWith('src/client-0912-') ? ` business-image--supplied${item.id === 'fukuri' ? ' business-image--fukuri' : item.id === 'seminar' ? ' business-image--seminar' : ''}` : '';
+const picture = (path, alt, eager = false) => {
+  const dimensions = path.startsWith('src/client-0912-') ? ' width="1672" height="941"' : '';
+  return `<picture><source type="image/webp" srcset="${esc(webp(path))}"><img src="${esc(path)}" alt="${esc(alt)}"${dimensions} loading="${eager ? 'eager' : 'lazy'}" decoding="async"></picture>`;
+};
 
 function head({ title, description, page, image }) {
   const url = `${publicBase}${page}`;
@@ -523,7 +527,7 @@ function overviewPage() {
   const title = '事業紹介｜不動産と暮らしの8つの支援';
   const description = '相続、不動産コンサルティング、仲介・買取、権利調整、資産形成、賃貸経営、企業向けセミナー、社会貢献。株式会社籠やの8つの事業をご紹介します。';
   const stories = businesses.map((item, index) => `<article class="business-story${index % 2 ? ' business-story--reverse' : ''}" id="${item.id}">
-        <div class="business-story__media">${picture(item.heroImage, item.heroAlt)}<p class="business-story__caption">${esc(item.en.toUpperCase())}</p></div>
+        <div class="business-story__media${imageClasses(item)}">${picture(item.heroImage, item.heroAlt)}<p class="business-story__caption">${esc(item.en.toUpperCase())}</p></div>
         <div class="business-story__content">
           <div class="business-story__head"><span class="business-story__number">${item.no}</span><div><span class="business-story__label">${esc(item.en)}</span><h2>${esc(item.title)}</h2></div></div>
           <p>${esc(item.summary)}</p>
@@ -543,7 +547,7 @@ ${header()}
     </div>
   </section>
   <section class="page-sec">
-    <div class="wrap business-intro"><div class="business-intro__pull" aria-hidden="true">8</div><div class="business-intro__copy"><span class="eyebrow">In motion</span><h2>不動産を中心とした、<br>8つの事業領域。</h2><p>このページでは各事業の概要をご紹介します。詳しい支援内容、確認する項目、進め方は、それぞれの専用ページでご覧いただけます。</p></div></div>
+    <div class="wrap business-intro"><div class="business-intro__pull" aria-hidden="true">8</div><div class="business-intro__copy"><span class="eyebrow">In motion</span><h2>不動産を中心とした、<br>8つの事業領域。</h2><p>このページでは各事業の概要をご紹介します。気になる事業の紹介ページから、ご相談へお進みいただけます。</p></div></div>
   </section>
   <section class="page-sec alt" aria-labelledby="business-index-title"><div class="wrap"><div class="section-head"><span class="eyebrow">Choose a field</span><h2 id="business-index-title">気になる事業から、詳しいページへ。</h2><p class="lead">相談分野が一つに決まっていない場合も、近いテーマからご覧ください。</p></div>${businessNav('')}</div></section>
   <section class="business-stories"><div class="wrap">${stories}</div></section>
@@ -557,27 +561,6 @@ ${footer()}
 }
 
 function detailPage(item) {
-  const scopeVisuals = item.cardVisuals?.check || [];
-  const optionVisuals = item.cardVisuals?.options || [];
-  const processVisuals = item.cardVisuals?.process || [];
-  const pickVisual = (visuals, index) => visuals.length ? visuals[index % visuals.length] : null;
-  const scope = item.scope.map(([title, copy], index) => {
-    const visual = pickVisual(scopeVisuals, index);
-    const thumb = visual ? `<figure class="biz-card-thumb numbered-row__media">${picture(visual[0], visual[1])}</figure>` : '';
-    return `<div class="numbered-row numbered-row--image-a">${thumb}<div class="numbered-row__body"><h3>${esc(title)}</h3><p>${esc(copy)}</p></div></div>`;
-  }).join('');
-  const choices = item.choices.map(([title, copy], index) => {
-    const visual = pickVisual(optionVisuals, index);
-    const thumb = visual ? `<figure class="biz-card-thumb biz-choice__media">${picture(visual[0], visual[1])}</figure>` : '';
-    return `<article class="biz-choice biz-choice--image-b">${thumb}<div class="biz-choice__body"><span>${String(index + 1).padStart(2, '0')}</span><h3>${esc(title)}</h3><p>${esc(copy)}</p></div></article>`;
-  }).join('');
-  const process = item.process.map(([title, copy], index) => {
-    const visual = pickVisual(processVisuals, index);
-    const thumb = visual ? `<figure class="biz-card-thumb biz-process__media">${picture(visual[0], visual[1])}</figure>` : '';
-    return `<div class="biz-process__step biz-process__step--image-c">${thumb}<div class="biz-process__shade"></div><div class="biz-process__body"><span class="biz-process__number">${String(index + 1).padStart(2, '0')}</span><h3>${esc(title)}</h3><p>${esc(copy)}</p></div></div>`;
-  }).join('');
-  const visuals = item.visuals.map(([image, alt, label, code]) => `<figure class="visual-journal__figure">${picture(image, alt)}<figcaption><span>${esc(label)}</span><small>${esc(code)}</small></figcaption></figure>`).join('');
-  const tags = item.networkTags.map((tag) => `<span>${esc(tag)}</span>`).join('');
   return `${head({ title: item.title, description: item.description, page: item.page, image: item.heroImage })}
 <body class="sample07-subpage business-detail-page">
 <a class="skip-link" href="#main">本文へスキップ</a>
@@ -587,34 +570,10 @@ ${header()}
   <section class="page-hero editorial-hero business-detail-hero">
     <div class="wrap page-hero__grid">
       <div><p class="crumb"><a href="index.html">ホーム</a> ／ <a href="business.html">事業紹介</a> ／ ${esc(item.title)}</p><span class="eyebrow">${esc(item.en)}</span><h1>${item.hero}</h1><p class="lead">${esc(item.summary)}</p></div>
-      <div class="page-hero__art">${picture(item.heroImage, item.heroAlt, true)}<span class="page-hero__caption">${esc(item.no)} / ${esc(item.en)}</span></div>
+      <div class="page-hero__art${imageClasses(item)}">${picture(item.heroImage, item.heroAlt, true)}<span class="page-hero__caption">${esc(item.no)} / ${esc(item.en)}</span></div>
     </div>
   </section>
   <div class="wrap">${businessNav(item.id)}</div>
-  <section class="page-sec biz-detail-intro">
-    <div class="wrap biz-lead-grid">
-      <aside class="biz-lead-grid__index"><span>${item.no}</span><small>${esc(item.en)}</small></aside>
-      <div class="biz-lead-grid__copy"><span class="eyebrow">What we do</span><h2>${esc(item.introTitle)}</h2>${item.intro.map((text) => `<p>${esc(text)}</p>`).join('')}</div>
-    </div>
-  </section>
-  <section class="page-sec page-sec--visual" data-subpage-visual>
-    <div class="wrap visual-journal">
-      <div class="visual-journal__head"><div><span class="eyebrow">Our perspective</span><h2>${item.visualTitle}</h2></div><p>${esc(item.visualCopy)}</p></div>
-      <div class="visual-journal__gallery visual-journal__gallery--duo">${visuals}</div>
-    </div>
-  </section>
-  <section class="page-sec alt biz-check-section">
-    <div class="wrap"><div class="section-head section-head--split"><div><span class="eyebrow">What we check</span><h2>${esc(item.scopeTitle)}</h2></div><p class="lead">${esc(item.scopeLead)}</p></div><div class="numbered-list">${scope}</div></div>
-  </section>
-  <section class="page-sec biz-decisions">
-    <div class="wrap"><div class="section-head"><span class="eyebrow">Options</span><h2>${esc(item.choicesTitle)}</h2><p class="lead">${esc(item.choicesLead)}</p></div><div class="biz-choice-grid">${choices}</div></div>
-  </section>
-  <section class="biz-process-section">
-    <div class="wrap"><div class="biz-process-intro biz-process-intro--solo"><div class="section-head"><span class="eyebrow">How we proceed</span><h2>相談から実行までの進め方</h2><p class="lead">案件ごとに必要な確認は異なります。状況を把握し、選択肢を比べてから実行へ進みます。</p></div></div><div class="biz-process">${process}</div></div>
-  </section>
-  <section class="page-sec alt">
-    <div class="wrap biz-network"><div><span class="eyebrow">Team approach</span><h2>${esc(item.networkTitle)}</h2></div><div><p>${esc(item.networkCopy)}</p><div class="biz-network__tags">${tags}</div></div></div>
-  </section>
   <!-- 末尾の問い合わせ文面・相談目的はsite.jsでページ別に管理 -->
   <section class="page-sec biz-more"><div class="wrap"><div class="section-head"><span class="eyebrow">More business</span><h2>ほかの事業を見る</h2></div>${businessNav(item.id)}</div></section>
 </main>
@@ -747,5 +706,5 @@ ${footer()}
 
 writeFileSync(resolve(root, 'business.html'), overviewPage(), 'utf8');
 businesses.filter((item) => item.intro).forEach((item) => writeFileSync(resolve(root, item.page), detailPage(item), 'utf8'));
-writeFileSync(resolve(root, 'image-layout-comparison.html'), imageComparisonPage(), 'utf8');
+if (process.argv.includes('--with-comparison')) writeFileSync(resolve(root, 'image-layout-comparison.html'), imageComparisonPage(), 'utf8');
 console.log(`generated: business.html + ${businesses.filter((item) => item.intro).length} business detail pages`);

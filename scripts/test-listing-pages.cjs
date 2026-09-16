@@ -26,7 +26,8 @@ for (const [file, firstClass, marker] of [
   }
   assert.equal((main.match(/<h1\b/g) || []).length, 1, `${file}: 主見出しは1つ`);
   const listMarker = file === 'services.html' ? 'class="numbered-list"' : marker;
-  assert.ok(main.indexOf('data-subpage-visual') > main.indexOf(listMarker), `${file}: 写真紹介は一覧の後`);
+  if (file === 'about.html') assert.ok(main.indexOf('data-subpage-visual') > main.indexOf(listMarker), `${file}: 写真紹介は一覧の後`);
+  else assert.doesNotMatch(main, /data-subpage-visual/, `${file}: 指定の写真紹介ブロックは削除済み`);
   if (file !== 'about.html') assert.match(html, /assets\/css\/listing-pages\.css\?v=/);
   for (const [, attrs, source] of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
     if (!attrs.includes('application/ld+json') && source.trim()) new Function(source);
@@ -35,7 +36,9 @@ for (const [file, firstClass, marker] of [
 
 const about = read('about.html');
 assert.equal((about.match(/class="company-table"/g) || []).length, 1, '会社概要の重複なし');
-assert.equal((about.match(/<tr><th>/g) || []).length, 11, '会社概要11項目を維持');
+assert.equal((about.match(/<tr><th>/g) || []).length, 12, '既存11項目＋所属');
+assert.match(about, /公益社団法人 東京都宅地建物取引業協会/);
+assert.match(about, /公益社団法人 全国宅地建物取引業保証協会/);
 assert.match(about, /id="company-profile-title">会社概要<\/h1>/);
 assert.match(about, /class="company-intro-title">難しい不動産ほど、<br>籠やへ。<\/h2>/);
 
@@ -55,4 +58,6 @@ assert.match(news, /data-cms-id="news_page-sec-2_H2_001"/);
 const data = JSON.parse(read('data/news-items.json'));
 assert.equal(data.items.length, data.count);
 assert.ok(fs.existsSync(path.join(root, 'news-detail.html')));
-console.log(`PASS: restored service hero, company profile first with 11 fields, news list first, single headings, six service links and ${data.count} news entries`);
+assert.doesNotMatch(news, /<span class="notice-row__media">/);
+assert.doesNotMatch(read('news-detail.html'), /<figure class="news-detail__visual">/);
+console.log(`PASS: service hero and six links retained; company profile with affiliations; ${data.count} news entries without photos`);

@@ -1,0 +1,147 @@
+/* 2026-09-16: 読みやすさと、承認済みの簡潔なページ構成。 */
+body{font-size:17px;line-height:1.9}
+main p{font-size:17px;line-height:1.9;overflow-wrap:anywhere}
+main p+p{margin-top:1em}
+main .lead{font-size:18px;line-height:1.9}
+main :is(h1,h2,h3){overflow-wrap:anywhere;line-height:1.5}
+main :is(.crumb,.eyebrow,.tag,.small-note,.listing-link,.business-story__link,.biz-local-nav a,.btn,.text-link){font-size:14px}
+main :is(.numbered-row p,.business-story__content p,.page-intro__body p,.notice p,.contact-panel p,.form-bridge p,.news-detail__body p){font-size:17px;line-height:1.9}
+.company-profile-first .company-table :is(th,td){font-size:17px;line-height:1.9}
+.company-profile-first td p{margin:0}
+.company-profile-first td p+p{margin-top:.5em}
+.site-footer__info :is(p,a){font-size:14px;line-height:1.9}
+.site-header__nav a{font-size:15px!important;letter-spacing:0!important}
+.site-header__nav{gap:clamp(12px,1vw,18px)!important}
+.site-header__brand img{max-width:170px;object-fit:contain}
+.site-header .site-header__cta{min-width:160px}
+.site-header__cta-label{font-size:14px}
+.site-header__topbar{font-size:14px}
+/* トップは本文を縮小せず、冒頭と写真・余白の高さを抑える。 */
+.hero{min-height:0!important}
+.hero-inner{max-width:760px!important;padding:48px 28px 54px max(40px,7vw)!important;gap:18px!important}
+.hero h1{font-size:clamp(36px,4.2vw,58px)!important;line-height:1.3!important}
+.hero .lead{font-size:18px!important;max-width:32em}
+.hero .trust .ti{padding:10px 18px}
+.hero .trust .ti span,.hero-live-note{font-size:14px!important}
+.hero-scroll{display:none}
+.today{padding-top:64px!important;padding-bottom:64px!important}
+.domain-section{padding-top:64px!important;padding-bottom:72px!important}
+.domain-section__head{gap:32px!important;margin-bottom:32px!important}
+.domain-section__head h2{font-size:clamp(32px,4vw,48px)!important}
+.domain-card__media{aspect-ratio:16/10!important}
+/* 0912提供画像：事業カード・一覧・詳細だけに限定し、共通写真は変えない。 */
+.domain-card__media.business-image--supplied picture{display:block;width:100%;height:100%}
+.domain-card__media.business-image--seminar img{object-position:62% center}
+.business-story__media.business-image--supplied img{display:block;width:100%;height:auto;aspect-ratio:1672/941}
+.sample07-subpage .page-hero__art.business-image--supplied{align-self:center;min-height:0}
+.sample07-subpage .page-hero__art.business-image--supplied picture{height:auto}
+.sample07-subpage .page-hero__art.business-image--supplied img{display:block;width:100%;height:auto;aspect-ratio:1672/941;filter:none;transform:none}
+/* 文字入りのエフクリは全面表示。番号・英字・グラデーションを重ねない。 */
+.domain-card__media.business-image--fukuri{background:#f8f7f0}
+.domain-card .domain-card__media.business-image--fukuri img,.domain-card:hover .domain-card__media.business-image--fukuri img{object-fit:contain;transform:none}
+.business-image--fukuri::after,.page-hero__art.business-image--fukuri::before{display:none}
+.business-image--fukuri :is(.domain-card__index,.domain-card__tag,.page-hero__caption){display:none}
+.domain-card__body p,.domain-section__lead{font-size:17px!important;line-height:1.85!important}
+.domain-card__link{font-size:14px!important}
+.today__item p,.today__entry-head p,.project-card__body p,.entry-routes__head p,.result-card__body p{font-size:17px!important;line-height:1.85!important}
+.entry-card small,.area-card__caption,.purchase-area__note{font-size:14px!important;line-height:1.8!important}
+.today__head p,.result-block__head p,.purchase-area__lead,.c-feat__lead,.c-feat__card p{font-size:17px!important;line-height:1.9!important}
+.business-story__caption,.news-detail__source{font-size:14px!important}
+.site-contact .contact-demo :is(.contact-lead,.contact-channel__note,.contact-primary-copy p){font-size:17px!important;line-height:1.9!important}
+.site-contact .contact-demo :is(.contact-eyebrow,.contact-hours,.contact-online,.contact-line-copy p){font-size:14px!important}
+.listing-intro .page-intro{display:block;max-width:960px}
+.listing-categories a{font-size:16px}
+.listing-heading p{font-size:17px;line-height:1.9}
+.listing-card :is(p,dt,dd){font-size:16px;line-height:1.8}
+.listing-card .listing-price{font-size:26px}
+.services-index .numbered-row p{font-size:17px}
+/* 画像なしのニュース一覧。日時と本文の列を独立させる。 */
+.news-index .notice-row{grid-template-columns:38px 130px minmax(0,1fr) 24px;gap:22px;padding:24px}
+.notice-row__body h2{font-size:20px;line-height:1.6}
+.notice-row__body p{font-size:16px;line-height:1.8;margin-top:.6em}
+.notice-row__date time,.notice-row__kind,.notice-filter,.notice-result{font-size:14px}
+.news-detail__body{max-width:48em}
+.news-detail__body p{margin-top:1em}
+/* 写真用88px列を使わず、番号・見出し・説明の3列にする。 */
+.contact-before .numbered-row{grid-template-columns:42px minmax(220px,.8fr) minmax(0,1.2fr);gap:24px;align-items:start;padding:28px 0;min-height:0}
+.contact-before .numbered-row::before{grid-column:1;grid-row:1}
+.contact-before .numbered-row h3{grid-column:2;grid-row:1;font-size:21px;line-height:1.65;margin:0}
+.contact-before .numbered-row p{grid-column:3;grid-row:1;margin:0;font-size:17px;line-height:1.9}
+.contact-panel :is(p,a){overflow-wrap:anywhere}
+/* 相談窓口は画面幅にかかわらず、フォーム→電話→LINEの1列で表示。 */
+.contact-grid.contact-grid--stacked{grid-template-columns:minmax(0,1fr);max-width:880px;gap:48px}
+.contact-grid--stacked .contact-channel-block{min-width:0;scroll-margin-top:140px}
+.contact-grid--stacked .contact-channel-block>h2{margin:10px 0 20px}
+.contact-grid--stacked :is(.form-bridge,.contact-panel){padding:clamp(22px,4vw,40px)}
+.contact-grid--stacked .contact-panel h3{margin:28px 0 8px;font-size:20px}
+.contact-grid--stacked .contact-phone{font-size:clamp(28px,6vw,48px)}
+.contact-grid--stacked .notice{margin-top:24px;font-size:16px;line-height:1.9}
+.contact-grid--stacked .contact-line{margin-top:0}
+.contact-grid--stacked .btn{max-width:100%;white-space:normal;text-align:center}
+.contact-line{margin-top:32px;padding-top:28px;border-top:1px solid var(--line,#d9e2e8)}
+.contact-line h3{margin:8px 0 12px;font-size:23px}
+.contact-line__button{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:20px 0;padding:14px 18px;background:#087a3b;color:#fff;border-radius:6px;font-size:16px;font-weight:700;text-decoration:none}
+.contact-line__button:hover{background:#066531}
+.contact-line__button:focus-visible,.tokyo-education__link:focus-visible{outline:3px solid #b88734;outline-offset:5px}
+.contact-line__qr{display:block;width:160px;height:160px;max-width:100%;object-fit:contain;background:#fff}
+.contact-line p.contact-line__note{font-size:14px;margin-top:14px}
+.tokyo-education{background:#eaf1f2;color:#163e4c}
+.tokyo-education .nbc-wrap{width:min(1160px,calc(100% - 64px));margin:0 auto}
+.tokyo-education__inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;border-top:3px solid #527b84;padding-top:36px}
+.tokyo-education p.tokyo-education__label{font-size:15px;letter-spacing:.06em;margin-bottom:20px}
+.tokyo-education h2{font-size:clamp(28px,3.2vw,44px);font-weight:700;line-height:1.5;letter-spacing:.02em}
+.tokyo-education__copy p{font-size:17px;line-height:1.9}
+.tokyo-education__link{display:inline-flex;gap:24px;align-items:center;margin-top:24px;border-bottom:1px solid;padding-bottom:8px;font-size:16px;font-weight:700}
+.tokyo-education--primary{margin-top:28px;margin-bottom:48px;padding-block:56px 64px;border-top:3px solid #b59b63}
+.tokyo-education--primary .tokyo-education__inner{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:44px;border-top:0;padding-top:0}
+.tokyo-education--primary p.tokyo-education__eyebrow{margin:0 0 24px;font:600 14px/1.6 var(--font-en);letter-spacing:.16em;color:#436775}
+.tokyo-education--primary h1{margin:0;font-size:clamp(32px,3.6vw,52px);font-weight:700;line-height:1.5;letter-spacing:.01em}
+.tokyo-education--primary h1 span{display:block}
+.tokyo-education--primary p.tokyo-education__operator{display:inline-block;margin-top:28px;padding:10px 16px;border:1px solid #a8bec4;background:#fff;font-size:19px;font-weight:600;line-height:1.65;color:#214d5c}
+.tokyo-education--primary p.tokyo-education__message{margin:0 0 18px;font-size:23px;font-weight:600;line-height:1.7}
+.tokyo-education--primary .tokyo-education__link{padding:14px 18px;border:1px solid #315e6e;border-radius:4px;background:#315e6e;color:#fff;font-size:16px}
+.tokyo-education--primary .tokyo-education__link:hover{background:#244b5a}
+.nbc-page :is(.nbc-intro,.nbc-principles,.nbc-program,.nbc-activity,.nbc-partnership) p{font-size:17px;line-height:1.9}
+@media(max-width:1240px){
+  .site-header__topbar{display:none!important}
+  .site-header__main{padding:10px 0!important;gap:14px!important}
+  .site-header__brand{margin-right:auto!important}
+  .site-header__nav{display:none!important}
+  .site-header__main>.hamburger{display:block!important}
+}
+@media(max-width:768px){
+  body,main p,main .lead,main :is(.numbered-row p,.business-story__content p,.page-intro__body p,.notice p,.contact-panel p,.form-bridge p,.news-detail__body p){font-size:16px;line-height:1.9}
+  .hero-inner{max-width:none!important;padding:40px 24px 44px!important;gap:18px!important}
+  .hero h1{font-size:clamp(32px,7.5vw,42px)!important}
+  .hero .lead{font-size:16px!important}
+  .hero-frame{inset:12px}
+  .hero .trust .ti{padding:10px 12px}
+  .today,.domain-section{padding-top:44px!important;padding-bottom:48px!important}
+  .domain-card__body p,.domain-section__lead,.today__item p,.today__entry-head p,.project-card__body p,.entry-routes__head p,.result-card__body p{font-size:16px!important}
+  .news-index .notice-row{grid-template-columns:26px minmax(0,1fr) 20px;gap:12px;padding:20px 14px}
+  .notice-row__num{grid-column:1;grid-row:1}
+  .notice-row__date{grid-column:2;grid-row:1}
+  .notice-row__body{grid-column:2 / -1;grid-row:2}
+  .notice-row__arrow{grid-column:3;grid-row:1}
+  .notice-row__body h2{font-size:18px;line-height:1.65}
+  .notice-row__body p{font-size:16px;line-height:1.85}
+  .contact-before .numbered-row{grid-template-columns:28px minmax(0,1fr);gap:10px 16px;padding:24px 0}
+  .contact-before .numbered-row h3{grid-column:2;grid-row:1;font-size:19px}
+  .contact-before .numbered-row p{grid-column:2;grid-row:2;font-size:16px}
+  .company-profile-first .company-table :is(th,td){font-size:16px}
+  .today__head p,.result-block__head p,.purchase-area__lead,.c-feat__lead,.c-feat__card p,.site-contact .contact-demo :is(.contact-lead,.contact-channel__note,.contact-primary-copy p){font-size:16px!important}
+  .tokyo-education .nbc-wrap{width:calc(100% - 40px)}
+  .tokyo-education__inner{grid-template-columns:1fr;gap:24px;padding-top:24px}
+  .tokyo-education--primary{margin-top:18px;margin-bottom:28px;padding-block:32px 36px}
+  .tokyo-education--primary .tokyo-education__inner{grid-template-columns:1fr;gap:26px}
+  .tokyo-education--primary h1{font-size:clamp(28px,7.5vw,42px)}
+  .tokyo-education--primary p.tokyo-education__operator{margin-top:20px;font-size:17px;padding:10px 12px}
+  .tokyo-education--primary p.tokyo-education__message{font-size:20px}
+  .tokyo-education--primary .tokyo-education__link{display:flex;justify-content:space-between;gap:12px;font-size:15px}
+  .tokyo-education__copy p,.nbc-page :is(.nbc-intro,.nbc-principles,.nbc-program,.nbc-activity,.nbc-partnership) p{font-size:16px}
+}
+@media(max-width:600px){
+  .site-header .site-header__cta{min-width:0}
+  .site-header__brand img{max-width:130px}
+  .site-header__cta-label{font-size:14px}
+}

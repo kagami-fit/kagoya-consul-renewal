@@ -29,6 +29,7 @@ ROOT_PAGES = [
     "team.html",
     "features.html",
     "for-sale.html",
+    "sold-properties.html",
     "properties.html",
     "wp-sale.html",
     "property-detail.html",
@@ -49,6 +50,8 @@ BLOG_PAGES = [
 
 def current_key(relative_path: str) -> str:
     name = Path(relative_path).name
+    if name in {"index.html", "animation-dynamic.html"}:
+        return "home"
     if name == "about.html":
         return "company"
     if name == "business.html":
@@ -107,6 +110,7 @@ def header(prefix: str, current: str) -> str:
 
     left = "".join(
         [
+            link(home, "ホーム", "common_common-header_A_022", "home", current),
             link(company, "会社情報", "common_common-header_A_002", "company", current),
             link(business, "事業紹介", "common_common-header_A_003", "business", current),
             link(properties, "販売物件", "common_common-header_A_004", "property", current),
@@ -209,6 +213,9 @@ def update_page(relative_path: str, prefix: str) -> None:
     html = re.sub(r"<main(?![^>]*\bid=)([^>]*)>", r'<main id="main"\1>', html, count=1)
     if f'{prefix}assets/js/site.js' not in html:
         html = html.replace("</body>", f'<script src="{prefix}assets/js/site.js"></script>\n</body>', 1)
+    html = re.sub(r'(assets/js/site\.js)(?:\?[^\"]*)?(?=\")', r'\1?v=20260916-readable', html)
+    if "site-refinements.css" not in html:
+        html = html.replace("</head>", f'<link rel="stylesheet" href="{prefix}assets/css/site-refinements.css?v=20260916">\n</head>', 1)
 
     path.write_text(html, encoding="utf-8")
     print(f"updated: {relative_path}")

@@ -224,7 +224,16 @@ PAGES = {
 
 def main() -> None:
     updated = []
+    # 2026-09-16: 承認済みの削除箇所を、再実行で復活させない。
+    removed_visual_pages = {
+        "news.html", "contact.html", "services.html", "service.html",
+        "inheritance-vacant-house.html", "sale-consulting.html",
+        "brokerage-purchase.html", "rights-coordination.html", "fukuri.html",
+        "property-management.html", "corporate-seminars.html",
+    }
     for filename, config in PAGES.items():
+        if filename in removed_visual_pages:
+            continue
         path = ROOT / filename
         text = path.read_text(encoding="utf-8")
         if "data-subpage-visual" in text:

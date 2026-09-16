@@ -1,43 +1,19 @@
 # KAGOYA コーポレートサイト
 
-株式会社籠やの確定HP設計書を内容の正本にし、`sample07`と同じデザイン構成・スクロール演出へ作り替えた静的HTMLのコーポレートサイトです。配色と書体はKAGOYAの指定を優先しています。
+[公開サイト](https://kagami-fit.github.io/kagoya-consul-renewal/)の編集元です。
 
-## ページ構成
+- 初めて開く方：[ABOUT.md](ABOUT.md)
+- 修正の仕方：[更新ガイド](docs/更新ガイド.md)
+- 会社・事業・採用内容のナレッジ：[SPEC.md](SPEC.md)
+- 今回の変更：[2026-09-16修正履歴](docs/修正履歴_20260916.md)
+- ファイルとページの対応：[directory-map.md](directory-map.md)
 
-- トップページ
-- 「今日の籠や」更新フィードと、いま動いている8つの事業領域を見せるサイト全体の表現
-- 進行中プロジェクトのデモカードと、案件相談・協業・投資・採用の導線
-- 社会貢献セクション（空き家・相続、介護・地域連携、次の担い手）と全ページ共通ナビ
-- サービス総合と5つの詳細ページ
-- 案件相談・協業・投資・採用へ分岐する4つの相談入口
-- 物件情報
-- 会社情報
-- 知る・読みもの／ブログ
-- お問い合わせ
-- プライバシーポリシー
-
-## 確認方法
-
-GitHub Pagesの公開URLからそのまま閲覧できます。
-
-https://kagami-fit.github.io/kagoya-consul-renewal/
-
-デザイン比較ページ：
-
-https://kagami-fit.github.io/kagoya-consul-renewal/design-comparison.html
-
-ローカルでは、このフォルダをWebサーバーの公開フォルダとして開いてください。
-
-再生成は次の順序です。
+## ローカル確認
 
 ```bash
-python3 scripts/build_site.py
-python3 scripts/build_sample07_home.py
-python3 scripts/update_blog_chrome.py
+python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-## 補足
+`http://127.0.0.1:8765/`を開きます。JSONを読み込むため、HTMLファイルを直接開かずWebサーバーを使ってください。
 
-静的サイトのため、入力内容の送信は株式会社籠やの現行公式フォームへ安全に引き継ぐ導線にしています。電話・メールのリンクも利用できます。「今日の籠や」は `data/today-items.json` を更新すると一覧を差し替えられます。現在は社内確認後のJSON更新を基本とし、SNS・WordPress・自動連携への拡張方法は `TODAY_FEED.md` に整理しています（ローカルをfile://で開く場合はHTML内の初期表示を使用します）。
-
-`design-sample07.html`、`design-sample12.html`、`design-sample33.html` は、現行トップと同じ文章・画像を使った比較用デザインです。比較専用のため検索エンジンには登録しない設定です。
+旧手順は`docs/reference/`に保管しています。`scripts/build_site.py`・`build_sample07_home.py`は初期生成用で、日常更新には使いません。

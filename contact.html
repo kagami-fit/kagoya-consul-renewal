@@ -19,14 +19,16 @@
 <link rel="stylesheet" href="assets/css/sample07-theme.css">
 <style>@media(max-width:768px){.zoroya-breakpoint{display:block}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/","telephone":"03-4400-7994"},{"@type":"WebSite","name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/"},{"@type":"ContactPage","name":"お問い合わせ","url":"https://kagami-fit.github.io/kagoya-consul-renewal/contact.html"}]}</script>
+<link rel="stylesheet" href="assets/css/site-refinements.css?v=20260916">
+<link rel="stylesheet" href="assets/css/contact-page.css?v=20260916-light">
 </head>
-<body class="sample07-subpage">
+<body class="sample07-subpage contact-page">
 <a class="skip-link" href="#main">本文へスキップ</a>
 <!-- ZOROYA:HEADER -->
 <header class="site-header">
   <div class="site-header__topbar"><div class="in"><span class="site-header__ticker"><b>LIVE</b><span data-live-ticker>案件・商談・提携の動きを随時更新しています。</span></span><div class="right"><span>10:00–18:00／水曜定休</span><span class="tel">03-4400-7994</span><a href="contact.html" data-cms-id="common_common-header_A_001">相談する</a></div></div></div>
   <div class="site-header__main">
-    <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="about.html" data-cms-id="common_common-header_A_002">会社情報</a><a href="business.html" data-cms-id="common_common-header_A_003">事業紹介</a><a href="for-sale.html" data-cms-id="common_common-header_A_004">販売物件</a><a href="services.html" data-cms-id="common_common-header_A_005">サービス</a></nav>
+    <nav class="site-header__nav is-left" aria-label="主要ナビゲーション（左）"><a href="index.html" data-cms-id="common_common-header_A_022">ホーム</a><a href="about.html" data-cms-id="common_common-header_A_002">会社情報</a><a href="business.html" data-cms-id="common_common-header_A_003">事業紹介</a><a href="for-sale.html" data-cms-id="common_common-header_A_004">販売物件</a><a href="services.html" data-cms-id="common_common-header_A_005">サービス</a></nav>
     <a class="site-header__brand" href="index.html" aria-label="KAGOYA 株式会社籠や トップへ"><picture><source type="image/webp" srcset="src/logo.webp"><img src="src/logo.png" alt="KAGOYA 株式会社籠や" loading="eager" decoding="async"></picture></a>
     <nav class="site-header__nav is-right" aria-label="主要ナビゲーション（右）"><a href="index.html#service-area" data-cms-id="common_common-header_A_006">対応エリア</a><a href="news.html" data-cms-id="common_common-header_A_007">お知らせ</a><a href="social-contribution.html" data-cms-id="common_common-header_A_008">社会貢献</a><a href="contact.html" data-cms-id="common_common-header_A_009" aria-current="page">相談する</a></nav>
     <a class="site-header__cta" href="contact.html" data-cms-id="common_common-header_A_010">相談する</a>
@@ -55,56 +57,60 @@
     </div>
   </section>
 
-  <section class="page-sec">
-    <div class="wrap contact-grid">
-      <aside class="contact-panel">
-        <span class="eyebrow">By phone</span>
-        <h2>お電話で相談</h2>
-        <a class="contact-phone" href="tel:0344007994">03-4400-7994</a>
-        <p>受付 10:00〜18:00<br>定休日：水曜日</p>
-        <div class="notice">所在地、現在の利用状況、ご希望の時期が分かると相談がスムーズです。分からない項目はそのままで構いません。</div>
-        <h3>所在地</h3>
-        <p>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</p>
-        <h3>メール</h3>
-        <p><a href="mailto:info@kagoya-consul.com">info@kagoya-consul.com</a></p>
-      </aside>
-      <div>
-        <span class="eyebrow">Inquiry form</span>
-        <h2>公式フォームで相談</h2>
+  <section class="page-sec contact-channels-section">
+    <div class="wrap contact-grid contact-grid--stacked">
+      <section class="contact-channel-block contact-channel-block--form" aria-labelledby="contact-form-title">
+        <header class="contact-channel__header">
+          <div class="contact-channel__kicker"><span class="contact-channel__number" aria-hidden="true">01</span><span>Inquiry form</span></div>
+          <h2 id="contact-form-title">公式フォームで相談</h2>
+        </header>
         <!-- ZOROYA:CONTACTFORM -->
         <div class="form-bridge">
           <p>お問い合わせは、株式会社籠やの公式フォームで受け付けています。</p>
           <div class="form-bridge__topics"><span>相続コンサル</span><span>不動産コンサル</span><span>仲介・買取</span><span>底地・借地</span><span>エフクリ</span><span>賃貸経営</span><span>企業向けセミナー</span><span>協業・社会貢献</span></div>
           <p data-inquiry-note>お名前、ご連絡先、物件の所在地、ご相談内容を入力できます。分かる範囲だけで構いません。</p>
-          <a class="btn" href="https://kagoya-consul.co.jp/contactus/" target="_blank" rel="noopener" data-inquiry-form-link>公式お問い合わせフォーム</a>
+          <a class="contact-action contact-action--form" href="https://kagoya-consul.co.jp/contactus/" target="_blank" rel="noopener noreferrer" aria-label="公式お問い合わせフォーム（新しいタブ）" data-inquiry-form-link><span>公式お問い合わせフォーム</span><span class="contact-action__arrow" aria-hidden="true">↗</span></a>
           <p class="form-bridge__note">公式サイトの入力画面が新しいタブで開きます。</p>
         </div>
         <!-- /ZOROYA:CONTACTFORM -->
-      </div>
+      </section>
+      <section class="contact-channel-block contact-channel-block--phone" aria-labelledby="contact-phone-title">
+        <header class="contact-channel__header">
+          <div class="contact-channel__kicker"><span class="contact-channel__number" aria-hidden="true">02</span><span>By phone</span></div>
+          <h2 id="contact-phone-title">電話で相談</h2>
+        </header>
+        <div class="contact-panel">
+          <a class="contact-phone" href="tel:0344007994">03-4400-7994</a>
+          <p class="contact-phone__hours">受付 10:00〜18:00 <span>定休日：水曜日</span></p>
+          <div class="notice">所在地、現在の利用状況、ご希望の時期が分かると相談がスムーズです。分からない項目はそのままで構いません。</div>
+          <h3>所在地</h3>
+          <p>〒152-0032 東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号</p>
+          <h3>メール</h3>
+          <p><a href="mailto:info@kagoya-consul.com">info@kagoya-consul.com</a></p>
+        </div>
+      </section>
+      <section class="contact-channel-block contact-channel-block--line" id="official-line" aria-labelledby="contact-line-title">
+        <header class="contact-channel__header">
+          <div class="contact-channel__kicker"><span class="contact-channel__number" aria-hidden="true">03</span><span>Official LINE</span></div>
+          <h2 id="contact-line-title">公式LINEで相談</h2>
+        </header>
+        <div class="contact-panel contact-line">
+          <p>友だち追加のうえ、ご相談内容をメッセージでお送りください。</p>
+          <a class="contact-line__button" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=096igviz" target="_blank" rel="noopener noreferrer" aria-label="LINEで友だち追加（新しいタブ）">
+            <svg class="contact-line__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 11.5c0 4.1-3.8 7.5-8.5 7.5-1.1 0-2.2-.2-3.2-.6L4 20l1.2-4A7 7 0 0 1 3 11.5C3 7.4 6.8 4 11.5 4S20 7.4 20 11.5Z"/><circle cx="8" cy="11.5" r="1"/><circle cx="11.5" cy="11.5" r="1"/><circle cx="15" cy="11.5" r="1"/></svg>
+            <span>LINEで友だち追加</span><span class="contact-line__arrow" aria-hidden="true">↗</span>
+          </a>
+          <figure class="contact-line__qr-card">
+            <span class="contact-line__qr-label">KAGOYA 公式LINE</span>
+            <img class="contact-line__qr" src="src/kagoya-line-qr.webp" alt="株式会社籠や 公式LINEの友だち追加用QRコード" width="160" height="160" loading="lazy" decoding="async">
+            <figcaption>スマートフォンで読み取り</figcaption>
+          </figure>
+          <p class="contact-line__note">スマートフォンはボタンから、パソコンはQRコードからご利用いただけます。</p>
+        </div>
+      </section>
     </div>
   </section>
-
-  <!-- SUBPAGE:VISUALS -->
-<section class="page-sec page-sec--visual" data-subpage-visual>
-  <div class="wrap visual-journal">
-    <div class="visual-journal__head">
-      <div><span class="eyebrow">A calm first step</span><h2>落ち着いて話せる場所から。</h2></div>
-      <p>相談内容が固まっていなくても大丈夫です。対話を通じて現在地を整理し、次の一歩をご案内します。</p>
-    </div>
-    <div class="visual-journal__gallery visual-journal__gallery--duo">
-        <figure class="visual-journal__figure">
-          <picture><source type="image/webp" srcset="src/gen-company.webp"><img src="src/gen-company.jpg" alt="株式会社籠やの落ち着いた相談スペース" loading="lazy" decoding="async"></picture>
-          <figcaption><span>相談スペース</span><small>KAGOYA / MEGURO</small></figcaption>
-        </figure>
-        <figure class="visual-journal__figure">
-          <picture><source type="image/webp" srcset="src/gen-consultation.webp"><img src="src/gen-consultation.jpg" alt="不動産について担当者と話す相談風景" loading="lazy" decoding="async"></picture>
-          <figcaption><span>対話から始める</span><small>FIRST MEETING</small></figcaption>
-        </figure>
-    </div>
-  </div>
-</section>
-<!-- /SUBPAGE:VISUALS -->
-<section class="page-sec alt">
+<section class="page-sec alt contact-before">
     <div class="wrap"><div class="section-head"><span class="eyebrow">Before contact</span><h2>ご相談前に</h2></div>
       <div class="numbered-list">
         <div class="numbered-row"><h3>売却を決めていなくても構いません</h3><p>状況と選択肢を知るための相談です。</p></div>
@@ -125,6 +131,6 @@
   <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
 </footer>
 <!-- /ZOROYA:FOOTER -->
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=20260916-readable"></script>
 </body>
 </html>

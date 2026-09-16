@@ -1,0 +1,241 @@
+/* お問い合わせ専用。窓口の順序・1カラムを保ち、他ページへ影響させない。 */
+.contact-page main{
+  --main:#4b555e;
+  --main-deep:#384149;
+  --navy:#343c43;
+  --sub:#657078;
+  --ink:#333b42;
+  --muted:#68727a;
+  --accent:#aeb7be;
+  --teal:#aeb7be;
+  --teal-deep:#64717a;
+}
+.contact-page .page-hero{
+  padding:72px 0 64px;
+  background:linear-gradient(120deg,#f4f5f6 0%,#fff 72%);
+}
+.contact-page .page-hero__grid{align-items:center}
+.contact-page .page-hero h1{color:#343c43;letter-spacing:.035em}
+.contact-page .page-hero__art{
+  min-height:0;
+  aspect-ratio:4/3;
+  border:0;
+  border-radius:6px;
+  box-shadow:18px 18px 0 #e9ecee;
+}
+.contact-page .page-hero__art::before,.contact-page .page-hero__art::after{display:none}
+.contact-page .page-hero__art img{display:block;filter:none;transform:none}
+.contact-page .contact-channels-section{
+  padding:64px 0 80px;
+  background:#f5f6f7;
+  border-top:1px solid #e1e4e6;
+}
+.contact-page .contact-grid--stacked{max-width:920px;gap:28px}
+.contact-page .contact-channel-block{
+  padding:clamp(26px,4.5vw,52px);
+  border:1px solid #dce0e3;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 14px 36px -30px #353b4240;
+  overflow-wrap:anywhere;
+}
+.contact-page .contact-channel__header{margin-bottom:24px}
+.contact-page .contact-channel__kicker{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  color:#636d75;
+  font:600 14px/1.5 var(--font-en);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.contact-page .contact-channel__number{
+  display:inline-flex;
+  align-items:center;
+  gap:16px;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:0;
+}
+.contact-page .contact-channel__number::after{content:"";width:32px;height:1px;background:#adb6bd}
+.contact-page .contact-channel__header h2{
+  margin:14px 0 0;
+  color:#333b42;
+  font-size:clamp(25px,3vw,34px);
+  line-height:1.5;
+  letter-spacing:.025em;
+}
+.contact-page .contact-channel-block :is(.form-bridge,.contact-panel){
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.contact-page .contact-channel-block p{color:#59636b}
+.contact-page .contact-channel-block--form{
+  border-color:#d7dde1;
+  background:#edf0f2;
+  box-shadow:0 20px 40px -30px #555c6330;
+}
+.contact-page .contact-channel-block--form .contact-channel__kicker{color:#5d6871}
+.contact-page .contact-channel-block--form .contact-channel__header h2{color:#333b42}
+.contact-page .contact-channel-block--form p{color:#525e67}
+.contact-page .form-bridge__topics{gap:8px;margin:24px 0}
+.contact-page .form-bridge__topics span{
+  padding:6px 12px;
+  border:1px solid #cfd6dc;
+  border-radius:3px;
+  background:#f8f9fa;
+  color:#56626b;
+  font-size:14px;
+  line-height:1.7;
+}
+.contact-page .contact-action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  max-width:100%;
+  min-height:60px;
+  margin-top:26px;
+  padding:12px 16px 12px 24px;
+  border:1px solid #c4ccd2;
+  border-radius:5px;
+  background:#fff;
+  color:#3e4952;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.6;
+  text-decoration:none;
+  transition:background .2s ease,box-shadow .2s ease;
+}
+.contact-page .contact-action__arrow{
+  display:grid;
+  flex:0 0 32px;
+  width:32px;
+  height:32px;
+  place-items:center;
+  border-radius:50%;
+  background:#e9edef;
+  font-size:19px;
+  font-weight:400;
+}
+.contact-page .contact-action:hover{background:#f7f8f9;box-shadow:0 5px 16px #363e451a}
+.contact-page .contact-action:focus-visible,.contact-page .contact-line__button:focus-visible{
+  outline:3px solid #818e98;
+  outline-offset:5px;
+}
+.contact-page .form-bridge p.form-bridge__note{margin-top:14px;color:#5d6871;font-size:14px}
+.contact-page .contact-phone{
+  display:inline-block;
+  margin:0 0 16px;
+  color:#414d56;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:600;
+  line-height:1.3;
+  letter-spacing:.025em;
+}
+.contact-page .contact-phone:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px}
+.contact-page .contact-phone__hours{margin:0;color:#606b74;font-size:16px}
+.contact-page .contact-phone__hours span{display:inline-block;margin-left:16px}
+.contact-page .contact-panel .notice{
+  margin-top:24px;
+  padding:16px 20px;
+  border-left:2px solid #b4bec6;
+  background:#f2f4f5;
+  color:#596670;
+}
+.contact-page .contact-panel h3{margin:24px 0 6px;font-size:16px;font-weight:700}
+.contact-page .contact-panel h3+p{margin-top:0}
+.contact-page .contact-panel a[href^="mailto:"]{text-underline-offset:4px}
+.contact-page .contact-channel-block--line{
+  border-color:#d9e6de;
+  background:#f9fcfa;
+  text-align:center;
+}
+.contact-page .contact-channel-block--line .contact-channel__kicker{justify-content:center;color:#3e6d56}
+.contact-page .contact-channel-block--line .contact-channel__number::after{background:#7a9c88}
+.contact-page .contact-line__button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  width:fit-content;
+  max-width:100%;
+  min-height:60px;
+  margin:24px 0 0;
+  padding:12px 14px 12px 20px;
+  border:1px solid #b9cec1;
+  border-radius:999px;
+  background:#fff;
+  color:#22543a;
+  box-shadow:0 5px 14px -10px #19482c66;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.6;
+  text-decoration:none;
+  transition:background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.contact-page .contact-line__icon{width:24px;height:24px;flex:0 0 24px}
+.contact-page .contact-line__icon path{fill:#087c43}
+.contact-page .contact-line__icon circle{fill:#fff}
+.contact-page .contact-line__arrow{
+  display:grid;
+  place-items:center;
+  flex:0 0 32px;
+  width:32px;
+  height:32px;
+  margin-left:8px;
+  border-radius:50%;
+  background:#edf5ef;
+  color:#2c6543;
+  font-size:19px;
+  font-weight:400;
+  transition:transform .2s ease;
+}
+.contact-page .contact-line__button:hover{background:#edf6f0;border-color:#80a88e;box-shadow:0 8px 20px -14px #19482c80}
+.contact-page .contact-line__button:hover .contact-line__arrow{transform:translate(1px,-1px)}
+.contact-page .contact-line__qr-card{
+  width:224px;
+  max-width:100%;
+  margin:28px auto 0;
+  padding:20px;
+  border:1px solid #dfe8e3;
+  border-radius:8px;
+  background:#fff;
+  text-align:center;
+}
+.contact-page .contact-line__qr-label{display:block;color:#365647;font-size:14px;letter-spacing:.035em}
+.contact-page .contact-line__qr{display:block;width:160px;height:160px;max-width:100%;margin:14px auto 10px;object-fit:contain}
+.contact-page .contact-line__qr-card figcaption{color:#50665b;font-size:14px;line-height:1.7}
+.contact-page .contact-line p.contact-line__note{max-width:38em;margin:20px auto 0;color:#51655b;font-size:14px;line-height:1.85}
+.contact-page .contact-before{background:#fff;padding:72px 0}
+.contact-page .contact-before .wrap{max-width:920px}
+.contact-page .contact-before .section-head{margin-bottom:24px}
+.contact-page .contact-before .numbered-row{gap:20px}
+@media(max-width:768px){
+  .contact-page .page-hero{padding:40px 0 48px}
+  .contact-page .page-hero__art{box-shadow:8px 8px 0 #e9ecee}
+  .contact-page .contact-channels-section{padding:36px 0 48px}
+  .contact-page .contact-grid--stacked{gap:22px;width:calc(100% - 32px)}
+  .contact-page .contact-channel-block{padding:26px 24px;border-radius:8px}
+  .contact-page .contact-channel__header{margin-bottom:20px}
+  .contact-page .contact-channel__header h2{font-size:25px}
+  .contact-page .contact-channel-block p{font-size:16px}
+  .contact-page .contact-action{gap:14px;width:100%;padding:12px 14px;font-size:15px}
+  .contact-page .contact-phone__hours span{display:block;margin-left:0;margin-top:4px}
+  .contact-page .contact-panel .notice{padding:14px 16px}
+  .contact-page .contact-before{padding:48px 0}
+}
+@media(max-width:380px){
+  .contact-page .contact-channel-block{padding:24px 18px}
+  .contact-page .contact-channel__header h2{font-size:23px}
+  .contact-page .contact-line__button{gap:8px;padding:10px 12px;font-size:14px;min-height:54px}
+  .contact-page .contact-line__icon{width:20px;height:20px;flex-basis:20px}
+  .contact-page .contact-line__arrow{width:26px;height:26px;flex-basis:26px;margin-left:0;font-size:17px}
+  .contact-page .contact-action{font-size:14px;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .contact-page .contact-action,.contact-page .contact-line__button,.contact-page .contact-line__arrow{transition:none}
+}

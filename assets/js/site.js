@@ -676,16 +676,7 @@ ${contactRoutes}
       if (propertyTargets.income) propertyTargets.income.innerHTML = income.length ? income.map((item) => listingCard(item, false)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
       if (propertyTargets.other) propertyTargets.other.innerHTML = other.length ? other.map((item) => listingCard(item, true)).join('') : '<p class="listing-empty">現在公開中の物件はありません。</p>';
 
-      const totalNode = document.querySelector('.page-intro__pull');
-      if (totalNode) {
-        const visibleCurrentCount = residential.length + income.length;
-        totalNode.textContent = propertyTargets.soldArchive ? `${sold.length}件` : `${propertyTargets.other ? current.length : visibleCurrentCount}件`;
-      }
-      const counts = { '#residential': residential.length, '#income': income.length, '#other-listings': other.length };
-      Object.entries(counts).forEach(([href, count]) => {
-        const node = document.querySelector(`.listing-categories a[href="${href}"] span`);
-        if (node) node.textContent = String(count);
-      });
+      // 一覧の件数は表示しない。物件データや各カードの価格・面積はそのまま保持する。
       if (window.ScrollTrigger) window.setTimeout(() => window.ScrollTrigger.refresh(), 80);
     }).catch(() => {});
   }

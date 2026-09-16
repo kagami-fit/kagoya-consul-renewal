@@ -15,8 +15,8 @@
 .nbc-hero{width:min(1320px,calc(100% - 56px));margin-inline:auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:48px 72px}
 .nbc-hero-copy{min-width:0;padding-left:clamp(0px,2vw,32px)}
 .nbc-page .nbc-eyebrow{font:700 12px/1.8 var(--font-en);letter-spacing:.15em;color:var(--main)}
-.nbc-hero h1{font-size:clamp(30px,3.6vw,48px);line-height:1.65;margin:24px 0;letter-spacing:.01em;text-wrap:initial;word-break:normal}
-.nbc-hero h1 span{display:block;color:var(--main)}
+.nbc-hero .nbc-hero-title{font-size:clamp(30px,3.6vw,48px);line-height:1.65;margin:24px 0;letter-spacing:.01em;text-wrap:initial;word-break:normal}
+.nbc-hero .nbc-hero-title span{display:block;color:var(--main)}
 .nbc-hero-lead{max-width:32em}
 .nbc-text-link,.nbc-source-link{display:inline-flex;align-items:center;gap:12px;color:var(--main);border-bottom:1px solid var(--line);padding-block:10px;font-size:14px;font-weight:700;text-decoration:none;margin-top:22px}
 .nbc-text-link:hover,.nbc-source-link:hover{border-color:var(--main);color:var(--main-deep)}
@@ -96,7 +96,7 @@
 @media(max-width:1000px){
   .nbc-hero{grid-template-columns:1fr 1fr;gap:28px}
   .nbc-hero-copy{padding-left:0}
-  .nbc-hero h1{font-size:34px}
+  .nbc-hero .nbc-hero-title{font-size:34px}
   .nbc-hero-note{margin-right:12px;padding:16px 20px}
   .nbc-intro-grid,.nbc-principles,.nbc-partnership{column-gap:36px}
   .nbc-program-title{gap:32px}
@@ -107,7 +107,7 @@
   .nbc-hero,.nbc-section,.nbc-jump-nav{width:calc(100% - 40px)}
   .nbc-page section[id]{scroll-margin-top:88px}
   .nbc-hero{grid-template-columns:1fr;padding-block:34px 28px;gap:28px}
-  .nbc-hero h1{font-size:clamp(29px,6.6vw,40px);margin-block:18px}
+  .nbc-hero .nbc-hero-title{font-size:clamp(29px,6.6vw,40px);margin-block:18px}
   .nbc-hero-image-wrap{padding-bottom:12px}
   .nbc-hero-image-wrap .nbc-hero-image{aspect-ratio:4/3}
   .nbc-hero-note{margin-right:16px}
