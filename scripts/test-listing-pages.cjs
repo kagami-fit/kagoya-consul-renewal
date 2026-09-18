@@ -1,4 +1,4 @@
-// サービスのヒーロー復元・会社概要とお知らせ一覧の先頭配置・既存導線を確認する。
+// サービス・会社概要・お知らせの配置と、販売／成約一覧への導線を確認する。
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -61,3 +61,21 @@ assert.ok(fs.existsSync(path.join(root, 'news-detail.html')));
 assert.doesNotMatch(news, /<span class="notice-row__media">/);
 assert.doesNotMatch(read('news-detail.html'), /<figure class="news-detail__visual">/);
 console.log(`PASS: service hero and six links retained; company profile with affiliations; ${data.count} news entries without photos`);
+
+for (const file of ['index.html', 'animation-dynamic.html']) {
+  const html = read(file);
+  const resultHeader = html.match(/<div class="result-block__head">([\s\S]*?)<div class="result-grid">/);
+  assert.ok(resultHeader, `${file}: 成約実績の見出しがある`);
+  assert.match(resultHeader[1], /<a class="facility__link" href="sold-properties\.html">成約物件一覧を見る<\/a>/,
+    `${file}: 販売中物件と同じデザインで成約一覧へ進める`);
+  assert.equal((resultHeader[1].match(/href="sold-properties\.html"/g) || []).length, 1,
+    `${file}: 成約一覧ボタンを重複させない`);
+  assert.match(resultHeader[1], /公開可能な成約物件の一部をご紹介します。未公開物件は掲載していません。/);
+  assert.match(html, /<a class="facility__link" href="for-sale\.html">販売中物件一覧を見る<\/a>/);
+  for (const [, attrs, source] of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
+    if (!attrs.includes('application/ld+json') && source.trim()) new Function(source);
+  }
+}
+assert.match(read('sold-properties.html'), /<h1>成約物件一覧<\/h1>/);
+assert.match(read('sold-properties.html'), /id="sold-listings"/);
+console.log('PASS: home and mirror link to the sold archive; current listings and disclosure copy retained');
