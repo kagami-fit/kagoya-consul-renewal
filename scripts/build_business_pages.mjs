@@ -560,8 +560,18 @@ ${footer()}
 </html>\n`;
 }
 
+const familyFutureEntry = `
+  <section class="family-entry" aria-label="家族未来会議のご案内">
+    <a class="family-entry__link" href="kazokumiraikaigi.html">
+      <picture><source type="image/webp" srcset="src/gen-family-future.webp"><img src="src/gen-family-future.jpg" alt="家族で将来について話し合うイメージ" width="1536" height="1024" loading="lazy" decoding="async"></picture>
+      <div><span class="family-entry__label">FAMILY FUTURE MEETING</span><h2>家族未来会議</h2><p>親の暮らし、実家、相続。家族の「これから」を、一緒に話す時間。</p></div>
+      <span class="family-entry__action"><span>詳しく見る</span><b aria-hidden="true">→</b></span>
+    </a>
+  </section>
+`;
+
 function detailPage(item) {
-  return `${head({ title: item.title, description: item.description, page: item.page, image: item.heroImage })}
+  return `${head({ title: item.title, description: item.description, page: item.page, image: item.heroImage }).replace('</head>', item.id === 'inheritance' ? '<link rel="stylesheet" href="assets/css/family-future-entry.css?v=20260919">\n</head>' : '</head>')}
 <body class="sample07-subpage business-detail-page">
 <a class="skip-link" href="#main">本文へスキップ</a>
 ${header()}
@@ -574,6 +584,7 @@ ${header()}
     </div>
   </section>
   <div class="wrap">${businessNav(item.id)}</div>
+  ${item.id === 'inheritance' ? familyFutureEntry : ''}
   <!-- 末尾の問い合わせ文面・相談目的はsite.jsでページ別に管理 -->
   <section class="page-sec biz-more"><div class="wrap"><div class="section-head"><span class="eyebrow">More business</span><h2>ほかの事業を見る</h2></div>${businessNav(item.id)}</div></section>
 </main>

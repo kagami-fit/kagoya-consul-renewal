@@ -15,6 +15,7 @@
 | `corporate-seminars.html` | 企業向けセミナー事業 |
 | `social-contribution.html` | 社会貢献（NBCジュニア／東京都の起業家教育プログラム紹介） |
 | `services.html` | サービス総合 |
+| `kazokumiraikaigi.html` | 家族未来会議LP（初稿） |
 | `purchase-asset.html` | 購入・資産形成相談 |
 | `corporate-benefits.html` | 法人向け不動産相談 |
 | `team.html` | 専門家・チーム |

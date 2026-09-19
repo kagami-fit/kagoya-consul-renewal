@@ -116,3 +116,13 @@ Create one photorealistic editorial image for a Japanese corporate social contri
 ```text
 Create one premium photorealistic editorial photograph for an inquiry section about partnering on children's educational workshops. Landscape 3:2 aspect ratio, 1536x1024 if supported. A close candid tabletop scene in a bright Japanese meeting room: two adult education coordinators in off-white and light-gray sleeves preparing a youth entrepreneurship lesson together, one hand organizing colorful plain paper materials and a small handmade kraft-cardboard prototype while the other hand writes in an open notebook. Include a few pencils, modest blank sticky notes, and a simple lesson-plan sheet with only indistinct small lines, no readable writing. No faces, no children, no house model or real-estate documents, no laptop as main subject. Main hands and workshop materials occupy center-right and right two-thirds, quiet light-gray negative space at left for the website's existing fade. Slightly elevated 45-degree view, natural side window light, realistic anatomy and subtle texture, sophisticated understated Japanese corporate editorial aesthetic, warm neutral gray and ivory palette with restrained blue-green and ochre accents. Clearly a fictional illustrative photograph, no actual event claim, no logos, no watermark, no overlay text, no collage. Do not use supplied conversation images as references.
 ```
+
+
+## 家族未来会議LP（2026-09-19）
+
+- 方式：内蔵`image_gen`、新規生成。
+- [JPEG](gen-family-future.jpg) / [WebP](gen-family-future.webp)：1536×1024。明るい室内で親世代と子世代、担当者が話し合うイメージ。
+- 用途：`kazokumiraikaigi.html`ヒーロー、トップ・サービス・相続ページのLP入口。
+- 架空の家族・担当者。実際の顧客や社員を示す写真ではない。
+- 原寸控え：`_review/family-future/hero-original.png`（公開対象外）。既存画像の上書きなし。
+- 最終生成プロンプト：[制作メモ](../docs/家族未来会議LP_制作メモ.md#生成プロンプト)。
