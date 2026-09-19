@@ -1,6 +1,6 @@
 # 家族未来会議LP 制作メモ
 
-作成日：2026-09-19。ローカル初稿。既存GitHub Pagesへの公開は未実施。
+作成日：2026-09-19。初稿をGitHub Pagesへ公開済み（コミット`1770cf3`）。
 
 ## 内容とデザイン
 
@@ -53,3 +53,4 @@ No text, logo, watermark, graphic overlays, borders, chart, UI, or decorative il
 - 既存の`test-site-contact.cjs`、`test-listing-pages.cjs`、`test-social-images.cjs`、`test-business-images.cjs`はすべて成功。
 - JavaScript構文チェックと`git diff --check`は成功。
 - ページ内のフォーム・LINE・電話はリンク確認まで。問い合わせ送信はしていない。
+- 公開URLでLP本体、トップのLP入口、`contact.html?type=family`の相談目的表示、画像読み込みを確認。
