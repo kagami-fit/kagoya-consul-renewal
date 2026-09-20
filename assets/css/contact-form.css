@@ -1,0 +1,22 @@
+.inquiry-form{margin-top:32px;text-align:left;color:#333b42}
+.inquiry-field{padding:24px 0;border-top:1px solid #d7dde1}
+.inquiry-field>label{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:18px;font-weight:600}
+.inquiry-badge{display:inline-block;padding:2px 9px;border-radius:4px;background:#e4e7e9;color:#596269;font-size:12px;font-weight:500;white-space:nowrap}
+.inquiry-badge--required{background:#fff;color:#7c4940;border:1px solid #d4bcb6}
+.inquiry-form input:not([type=checkbox]):not([type=submit]),.inquiry-form textarea{box-sizing:border-box;width:100%;max-width:100%;padding:16px 18px;border:1px solid #b9c1c7;border-radius:6px;background:#fff;color:#333b42;font:inherit;font-size:16px;line-height:1.7}
+.inquiry-form textarea{resize:vertical;min-height:180px}
+.inquiry-form input::placeholder,.inquiry-form textarea::placeholder{color:#737b82}
+.inquiry-form :is(input,textarea,button,a):focus-visible{outline:3px solid #65747d;outline-offset:3px}
+.inquiry-consent{padding:24px 0;line-height:1.9;border-top:1px solid #d7dde1}
+.inquiry-consent label{display:flex;align-items:flex-start;gap:12px}
+.inquiry-consent input[type=checkbox]{flex:none;width:20px;height:20px;margin-top:6px;accent-color:#65747d}
+.inquiry-consent a,.inquiry-preview-notice a{text-decoration:underline;text-underline-offset:4px;color:inherit}
+.inquiry-submit{display:block;width:100%;max-width:420px;min-height:60px;margin:12px auto 0;padding:16px 24px;border:1px solid #b9c1c7;border-radius:8px;background:#fff;color:#333b42;font:inherit;font-weight:600;cursor:pointer;transition:background .2s}
+.inquiry-submit:hover{background:#e4e8eb}
+.inquiry-submit span{margin-left:20px}
+.inquiry-preview-notice{padding:16px 20px;margin-top:24px;background:#fff;border-left:3px solid #aab4bc;font-size:14px;line-height:1.9}
+.inquiry-form-status{font-size:15px;line-height:1.9;margin-top:16px}
+.inquiry-form .wpcf7-not-valid-tip{color:#9b392e;font-size:14px;margin-top:8px}
+.inquiry-form .wpcf7-list-item{margin:0}
+.inquiry-form .wpcf7-form-control-wrap{display:block}
+@media(max-width:600px){.inquiry-field{padding:20px 0}.inquiry-field>label{font-size:17px}.inquiry-form input:not([type=checkbox]):not([type=submit]),.inquiry-form textarea{padding:12px}.inquiry-consent{font-size:15px}.inquiry-preview-notice{padding:12px 14px}}

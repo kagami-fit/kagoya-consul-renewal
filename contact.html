@@ -21,6 +21,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","LocalBusiness"],"name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/","telephone":"03-4400-7994"},{"@type":"WebSite","name":"株式会社籠や","url":"https://kagami-fit.github.io/kagoya-consul-renewal/"},{"@type":"ContactPage","name":"お問い合わせ","url":"https://kagami-fit.github.io/kagoya-consul-renewal/contact.html"}]}</script>
 <link rel="stylesheet" href="assets/css/site-refinements.css?v=20260916">
 <link rel="stylesheet" href="assets/css/contact-page.css?v=20260916-light">
+<link rel="stylesheet" href="assets/css/contact-form.css?v=20260921">
 </head>
 <body class="sample07-subpage contact-page">
 <a class="skip-link" href="#main">本文へスキップ</a>
@@ -66,11 +67,22 @@
         </header>
         <!-- ZOROYA:CONTACTFORM -->
         <div class="form-bridge">
-          <p>お問い合わせは、株式会社籠やの公式フォームで受け付けています。</p>
+          <p>ご相談内容を、下記フォームにご入力ください。</p>
           <div class="form-bridge__topics"><span>相続コンサル</span><span>不動産コンサル</span><span>仲介・買取</span><span>底地・借地</span><span>エフクリ</span><span>賃貸経営</span><span>企業向けセミナー</span><span>協業・社会貢献</span></div>
-          <p data-inquiry-note>お名前、ご連絡先、物件の所在地、ご相談内容を入力できます。分かる範囲だけで構いません。</p>
-          <a class="contact-action contact-action--form" href="https://kagoya-consul.co.jp/contactus/" target="_blank" rel="noopener noreferrer" aria-label="公式お問い合わせフォーム（新しいタブ）" data-inquiry-form-link><span>公式お問い合わせフォーム</span><span class="contact-action__arrow" aria-hidden="true">↗</span></a>
-          <p class="form-bridge__note">公式サイトの入力画面が新しいタブで開きます。</p>
+          <p data-inquiry-note>物件の詳細は分かる範囲で構いません。「必須」の項目をご入力ください。</p>
+          <!-- KAGOYA:FORM -->
+          <form class="inquiry-form" id="inquiry-form" method="post" onsubmit="return false">
+            <div class="inquiry-field"><label for="your-property01">対象物件 <span class="inquiry-badge">任意</span></label><input id="your-property01" name="your-property01" type="text" maxlength="300" placeholder="物件名・所在地など"></div>
+            <div class="inquiry-field"><label for="your-name01">お名前 <span class="inquiry-badge inquiry-badge--required">必須</span></label><input id="your-name01" name="your-name01" type="text" autocomplete="name" maxlength="100" required></div>
+            <div class="inquiry-field"><label for="your-email01">メールアドレス <span class="inquiry-badge inquiry-badge--required">必須</span></label><input id="your-email01" name="your-email01" type="email" autocomplete="email" maxlength="254" required placeholder="example@example.com"></div>
+            <div class="inquiry-field"><label for="your-tel01">お電話番号 <span class="inquiry-badge inquiry-badge--required">必須</span></label><input id="your-tel01" name="your-tel01" type="tel" autocomplete="tel" maxlength="40" required placeholder="03-4400-7994"></div>
+            <div class="inquiry-field"><label for="your-textarea01">お問い合わせ内容 <span class="inquiry-badge inquiry-badge--required">必須</span></label><textarea id="your-textarea01" name="your-textarea01" rows="7" maxlength="5000" required placeholder="ご相談内容や、ご希望の時期などをお聞かせください。"></textarea></div>
+            <div class="inquiry-consent"><label><input name="your-consent" type="checkbox" required> <span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー（新しいタブ）</a>に同意する <span class="inquiry-badge inquiry-badge--required">必須</span></span></label></div>
+            <button class="inquiry-submit" type="submit">この内容で送信する <span aria-hidden="true">→</span></button>
+            <noscript><p>送信にはWordPress版のお問い合わせページをご利用ください。</p></noscript>
+            <p class="inquiry-form-status" id="inquiry-form-status" role="status" aria-live="polite"></p>
+          </form>
+          <!-- /KAGOYA:FORM -->
         </div>
         <!-- /ZOROYA:CONTACTFORM -->
       </section>
@@ -131,6 +143,7 @@
   <div class="site-footer__cp"><div class="in"><span>© KAGOYA Co., Ltd.</span><span>東京都知事（1）第108542号</span></div></div>
 </footer>
 <!-- /ZOROYA:FOOTER -->
-<script src="assets/js/site.js?v=20260920-mirai"></script>
+<script src="assets/js/site.js?v=20260921-contact"></script>
+<script src="assets/js/contact-form.js?v=20260921-production"></script>
 </body>
 </html>

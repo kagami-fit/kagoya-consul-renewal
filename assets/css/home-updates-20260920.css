@@ -1,0 +1,136 @@
+/* 2026-09-20：トップの実際のお知らせと、参考画像に合わせた3プロジェクト。 */
+.today .today__item--notice {
+  grid-template-columns: 112px minmax(0, 1fr);
+  cursor: default;
+}
+.today .today__item--notice:hover {
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+.motion-variant--dynamic .dyn-receipt-paper .today__item--notice {
+  grid-template-columns: 98px minmax(0, 1fr);
+}
+.today .today__item > div { min-width: 0; }
+.today .today__item h3 { line-height: 1.65; overflow-wrap: anywhere; }
+.today .today__item p { line-height: 1.9; overflow-wrap: anywhere; }
+.today .today__kind--other { background: #647b80; color: #fff; }
+
+.motion-variant--dynamic .today__entry.project-showcase {
+  padding: 54px 0 0;
+  background: #fff;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+.project-showcase .today__entry-head { display: block; }
+.project-showcase .today__entry-head h3 {
+  margin-top: 18px;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.55;
+  font-weight: 500;
+}
+.project-showcase .today__entry-head > p {
+  margin-top: 18px;
+  max-width: 62em;
+  font-size: 17px;
+  line-height: 1.9;
+}
+.motion-variant--dynamic .project-showcase .project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 30px);
+  margin-top: 38px;
+}
+.motion-variant--dynamic .project-showcase .project-card {
+  border: 1px solid #d6e0e2;
+  border-radius: 0;
+  background: #f7f9f9;
+  box-shadow: none;
+}
+.project-showcase .project-card:hover { transform: none; }
+.motion-variant--dynamic .project-showcase .project-card__media {
+  aspect-ratio: 16 / 9;
+  background: #edf1ef;
+}
+.project-showcase .project-card__media::after { display: none; }
+.project-showcase .project-card__media picture { display: block; width: 100%; height: 100%; }
+.project-showcase .project-card__media img { display: block; object-position: center; }
+.project-showcase .project-card:hover .project-card__media img { transform: none; }
+.motion-variant--dynamic .project-showcase .project-card__body {
+  padding: 24px;
+}
+.project-showcase .project-card__meta {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: .03em;
+}
+.project-showcase .project-card__title-part { display: inline-block; }
+.motion-variant--dynamic .project-showcase .project-card__body h4 {
+  min-height: 3.1em;
+  margin-top: 18px;
+  font-size: clamp(21px, 1.95vw, 27px);
+  font-weight: 500;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.project-showcase .project-card__body .project-card__lead {
+  margin-top: 26px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  /* 既存の本文サイズ固定を、このキャッチコピーだけ上書き。 */
+  font-size: clamp(19px, 1.35vw, 20px) !important;
+  line-height: 1.85;
+}
+.project-showcase .project-card__body .project-card__summary {
+  margin-top: 24px;
+  margin-bottom: 30px;
+  color: #4a606a;
+  font-size: 17px;
+  line-height: 1.95;
+}
+.project-showcase .project-card__link {
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 44px;
+  padding-top: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.project-showcase .project-card__link:focus-visible {
+  outline: 2px solid var(--main);
+  outline-offset: 5px;
+}
+.project-showcase .project-showcase__image-note {
+  margin-top: 18px;
+  color: #68797e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+/* リンク先の冒頭文と同じ長さになっても、4つの相談カードを読みやすく保つ。 */
+#connect { scroll-margin-top: 150px; }
+#connect .entry-card { min-width: 0; }
+#connect .entry-card > [data-inquiry-route-label] { font-size: 14px; letter-spacing: .04em; }
+#connect .entry-card > [data-inquiry-route-title] { min-height: 3.2em; line-height: 1.6; }
+#connect .entry-card > [data-inquiry-route-lead] { margin-top: 14px; font-size: 16px !important; line-height: 1.8 !important; }
+#connect .entry-card em { padding-top: 22px; font-size: 14px; }
+#connect .entry-card em span { font-size: inherit; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .motion-variant--dynamic .project-showcase .project-grid { grid-template-columns: 1fr; }
+  .motion-variant--dynamic .project-showcase .project-card { display: grid; grid-template-columns: 36% minmax(0, 1fr); }
+  .motion-variant--dynamic .project-showcase .project-card__media { height: 100%; min-height: 280px; }
+  .motion-variant--dynamic .project-showcase .project-card__body h4 { min-height: 0; }
+  .project-showcase .project-card__body .project-card__lead { margin-top: 18px; }
+}
+@media (max-width: 767px) {
+  .today .today__item--notice,
+  .motion-variant--dynamic .dyn-receipt-paper .today__item--notice { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .today .today__item--notice .today__kind { grid-column: 1; }
+  .motion-variant--dynamic .today__entry.project-showcase { margin-top: 58px; padding-top: 36px; }
+  .project-showcase .today__entry-head > p { font-size: 16px; }
+  .motion-variant--dynamic .project-showcase .project-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 28px; }
+  .motion-variant--dynamic .project-showcase .project-card__body { padding: 24px; }
+  .motion-variant--dynamic .project-showcase .project-card__body h4 { min-height: 0; font-size: 25px; }
+  .project-showcase .project-card__body .project-card__lead { margin-top: 24px; font-size: 20px !important; }
+  .project-showcase .project-card__body .project-card__summary { font-size: 16px; }
+}

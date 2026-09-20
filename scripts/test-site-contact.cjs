@@ -110,7 +110,7 @@ const contactPage = fs.readFileSync(path.join(root, 'contact.html'), 'utf8');
 const channels = [...contactPage.matchAll(/<section class="contact-channel-block(?: [^"]*)?"[^>]*>([\s\S]*?)<\/section>/g)];
 assert.equal(channels.length, 3, 'Three independent contact channels');
 assert.deepEqual(channels.map(match => match[1].match(/<h2[^>]*>([^<]+)<\/h2>/)[1]), ['公式フォームで相談', '電話で相談', '公式LINEで相談']);
-assert.ok(channels[0][1].includes('data-inquiry-form-link'), 'Official form remains first');
+assert.ok(channels[0][1].includes('id="inquiry-form"'), 'Inline inquiry form remains first');
 assert.ok(channels[1][1].includes('href="tel:0344007994"'), 'Phone remains second');
 assert.ok(channels[2][1].includes('accountId=096igviz'), 'Official LINE remains third');
 assert.ok(channels[2][1].includes('src/kagoya-line-qr.webp'), 'LINE QR retained');

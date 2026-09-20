@@ -533,6 +533,7 @@ ${contactRoutes}
   // 本番ではmeta[name="kagoya-today-feed"]をWordPress REST / WorkerのURLへ差し替え可能。
   // file:// プレビューではfetchが制限されるため、HTMLに入れた初期表示をそのまま使う。
   const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const textWithBreaks = (value) => escapeHtml(value).replace(/\r?\n/g, '<br>');
   const safeHref = (value) => {
     const raw = String(value || 'contact.html');
     try {
@@ -557,7 +558,7 @@ ${contactRoutes}
   };
   const todayFeed = document.querySelector('#todayFeed');
   if (todayFeed) {
-    const kindClass = { NEW: 'new', MEETING: 'meeting', CLOSE: 'close', PARTNER: 'partner' };
+    const kindClass = { NEW: 'new', MEETING: 'meeting', CLOSE: 'close', PARTNER: 'partner', OTHER: 'other' };
     const feedMeta = document.querySelector('meta[name="kagoya-today-feed"]');
     const feedUrl = feedMeta?.getAttribute('content') || `${prefix}data/today-items.json`;
     fetch(feedUrl, { cache: 'no-store' }).then((response) => {
@@ -577,13 +578,15 @@ ${contactRoutes}
       todayFeed.innerHTML = items.map((item) => {
         const kind = String(item.kind || 'NEW').toUpperCase();
         const klass = kindClass[kind] || 'new';
-        const source = item.source || item.platform || 'KAGOYA';
-        return `<a class="today__item" href="${escapeHtml(safeHref(item.href))}"><span class="today__kind today__kind--${klass}">${escapeHtml(kind)}</span><div><strong>${escapeHtml(item.label || kind)}</strong><h3>${escapeHtml(item.title || '')}</h3><p>${escapeHtml(item.when || '')}｜${escapeHtml(item.summary || '')}</p><small class="today__meta">${escapeHtml(source)}</small></div><span class="today__arrow">→</span></a>`;
+        const source = item.source || item.platform || '';
+        const summary = [item.when, item.summary].filter(Boolean).join('｜');
+        // Today’s KAGOYAは読むだけの欄。データにhrefが残っていてもリンク化しない。
+        return `<article class="today__item today__item--notice"><span class="today__kind today__kind--${klass}">${escapeHtml(kind)}</span><div><strong>${escapeHtml(item.label || kind)}</strong><h3>${escapeHtml(item.title || '')}</h3>${summary ? `<p>${textWithBreaks(summary)}</p>` : ''}${source ? `<small class="today__meta">${escapeHtml(source)}</small>` : ''}</div></article>`;
       }).join('');
     }).catch(() => {});
   }
 
-  // スプレッドシートで公開された進行中プロジェクトを表示する。
+  // プロジェクトJSONから表示。hrefが空のカードにはリンクを付けない。
   const projectGrid = document.querySelector('#projectGrid');
   if (projectGrid) {
     fetch(`${prefix}data/project-items.json`, { cache: 'no-store' }).then((response) => {
@@ -594,8 +597,12 @@ ${contactRoutes}
       if (!Array.isArray(items) || !items.length) return;
       projectGrid.innerHTML = items.map((item) => {
         const imageUrl = safeAssetHref(item.image, 'src/gen-company.jpg');
-        const linkUrl = safeHref(item.href || 'contact.html?type=project');
-        return `<article class="project-card"><div class="project-card__media"><img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.title || '進行中プロジェクト')}" loading="lazy" decoding="async"><span class="project-card__status">${escapeHtml(item.status || 'IN PROGRESS')}</span></div><div class="project-card__body"><span class="project-card__meta">${escapeHtml(item.meta || '')}</span><h4>${escapeHtml(item.title || '')}</h4><p>${escapeHtml(item.summary || '')}</p><a class="project-card__link" href="${escapeHtml(linkUrl)}">このテーマを相談する</a></div></article>`;
+        const title = Array.isArray(item.titleParts) && item.titleParts.join('') === item.title
+          ? item.titleParts.map((part) => `<span class="project-card__title-part">${escapeHtml(part)}</span>`).join('')
+          : escapeHtml(item.title || '');
+        const webp = item.imageWebp ? `<source type="image/webp" srcset="${escapeHtml(safeAssetHref(item.imageWebp))}">` : '';
+        const link = item.href && String(item.href).trim() ? `<a class="project-card__link" href="${escapeHtml(safeContentHref(item.href))}">${escapeHtml(item.linkLabel || '詳しく見る')}</a>` : '';
+        return `<article class="project-card"><div class="project-card__media"><picture>${webp}<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(item.imageAlt || item.title || '進行中プロジェクト')}" width="1672" height="941" loading="lazy" decoding="async"></picture>${item.status ? `<span class="project-card__status">${escapeHtml(item.status)}</span>` : ''}</div><div class="project-card__body"><span class="project-card__meta">${escapeHtml(item.meta || '')}</span><h4>${title}</h4>${item.lead ? `<p class="project-card__lead">${textWithBreaks(item.lead)}</p>` : ''}<p class="project-card__summary">${escapeHtml(item.summary || '')}</p>${link}</div></article>`;
       }).join('');
       if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         window.gsap.utils.toArray('#projectGrid .project-card').forEach((element, index) => {
@@ -840,7 +847,7 @@ ${contactRoutes}
     applySiteSettings(items);
   }).catch(() => {}).finally(normalizeHeader);
 
-  // 4つの入口（案件相談／協業／投資／採用）は同じフォームを使い、typeだけを引き継ぐ。
+  // 4つの入口（物件・相続／協業・連携／事業・資産形成／セミナー・採用）は同じフォームを使い、typeだけを引き継ぐ。
   // 受付側で案件ごとのフォームを増やさず、到着時に相談目的を見える化する設計。
   const inquiryRoutes = {
     family: { title: '籠やみらい相談について相談する', lead: '相続・不動産・介護。家族と資産のこれからについて、気になっていることをお聞かせください。', label: '籠やみらい相談について', description: 'ご家族の希望や資産の状況、相談したいことを伺い、必要な専門家との連携や今後の進め方をご案内します。' },
@@ -849,6 +856,16 @@ ${contactRoutes}
     investment: { title: '事業・資産形成について相談する', lead: 'エフクリ、投資、事業提携などの可能性とリスクを、対話しながら整理します。', label: '事業・資産形成', description: '対象・時期・関係者を確認し、公開できる情報から検討を始めます。' },
     recruit: { title: 'セミナー・採用について相談する', lead: '企業向けセミナーのご依頼や、動いている案件への関わり方をお聞かせください。', label: 'セミナー・採用', description: 'ご希望のテーマや経験を確認し、担当者から次の進め方をご案内します。' }
   };
+  // トップの相談カードも、リンク先のファーストビューと同じ文章を使う。
+  document.querySelectorAll('.entry-card[data-inquiry-route]').forEach((card) => {
+    const copy = inquiryRoutes[card.getAttribute('data-inquiry-route')];
+    if (!copy) return;
+    const fields = { label: copy.label, title: copy.title, lead: copy.lead };
+    Object.entries(fields).forEach(([field, value]) => {
+      const node = card.querySelector(`[data-inquiry-route-${field}]`);
+      if (node) node.textContent = value;
+    });
+  });
   const route = inquiryRoutes[new URLSearchParams(window.location.search).get('type')];
   if (route) {
     const titleNode = document.querySelector('[data-inquiry-title]');
