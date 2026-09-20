@@ -1,8 +1,21 @@
 {
   "source": "https://kagoya-consul.co.jp/news/",
-  "fetchedAt": "2026-08-13T09:12:43.382Z",
-  "count": 20,
+  "fetchedAt": "2026-09-20T23:28:20.618Z",
+  "count": 21,
   "items": [
+    {
+      "id": 2747,
+      "slug": "news-2747",
+      "sourceSlug": "%e8%b3%87%e7%94%a3%e5%bd%a2%e6%88%90%e3%83%a9%e3%82%a6%e3%83%b3%e3%82%b8%e3%80%8e%e3%82%a8%e3%83%95%e3%82%af%e3%83%aa%e3%80%8f%e3%81%ab%e3%81%a6fpx%e4%b8%8d%e5%8b%95%e7%94%a3%e6%8a%95%e8%b3%87",
+      "title": "資産形成ラウンジ『エフクリ』にてFP×不動産投資セミナー開催(第7回)のお知らせ ～8/25開催～",
+      "date": "2026-08-19",
+      "category": "お知らせ",
+      "kind": "セミナー",
+      "excerpt": "資産形成ラウンジ『エフクリ』にて、ファイナンシャルアライアンス様とのコラボによる不動産投資セミナーを開催します。第7回目のテーマは「貯めるだけでは守れない時代の「資産防衛」～将来不安に備える、未来につなぐ選択肢～」​エフクリは、SCSK株式会社様が提供する「資産形成ラウンジ エフクリ」の略称で、従業員様の資産形成を支援する福利厚生プラットフォームです。 ​",
+      "contentHtml": "<pre class=\"wp-block-preformatted\">資産形成ラウンジ『エフクリ』にて、ファイナンシャルアライアンス様とのコラボによる不動産投資セミナーを開催します。<br>第7回目のテーマは「貯めるだけでは守れない時代の「資産防衛」～将来不安に備える、未来につなぐ選択肢～」<br>​エフクリは、SCSK株式会社様が提供する「資産形成ラウンジ エフクリ」の略称で、従業員様の資産形成を支援する福利厚生プラットフォームです。 ​</pre>",
+      "sourceUrl": "https://kagoya-consul.co.jp/%e8%b3%87%e7%94%a3%e5%bd%a2%e6%88%90%e3%83%a9%e3%82%a6%e3%83%b3%e3%82%b8%e3%80%8e%e3%82%a8%e3%83%95%e3%82%af%e3%83%aa%e3%80%8f%e3%81%ab%e3%81%a6fpx%e4%b8%8d%e5%8b%95%e7%94%a3%e6%8a%95%e8%b3%87/",
+      "featuredImage": ""
+    },
     {
       "id": 2482,
       "slug": "news-2482",
@@ -173,19 +186,6 @@
       "featuredImage": ""
     },
     {
-      "id": 790,
-      "slug": "news-790",
-      "sourceSlug": "%e3%80%8c%e5%b9%b8%e6%89%8b%e5%b8%82%e4%b8%ad%e4%b8%89%e4%b8%81%e7%9b%ae%e4%b8%80%e6%88%b8%e5%bb%ba%e3%81%a6-%e3%80%8d%e6%88%90%e7%b4%84%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%e3%80%82%e5%bd%93%e7%a4%be",
-      "title": "「幸手市中三丁目一戸建て 」成約しました。(当社売主)",
-      "date": "2024-10-09",
-      "category": "お知らせ",
-      "kind": "成約",
-      "excerpt": "元サイトでは本文の掲載はありません。",
-      "contentHtml": "<p>元サイトでは本文の掲載はありません。</p>",
-      "sourceUrl": "https://kagoya-consul.co.jp/%e3%80%8c%e5%b9%b8%e6%89%8b%e5%b8%82%e4%b8%ad%e4%b8%89%e4%b8%81%e7%9b%ae%e4%b8%80%e6%88%b8%e5%bb%ba%e3%81%a6-%e3%80%8d%e6%88%90%e7%b4%84%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%e3%80%82%e5%bd%93%e7%a4%be/",
-      "featuredImage": ""
-    },
-    {
       "id": 777,
       "slug": "news-777",
       "sourceSlug": "%e3%80%8c%e6%89%80%e6%b2%a2%e5%b8%82%e8%a5%bf%e7%8b%ad%e5%b1%b1%e3%83%b6%e4%b8%98%e4%b8%80%e4%b8%81%e7%9b%ae-%e5%9c%9f%e5%9c%b0%e3%80%8d%e8%b2%a9%e5%a3%b2%e9%96%8b%e5%a7%8b%e3%81%97%e3%81%be%e3%81%97",
@@ -196,6 +196,19 @@
       "excerpt": "本文は公式サイトに掲載されていません。",
       "contentHtml": "<p class=\"wp-block-paragraph\"></p>\n\n\n\n<p class=\"wp-block-paragraph\"></p>",
       "sourceUrl": "https://kagoya-consul.co.jp/%e3%80%8c%e6%89%80%e6%b2%a2%e5%b8%82%e8%a5%bf%e7%8b%ad%e5%b1%b1%e3%83%b6%e4%b8%98%e4%b8%80%e4%b8%81%e7%9b%ae-%e5%9c%9f%e5%9c%b0%e3%80%8d%e8%b2%a9%e5%a3%b2%e9%96%8b%e5%a7%8b%e3%81%97%e3%81%be%e3%81%97/",
+      "featuredImage": ""
+    },
+    {
+      "id": 790,
+      "slug": "news-790",
+      "sourceSlug": "%e3%80%8c%e5%b9%b8%e6%89%8b%e5%b8%82%e4%b8%ad%e4%b8%89%e4%b8%81%e7%9b%ae%e4%b8%80%e6%88%b8%e5%bb%ba%e3%81%a6-%e3%80%8d%e6%88%90%e7%b4%84%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%e3%80%82%e5%bd%93%e7%a4%be",
+      "title": "「幸手市中三丁目一戸建て 」成約しました。(当社売主)",
+      "date": "2024-10-09",
+      "category": "お知らせ",
+      "kind": "成約",
+      "excerpt": "元サイトでは本文の掲載はありません。",
+      "contentHtml": "<p>元サイトでは本文の掲載はありません。</p>",
+      "sourceUrl": "https://kagoya-consul.co.jp/%e3%80%8c%e5%b9%b8%e6%89%8b%e5%b8%82%e4%b8%ad%e4%b8%89%e4%b8%81%e7%9b%ae%e4%b8%80%e6%88%b8%e5%bb%ba%e3%81%a6-%e3%80%8d%e6%88%90%e7%b4%84%e3%81%97%e3%81%be%e3%81%97%e3%81%9f%e3%80%82%e5%bd%93%e7%a4%be/",
       "featuredImage": ""
     },
     {

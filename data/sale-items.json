@@ -1,8 +1,110 @@
 {
   "source": "https://kagoya-consul.co.jp/sale/",
-  "fetchedAt": "2026-08-13T08:19:41.320Z",
-  "count": 88,
+  "fetchedAt": "2026-09-20T23:28:20.616Z",
+  "count": 91,
   "items": [
+    {
+      "id": 2873,
+      "title": "マイキャッスル・ラルジュ鴨居",
+      "date": "2026-09-10",
+      "slug": "maikyassulraruzyukamoi2980",
+      "image": "src/wp-sale/2873-01.jpg",
+      "gallery": [
+        "src/wp-sale/2873-01.jpg",
+        "src/wp-sale/2873-02.jpg",
+        "src/wp-sale/2873-03.jpg",
+        "src/wp-sale/2873-04.jpg",
+        "src/wp-sale/2873-05.jpg",
+        "src/wp-sale/2873-06.jpg",
+        "src/wp-sale/2873-07.jpg",
+        "src/wp-sale/2873-08.jpg",
+        "src/wp-sale/2873-09.jpg",
+        "src/wp-sale/2873-10.jpg",
+        "src/wp-sale/2873-11.jpg",
+        "src/wp-sale/2873-12.jpg",
+        "src/wp-sale/2873-13.jpg"
+      ],
+      "categories": [
+        "販売中物件(土地建物/マンション)"
+      ],
+      "tags": [],
+      "link": "https://kagoya-consul.co.jp/sale/maikyassulraruzyukamoi2980",
+      "fields": {
+        "種別": "マイキャッスル・ラルジュ鴨居",
+        "所在地": "横浜市緑区東本郷6-5-11",
+        "建物面積／土地面積": "55.45㎡",
+        "築年月": "1998年12月",
+        "価格": "2880万円",
+        "交通": "横浜線鴨居駅徒歩13分",
+        "間取り": "2LDK",
+        "その他": "バルコニー面積:13.90㎡ ららぽーと横浜まで車でおよそ10分です。"
+      }
+    },
+    {
+      "id": 2871,
+      "title": "エイジングコート姫路",
+      "date": "2026-09-10",
+      "slug": "eijingcort860",
+      "image": "src/wp-sale/2871-01.jpg",
+      "gallery": [
+        "src/wp-sale/2871-01.jpg"
+      ],
+      "categories": [
+        "成約物件"
+      ],
+      "tags": [],
+      "link": "https://kagoya-consul.co.jp/sale/eijingcort860",
+      "fields": {
+        "種別": "エイジングコート姫路",
+        "所在地": "姫路市北条448-9",
+        "建物面積／土地面積": "61.20㎡",
+        "築年月": "2011年3月",
+        "価格": "860万円",
+        "交通": "JR山陽本線姫路駅から徒歩14分",
+        "間取り": "2LDK",
+        "その他": "バルコニー面積：15.93㎡ シニア向けにサービスが充実したマンションです。"
+      },
+      "status": "成約済み"
+    },
+    {
+      "id": 2799,
+      "title": "プレシスヴィアラ南与野",
+      "date": "2026-08-31",
+      "slug": "presis-viala-minamiyono-2799",
+      "image": "src/wp-sale/2799-01.jpg",
+      "gallery": [
+        "src/wp-sale/2799-01.jpg",
+        "src/wp-sale/2799-02.jpg",
+        "src/wp-sale/2799-03.jpg",
+        "src/wp-sale/2799-04.png",
+        "src/wp-sale/2799-05.jpg",
+        "src/wp-sale/2799-06.jpg",
+        "src/wp-sale/2799-07.jpg",
+        "src/wp-sale/2799-08.jpg",
+        "src/wp-sale/2799-09.jpg",
+        "src/wp-sale/2799-10.jpg",
+        "src/wp-sale/2799-11.jpg",
+        "src/wp-sale/2799-12.jpg",
+        "src/wp-sale/2799-13.jpg",
+        "src/wp-sale/2799-14.jpg",
+        "src/wp-sale/2799-15.jpg"
+      ],
+      "categories": [
+        "販売中物件(土地建物/マンション)"
+      ],
+      "tags": [],
+      "link": "https://kagoya-consul.co.jp/sale/%e3%83%97%e3%83%ac%e3%82%b7%e3%82%b9%e3%83%b4%e3%82%a3%e3%82%a2%e3%83%a9%e5%8d%97%e4%b8%8e%e9%87%8e%ef%bc%91%ef%bc%92%ef%bc%90%ef%bc%94%e5%8f%b7%e5%ae%a4",
+      "fields": {
+        "種別": "プレシスヴィアラ南与野",
+        "所在地": "埼玉県さいたま市桜区中島2丁目2-24",
+        "建物面積／土地面積": "31.85㎡",
+        "築年月": "2025年2月",
+        "価格": "3780万円",
+        "交通": "JR埼京線「南与野」駅徒歩9分",
+        "間取り": "1LDK",
+        "その他": ""
+      }
+    },
     {
       "id": 2691,
       "title": "コスモシティ川越　１階",
@@ -17,7 +119,7 @@
         "src/wp-sale/2691-05.jpg"
       ],
       "categories": [
-        "販売中物件(土地建物/マンション)"
+        "成約物件"
       ],
       "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/cosumosithykawagoe5120",
@@ -42,7 +144,7 @@
         "src/wp-sale/2645-01.jpg"
       ],
       "categories": [
-        "販売中物件(一棟収益)"
+        "成約物件"
       ],
       "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/haimuyakouguthi8900",
@@ -67,7 +169,7 @@
         "src/wp-sale/2643-01.jpg"
       ],
       "categories": [
-        "販売中物件(一棟収益)"
+        "成約物件"
       ],
       "tags": [],
       "link": "https://kagoya-consul.co.jp/sale/sugitaittyoumetennpobill12500",
@@ -116,7 +218,7 @@
     },
     {
       "id": 2582,
-      "title": "藤和シティコープ初台",
+      "title": "藤和シティコープ初台(仲介手数料無料)",
       "date": "2026-05-31",
       "slug": "touwashityikopuhatudai",
       "image": "src/wp-sale/2582-01.jpg",
@@ -140,10 +242,10 @@
         "所在地": "渋谷区初台1-33-3",
         "建物面積／土地面積": "61.85㎡",
         "築年月": "",
-        "価格": "8933万円",
+        "価格": "8890万円",
         "交通": "京王新線「初台」歩5分 小田急線「参宮橋」歩13分",
         "間取り": "2LDK",
-        "その他": ""
+        "その他": "仲介手数料はかかりません。"
       }
     },
     {
