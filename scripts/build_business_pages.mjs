@@ -583,7 +583,6 @@ ${header()}
       <div class="page-hero__art${imageClasses(item)}">${picture(item.heroImage, item.heroAlt, true)}<span class="page-hero__caption">${esc(item.no)} / ${esc(item.en)}</span></div>
     </div>
   </section>
-  <div class="wrap">${businessNav(item.id)}</div>
   ${item.id === 'inheritance' ? familyFutureEntry : ''}
   <!-- 末尾の問い合わせ文面・相談目的はsite.jsでページ別に管理 -->
   <section class="page-sec biz-more"><div class="wrap"><div class="section-head"><span class="eyebrow">More business</span><h2>ほかの事業を見る</h2></div>${businessNav(item.id)}</div></section>
