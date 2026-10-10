@@ -33,10 +33,18 @@ const dom=f=>new JSDOM(read(f),{url:'https://example.invalid/qualita-property-lp
  for(const p of data){const detail=dom('property-'+p.id.toLowerCase()+'.html').window.document;assert.match(detail.body.textContent,new RegExp(p.grossYieldPercent.toFixed(1).replace('.','\\.')+'％'));assert.ok(detail.body.textContent.includes('土地面積例'));assert.ok(detail.body.textContent.includes('延床面積例'));assert.match(detail.querySelector('.income-detail-actions a').href,/property=DEMO-/);}
  const selected=new JSDOM(read('index.html'),{url:'https://example.invalid/qualita-property-lp/index.html?property=DEMO-03#consultation',runScripts:'outside-only'});selected.window.matchMedia=()=>({matches:false,addEventListener(){}});selected.window.eval(read('assets/js/income-collection.js'));assert.match(selected.window.document.getElementById('property-interest').value,/DEMO-03/);assert.equal(selected.window.document.getElementById('price-range').value,'over-800m');
  const policy=dom('privacy.html').window.document;assert.equal(policy.querySelectorAll('.income-privacy h2').length,9);
- const original=read('data/privacy-original.md').split('\n---\n')[1];
- const normalizedOriginal=original.replace(/^#{1,2} /gm,'').replace(/\s/g,'');
- const publishedOriginal=[...policy.querySelector('.income-privacy').children].filter(el=>['H1','H2','P'].includes(el.tagName)&&!el.classList.contains('policy-source')).map(el=>el.textContent).join('').replace(/\s/g,'');
- assert.equal(publishedOriginal,normalizedOriginal,'原文ポリシーの全文一致');
+ const corporate=new JSDOM(fs.readFileSync(path.resolve(root,'../privacy.html'),'utf8')).window.document;
+ const normalize=text=>text.replace(/\s/g,'');
+ const original=corporate.querySelector('h1').textContent+corporate.querySelector('.privacy-document__intro').textContent+corporate.querySelector('.privacy-document__body').textContent;
+ const published=policy.querySelector('h1').textContent+policy.querySelector('.income-privacy-intro').textContent+policy.querySelector('.income-privacy-body').textContent;
+ assert.equal(normalize(published),normalize(original),'指定された籠や privacy.html の全文と一致');
+ assert.ok(published.includes('〒152-0032　東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号'));
+ assert.ok(!published.includes('目黒本町一丁目12番15号-1F'),'最新版には旧住所を残さない');
+ assert.ok(!policy.querySelector('.policy-source'),'旧住所保持という古い案内を表示しない');
+ assert.equal(d.querySelector('[data-version-navigation]').getAttribute('href'),'versions/20261010-before-privacy/index.html');
+ for(const link of d.querySelectorAll('a[href*="privacy.html"]'))assert.equal(link.getAttribute('href'),'privacy.html','フォームとフッターは共通の全文ポリシーへ');
+ assert.equal(corporate.querySelectorAll('.privacy-document__section').length,9);
+ assert.ok(corporate.querySelector('link[href^="assets/css/privacy-document.css"]'),'公開版にも記事用のスタイルを同梱');
  for(const f of ['index.html','for-sale.html','property-demo-01.html','property-demo-02.html','property-demo-03.html','privacy.html']){const doc=dom(f).window.document;assert.equal(doc.querySelectorAll('h1').length,1,f);for(const el of doc.querySelectorAll('[src],[href]'))for(const attr of ['src','href']){const v=el.getAttribute(attr);if(!v||/^(?:[a-z]+:|\/\/|#)/i.test(v))continue;assert.ok(fs.existsSync(path.resolve(root,v.split(/[?#]/)[0])),`${f}: ${v}`);}}
- console.log('PASS: boundary filters, newest per segment, no closed properties, three details, areas/yields, property preselection, optional property form, no send, nine original policy articles, local links.');
+ console.log('PASS: boundary filters, newest per segment, no closed properties, three details, areas/yields, property preselection, optional property form, no send, nine shared policy articles/current address, privacy and version links.');
 })();

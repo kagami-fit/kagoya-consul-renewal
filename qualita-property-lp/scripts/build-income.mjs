@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import {JSDOM} from 'jsdom';
 const root=path.resolve(import.meta.dirname,'..');
 const e=v=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 export const priceRange=yen=>yen<=500000000?'under-500m':yen<=800000000?'500m-800m':'over-800m';
@@ -42,9 +43,17 @@ for(const p of available){
 const detailFacts=[['物件番号',p.id+'（架空）'],['種別',p.type],['想定エリア',p.area],['価格例',money(p.priceYen)],['表面利回り（想定）',p.grossYieldPercent.toFixed(1)+'％'],['土地面積例',area(p.landAreaSqm)],['延床面積例',area(p.floorAreaSqm)],['構造・階数',p.building],['戸数・テナント',p.units],['取扱状況','サンプル・実際の販売物件ではありません']];
 fs.writeFileSync(path.join(root,file(p)),page(p.title,`<article class="income-detail wrap"><p class="crumb"><a href="index.html">トップ</a> ／ <a href="for-sale.html">販売中収益物件</a> ／ ${e(p.id)}</p><div class="income-detail-layout"><div><figure class="detail-image"><img src="assets/images/${e(p.image)}" alt="${e(p.imageAlt)}" width="1536" height="1024"><figcaption>生成イメージ・実在物件ではありません</figcaption></figure><p class="income-detail-copy">${e(p.description)}</p></div><div><p class="eyebrow">INCOME PROPERTY / SAMPLE</p><h1>${e(p.title)}</h1><p class="detail-preview-note">名称・価格・面積・利回りはすべて架空の設定です。販売や内覧はできません。</p><dl class="detail-facts">${detailFacts.map(([k,v])=>`<div><dt>${e(k)}</dt><dd>${e(v)}</dd></div>`).join('')}</dl><p class="yield-note">${yieldNote}</p><div class="income-detail-actions"><a class="button button-dark" href="index.html?property=${encodeURIComponent(p.id)}#consultation">この物件について相談する <span aria-hidden="true">→</span></a><a class="text-link" href="for-sale.html?range=${priceRange(p.priceYen)}">同じ価格帯の物件を見る <span aria-hidden="true">→</span></a></div></div></div></article>`));
 }
-// 既存WordPress固定ページID3から確認済みの原文をそのまま掲載。住所等も無断で変更しない。
-const original=fs.readFileSync(path.join(root,'data/privacy-original.md'),'utf8').split('\n---\n')[1];
-assert.ok(original.includes('第９条'));
-const policy=original.trim().split(/\n\s*\n/).map(block=>block.startsWith('## ')?`<h2>${e(block.slice(3))}</h2>`:block.startsWith('# ')?`<h1>${e(block.slice(2))}</h1>`:`<p>${e(block).replace(/  \n/g,'<br>').replaceAll('\n','<br>')}</p>`).join('\n');
-fs.writeFileSync(path.join(root,'privacy.html'),page('プライバシーポリシー',`<article class="income-privacy wrap">${policy}<p class="policy-source">出典：籠やWordPressの固定ページ「プライバシーポリシー」（ID3）、2026年9月28日確認の原文。本文・旧住所を保持しています。</p><a class="text-link" href="index.html#consultation">相談フォームへ戻る <span aria-hidden="true">→</span></a></article>`));
-console.log(`Generated home (${newest.length} newest), listing (${available.length}), ${available.length} details, original policy.`);
+// ユーザー指定の籠やサイト privacy.html を正本とし、本文を加筆・要約せず共用する。
+// data/privacy-original.md は旧住所を含む取得時の記録であり、最新版の生成元にはしない。
+const corporatePolicy=new JSDOM(fs.readFileSync(path.resolve(root,'../privacy.html'),'utf8')).window.document;
+const policyArticle=corporatePolicy.querySelector('.privacy-document');
+assert.ok(policyArticle,'籠やサイトのプライバシーポリシー本文が必要です。');
+const policyTitle=policyArticle.querySelector('h1');
+const policyIntro=policyArticle.querySelector('.privacy-document__intro');
+const policyBody=policyArticle.querySelector('.privacy-document__body');
+assert.ok(policyTitle&&policyIntro&&policyBody,'ポリシーの見出し・導入文・本文を確認してください。');
+assert.equal(policyBody.querySelectorAll('.privacy-document__section').length,9,'原文9条を保持してください。');
+const policy=`<h1>${e(policyTitle.textContent.trim())}</h1>\n<p class="income-privacy-intro">${e(policyIntro.textContent.trim())}</p>\n<div class="income-privacy-body">${policyBody.innerHTML}</div>`;
+fs.writeFileSync(path.join(root,'privacy.html'),page('プライバシーポリシー',`<article class="income-privacy wrap">${policy}<a class="text-link" href="index.html#consultation">相談フォームへ戻る <span aria-hidden="true">→</span></a></article>`));
+corporatePolicy.defaultView.close();
+console.log(`Generated home (${newest.length} newest), listing (${available.length}), ${available.length} details, shared corporate policy.`);

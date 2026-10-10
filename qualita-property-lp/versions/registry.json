@@ -11,6 +11,12 @@
       "label": "2026年10月10日 編集後（収益不動産版）",
       "sourceCommit": "487dab2464e269d33220d501b5ad04afd3652ae9",
       "savedAt": "2026-10-10T02:43:35.157Z"
+    },
+    {
+      "id": "20261010-before-privacy",
+      "label": "2026年10月10日 プライバシーポリシー変更前",
+      "sourceCommit": "eef16ccfc216e0a96f1ef808a0bd46a191c0364f",
+      "savedAt": "2026-10-10T04:16:23.924Z"
     }
   ]
 }
