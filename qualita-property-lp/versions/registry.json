@@ -17,6 +17,12 @@
       "label": "2026年10月10日 プライバシーポリシー変更前",
       "sourceCommit": "eef16ccfc216e0a96f1ef808a0bd46a191c0364f",
       "savedAt": "2026-10-10T04:16:23.924Z"
+    },
+    {
+      "id": "20261010-before-sale-navigation",
+      "label": "2026年10月10日 販売一覧のホームリンク修正前",
+      "sourceCommit": "301baf5c3e6e50a6bcfe642a9de735fcf72f4b60",
+      "savedAt": "2026-10-10T07:17:47.912Z"
     }
   ]
 }
