@@ -24,6 +24,11 @@ QUALITA向け紹介企画のラグジュアリー案を、収益不動産に特�
 - `data/privacy-original.md`：確認済みの籠やプライバシーポリシー原文。生成元として同梱。
 - `scripts/build-income.mjs`：新着・一覧・詳細・原文ポリシーの生成。
 - `scripts/test-income.cjs`：価格帯の境界・新着・フォーム・原文一致・ローカルリンクの確認。
+- `versions/`：編集前・編集後の固定保存版。各版の写真・CSS・JSも保持し、上書きしない。
+- `versions/index.html`：過去版・修正版・最新版の比較入口。
+- `scripts/archive-version.mjs`：確定したGitコミットから比較用の版を保存。
+- `scripts/build-version-index.mjs`：比較一覧だけを再生成。
+- `scripts/verify-versions.mjs`：保存した版の照合値を確認。
 - `assets/css/`：各案専用のスタイル。
 - `assets/js/income-collection.js`：価格帯絞り込み・物件引き継ぎ・入力確認。
 - `assets/js/private-collection.js`：以前のPDF比較案専用。
@@ -56,6 +61,16 @@ npm test
 GitHub Pagesは既存の `main` ブランチのルートから配信する設定を利用します。公開用フォルダは制作元より1階層浅いため、共通画像・企業サイトへのリンクは `../` に調整しています。初期案へのリンクは公開版から除外しています。
 
 更新は作業ブランチ → Pull Request → GitHub Pages確認の順で行います。WordPressへの自動反映はありません。
+
+修正前には、実際に公開されているGitコミットを固定保存します。以下のID・参照・ラベルは次の修正に合わせて変更してください。保存済みのIDで実行すると上書きせず停止します。
+
+```sh
+node scripts/archive-version.mjs --ref origin/main --id 20261011-before --label '2026年10月11日 編集前'
+node scripts/build-version-index.mjs
+node scripts/verify-versions.mjs
+```
+
+修正後の確定コミットも同様に別IDで保存できます。最新版の上部には直近の「編集前」と「比較一覧」へのリンクを設置します。固定保存版の本文・画像・スタイルを後から修正しないでください。
 
 ## 状態
 

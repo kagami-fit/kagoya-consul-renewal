@@ -1,0 +1,16 @@
+{
+  "versions": [
+    {
+      "id": "20261010-before",
+      "label": "2026年10月10日 編集前",
+      "sourceCommit": "c249ef4b90e5cb831f398cf85d54583cf64a3cf6",
+      "savedAt": "2026-10-10T02:43:34.242Z"
+    },
+    {
+      "id": "20261010-after",
+      "label": "2026年10月10日 編集後（収益不動産版）",
+      "sourceCommit": "487dab2464e269d33220d501b5ad04afd3652ae9",
+      "savedAt": "2026-10-10T02:43:35.157Z"
+    }
+  ]
+}
