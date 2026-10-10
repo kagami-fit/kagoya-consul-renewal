@@ -1,0 +1,107 @@
+/* エフクリ既存LP専用。新サイト・一般フォームには適用しない。 */
+.kagoya-legacy-lp {
+  --lp-accent: #003475;
+  --lp-action: #003475;
+  --lp-header-offset: 24px;
+  padding: 54px 0 80px;
+  color: #333;
+  background: #fff;
+  font-family: var(--font-jp, sans-serif);
+  font-size: 16px;
+  line-height: 1.85;
+}
+.kagoya-legacy-lp--tax { --lp-accent: #009368; --lp-action: #067653; }
+.kagoya-legacy-lp--estate { --lp-accent: #22a7a7; --lp-action: #176e75; }
+.kagoya-legacy-lp__wrap { width: min(1100px, calc(100% - 56px)); margin: 0 auto; }
+.kagoya-legacy-lp__article,
+.kagoya-legacy-lp__content,
+.kagoya-legacy-lp .l-wrapper.user { min-width: 0; max-width: 100%; }
+.kagoya-legacy-lp__heading { margin: 0 0 28px; }
+.kagoya-legacy-lp .c-icon-heading01 {
+  margin: 0;
+  color: #333;
+  font-family: var(--font-jp, sans-serif) !important;
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 700;
+  line-height: 1.6;
+  text-wrap: wrap;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.kagoya-legacy-lp .c-icon-heading01 span.ttl-ann { display: inline-block; padding-top: 12px; font-size: 18px; font-weight: 500; line-height: 1.8; }
+.kagoya-legacy-lp :is(h2, h3, .heading, .heading2) { color: #333; font-family: var(--font-jp, sans-serif) !important; text-wrap: wrap; }
+.kagoya-legacy-lp p { font-size: 16px; line-height: 1.85; overflow-wrap: anywhere; }
+.kagoya-legacy-lp :is(.description, .description3, .description4, .description5) { font-size: 16px; line-height: 1.9; }
+.kagoya-legacy-lp .attention { margin-bottom: 26px; font-size: 14px; }
+.kagoya-legacy-lp .heading { font-size: 28px; }
+.kagoya-legacy-lp .heading2 { font-size: 20px; }
+.kagoya-legacy-lp .js-fade { visibility: visible; opacity: 1; transform: none; }
+.kagoya-legacy-lp [id^="section"] { scroll-margin-top: var(--lp-header-offset); }
+.kagoya-legacy-lp .logo-box img { width: min(950px, 100%); height: auto; }
+.kagoya-legacy-lp :is(.container-profile, .container-profile2, .container-message, .container-seminar) > * { min-width: 0; }
+.kagoya-legacy-lp :is(.button, .button2, .button3) { max-width: 100%; background-color: var(--lp-action); color: #fff; text-decoration: none; }
+.kagoya-legacy-lp :is(.button, .button2, .button3):focus-visible { outline: 3px solid #bd8b30; outline-offset: 4px; }
+.kagoya-legacy-lp .button-container > p { display: contents; }
+.kagoya-legacy-lp .button-container > br,
+.kagoya-legacy-lp .button-container > p > br { display: none; }
+.kagoya-legacy-lp .container-inquiry_details .service { flex: 1 1 calc(50% - 40px); min-width: 0; }
+.kagoya-legacy-lp :is(.container-inquiry_details, .seminar-info) h3::before { content: ""; }
+
+/* 消えていた旧テーマのフォーム共通部品を補う。メール・項目の設定はそのまま。 */
+.kagoya-legacy-lp .p-contact-dl { width: 100%; margin: 28px 0 0; border-top: 1px solid #d4dadd; }
+.kagoya-legacy-lp .p-contact-dl dl { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: start; gap: 24px; margin: 0; padding: 24px 0; border-bottom: 1px solid #d4dadd; }
+.kagoya-legacy-lp .p-contact-dl dt { margin: 0; padding-top: 8px; font-weight: 700; }
+.kagoya-legacy-lp .p-contact-dl dd { min-width: 0; margin: 0; }
+.kagoya-legacy-lp .p-contact-dl :is(dt, dd) > p { margin: 0; }
+.kagoya-legacy-lp .p-contact-dl .c-need { display: inline-block; margin-left: 12px; padding: 2px 8px; border-radius: 3px; color: #fff; background: #9b392e; font-size: 12px; font-weight: 700; line-height: 1.6; vertical-align: middle; }
+.kagoya-legacy-lp .p-contact-dl .wpcf7-form-control-wrap { display: block; max-width: 100%; }
+.kagoya-legacy-lp .p-contact-dl :is(input[type="text"], input[type="email"], input[type="tel"], textarea, select) { display: block; box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid #aebbc3; border-radius: 5px; background: #fff; color: #333; font: inherit; font-size: 16px; line-height: 1.6; }
+.kagoya-legacy-lp .p-contact-dl textarea { min-height: 210px; resize: vertical; }
+.kagoya-legacy-lp .p-contact-dl :is(input, textarea, select):focus-visible { border-color: var(--lp-action); outline: 2px solid var(--lp-action); outline-offset: 2px; }
+.kagoya-legacy-lp .p-contact-dl .cf-text { margin-top: 14px; color: #4d575e; font-size: 14px; line-height: 1.8; }
+.kagoya-legacy-lp .p-contact-dl .checkes { padding: 8px 0; }
+.kagoya-legacy-lp .p-contact-dl .checkes .wpcf7-form-control-wrap { display: inline; }
+.kagoya-legacy-lp .p-contact-dl .wpcf7-list-item { margin: 0; }
+.kagoya-legacy-lp .p-contact-dl .checkes label { display: inline-flex; align-items: flex-start; gap: 10px; }
+.kagoya-legacy-lp .p-contact-dl input[type="checkbox"] { flex: 0 0 auto; width: 20px; height: 20px; margin: 5px 0 0; accent-color: var(--lp-action); }
+.kagoya-legacy-lp .p-contact-dl .checkes a { color: var(--lp-action); text-decoration: underline; text-underline-offset: 4px; }
+.kagoya-legacy-lp .p-contact-dl__input { margin-top: 32px; text-align: center; }
+.kagoya-legacy-lp .p-contact-dl__input p { margin: 0; }
+.kagoya-legacy-lp .p-contact-dl__input input[type="submit"] { width: min(320px, 100%); min-height: 56px; padding: 14px 24px; border: 0; border-radius: 6px; color: #fff; background: var(--lp-action); font-family: inherit; font-size: 18px; font-weight: 700; line-height: 1.6; cursor: pointer; }
+.kagoya-legacy-lp .p-contact-dl__input input[type="submit"]:disabled { color: #646d74; background: #e4e8eb; cursor: not-allowed; }
+.kagoya-legacy-lp .wpcf7-not-valid { border-color: #9b392e !important; }
+.kagoya-legacy-lp .wpcf7-not-valid-tip { margin-top: 6px; color: #9b392e; font-size: 14px; }
+.kagoya-legacy-lp .wpcf7-response-output { margin: 24px 0 0; padding: 14px; font-size: 16px; }
+
+/* 各専門家の元ポリシーは本文を変えず記事形式で表示する。 */
+.kagoya-legacy-lp--policy .kagoya-legacy-lp__wrap { max-width: 900px; }
+.kagoya-legacy-lp__policy-content { line-height: 1.9; overflow-wrap: anywhere; }
+.kagoya-legacy-lp__policy-content p { margin: 0 0 1.2em; }
+.kagoya-legacy-lp__policy-content :is(h2, h3) { margin: 1.8em 0 .7em; font-size: 21px; line-height: 1.7; }
+.kagoya-legacy-lp__policy-content :is(ul, ol) { padding-left: 1.5em; }
+.kagoya-legacy-lp__policy-content a,
+.kagoya-legacy-lp__back a { color: var(--lp-action); text-decoration: underline; text-underline-offset: 4px; }
+.kagoya-legacy-lp__back { margin: 40px 0 0; }
+.kagoya-legacy-lp-page :is(#site-contact, .mobile-contact-bar) { display: none; }
+
+@media (max-width: 999.98px) {
+  .kagoya-legacy-lp { padding: 32px 0 60px; }
+  .kagoya-legacy-lp__wrap { width: calc(100% - 40px); }
+  .kagoya-legacy-lp .heading { font-size: clamp(23px, 4.2vw, 28px); }
+  .kagoya-legacy-lp .heading2 { font-size: 19px; }
+  .kagoya-legacy-lp :is(.container-profile p.prof1, .container-profile p.prof4) { font-size: 16px; }
+  .kagoya-legacy-lp .container-profile p.prof2 { font-size: 24px; }
+  .kagoya-legacy-lp .container-profile p.prof3 { font-size: 15px; }
+  .kagoya-legacy-lp .p-contact-dl dl { grid-template-columns: 1fr; gap: 12px; padding: 22px 0; }
+  .kagoya-legacy-lp .p-contact-dl dt { padding-top: 0; }
+  .kagoya-legacy-lp .container-message .title { font-size: 24px; }
+  .kagoya-legacy-lp :is(.button, .button2, .button3) { min-height: 46px; padding-top: 10px; padding-bottom: 10px; font-size: 16px !important; }
+  .kagoya-legacy-lp :is(.icon, .icon2, .icon3) { top: 50% !important; transform: translateY(-50%); width: 17px !important; }
+}
+@media (max-width: 600px) {
+  .kagoya-legacy-lp__wrap { width: calc(100% - 32px); }
+  .kagoya-legacy-lp .c-icon-heading01 { font-size: 25px; line-height: 1.6; }
+  .kagoya-legacy-lp .c-icon-heading01 span.ttl-ann { padding-top: 10px; font-size: 14px; }
+  .kagoya-legacy-lp .container-message { border-radius: 24px 0; }
+  .kagoya-legacy-lp .p-contact-dl .cf-text { font-size: 13px; }
+}
