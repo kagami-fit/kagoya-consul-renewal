@@ -11,11 +11,15 @@
 ## 構成
 - index.html：3ページの比較画面
 - horitsu_lp.html / zeimu_lp.html / fudosan_lp.html：各相談ページ
-- *-privacy.html：各ページのポリシー
+- *-privacy.html：各ページ専用のポリシー。共通ヘッダー・フッター・スマートフォンメニューを省き、本文と「相談窓口に戻る」リンクを表示
 - style-*.css：表示用スタイル
 
 ## 使い方
 GitHub Pagesの /review/consultation-20261010/ を開きます。フォームは無効化してあり、送信できません。公開ページなので機密情報は掲載しません。noindexは閲覧制限ではありません。
 
+表示・リンクの検査：`node scripts/test-consultation-privacy.mjs`。公開版の変更前との本文照合：`node scripts/test-consultation-privacy.mjs --baseline=2c46c11`。
+
 ## 状態
 確認用公開版。セミナー情報はクライアント原稿を受領後に更新予定。本番WordPressは未変更。画像の一部は既存公開サイトを参照しています。
+
+2026年10月10日：3つの専用ポリシーから共通ヘッダー・フッターを削除。各専門家のポリシー本文、相談窓口に戻るリンク、相談ページ、籠や本サイトのポリシーは変更していません。
