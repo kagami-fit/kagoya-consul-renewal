@@ -1,0 +1,22 @@
+{
+  "id": "20261010-before",
+  "label": "2026年10月10日 編集前",
+  "sourceCommit": "c249ef4b90e5cb831f398cf85d54583cf64a3cf6",
+  "savedAt": "2026-10-10T02:43:34.242Z",
+  "sampleOnly": true,
+  "files": {
+    "assets/css/private-collection-luxury.css": "b87424962270feb6dc5184d6fc223acf2f8366e60abe22b37eaa30a39eec01b1",
+    "assets/css/private-collection-pdf.css": "20d153f8503d6b9488fc7095bca9fe5d7e1fbdd091480d48bb0beb4b2e29ef09",
+    "assets/images/building.jpg": "432af56a6dbc4f89345f8e0c7a48cc77c6102d06361b167c16ef21d50b528ec1",
+    "assets/images/flourish.svg": "38c7a8c3195d776103e020ffe9ec788662b834c83c2740cb1db911712d822382",
+    "assets/images/ivory-marble-v2.jpg": "c61352f29c5af8dc9c2d627a18206d48c16a2c5fb9b2c6dd4248ebc68db800af",
+    "assets/images/residence.jpg": "ea3cbb00591c3f2b397f0b4744d334f64f125222e6e4f8bb6e9b0bc230855d4e",
+    "assets/images/ribbon.svg": "44121381c43e4e5dd15c344f634683ca7fabb35a0285310828bebed9c9c7e9b3",
+    "assets/images/villa.jpg": "f8874d7cbfc7ec870531221224eb155b490623387d1d38e29b11942f87365b20",
+    "assets/js/private-collection.js": "ccf37c7724026c1cfe3b29f84a5b12fde6aca0088a61ab69ca3c52212279919c",
+    "index-pdf.html": "848974715a0417a95c9bebf503307b1710355b0d09bdbb9c14651f9f6b54d10f",
+    "index.html": "9421d1e7153dde4d7e1a08e62d7c727a95450c08f396dfcf1ee96bfc36384a1a",
+    "assets/images/version-site-logo.png": "588a873ace4045af0e97cc8667c3cd679c9f13d5344778f677f12cb3ea6b25ae",
+    "assets/images/version-site-favicon.png": "4dc3986be257111bd3b76779d01104264091318d667ae779d1c5e2e17e3029f9"
+  }
+}
