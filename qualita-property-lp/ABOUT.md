@@ -19,10 +19,11 @@ QUALITA向け紹介企画のラグジュアリー案を、収益不動産に特�
 - `index.html`：収益不動産向けトップ。
 - `for-sale.html`：価格帯別の一覧。
 - `property-demo-*.html`：サンプル物件詳細。
-- `privacy.html`：籠やWordPress固定ページID3の原文。旧住所も保持。
+- `privacy.html`：サイト直下の `../privacy.html` と全文を共用する9条のポリシー。現在の住所を掲載。
 - `data/income-properties.json`：収益物件データの編集元。
-- `data/privacy-original.md`：確認済みの籠やプライバシーポリシー原文。生成元として同梱。
-- `scripts/build-income.mjs`：新着・一覧・詳細・原文ポリシーの生成。
+- `../privacy.html`：プライバシーポリシーの正本。本文の修正はこのファイルに集約。
+- `data/privacy-original.md`：2026年9月28日の取得時の原文記録。旧住所のまま保管し、最新版の生成には使わない。
+- `scripts/build-income.mjs`：新着・一覧・詳細・正本と同じポリシーの生成。
 - `scripts/test-income.cjs`：価格帯の境界・新着・フォーム・原文一致・ローカルリンクの確認。
 - `versions/`：編集前・編集後の固定保存版。各版の写真・CSS・JSも保持し、上書きしない。
 - `versions/index.html`：過去版・修正版・最新版の比較入口。
@@ -50,6 +51,8 @@ python3 -m http.server 8766 --bind 127.0.0.1
 物件を編集するときは `data/income-properties.json` を更新し、`node qualita-property-lp/scripts/build-income.mjs` を実行します。表示は掲載日降順。トップは販売対象の各価格帯の新着1件です。公開確認版は `sampleOnly:true`・`isSample:true` のサンプル専用です。実物件を追加するには本番の認証・情報公開範囲を先に確定してください。
 
 Node.js 20.19以降で、生成・自動チェックを行えます。チェック用ライブラリーを最初にインストールします。
+
+ポリシーを編集するときは、サイト直下の `privacy.html` の導入文と本文を修正し、以下の生成・チェックを行ってください。QUALITA側の `privacy.html` を直接編集しても、次の生成で正本の内容に戻ります。チェックは9条の全文・現在の住所・フォームのリンクを照合します。
 
 ```sh
 cd qualita-property-lp
@@ -80,6 +83,7 @@ node scripts/verify-versions.mjs
 - 限定閲覧の認証・機密資料の保護：未実装。
 - 実物件管理・メール送信・WordPress接続：未接続。
 - Contact Form 7移行用フォーム原稿：`forms/` に準備。送信先の管理画面確認・接続・実送信テストは未実施。
-- 既存の企業サイト本体・WordPressテーマ：この公開作業では変更しない。
+- 企業サイトのGitHub確認版：プライバシーポリシーのみ、指定の全文と記事レイアウトに統一（2026年10月10日）。その他の未公開変更は含めない。
+- 本番WordPress・テーマZIP：今回未更新。
 
 **注意：GitHubリポジトリとGitHub Pagesは公開です。noindexは閲覧制限ではありません。実際の水面下物件、顧客情報、未公開資料をこのフォルダへ追加しないでください。**

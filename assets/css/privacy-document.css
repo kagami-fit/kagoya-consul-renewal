@@ -1,0 +1,22 @@
+/* プライバシーポリシー専用。既存ページには影響を与えない記事レイアウト。 */
+.privacy-page{background:#fff}
+.privacy-document{width:min(760px,calc(100% - 48px));max-width:760px;margin-inline:auto;padding-block:clamp(40px,6vw,72px) 88px}
+.privacy-document__header{padding-bottom:26px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.privacy-document__header .crumb{margin:0 0 22px;color:var(--muted);font-size:14px}
+.privacy-document__header .eyebrow{margin-bottom:12px}
+.privacy-document__header h1{margin:0 0 14px;font-size:clamp(2rem,4vw,2.5rem);line-height:1.45}
+.privacy-document__intro{max-width:68ch;margin:0;color:var(--muted);font-size:16px;line-height:1.9}
+.privacy-document__section{padding:21px 0;border-bottom:1px solid var(--line)}
+.privacy-document__section h2{margin:0 0 8px;color:var(--ink);font-family:var(--font-jp);font-size:1.12rem;line-height:1.7}
+.privacy-document__section p{margin:0;color:#46545d;font-size:16px;line-height:1.95}
+.privacy-document__section p + p{margin-top:1em}
+.privacy-document__section strong{font-weight:700}
+.privacy-document__section a{color:#176b83;text-decoration:underline;text-underline-offset:3px}
+.privacy-document__date{margin:22px 0 0;color:var(--muted);font-size:14px;text-align:right}
+@media(max-width:600px){
+  .privacy-document{width:calc(100% - 40px);padding-block:32px 56px}
+  .privacy-document__header{padding-bottom:20px;margin-bottom:16px}
+  .privacy-document__section{padding:18px 0}
+  .privacy-document__section h2{font-size:1.05rem}
+  .privacy-document__section p{font-size:16px}
+}
