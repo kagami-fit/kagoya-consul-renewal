@@ -1,26 +1,36 @@
-# 籠や｜物件紹介LP・2案比較（GitHub Pages公開用）
+# 籠や｜収益不動産紹介LP（GitHub Pages確認版）
 
 ## 一言で言うと
 
-「PDF誌面案」と「ラグジュアリー案」を、共有URLで比較するための静的サイトです。実在物件ではなく、生成写真・架空の物件名・価格・面積を使った制作確認版です。
+QUALITA向け紹介企画のラグジュアリー案を、収益不動産に特化したトップ・販売一覧・詳細へ整えた静的確認サイトです。物件・価格・面積・利回りは架空の設定です。PDF誌面案は以前の比較資料として残しています。
 
 ## 何ができるのか
 
 - パソコン・スマートフォンで2案を比較する。
 - 上部の比較リンクで2案を切り替える。
-- サンプルの用途別絞り込み・詳細・FAQを確認する。
+- 5億円以下／5億円超〜8億円以下／8億円超で絞り込む。
+- 各価格帯の新着をトップに表示し、独立した詳細ページを見る。
+- 物件詳細から相談フォームへ物件番号・価格帯を引き継ぐ。
 - 必須項目と同意欄を含むフォームの表示を確認する（保存・送信なし）。
 
 ## 構成
 
-- `index-pdf.html`：PDF誌面案。
-- `index.html`：ラグジュアリー案。
+- `index-pdf.html`：従来のPDF誌面比較案（今回未変更）。
+- `index.html`：収益不動産向けトップ。
+- `for-sale.html`：価格帯別の一覧。
+- `property-demo-*.html`：サンプル物件詳細。
+- `privacy.html`：籠やWordPress固定ページID3の原文。旧住所も保持。
+- `data/income-properties.json`：収益物件データの編集元。
+- `data/privacy-original.md`：確認済みの籠やプライバシーポリシー原文。生成元として同梱。
+- `scripts/build-income.mjs`：新着・一覧・詳細・原文ポリシーの生成。
+- `scripts/test-income.cjs`：価格帯の境界・新着・フォーム・原文一致・ローカルリンクの確認。
 - `assets/css/`：各案専用のスタイル。
-- `assets/js/private-collection.js`：サンプル詳細・絞り込み・入力確認。
+- `assets/js/income-collection.js`：価格帯絞り込み・物件引き継ぎ・入力確認。
+- `assets/js/private-collection.js`：以前のPDF比較案専用。
 - `assets/images/`：架空の建築写真と背景・装飾素材。
 - `../src/logo.png`、`../src/favicon.png`：既存サイトと共通のロゴ・アイコン。
 
-制作元は `../outputs/qualita-property-lp-20261003/` です。この公開用フォルダには2案と必要な素材だけを含め、初期案・制作資料・スクリーンショット・WordPressのZIPは含めません。
+現在の収益不動産版の正本はこのフォルダーです。`../outputs/qualita-property-lp-20261003/` は以前の制作案の保管先です。旧制作案をコピーしてこの版を上書きしないでください。
 
 ## 使い方
 
@@ -32,16 +42,29 @@ python3 -m http.server 8766 --bind 127.0.0.1
 
 ブラウザーで `/qualita-property-lp/index-pdf.html` または `/qualita-property-lp/index.html` を開きます。
 
+物件を編集するときは `data/income-properties.json` を更新し、`node qualita-property-lp/scripts/build-income.mjs` を実行します。表示は掲載日降順。トップは販売対象の各価格帯の新着1件です。公開確認版は `sampleOnly:true`・`isSample:true` のサンプル専用です。実物件を追加するには本番の認証・情報公開範囲を先に確定してください。
+
+Node.js 20.19以降で、生成・自動チェックを行えます。チェック用ライブラリーを最初にインストールします。
+
+```sh
+cd qualita-property-lp
+npm ci
+npm run build
+npm test
+```
+
 GitHub Pagesは既存の `main` ブランチのルートから配信する設定を利用します。公開用フォルダは制作元より1階層浅いため、共通画像・企業サイトへのリンクは `../` に調整しています。初期案へのリンクは公開版から除外しています。
 
-今後制作元を変更するときは、このフォルダにもHTML・CSS・JavaScript・素材を反映し、上記の階層差と比較リンクを確認してからGitHubへ更新してください。
+更新は作業ブランチ → Pull Request → GitHub Pages確認の順で行います。WordPressへの自動反映はありません。
 
 ## 状態
 
-- 2案の表示・比較・絞り込み・詳細：実装済み。
+- 収益不動産版の新着・価格帯別一覧・詳細・物件引き継ぎ：実装済み。
+- サンプル物件の写真3点：内蔵画像生成で個別制作。
 - 公開用データ：GitHub Pages配信用に整理済み。
 - 限定閲覧の認証・機密資料の保護：未実装。
 - 実物件管理・メール送信・WordPress接続：未接続。
+- Contact Form 7移行用フォーム原稿：`forms/` に準備。送信先の管理画面確認・接続・実送信テストは未実施。
 - 既存の企業サイト本体・WordPressテーマ：この公開作業では変更しない。
 
 **注意：GitHubリポジトリとGitHub Pagesは公開です。noindexは閲覧制限ではありません。実際の水面下物件、顧客情報、未公開資料をこのフォルダへ追加しないでください。**

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sampleOnly": true,
+  "properties": [
+    {
+      "id": "DEMO-01", "title": "一棟収益マンション｜郊外エリア", "type": "一棟賃貸マンション", "area": "郊外・住宅地（架空）",
+      "priceYen": 320000000, "grossYieldPercent": 6.0, "landAreaSqm": 430.0, "floorAreaSqm": 980.0,
+      "building": "鉄筋コンクリート造・地上4階（仮設定）", "units": "16戸（仮設定）",
+      "image": "income-320-v1.jpg", "imageAlt": "住宅地の4階建て一棟賃貸マンションの生成イメージ。実在する物件ではありません。",
+      "description": "穏やかな住宅地に立つ、一棟賃貸マンションを想定したモデルケース。価格・面積・利回りを並べて比較するためのサンプルです。",
+      "publishedAt": "2026-10-10T09:00:00+09:00", "saleStatus": "available", "isSample": true
+    },
+    {
+      "id": "DEMO-02", "title": "一棟収益マンション｜都市部", "type": "一棟賃貸マンション", "area": "都市部・住宅エリア（架空）",
+      "priceYen": 625000000, "grossYieldPercent": 5.2, "landAreaSqm": 360.0, "floorAreaSqm": 1420.0,
+      "building": "鉄筋コンクリート造・地上6階（仮設定）", "units": "20戸（仮設定）",
+      "image": "income-625-v1.jpg", "imageAlt": "都市部の6階建て一棟賃貸マンションの生成イメージ。実在する物件ではありません。",
+      "description": "都市部の街並みに馴染む、一棟賃貸マンションを想定したモデルケース。賃貸需要や管理の背景も検討するためのサンプルです。",
+      "publishedAt": "2026-10-10T09:10:00+09:00", "saleStatus": "available", "isSample": true
+    },
+    {
+      "id": "DEMO-03", "title": "一棟収益ビル｜都心エリア", "type": "オフィス・店舗ビル", "area": "都心・商業エリア（架空）",
+      "priceYen": 878000000, "grossYieldPercent": 4.1, "landAreaSqm": 215.0, "floorAreaSqm": 1180.0,
+      "building": "鉄骨鉄筋コンクリート造・地上7階（仮設定）", "units": "オフィス・店舗（仮設定）",
+      "image": "income-878-v1.jpg", "imageAlt": "都心の7階建てオフィス・店舗ビルの生成イメージ。実在する物件ではありません。",
+      "description": "ガラスと石材の外観を持つ、都心の収益ビルを想定したモデルケース。テナント構成や収支を比較するためのサンプルです。",
+      "publishedAt": "2026-10-10T09:20:00+09:00", "saleStatus": "available", "isSample": true
+    }
+  ]
+}

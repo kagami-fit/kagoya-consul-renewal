@@ -1,0 +1,11 @@
+<div class="inquiry-form">
+<div class="form-row"><label for="price-range">ご希望の価格帯 <span class="optional-label">任意</span></label>[select price-range id:price-range "未定・希望条件について相談したい|" "5億円以下|under-500m" "5億円超〜8億円以下|500m-800m" "8億円超|over-800m"]</div>
+<div class="form-row"><label for="property-interest">気になる物件 <span class="optional-label">任意</span></label>[text property-interest id:property-interest maxlength:200 placeholder "物件名・物件番号など。未指定でもご相談いただけます。"]</div>
+<div class="form-row"><label for="your-name">お名前 <span class="required-label">必須</span></label>[text* your-name id:your-name autocomplete:name maxlength:80]</div>
+<div class="form-row"><label for="your-email">メールアドレス <span class="required-label">必須</span></label>[email* your-email id:your-email autocomplete:email maxlength:254]</div>
+<div class="form-row"><label for="your-phone">電話番号 <span class="optional-label">任意</span></label>[tel your-phone id:your-phone autocomplete:tel maxlength:30]</div>
+<div class="form-row"><label for="your-message">ご相談内容 <span class="required-label">必須</span></label>[textarea* your-message id:your-message maxlength:2000 placeholder "希望のエリア・予算・利回りなど、分かる範囲でお聞かせください。"]</div>
+<p><a href="【WordPress設置時のプライバシーポリシーURL】" target="_blank" rel="noopener">籠やのプライバシーポリシーを読む</a></p>
+[acceptance privacy-consent]個人情報の取り扱いに同意する[/acceptance]
+[submit class:button class:button-dark "この内容で送信する"]
+</div>
