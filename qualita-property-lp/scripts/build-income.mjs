@@ -36,7 +36,18 @@ const head=home.match(/<head>[\s\S]*?<\/head>/)[0];
 const aside=home.match(/<aside class="preview-note"[\s\S]*?<\/aside>/)[0];
 const header=home.match(/<!-- KAGOYA:PRIVATE_HEADER -->[\s\S]*?<!-- \/KAGOYA:PRIVATE_HEADER -->/)[0].replaceAll('href="#philosophy"','href="index.html#philosophy"').replaceAll('href="#consultation"','href="index.html#consultation"');
 const footer=home.match(/<!-- KAGOYA:PRIVATE_FOOTER -->[\s\S]*?<!-- \/KAGOYA:PRIVATE_FOOTER -->/)[0];
-function page(title,main){return `<!doctype html>\n<html lang="ja">${head.replace(/<title>[\s\S]*?<\/title>/,`<title>${e(title)}｜KAGOYA Private Collection</title>`)}<body><a class="skip-link" href="#main">本文へスキップ</a>${aside}${header}<main id="main">${main}</main>${footer}</body></html>\n`;}
+// 販売一覧だけは企業サイトのトップに戻さず、この紹介サイト内へ戻す。
+const listingNavigation=html=>html
+ .replace('href="../index.html" aria-label="株式会社籠やのホームへ"','href="index.html" aria-label="収益不動産紹介のトップへ"')
+ .replaceAll('<a href="../index.html">籠やのホームへ</a>','');
+const versionRegistry=JSON.parse(fs.readFileSync(path.join(root,'versions/registry.json'),'utf8'));
+const listingBeforeVersion=versionRegistry.versions.filter(v=>/-before(?:-|$)/.test(v.id)).at(-1);
+assert.ok(listingBeforeVersion,'販売一覧の編集前の固定保存版が必要です。');
+const listingAside=aside.replace(/(<a\b[^>]*data-version-navigation[^>]*href=")[^"]+(?=">編集前を見る)/,`$1versions/${listingBeforeVersion.id}/for-sale.html`);
+function page(title,main){
+ const isListing=title==='販売中収益物件';
+ return `<!doctype html>\n<html lang="ja">${head.replace(/<title>[\s\S]*?<\/title>/,`<title>${e(title)}｜KAGOYA Private Collection</title>`)}<body><a class="skip-link" href="#main">本文へスキップ</a>${isListing?listingAside:aside}${isListing?listingNavigation(header):header}<main id="main">${main}</main>${isListing?listingNavigation(footer):footer}</body></html>\n`;
+}
 const filters=`<div class="filter-bar" role="group" aria-label="価格帯で絞り込み"><button type="button" data-income-filter="all" aria-pressed="true" disabled>すべて</button>${Object.entries(labels).map(([r,l])=>`<button type="button" data-income-filter="${r}" aria-pressed="false" disabled>${l}</button>`).join('')}<span class="filter-label">NEWEST FIRST</span></div><p id="filter-status" class="small-note" role="status" aria-live="polite">${available.length}件のサンプルを表示しています。</p>`;
 fs.writeFileSync(path.join(root,'for-sale.html'),page('販売中収益物件',`<section class="income-list-intro"><div class="wrap"><p class="crumb"><a href="index.html">トップ</a> ／ 販売中収益物件</p><p class="eyebrow">INCOME PROPERTY COLLECTION</p><h1>販売中収益物件</h1><p class="lead">ご希望の価格帯から、収益不動産を比較する。</p><p class="small-note">制作確認用。掲載情報・価格・面積・利回りはすべて架空のサンプルです。実際の販売物件ではありません。</p></div></section><section class="collection section-space income-listing"><div class="wrap">${filters}<div class="property-grid">${available.map(card).join('\n')}</div><p class="yield-note">${yieldNote}</p><div class="collection-bottom"><p>物件が決まっていなくても、<br>ご希望の条件からお聞かせください。</p><a class="button button-dark" href="index.html#consultation">希望条件から相談する <span aria-hidden="true">→</span></a></div><noscript><p class="no-script">価格帯の絞り込みにはJavaScriptが必要です。物件概要と詳細ページはそのままご覧いただけます。</p></noscript></div></section>`));
 for(const p of available){
