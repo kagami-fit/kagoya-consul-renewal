@@ -1,0 +1,24 @@
+/* WordPressの標準DOMを既存デザインに合わせる補助。既存のページ配色は変更しない。 */
+.site-header__nav .kagoya-menu{display:flex;align-items:center;gap:inherit;list-style:none;padding:0;margin:0}
+.kagoya-menu li{list-style:none;margin:0;padding:0}
+.kagoya-menu .current-menu-item>a{color:var(--main);font-weight:700}
+.drawer .kagoya-menu{list-style:none;padding:0;margin:0;display:block}
+.drawer .kagoya-menu a{display:flex}
+.admin-bar .site-header{top:32px}
+.kagoya-wp-main{padding:70px 0 100px;min-height:50vh}
+.kagoya-wp-main h1{margin-bottom:30px}
+.kagoya-wp-posts{display:grid;gap:24px}
+.kagoya-wp-list-row{padding:24px 0;border-bottom:1px solid var(--line)}
+.kagoya-wp-list-row time{color:var(--muted)}
+.kagoya-wp-list-row h2{font-size:clamp(20px,3vw,28px);margin:8px 0 16px}
+.post-main,.kagoya-wp-content{min-width:0;max-width:100%}
+.kagoya-wp-content{overflow-wrap:anywhere;line-height:1.9}
+.kagoya-wp-content p{margin:0 0 1.4em}
+.kagoya-wp-content h2,.kagoya-wp-content h3{margin:1.8em 0 .7em}
+.kagoya-wp-content pre{white-space:pre-wrap;font-family:inherit;line-height:inherit}
+.kagoya-wp-content img{max-width:100%;height:auto}
+.widget .w-list{padding:0;list-style:none}.widget li{margin-bottom:12px}
+.w-search{display:flex;gap:6px}.w-search input{min-width:0;width:100%;padding:10px;border:1px solid var(--line)}
+.w-search button{padding:10px 14px;border:1px solid var(--line);background:#f3f5f6;color:var(--ink);white-space:nowrap}
+@media(max-width:782px){.admin-bar .site-header{top:46px}}
+@media(max-width:600px){.admin-bar .site-header{top:0}}
