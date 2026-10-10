@@ -1,0 +1,11 @@
+{
+  "name": "kagoya-qualita-income-preview",
+  "private": true,
+  "description": "収益不動産紹介の静的確認サイトと生成・検証ツール",
+  "engines": { "node": ">=20.19" },
+  "scripts": {
+    "build": "node scripts/build-income.mjs",
+    "test": "node scripts/test-income.cjs"
+  },
+  "devDependencies": { "jsdom": "26.1.0" }
+}
