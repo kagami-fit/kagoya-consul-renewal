@@ -1,0 +1,19 @@
+{
+  "version": "20261010-seminar",
+  "previousSourceCommit": "f23fd10aff84aa3306939ff5b691f6d74a03be35",
+  "previousDirectory": "review/consultation-20261010",
+  "title": "分けられない、売れない、決められない",
+  "subtitle": "親が認知症になる前に考える不動産相続",
+  "specialists": "(弁護士・税理士)",
+  "date": "2026-11-06",
+  "dateLabel": "2026年11月6日(金)",
+  "timeLabel": "12:05～12:55(Teams開催)",
+  "timezone": "Asia/Tokyo",
+  "formSubmission": false,
+  "wordpressUpdated": false,
+  "pages": [
+    {"slug": "horitsu_lp", "label": "法律相談", "section": "section4", "thumbnail": "assets/images/seminar-law-20261106.png"},
+    {"slug": "zeimu_lp", "label": "税務相談", "section": "section4", "thumbnail": "assets/images/seminar-tax-20261106.png"},
+    {"slug": "fudosan_lp", "label": "不動産相談", "section": "section6", "thumbnail": "assets/images/seminar-estate-20261106.png"}
+  ]
+}
