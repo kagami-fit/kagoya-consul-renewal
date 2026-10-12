@@ -1,0 +1,19 @@
+/* 採用E案：文字と矢印を細い縦線で区切る。装飾は読み上げ対象外。 */
+.arrow-e{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 auto;width:44px;height:32px;border-left:1px solid currentColor;padding-left:12px;line-height:1;color:inherit;opacity:.9;vertical-align:middle}
+.arrow-e svg{display:block;width:32px;height:32px;flex:0 0 auto;transition:transform .2s ease}
+.property-detail-link>.arrow-e{color:var(--gold-ink)}
+a:has(>.arrow-e){display:inline-flex;align-items:center;gap:12px}
+.button:has(>.arrow-e),.header-contact:has(>.arrow-e){display:flex;align-items:center;justify-content:flex-start;gap:12px}
+.hero-actions .button:has(>.arrow-e){display:inline-flex}
+.income-range>.arrow-e,.preview-note a>.arrow-e,.privacy-information a>.arrow-e,.footer-bottom a>.arrow-e{width:32px;height:24px;padding-left:10px}
+.income-range>.arrow-e svg,.preview-note a>.arrow-e svg,.privacy-information a>.arrow-e svg,.footer-bottom a>.arrow-e svg{width:22px;height:22px}
+.arrow-up svg{transform:rotate(-90deg)}
+a:hover>.arrow-e:not(.arrow-up):not(.arrow-down) svg,button:hover>.arrow-e:not(.arrow-up):not(.arrow-down) svg{transform:translateX(3px)}
+a:hover>.arrow-up svg{transform:rotate(-90deg) translateX(3px)}
+@media(max-width:760px){.arrow-e{width:42px;padding-left:12px}.button:has(>.arrow-e),.header-contact:has(>.arrow-e),a:has(>.arrow-e){gap:12px}}
+@media(prefers-reduced-motion:reduce){.arrow-e svg{transition:none}a:hover>.arrow-e:not(.arrow-up):not(.arrow-down) svg,button:hover>.arrow-e:not(.arrow-up):not(.arrow-down) svg{transform:none}a:hover>.arrow-up svg{transform:rotate(-90deg)}}
+
+.arrow-down svg{transform:rotate(90deg)}a:hover>.arrow-down svg{transform:rotate(90deg) translateX(3px)}@media(prefers-reduced-motion:reduce){a:hover>.arrow-down svg{transform:rotate(90deg)}}
+
+/* 右端へ離さず、文字の直後に縦線と矢印を並べる。 */
+a:has(>.arrow-e),button:has(>.arrow-e){justify-content:flex-start;gap:12px}

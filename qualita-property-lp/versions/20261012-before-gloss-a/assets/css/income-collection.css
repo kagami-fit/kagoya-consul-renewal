@@ -1,0 +1,44 @@
+/* 収益不動産版だけに適用。PDF比較案のスタイルは変更しない。 */
+.property-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 24px; }
+.property-facts dd { font-size:27px; }
+.property-image>a { display:block; min-width:0; }
+.property-image>a>img { width:100%; height:100%; min-height:458px; object-fit:cover; object-position:center; }
+.income-range { display:inline-block; color:var(--gold-ink); font-size:12px; padding:6px 12px; border:1px solid var(--line); margin-bottom:10px; }
+.income-range:hover { background:var(--paper); }
+.yield-note { color:var(--muted); font-size:12px; line-height:1.9; margin-top:18px; }
+.income-list-intro { padding:64px 0 42px; background:var(--paper) url('../images/ivory-marble-v2.jpg') center/cover; border-bottom:1px solid var(--line); }
+.income-list-intro .crumb { color:var(--muted); font-size:13px; margin-bottom:24px; }
+.income-list-intro h1 { font-size:clamp(30px,4vw,50px); font-weight:400; margin:16px 0; line-height:1.55; }
+.income-list-intro .lead { font-size:16px; color:var(--muted); max-width:720px; }
+.income-listing { padding-top:30px; }
+.filter-bar { flex-wrap:wrap; gap:12px 28px; }
+.filter-label { white-space:nowrap; }
+.income-detail { padding:48px 0 85px; }
+.income-detail .crumb { color:var(--muted); font-size:13px; margin-bottom:28px; }
+.income-detail-layout { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:48px; align-items:start; }
+.income-detail h1 { font-size:clamp(27px,3vw,38px); line-height:1.6; font-weight:400; margin:12px 0 24px; }
+.income-detail .detail-image img { max-height:none; aspect-ratio:3/2; }
+.income-detail .detail-facts { margin:24px 0; }
+.income-detail .detail-facts>div { grid-template-columns:145px minmax(0,1fr); }
+.income-detail-actions { display:flex; flex-wrap:wrap; gap:20px; margin-top:32px; }
+.income-detail-copy { margin-top:30px; color:var(--muted); line-height:2; }
+.income-privacy { max-width:800px; padding-top:48px; padding-bottom:70px; }
+.income-privacy h1 { font-size:32px; line-height:1.5; margin-bottom:28px; }
+.income-privacy h2 { font-family:var(--sans); font-size:20px; margin:40px 0 18px; line-height:1.7; }
+.income-privacy p { font-family:var(--sans); font-size:16px; line-height:2; margin:14px 0; overflow-wrap:anywhere; }
+.income-privacy .policy-source { font-size:13px; color:var(--muted); padding-top:24px; border-top:1px solid var(--line); }
+.property-card[hidden] { display:none!important; }
+@media(max-width:900px) { .income-detail-layout { grid-template-columns:1fr; gap:28px; } }
+@media(max-width:600px) {
+  .property-image>a>img { min-height:0; aspect-ratio:3/2; }
+  .filter-bar { gap:8px 22px; }
+  .filter-bar button { font-size:13px; }
+  .filter-label { width:100%; margin-left:0; }
+  .property-facts dd { font-size:25px; }
+  .income-list-intro { padding:38px 0 30px; }
+  .income-listing { padding-top:18px; }
+  .income-detail { padding-top:28px; }
+  .income-detail .detail-facts>div { grid-template-columns:115px minmax(0,1fr); font-size:14px; }
+  .income-privacy h1 { font-size:27px; }
+  .income-detail-actions .button { width:100%; }
+}
