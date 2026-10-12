@@ -91,3 +91,6 @@ node scripts/verify-versions.mjs
 
 ## 2026年10月12日：専門家相談・大理石D案の反映
 トップの4ステップ案内と相談フォームの間に、FP・税理士・プライベートバンカーのリンクなし案内を追加。LPと同じ大理石素材、ゴールド二重枠、明朝体を使用。CSSは assets/css/advisory-marble-v1.css。変更前は versions/20261012-before-advisory-marble/ に写真・CSS・JSとともに固定保存済み。
+
+## 2026年10月12日：相談カードの文字拡大
+相談名をPC25→29px・スマートフォン25→28px、専門家の説明を12→14pxに拡大。見出し・紹介文・番号も少し拡大。CSSは advisory-marble-v2.css。拡大前は versions/20261012-before-advisory-type/ に固定保存。
