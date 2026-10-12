@@ -540,3 +540,7 @@ h3 { font-size:26px; line-height:1.65; letter-spacing:.035em; }
 .consultation-topic:focus-within{outline:2px solid var(--focus);outline-offset:2px}
 
 .consultation-topics legend .optional-label strong{font-weight:700;color:var(--ink)}
+
+/* ホーム・会社HPの導線を含むPCナビを一列に保つ。 */
+.desktop-nav{gap:20px;white-space:nowrap}
+@media(min-width:601px) and (max-width:1100px){.brand-caption{display:none}.desktop-nav{gap:14px;font-size:12px}.header-inner{gap:14px}.header-contact{padding-inline:12px}}
