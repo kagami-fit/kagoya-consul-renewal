@@ -41,6 +41,12 @@
       "label": "専門家相談の注記削除前",
       "sourceCommit": "3ba904166daed8282720d6f0b7bdba2d9dec7258",
       "savedAt": "2026-10-12T05:26:59.952Z"
+    },
+    {
+      "id": "20261012-before-arrow-e",
+      "label": "ボタン矢印E案への統一前",
+      "sourceCommit": "71b326c810a93b8fdb9c3f141d4fdf5323aa8f3a",
+      "savedAt": "2026-10-12T05:40:36.039Z"
     }
   ]
 }
