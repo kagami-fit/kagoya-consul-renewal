@@ -96,3 +96,6 @@ node scripts/verify-versions.mjs
 相談名をPC25→29px・スマートフォン25→28px、専門家の説明を12→14pxに拡大。見出し・紹介文・番号も少し拡大。CSSは advisory-marble-v2.css。拡大前は versions/20261012-before-advisory-type/ に固定保存。
 
 2026-10-12：専門家相談の「対応範囲・料金・紹介条件は正式公開前に確認します。」注記を最新版LPから削除。削除前は versions/20261012-before-advisory-note/ に固定保存。
+
+## 2026年10月12日：矢印をE案へ統一
+LP・一覧・詳細・ポリシー・PDF誌面案のボタンとリンクの矢印を縦線付きSVGに変更。ページ上部へ戻る矢印は同じ意匠で上向き。生成スクリプトにも反映。CSSは assets/css/arrows-e-v1.css。変更前は versions/20261012-before-arrow-e/ に固定保存。

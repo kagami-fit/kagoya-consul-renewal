@@ -1,0 +1,18 @@
+/* 採用された大理石D案。既存LPの色・書体・素材を継承。 */
+.specialist-advisory{background:#faf8f4;padding:0 0 85px;color:var(--ink)}
+.advisory-stage{padding:54px 0;border-top:1px solid var(--line)}
+.specialist-advisory h2{font:400 38px/1.7 var(--serif);letter-spacing:.06em;margin:20px 0 18px}
+.specialist-advisory .intro{font:17px/1.95 var(--sans);color:var(--muted);margin:0 0 38px}
+.advisor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.specialist-advisory .advisor{min-width:0;display:flex;align-items:center;justify-content:center;min-height:330px;padding:36px 28px;text-align:center;position:relative;background:linear-gradient(rgb(250 248 244 / .32),rgb(250 248 244 / .32)),var(--paper) url('../images/ivory-marble-v2.jpg') center/cover;border:1px solid var(--gold)}
+.specialist-advisory .advisor:nth-child(2){background-position:50% 75%}.specialist-advisory .advisor:nth-child(3){background-position:85% 35%}
+.specialist-advisory .advisor:before{content:"";position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none}
+.specialist-advisory .advisor-copy{width:100%}
+.specialist-advisory .num{display:block;font:italic 25px/1.2 var(--english);letter-spacing:.06em;color:var(--gold-ink);margin-bottom:30px}
+.specialist-advisory .role{font:14px/1.8 var(--sans);color:var(--muted);margin:0}
+.specialist-advisory h3{font:400 29px/1.7 var(--serif);letter-spacing:.035em;margin:14px 0 0}
+.specialist-advisory .keep{white-space:nowrap}
+.specialist-advisory .advisor-copy:after{content:"";display:block;width:40px;height:1px;background:var(--gold);margin:26px auto 0}
+.advisory-note{font:14px/1.85 var(--sans);color:var(--muted);margin:20px 0 0}
+@media(max-width:1000px){.advisor-grid{gap:20px}.specialist-advisory .advisor{padding:32px 18px;min-height:300px}.specialist-advisory h3{font-size:25px}}
+@media(max-width:760px){.specialist-advisory{padding-bottom:45px}.advisory-stage{padding:36px 0}.specialist-advisory h2{font-size:30px;line-height:1.75}.advisor-grid{grid-template-columns:1fr;gap:32px}.specialist-advisory .advisor{min-height:270px;padding:35px 24px}.specialist-advisory h3{font-size:28px}.specialist-advisory .num{margin-bottom:24px}}
