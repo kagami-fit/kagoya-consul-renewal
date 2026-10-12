@@ -71,6 +71,12 @@
       "label": "相談テーマ6項目への変更前",
       "sourceCommit": "31f44dc234c12d4053c63ee44fede7f1984c6580",
       "savedAt": "2026-10-12T07:03:11.634Z"
+    },
+    {
+      "id": "20261012-before-navigation-alignment",
+      "label": "ホーム導線・カード位置の調整前",
+      "sourceCommit": "074d5d9c9422523b4650613168fb341358231b12",
+      "savedAt": "2026-10-12T13:05:13.321Z"
     }
   ]
 }

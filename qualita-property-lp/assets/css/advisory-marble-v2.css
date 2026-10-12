@@ -23,3 +23,6 @@
 .specialist-advisory .advisor:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(130deg,rgb(255 255 255 / .32),transparent 40%,rgb(255 255 255 / .09) 70%)}
 .specialist-advisory .advisor-copy{position:relative;z-index:2}
 .specialist-advisory .role{color:#5b5247}
+
+/* 見出しが2行でも番号・肩書きの開始位置を揃える。 */
+@media(min-width:761px){.specialist-advisory h3{min-height:3.4em}}
