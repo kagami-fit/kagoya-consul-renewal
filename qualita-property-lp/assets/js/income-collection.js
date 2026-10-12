@@ -36,7 +36,8 @@
   form.addEventListener('submit', e => e.preventDefault());
   document.getElementById('preview-inquiry').addEventListener('click', () => {
     if (!form.reportValidity()) return;
-    status.textContent = `入力項目を確認しました。${interest.value.trim() ? '物件についてのご相談' : '物件を指定しないご相談'}として受付できる構成です。この確認版は保存・送信しません。`;
+    const topics = [...form.querySelectorAll('[name="consultation-topics"]:checked')].map(input => input.nextElementSibling.textContent);
+    status.textContent = `入力項目を確認しました。${topics.length ? 'ご相談のテーマ：' + topics.join('、') + '。' : ''}${interest.value.trim() ? '物件についてのご相談' : '物件を指定しないご相談'}として受付できる構成です。この確認版は保存・送信しません。`;
     status.hidden = false;
     status.scrollIntoView({block: 'nearest', behavior: 'auto'});
   });

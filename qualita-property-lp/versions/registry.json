@@ -59,6 +59,12 @@
       "label": "ツヤのある大理石A案の反映前",
       "sourceCommit": "bb1e511a5c59c338fb3e28cec3fd6a510135aafb",
       "savedAt": "2026-10-12T06:07:00.089Z"
+    },
+    {
+      "id": "20261012-before-consultation-options",
+      "label": "相談内容の複数選択欄追加前",
+      "sourceCommit": "20bd9548119d867c20c1228b455fb1a307db5969",
+      "savedAt": "2026-10-12T06:31:33.614Z"
     }
   ]
 }
