@@ -538,3 +538,5 @@ h3 { font-size:26px; line-height:1.65; letter-spacing:.035em; }
 .consultation-topic input{flex-shrink:0;width:18px;height:18px;margin:4px 0 0;accent-color:var(--gold-ink)}
 .consultation-topic:has(input:checked){border-color:var(--gold-ink);background:#f4eee2}
 .consultation-topic:focus-within{outline:2px solid var(--focus);outline-offset:2px}
+
+.consultation-topics legend .optional-label strong{font-weight:700;color:var(--ink)}
