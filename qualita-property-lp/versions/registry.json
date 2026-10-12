@@ -35,6 +35,12 @@
       "label": "大理石カードの文字拡大前",
       "sourceCommit": "20967d309d6002f12a1b316de27f063224964342",
       "savedAt": "2026-10-12T05:23:09.952Z"
+    },
+    {
+      "id": "20261012-before-advisory-note",
+      "label": "専門家相談の注記削除前",
+      "sourceCommit": "3ba904166daed8282720d6f0b7bdba2d9dec7258",
+      "savedAt": "2026-10-12T05:26:59.952Z"
     }
   ]
 }
