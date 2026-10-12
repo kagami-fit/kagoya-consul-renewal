@@ -53,6 +53,12 @@
       "label": "ボタンと矢印の間隔調整前",
       "sourceCommit": "d8464fbe0371eaea6d288d32c39e7d98cabb627e",
       "savedAt": "2026-10-12T05:48:10.744Z"
+    },
+    {
+      "id": "20261012-before-gloss-a",
+      "label": "ツヤのある大理石A案の反映前",
+      "sourceCommit": "bb1e511a5c59c338fb3e28cec3fd6a510135aafb",
+      "savedAt": "2026-10-12T06:07:00.089Z"
     }
   ]
 }
