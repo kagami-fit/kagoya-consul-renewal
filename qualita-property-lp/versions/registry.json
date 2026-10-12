@@ -23,6 +23,12 @@
       "label": "2026年10月10日 販売一覧のホームリンク修正前",
       "sourceCommit": "301baf5c3e6e50a6bcfe642a9de735fcf72f4b60",
       "savedAt": "2026-10-10T07:17:47.912Z"
+    },
+    {
+      "id": "20261012-before-advisory-marble",
+      "label": "専門家相談・大理石D案の追加前",
+      "sourceCommit": "9ad4407d5c359d11c30a7568ad9dd4ad26b4994e",
+      "savedAt": "2026-10-12T05:14:04.666Z"
     }
   ]
 }
