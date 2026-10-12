@@ -99,3 +99,5 @@ node scripts/verify-versions.mjs
 
 ## 2026年10月12日：矢印をE案へ統一
 LP・一覧・詳細・ポリシー・PDF誌面案のボタンとリンクの矢印を縦線付きSVGに変更。ページ上部へ戻る矢印は同じ意匠で上向き。生成スクリプトにも反映。CSSは assets/css/arrows-e-v1.css。変更前は versions/20261012-before-arrow-e/ に固定保存。
+
+2026-10-12：ボタン・リンクのテキストとE矢印を左寄せで並べ、間隔を12pxに統一。CSSは arrows-e-v2.css。調整前は versions/20261012-before-arrow-spacing/ に固定保存。
