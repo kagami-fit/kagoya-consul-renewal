@@ -88,3 +88,6 @@ node scripts/verify-versions.mjs
 - 本番WordPress・テーマZIP：今回未更新。
 
 **注意：GitHubリポジトリとGitHub Pagesは公開です。noindexは閲覧制限ではありません。実際の水面下物件、顧客情報、未公開資料をこのフォルダへ追加しないでください。**
+
+## 2026年10月12日：専門家相談・大理石D案の反映
+トップの4ステップ案内と相談フォームの間に、FP・税理士・プライベートバンカーのリンクなし案内を追加。LPと同じ大理石素材、ゴールド二重枠、明朝体を使用。CSSは assets/css/advisory-marble-v1.css。変更前は versions/20261012-before-advisory-marble/ に写真・CSS・JSとともに固定保存済み。

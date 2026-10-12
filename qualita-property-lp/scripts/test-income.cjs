@@ -54,7 +54,8 @@ const dom=f=>new JSDOM(read(f),{url:'https://example.invalid/qualita-property-lp
  assert.ok(published.includes('〒152-0032　東京都目黒区平町1丁目26-17 ソシアル都立大学駅前201号'));
  assert.ok(!published.includes('目黒本町一丁目12番15号-1F'),'最新版には旧住所を残さない');
  assert.ok(!policy.querySelector('.policy-source'),'旧住所保持という古い案内を表示しない');
- assert.equal(d.querySelector('[data-version-navigation]').getAttribute('href'),'versions/20261010-before-privacy/index.html');
+ assert.equal(d.querySelector('[data-version-navigation]').getAttribute('href'),`versions/${latestBefore.id}/index.html`);
+ const advisory=d.querySelector('#specialist-consultation');assert.ok(advisory);assert.equal(advisory.querySelectorAll('.advisor').length,3);assert.equal(advisory.querySelectorAll('a,button').length,0);assert.ok(d.querySelector('#process').compareDocumentPosition(advisory)&4);assert.ok(advisory.compareDocumentPosition(d.querySelector('#consultation'))&4);
  for(const link of d.querySelectorAll('a[href*="privacy.html"]'))assert.equal(link.getAttribute('href'),'privacy.html','フォームとフッターは共通の全文ポリシーへ');
  assert.equal(corporate.querySelectorAll('.privacy-document__section').length,9);
  assert.ok(corporate.querySelector('link[href^="assets/css/privacy-document.css"]'),'公開版にも記事用のスタイルを同梱');
