@@ -107,6 +107,12 @@
       "label": "価格帯ボタン文言変更前",
       "sourceCommit": "543de6f10dbc90f1ede82beb68dc7165c0025576",
       "savedAt": "2026-10-13T03:46:57.689Z"
+    },
+    {
+      "id": "20261013-before-placement-a",
+      "label": "価格帯ボタンA配置の反映前",
+      "sourceCommit": "5f36489dd86360f14dd53e3ae061482e2922f8c5",
+      "savedAt": "2026-10-13T04:17:17.474Z"
     }
   ]
 }

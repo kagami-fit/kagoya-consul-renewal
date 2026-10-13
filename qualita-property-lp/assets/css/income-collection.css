@@ -47,3 +47,7 @@
 
 /* 価格帯はブランドの濃いゴールドで強調する。 */
 .property-folio{color:var(--gold-ink);font-weight:500}
+
+/* 採用A案：価格帯見出しの直下。 */
+.property-folio{border-bottom:0;padding-bottom:0;margin-bottom:14px}
+.income-range{font-size:14px;padding:12px 16px;line-height:1.7;margin:0 0 24px}
