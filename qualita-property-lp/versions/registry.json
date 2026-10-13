@@ -113,6 +113,12 @@
       "label": "価格帯ボタンA配置の反映前",
       "sourceCommit": "5f36489dd86360f14dd53e3ae061482e2922f8c5",
       "savedAt": "2026-10-13T04:17:17.474Z"
+    },
+    {
+      "id": "20261013-before-list-no-range-cta",
+      "label": "販売一覧の価格帯ボタン削除前",
+      "sourceCommit": "446bde60cc249df910fe045a52563e39fb73f773",
+      "savedAt": "2026-10-13T05:54:50.525Z"
     }
   ]
 }
