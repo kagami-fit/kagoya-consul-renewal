@@ -95,6 +95,12 @@
       "label": "価格帯見出しの色変更前",
       "sourceCommit": "40335cf8384abf939f8731ce1d13114f10857021",
       "savedAt": "2026-10-13T03:18:30.510Z"
+    },
+    {
+      "id": "20261013-before-restore-range-buttons",
+      "label": "価格帯別販売一覧ボタン復元前",
+      "sourceCommit": "d1c2a0a958b839358a13ec43679e3b34b48f2fb0",
+      "savedAt": "2026-10-13T03:42:18.701Z"
     }
   ]
 }
