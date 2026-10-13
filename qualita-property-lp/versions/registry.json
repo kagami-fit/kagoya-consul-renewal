@@ -77,6 +77,12 @@
       "label": "ホーム導線・カード位置の調整前",
       "sourceCommit": "074d5d9c9422523b4650613168fb341358231b12",
       "savedAt": "2026-10-12T13:05:13.321Z"
+    },
+    {
+      "id": "20261013-before-property-labels",
+      "label": "価格帯表記・物件番号・PCメニュー変更前",
+      "sourceCommit": "07ab5403088d4992dc3bb26ba64f39f39683364e",
+      "savedAt": "2026-10-13T00:11:12.921Z"
     }
   ]
 }
