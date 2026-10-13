@@ -101,6 +101,12 @@
       "label": "価格帯別販売一覧ボタン復元前",
       "sourceCommit": "d1c2a0a958b839358a13ec43679e3b34b48f2fb0",
       "savedAt": "2026-10-13T03:42:18.701Z"
+    },
+    {
+      "id": "20261013-before-range-cta",
+      "label": "価格帯ボタン文言変更前",
+      "sourceCommit": "543de6f10dbc90f1ede82beb68dc7165c0025576",
+      "savedAt": "2026-10-13T03:46:57.689Z"
     }
   ]
 }
