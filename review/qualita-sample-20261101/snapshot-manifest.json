@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-01",
+  "source": "https://kagoya-consul.co.jp/qualita/",
+  "pages": {
+    "/qualita/": "index.html",
+    "/qualita/for-sale/": "for-sale.html",
+    "/qualita/privacy/": "privacy.html",
+    "/qualita/property/demo-01/": "demo-01.html",
+    "/qualita/property/demo-02/": "demo-02.html",
+    "/qualita/property/demo-03/": "demo-03.html"
+  },
+  "assets": [
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/favicon.png",
+      "file": "assets/388cc25d50-favicon.png",
+      "sha256": "4dc3986be257111bd3b76779d01104264091318d667ae779d1c5e2e17e3029f9"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/ivory-marble-v2.jpg",
+      "file": "assets/644e8f81dc-ivory-marble-v2.jpg",
+      "sha256": "c61352f29c5af8dc9c2d627a18206d48c16a2c5fb9b2c6dd4248ebc68db800af"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/ribbon.svg",
+      "file": "assets/d41779835d-ribbon.svg",
+      "sha256": "44121381c43e4e5dd15c344f634683ca7fabb35a0285310828bebed9c9c7e9b3"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/flourish.svg",
+      "file": "assets/c732a471b0-flourish.svg",
+      "sha256": "38c7a8c3195d776103e020ffe9ec788662b834c83c2740cb1db911712d822382"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/css/private-collection-luxury.css",
+      "file": "assets/3261b32615-private-collection-luxury.css",
+      "sha256": "97b2ba71fa2233ad2aec3a435a3f48dcc48b41a7726a11d1b2d472d3f3ea8a05"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/css/income-collection.css",
+      "file": "assets/808ff3082c-income-collection.css",
+      "sha256": "5f8841f84bb30f927a96d81bf75debaf223853834ed0e12f83ffc15c31d23b63"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/ivory-marble-gloss-a.jpg",
+      "file": "assets/759f627e92-ivory-marble-gloss-a.jpg",
+      "sha256": "1f359635e35ad15bcf5ed4dbea529eb80263ebe7ea9875963d1608e309a0adaa"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/css/advisory-marble-v2.css",
+      "file": "assets/33428fd6f1-advisory-marble-v2.css",
+      "sha256": "4fd4ff40da6e63f398e521e2e639fcaae59161c760fa9199b815e9c6f1ed96b5"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/js/income-collection.js",
+      "file": "assets/cf1bb74fc3-income-collection.js",
+      "sha256": "2e6694ee1ddfd8a5eeff727018d192b5aa5d9527ce5eb27ce9c01bf9be3b45da"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/css/arrows-e-v2.css",
+      "file": "assets/f7bdb1d5a5-arrows-e-v2.css",
+      "sha256": "1f5057b47462cab19f4dc3ef0a343ff333111d665f734ee08a82dd8d12c19b6e"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.8.7",
+      "file": "assets/2899dfb050-styles.css",
+      "sha256": "ccd31ffa708d025833f954b3e0560cedd58df9a0d2706b2ccee5f501c5b2467b"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/uploads/2023/12/img_logo.png",
+      "file": "assets/ae00267092-img_logo.png",
+      "sha256": "0c85e87f8f730336b0871320ac1f548b34228969354447ebffd5c9a3ac73c937"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/css/wordpress-qualita.css",
+      "file": "assets/e25e167b45-wordpress-qualita.css",
+      "sha256": "c1fde3b60d43d11562dec3f4612c82a3204411f678005087d2cbc090389bc9f5"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/logo.png",
+      "file": "assets/a421e2f916-logo.png",
+      "sha256": "588a873ace4045af0e97cc8667c3cd679c9f13d5344778f677f12cb3ea6b25ae"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/building.jpg",
+      "file": "assets/afd3c14fa9-building.jpg",
+      "sha256": "432af56a6dbc4f89345f8e0c7a48cc77c6102d06361b167c16ef21d50b528ec1"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/income-320-v1.jpg",
+      "file": "assets/f8a1c6eeca-income-320-v1.jpg",
+      "sha256": "e9227173353eefbb140d2e56e03beb8c2fd6cb3bc918679a4f6caddefc07b7f6"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/income-625-v1.jpg",
+      "file": "assets/8def64f31f-income-625-v1.jpg",
+      "sha256": "348b05973a52291c764222d2d542ddfe0c2489db9bc3839b4de5dd44b9c34a84"
+    },
+    {
+      "source": "https://kagoya-consul.co.jp/cms/wp-content/plugins/kagoya-qualita/assets/images/income-878-v1.jpg",
+      "file": "assets/0adfa946d0-income-878-v1.jpg",
+      "sha256": "f31c3b3ec8cd4a0499a82ef8f627aab77191cc4f31c7f84860977783f03a530e"
+    }
+  ]
+}
